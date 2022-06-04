@@ -1,0 +1,4 @@
+./appupdatecreator -path /test  -version 0 -subver 1 -vererr 0 -boot yes -nokey
+
+
+
