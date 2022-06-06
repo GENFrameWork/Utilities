@@ -13,7 +13,9 @@
       obj\XTranslation.obj obj\XTranslation_GEN.obj obj\XFileJSON.obj 
       obj\XFileTXT.obj obj\XPath.obj obj\XPathsManager.obj obj\XThread.obj 
       obj\XTimer.obj obj\XRand.obj obj\Cipher.obj obj\XWINDOWSDir.obj 
-      obj\XWINDOWSRand.obj obj\XWINDOWSRegistryManager.obj"/>
+      obj\XWINDOWSRand.obj obj\XWINDOWSRegistryManager.obj 
+      obj\NewAPPCreator_CFG.obj obj\XFileCFG.obj obj\XFileINI.obj obj\XEvent.obj 
+      obj\XObserver.obj obj\XPublisher.obj obj\XSubject.obj"/>
     <RESFILES value="NewAPPCreator.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -66,8 +68,8 @@
     <OTHERFILES value=""/>
   </LINKER>
   <FILELIST>
-      <FILE FILENAME="NewAPPCreator.res" FORMNAME="" UNITNAME="NewAPPCreator.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="NewAPPCreator.cpp" FORMNAME="" UNITNAME="NewAPPCreator" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NewAPPCreator.res" FORMNAME="" UNITNAME="NewAPPCreator.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Unit1.cpp" FORMNAME="Form1" UNITNAME="Unit1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSDateTime.cpp" FORMNAME="" UNITNAME="XWINDOWSDateTime.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSFactory.cpp" FORMNAME="" UNITNAME="XWINDOWSFactory.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -101,6 +103,13 @@
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSDir.cpp" FORMNAME="" UNITNAME="XWINDOWSDir.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSRand.cpp" FORMNAME="" UNITNAME="XWINDOWSRand.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSRegistryManager.cpp" FORMNAME="" UNITNAME="XWINDOWSRegistryManager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NewAPPCreator_CFG.cpp" FORMNAME="" UNITNAME="NewAPPCreator_CFG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XFileCFG.cpp" FORMNAME="" UNITNAME="XFileCFG.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XFileINI.cpp" FORMNAME="" UNITNAME="XFileINI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XEvent.cpp" FORMNAME="" UNITNAME="XEvent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XObserver.cpp" FORMNAME="" UNITNAME="XObserver.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XPublisher.cpp" FORMNAME="" UNITNAME="XPublisher.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\Utils\XSubject.cpp" FORMNAME="" UNITNAME="XSubject.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

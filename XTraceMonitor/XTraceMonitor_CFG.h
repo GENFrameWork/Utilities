@@ -3,13 +3,10 @@
 * @file        XTraceMonitor_CFG.h
 *
 * @class       XTRACEMONITOR_CFG
-* @brief       eXtended Trace Monitor
-* @ingroup     UTILS
+* @brief       eXtended Trace Monitor Config
+* @ingroup     UTILITIES
 *
-* @author      Abraham J. Velez 
-* @date       01/03/2016 12:00
-*
-* @copyright   Copyright(c) 2005 - 2018 GEN Group.
+* @copyright   GEN Group. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated

@@ -3,13 +3,10 @@
 * @file        XTraceMonitor_CFG.cpp
 *
 * @class       XTRACEMONITOR_CFG
-* @brief       Debug Monitor CFG
-* @ingroup     UTILS
-*
-* @author      Abraham J. Velez 
-* @date       01/03/2016 12:00
-*
-* @copyright   Copyright(c) 2005 - 2018 GEN Group.
+* @brief       eXtended Trace Monitor Config
+* @ingroup     UTILITIES
+
+* @copyright   GEN Group. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -59,10 +56,7 @@
 *
 * @fn         XTRACEMONITOR_SERVERCFG::XTRACEMONITOR_SERVERCFG()
 * @brief      Constructor
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     Does not return anything. 
 *
@@ -79,10 +73,7 @@ XTRACEMONITOR_SERVERCFG::XTRACEMONITOR_SERVERCFG()
 * @fn         XTRACEMONITOR_SERVERCFG::~XTRACEMONITOR_SERVERCFG()
 * @brief      Destructor
 * @note       VIRTUAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     Does not return anything. 
 *
@@ -99,10 +90,7 @@ XTRACEMONITOR_SERVERCFG::~XTRACEMONITOR_SERVERCFG()
 * @fn         void XTRACEMONITOR_SERVERCFG::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     void : does not return anything. 
 *
@@ -126,10 +114,7 @@ void XTRACEMONITOR_SERVERCFG::Clean()
 *
 * @fn         XTRACEMONITOR_ORIGINCFG::XTRACEMONITOR_ORIGINCFG()
 * @brief      Constructor
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     Does not return anything. 
 *
@@ -146,10 +131,7 @@ XTRACEMONITOR_ORIGINCFG::XTRACEMONITOR_ORIGINCFG()
 * @fn         XTRACEMONITOR_ORIGINCFG::~XTRACEMONITOR_ORIGINCFG()
 * @brief      Destructor
 * @note       VIRTUAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     Does not return anything. 
 *
@@ -166,10 +148,7 @@ XTRACEMONITOR_ORIGINCFG::~XTRACEMONITOR_ORIGINCFG()
 * @fn         void XTRACEMONITOR_ORIGINCFG::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     void : does not return anything. 
 *
@@ -196,10 +175,7 @@ void XTRACEMONITOR_ORIGINCFG::Clean()
 *
 * @fn         XTRACEMONITOR_CFG::XTRACEMONITOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 * @brief      Constructor
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  XCHAR* : 
 *
@@ -292,10 +268,7 @@ XTRACEMONITOR_CFG::XTRACEMONITOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 * @fn         XTRACEMONITOR_CFG::~XTRACEMONITOR_CFG()
 * @brief      Destructor
 * @note       VIRTUAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     Does not return anything. 
 *
@@ -312,10 +285,7 @@ XTRACEMONITOR_CFG::~XTRACEMONITOR_CFG()
 *
 * @fn         int XTRACEMONITOR_CFG::GetXPos()
 * @brief      GetXPos
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int : 
 *
@@ -331,10 +301,7 @@ int XTRACEMONITOR_CFG::GetXPos()
 *
 * @fn         void XTRACEMONITOR_CFG::SetXPos(int xpos)
 * @brief      SetXPos
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  xpos : 
 *
@@ -352,10 +319,7 @@ void XTRACEMONITOR_CFG::SetXPos(int xpos)
 *
 * @fn         int XTRACEMONITOR_CFG::GetYPos()
 * @brief      GetYPos
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int : 
 *
@@ -371,10 +335,7 @@ int XTRACEMONITOR_CFG::GetYPos()
 *
 * @fn         void XTRACEMONITOR_CFG::SetYPos(int ypos)
 * @brief      SetYPos
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  ypos :
 *
@@ -392,10 +353,7 @@ void XTRACEMONITOR_CFG::SetYPos(int ypos)
 *
 * @fn         int XTRACEMONITOR_CFG::GetWidth()
 * @brief      GetWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int :
 *
@@ -411,10 +369,7 @@ int XTRACEMONITOR_CFG::GetWidth()
 *
 * @fn         void XTRACEMONITOR_CFG::SetWidth(int width)
 * @brief      SetWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  width :
 *
@@ -432,10 +387,7 @@ void XTRACEMONITOR_CFG::SetWidth(int width)
 *
 * @fn         int XTRACEMONITOR_CFG::GetHeight()
 * @brief      GetHeight
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int :
 *
@@ -451,10 +403,7 @@ int XTRACEMONITOR_CFG::GetHeight()
 *
 * @fn         void XTRACEMONITOR_CFG::SetHeight(int height)
 * @brief      SetHeight
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  height : 
 *
@@ -472,10 +421,7 @@ void XTRACEMONITOR_CFG::SetHeight(int height)
 *
 * @fn         bool XTRACEMONITOR_CFG::IsCheckInternetAvailable()
 * @brief      IsDNSChangeAvaible
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful.
 *
@@ -491,10 +437,7 @@ bool XTRACEMONITOR_CFG::IsCheckInternetAvailable()
 *
 * @fn         bool XTRACEMONITOR_CFG::IsAddTimemark()
 * @brief      IsAddTimemark
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful. 
 *
@@ -510,10 +453,7 @@ bool XTRACEMONITOR_CFG::IsAddTimemark()
 *
 * @fn         void XTRACEMONITOR_CFG::SetIsAddTimemark(bool isaddtimemark)
 * @brief      SetIsAddTimemark
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  isaddtimemark : 
 *
@@ -531,10 +471,7 @@ void XTRACEMONITOR_CFG::SetIsAddTimemark(bool isaddtimemark)
 *
 * @fn         bool XTRACEMONITOR_CFG::IsTextTracing()
 * @brief      IsTextTracing
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful.
 *
@@ -550,10 +487,7 @@ bool XTRACEMONITOR_CFG::IsTextTracing()
 *
 * @fn         void XTRACEMONITOR_CFG::SetIsTextTracing(bool istexttracing)
 * @brief      SetIsTextTracing
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  istexttracing :
 *
@@ -571,10 +505,7 @@ void XTRACEMONITOR_CFG::SetIsTextTracing(bool istexttracing)
 *
 * @fn         bool XTRACEMONITOR_CFG::IsShowIPs()
 * @brief      IsShowIPs
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful.
 *
@@ -590,10 +521,7 @@ bool XTRACEMONITOR_CFG::IsShowIPs()
 *
 * @fn         void XTRACEMONITOR_CFG::SetIsShowIPs(bool isshowIPs)
 * @brief      SetIsShowIPs
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  isshowIPs :
 *
@@ -611,10 +539,7 @@ void XTRACEMONITOR_CFG::SetIsShowIPs(bool isshowIPs)
 *
 * @fn         bool XTRACEMONITOR_CFG::IsShowStatusMsg()
 * @brief      IsShowStatusMsg
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful.
 *
@@ -630,10 +555,7 @@ bool XTRACEMONITOR_CFG::IsShowStatusMsg()
 *
 * @fn         void XTRACEMONITOR_CFG::SetIsShowStatusMsg(bool isshowstatusmsg)
 * @brief      SetIsShowStatusMsg
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  isshowIPs :
 *
@@ -651,10 +573,7 @@ void XTRACEMONITOR_CFG::SetIsShowStatusMsg(bool isshowstatusmsg)
 *
 * @fn         int XTRACEMONITOR_CFG::GetStatusMsgRefresh()
 * @brief      GetStatusMsgRefresh
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int  :
 *
@@ -670,11 +589,7 @@ int XTRACEMONITOR_CFG::GetStatusMsgRefresh()
 *
 * @fn         bool XTRACEMONITOR_CFG::IsShowCommandMsg()
 * @brief      IsShowCommandMsg
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+* @ingroup    UTILITIES
 *
 * @return     bool :
 *
@@ -690,10 +605,7 @@ bool XTRACEMONITOR_CFG::IsShowCommandMsg()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::GetRootOriginName()
 * @brief      GetRootOriginName
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -709,10 +621,7 @@ XSTRING* XTRACEMONITOR_CFG::GetRootOriginName()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::GetLocalNoInternetOriginName()
 * @brief      GetLocalNoInternetOriginName
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -727,10 +636,7 @@ XSTRING* XTRACEMONITOR_CFG::GetLocalNoInternetOriginName()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::GetWindowsMessageOriginName()
 * @brief      GetLocalNoInternetOriginName
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -746,10 +652,7 @@ XSTRING* XTRACEMONITOR_CFG::GetWindowsMessageOriginName()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::GetUARTOriginName()
 * @brief      GetLocalNoInternetOriginName
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* :
 *
@@ -765,10 +668,7 @@ XSTRING* XTRACEMONITOR_CFG::GetUARTOriginName()
 *
 * @fn         XDWORD XTRACEMONITOR_CFG::GetMaxTextSize()
 * @brief      GetMaxTextSize
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XDWORD : 
 *
@@ -784,10 +684,7 @@ XDWORD XTRACEMONITOR_CFG::GetMaxTextSize()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::GetSaveDir()
 * @brief      GetSaveDir
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -803,10 +700,7 @@ XSTRING* XTRACEMONITOR_CFG::GetSaveDir()
 *
 * @fn         int XTRACEMONITOR_CFG::GetServerIPSelected()
 * @brief      GetServerIPSelected
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int : 
 *
@@ -822,10 +716,7 @@ int XTRACEMONITOR_CFG::GetServerIPSelected()
 *
 * @fn         void XTRACEMONITOR_CFG::SetServerIPSelected(int serverIPselected)
 * @brief      SetServerIPSelected
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  serverselected :
 *
@@ -844,10 +735,7 @@ void XTRACEMONITOR_CFG::SetServerIPSelected(int serverIPselected)
 *
 * @fn         int XTRACEMONITOR_CFG::GetServerUARTSelected()
 * @brief      GetServerUARTSelected
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int : 
 *
@@ -863,10 +751,7 @@ int XTRACEMONITOR_CFG::GetServerUARTSelected()
 *
 * @fn         void XTRACEMONITOR_CFG::SetServerUARTSelected(int serverUARTselected)
 * @brief      SetServerUARTSelected
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  serverUARTselected :
 *
@@ -885,10 +770,7 @@ void XTRACEMONITOR_CFG::SetServerUARTSelected(int serverUARTselected)
 *
 * @fn         bool XTRACEMONITOR_CFG::Filters_IsTextActive()
 * @brief      Filters_IsTextActive
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful. 
 *
@@ -904,10 +786,7 @@ bool XTRACEMONITOR_CFG::Filters_IsTextActive()
 *
 * @fn         void XTRACEMONITOR_CFG::Filters_SetIsTextActive(bool istextactive)
 * @brief      Filters_SetIsTextActive
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  istextactive : 
 *
@@ -925,10 +804,7 @@ void XTRACEMONITOR_CFG::Filters_SetIsTextActive(bool istextactive)
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::Filters_GetText()
 * @brief      Filters_GetText
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -944,10 +820,7 @@ XSTRING* XTRACEMONITOR_CFG::Filters_GetText()
 *
 * @fn         XDWORD XTRACEMONITOR_CFG::Filters_GetLevels()
 * @brief      Filters_GetLevels
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XDWORD : 
 *
@@ -963,10 +836,7 @@ XDWORD XTRACEMONITOR_CFG::Filters_GetLevels()
 *
 * @fn         void XTRACEMONITOR_CFG::Filters_SetLevels(XDWORD levels)
 * @brief      Filters_SetLevels
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  levels : 
 *
@@ -984,10 +854,7 @@ void XTRACEMONITOR_CFG::Filters_SetLevels(XDWORD levels)
 *
 * @fn         int XTRACEMONITOR_CFG::Filters_IsTreeVisible()
 * @brief      Filters_IsTreeVisible
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool :
 *
@@ -1004,10 +871,7 @@ bool XTRACEMONITOR_CFG::Filters_IsTreeVisible()
 *
 * @fn         void XTRACEMONITOR_CFG::Filters_SetIsTreeVisible(bool istreevisible)
 * @brief      Filters_SetIsTreeVisible
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  istreevisible : 
 *
@@ -1026,10 +890,7 @@ void XTRACEMONITOR_CFG::Filters_SetIsTreeVisible(bool istreevisible)
 *
 * @fn         int XTRACEMONITOR_CFG::Filters_GetTreeWidth()
 * @brief      Filters_GetTreeWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int : 
 *
@@ -1046,10 +907,7 @@ int XTRACEMONITOR_CFG::Filters_GetTreeWidth()
 *
 * @fn         void XTRACEMONITOR_CFG::Filters_SetTreeWidth(int treewidth)
 * @brief      Filters_SetTreeWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  treewidth :
 *
@@ -1067,10 +925,7 @@ void XTRACEMONITOR_CFG::Filters_SetTreeWidth(int treewidth)
 *
 * @fn         int XTRACEMONITOR_CFG::Filters_GetStatusMsgWidth()
 * @brief      Filters_GetStatusMsgWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     int :
 *
@@ -1085,10 +940,7 @@ int XTRACEMONITOR_CFG::Filters_GetStatusMsgWidth()
 *
 * @fn         void XTRACEMONITOR_CFG::Filters_SetStatusMsgWidth(int status)
 * @brief      Filters_SetStatusMsgWidth
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  status :
 *
@@ -1107,10 +959,7 @@ void XTRACEMONITOR_CFG::Filters_SetStatusMsgWidth(int status)
 *
 * @fn         bool XTRACEMONITOR_CFG::DynDNS_IsChangeAvailable()
 * @brief      DynDNS_IsChangeAvailable
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful. 
 *
@@ -1126,10 +975,7 @@ bool XTRACEMONITOR_CFG::DynDNS_IsChangeAvailable()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::DynDNS_GetLogin()
 * @brief      DynDNS_GetLogin
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -1145,10 +991,7 @@ XSTRING* XTRACEMONITOR_CFG::DynDNS_GetLogin()
 *
 * @fn         XSTRING* XTRACEMONITOR_CFG::DynDNS_GetPassword()
 * @brief      DynDNS_GetPassword
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     XSTRING* : 
 *
@@ -1164,10 +1007,7 @@ XSTRING* XTRACEMONITOR_CFG::DynDNS_GetPassword()
 *
 * @fn         XTRACEMONITOR_ORIGINCFG* XTRACEMONITOR_CFG::GetServer(int index)
 * @brief      GetServer
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  index :
 *
@@ -1205,10 +1045,7 @@ XTRACEMONITOR_SERVERCFG* XTRACEMONITOR_CFG::GetServer(int index, XTRACEMONITOR_C
 *
 * @fn         XTRACEMONITOR_ORIGINCFG* XTRACEMONITOR_CFG::GetOrigin(int index)
 * @brief      GetOrigin
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @param[in]  index : 
 *
@@ -1229,10 +1066,7 @@ XTRACEMONITOR_ORIGINCFG* XTRACEMONITOR_CFG::GetOrigin(int index)
 *
 * @fn         bool XTRACEMONITOR_CFG::Default()
 * @brief      Default
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     bool : true if is succesful. 
 *
@@ -1304,10 +1138,7 @@ bool XTRACEMONITOR_CFG::Default()
 * @fn         void XTRACEMONITOR_CFG::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup    UTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+* @ingroup    UTILITIES
 *
 * @return     void : does not return anything.
 *

@@ -50,14 +50,25 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
   XPATH      xpath;
 
   xpath  = exepath.c_str();
-  xpath += __L("assets");
+  xpath += NEWAPPCREATOR_ROOTDIR;
 
   GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_ROOT, xpath);
 
+  cfg  = new NEWAPPCREATOR_CFG(NEWAPPCREATOR_CFGNAMEFILE);
+	if(!cfg) return;
 
-  CDirectoryOutline->Visible  = false;
-  CDirectoryOutline->Left     = 96;
-  CDirectoryOutline->Top      = 32;
+
+  Left                          = cfg->GetXPos();
+  Top                           = cfg->GetYPos();
+
+  EditAppPath->Text             = cfg->GetAppPath()->Get();
+  EditGENPath->Text             = cfg->GetGENPath()->Get();
+
+  RadioGroupTypeApp->ItemIndex  = cfg->GetAPPType();
+
+  CDirectoryOutline->Visible    = false;
+  CDirectoryOutline->Left       = 96;
+  CDirectoryOutline->Top        = 32;
 
   ButtonCreate->Enabled = false;
 }
@@ -106,6 +117,28 @@ void __fastcall TForm1::EditGENPathEnter(TObject *Sender)
 void __fastcall TForm1::TimerCheckStateButtonCreateTimer(TObject *Sender)
 {
   ButtonCreate->Enabled = (EditAppPath->Text.Length() && EditGENPath->Text.Length() && EditAppName->Text.Length())?true:false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+  cfg->SetXPos(Left);
+  cfg->SetYPos(Top);
+
+  cfg->GetAppPath()->Set(EditAppPath->Text.c_str());
+  cfg->GetGENPath()->Set(EditGENPath->Text.c_str());
+
+  cfg->SetAPPType(RadioGroupTypeApp->ItemIndex);
+
+  cfg->Save();
+
+//if(DIOFACTORY::GetIsInstanced()) DIOFACTORY::DelInstance();
+
+  if(XSLEEP::GetIsInstanced()) XSLEEP::DelInstance();
+
+  if(XSYSTEM::GetIsInstanced()) XSYSTEM::DelInstance();
+
+  if(XFACTORY::GetIsInstanced()) XFACTORY::DelInstance();
 }
 //---------------------------------------------------------------------------
 

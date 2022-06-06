@@ -159,8 +159,8 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
   AnsiString exepath = ExtractFilePath(exefile);
   XPATH      xpath;
 
-  xpath = exepath.c_str();
-  xpath += __L("assets");
+  xpath  = exepath.c_str();
+  xpath += XTRACEMONITOR_ROOTDIR;
 
   GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_ROOT, xpath);
 

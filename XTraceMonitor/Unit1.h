@@ -44,6 +44,8 @@
 #include <Graphics.hpp>
 #include <Menus.hpp>
 #include <ImgList.hpp>
+#include <Grids.hpp>
+#include <ValEdit.hpp>
 
 #include "XBase.h"
 #include "XPath.h"
@@ -51,14 +53,12 @@
 #include "XVector.h"
 
 #include "XTraceMonitor_CFG.h"
-#include <Grids.hpp>
-#include <ValEdit.hpp>
-
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			      __L("XTraceMonitor")
 #define XTRACEMONITOR_VERSIONLABEL              __L("Version 7.4.0")
+#define XTRACEMONITOR_ROOTDIR                   __L("assets")
 
 #define XTRACEMONITOR_MASKLEVELBLACK            0x00000001
 #define XTRACEMONITOR_MASKLEVELPURPLE           0x00000002
