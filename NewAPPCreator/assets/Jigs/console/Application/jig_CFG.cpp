@@ -1,28 +1,12 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       Scripts_CFG.cpp
+* @file       #@[jig]_CFG.cpp
 *
-* @class      SCRIPTS_CFG
-* @brief      Scripts Configuration
-* @ingroup    EXAMPLES
+* @class      #*[jig]_CFG
+* @brief      #@[jig] Configuration
+* @ingroup    #*[jig]
 *
-* @copyright  GEN Group. All right reserved.
-*
-* @cond
-* Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
-* documentation files(the "Software"), to deal in the Software without restriction, including without limitation
-* the rights to use, copy, modify, merge, publish, distribute, sublicense, and/ or sell copies of the Software,
-* and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of
-* the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-* THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-* @endcond
+* @copyright  #=[jig]. All right reserved.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 
@@ -36,29 +20,29 @@
 
 #include "XLog.h"
 
-#include "Scripts.h"
+#include "#@[jig].h"
 
-#include "Scripts_CFG.h"
+#include "#@[jig]_CFG.h"
 
 #include "XMemory_Control.h"
 
 /*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/
 
-SCRIPTS_CFG* SCRIPTS_CFG::instance = NULL;
+#*[jig]_CFG* #*[jig]_CFG::instance = NULL;
 
 /*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/
 
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPTS_CFG::GetIsInstanced()
+* @fn         bool #*[jig]_CFG::GetIsInstanced()
 * @brief      GetIsInstanced
-* @ingroup
+* @ingroup    [#*[jig]] 
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS_CFG::GetIsInstanced()
+bool #*[jig]_CFG::GetIsInstanced()
 {
   return instance!=NULL;
 }
@@ -67,16 +51,16 @@ bool SCRIPTS_CFG::GetIsInstanced()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS_CFG& SCRIPTS_CFG::GetInstance()
+* @fn         #*[jig]_CFG& #*[jig]_CFG::GetInstance()
 * @brief      GetInstance
-* @ingroup
+* @ingroup    [#*[jig]]
 *
-* @return     SCRIPTS_CFG& :
+* @return     #*[jig]_CFG& :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-SCRIPTS_CFG& SCRIPTS_CFG::GetInstance()
+#*[jig]_CFG& #*[jig]_CFG::GetInstance()
 {
-  if(!instance) instance = new SCRIPTS_CFG(APPLICATION_NAMEFILE);
+  if(!instance) instance = new #*[jig]_CFG(APPLICATION_NAMEFILE);
 
   return (*instance);
 }
@@ -84,14 +68,14 @@ SCRIPTS_CFG& SCRIPTS_CFG::GetInstance()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPTS_CFG::DelInstance()
+* @fn         bool #*[jig]_CFG::DelInstance()
 * @brief      DelInstance
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS_CFG::DelInstance()
+bool #*[jig]_CFG::DelInstance()
 {
   if(instance)
     {
@@ -108,14 +92,14 @@ bool SCRIPTS_CFG::DelInstance()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPTS_CFG::Default()
+* @fn         bool #*[jig]_CFG::Default()
 * @brief      Default config
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS_CFG::Default()
+bool #*[jig]_CFG::Default()
 {
   
   //------------------------------------------------------------------------------
@@ -151,16 +135,16 @@ bool SCRIPTS_CFG::Default()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS_CFG::SCRIPTS_CFG(XCHAR* namefile) : APPLICATIONCFG(namefile)
+* @fn         #*[jig]_CFG::#*[jig]_CFG(XCHAR* namefile) : APPLICATIONCFG(namefile)
 * @brief      Constructor
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param[in]  XCHAR* : name of file of config
 *
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-SCRIPTS_CFG::SCRIPTS_CFG(XCHAR* namefile) : APPCFG(namefile)
+#*[jig]_CFG::#*[jig]_CFG(XCHAR* namefile) : APPCFG(namefile)
 {
   Clean();
 
@@ -172,30 +156,30 @@ SCRIPTS_CFG::SCRIPTS_CFG(XCHAR* namefile) : APPCFG(namefile)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS_CFG::~SCRIPTS_CFG()
+* @fn         #*[jig]_CFG::~#*[jig]_CFG()
 * @brief      Destructor
 * @note       VIRTUAL
-* @ingroup
+* @ingroup    [#*[jig]]  
 *
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-SCRIPTS_CFG::~SCRIPTS_CFG()
+#*[jig]_CFG::~#*[jig]_CFG()
 {
   Clean();
 }
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void SCRIPTS_CFG::Clean()
+* @fn         void #*[jig]_CFG::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void SCRIPTS_CFG::Clean()
+void #*[jig]_CFG::Clean()
 {
 
 }

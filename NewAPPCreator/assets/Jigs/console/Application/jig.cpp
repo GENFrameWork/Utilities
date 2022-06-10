@@ -1,28 +1,12 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       Scripts.cpp
+* @file       #@[jig].cpp
 *
-* @class      SCRIPTS
-* @brief      GEN Scripts Example class
-* @ingroup    EXAMPLES
+* @class      #*[jig]
+* @brief      #@[jig] Main Module
+* @ingroup    #*[jig]
 *
-* @copyright  GEN Group. All right reserved.
-*
-* @cond
-* Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
-* documentation files(the "Software"), to deal in the Software without restriction, including without limitation
-* the rights to use, copy, modify, merge, publish, distribute, sublicense, and/ or sell copies of the Software,
-* and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of
-* the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-* THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-* SOFTWARE.
-* @endcond
+* @copyright  #=[jig]. All right reserved.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 
@@ -81,31 +65,31 @@
 
 #include "APPLog.h"
 
-#include "Scripts_CFG.h"
+#include "#@[jig]_CFG.h"
 
-#include "Scripts.h"
+#include "#@[jig].h"
 
 #include "XMemory_Control.h"
 
 
 /*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/
 
- APPLICATIONCREATEINSTANCE(SCRIPTS, scripts)
+ APPLICATIONCREATEINSTANCE(#*[jig], #![jig])
 
 /*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/
 
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::SCRIPTS
+* @fn         #*[jig]::#*[jig]
 * @brief      Constructor
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param
 * @return
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-SCRIPTS::SCRIPTS() :  XFSMACHINE(0)
+#*[jig]::#*[jig]() :  XFSMACHINE(0)
 {
   Clean();
 }
@@ -113,15 +97,15 @@ SCRIPTS::SCRIPTS() :  XFSMACHINE(0)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::~SCRIPTS
+* @fn         #*[jig]::~#*[jig]
 * @brief      Destructor
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param
 * @return
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-SCRIPTS::~SCRIPTS()
+#*[jig]::~#*[jig]()
 {
   Clean();
 }
@@ -129,38 +113,38 @@ SCRIPTS::~SCRIPTS()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::InitFSMachine
+* @fn         #*[jig]::InitFSMachine
 * @brief      Init FS Machine
-* @ingroup
+* @ingroup    [#*[jig]]  
 *
 * @param
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::InitFSMachine()
+bool #*[jig]::InitFSMachine()
 {
-  if(!AddState( SCRIPTS_XFSMSTATE_NONE            ,
-                SCRIPTS_XFSMEVENT_INI             , SCRIPTS_XFSMSTATE_INI       ,
-                SCRIPTS_XFSMEVENT_END             , SCRIPTS_XFSMSTATE_END             ,
+  if(!AddState( #*[jig]_XFSMSTATE_NONE            ,
+                #*[jig]_XFSMEVENT_INI             , #*[jig]_XFSMSTATE_INI       ,
+                #*[jig]_XFSMEVENT_END             , #*[jig]_XFSMSTATE_END       ,
                 XFSMACHINESTATE_EVENTDEFEND)) return false;
 
 
-  if(!AddState( SCRIPTS_XFSMSTATE_INI             ,
-                SCRIPTS_XFSMEVENT_NONE            , SCRIPTS_XFSMSTATE_NONE      ,
-                SCRIPTS_XFSMEVENT_UPDATE          , SCRIPTS_XFSMSTATE_UPDATE          ,
-                SCRIPTS_XFSMEVENT_END             , SCRIPTS_XFSMSTATE_END             ,
+  if(!AddState( #*[jig]_XFSMSTATE_INI             ,
+                #*[jig]_XFSMEVENT_NONE            , #*[jig]_XFSMSTATE_NONE      ,
+                #*[jig]_XFSMEVENT_UPDATE          , #*[jig]_XFSMSTATE_UPDATE    ,
+                #*[jig]_XFSMEVENT_END             , #*[jig]_XFSMSTATE_END       ,
                 XFSMACHINESTATE_EVENTDEFEND)) return false;
 
-  if(!AddState( SCRIPTS_XFSMSTATE_UPDATE          ,
-                SCRIPTS_XFSMEVENT_NONE            , SCRIPTS_XFSMSTATE_NONE      ,
-                SCRIPTS_XFSMEVENT_END             , SCRIPTS_XFSMSTATE_END             ,
+  if(!AddState( #*[jig]_XFSMSTATE_UPDATE          ,
+                #*[jig]_XFSMEVENT_NONE            , #*[jig]_XFSMSTATE_NONE      ,
+                #*[jig]_XFSMEVENT_END             , #*[jig]_XFSMSTATE_END       ,
                 XFSMACHINESTATE_EVENTDEFEND)) return false;
 
 
-  if(!AddState( SCRIPTS_XFSMSTATE_END             ,
-                SCRIPTS_XFSMEVENT_NONE            , SCRIPTS_XFSMSTATE_NONE      ,
-                SCRIPTS_XFSMEVENT_INI             , SCRIPTS_XFSMSTATE_INI             ,
+  if(!AddState( #*[jig]_XFSMSTATE_END             ,
+                #*[jig]_XFSMEVENT_NONE            , #*[jig]_XFSMSTATE_NONE      ,
+                #*[jig]_XFSMEVENT_INI             , #*[jig]_XFSMSTATE_INI       ,
                 XFSMACHINESTATE_EVENTDEFEND)) return false;
 
   return true;
@@ -169,16 +153,16 @@ bool SCRIPTS::InitFSMachine()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::AppProc_Ini
+* @fn         #*[jig]::AppProc_Ini
 * @brief      Ini Application
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::AppProc_Ini()
+bool #*[jig]::AppProc_Ini()
 {
   XSTRING string;
   XSTRING stringresult;
@@ -205,7 +189,7 @@ bool SCRIPTS::AppProc_Ini()
 
   GEN_XPATHSMANAGER.AdjustRootPathDefault(APPDEFAULT_DIRECTORY_ROOT);
 
-  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_SCRIPTS, APPDEFAULT_DIRECTORY_SCRIPTS);
+  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_#*[jig], APPDEFAULT_DIRECTORY_#*[jig]);
 
   GEN_XPATHSMANAGER.CreateAllPathSectionOnDisk();
 
@@ -249,7 +233,7 @@ bool SCRIPTS::AppProc_Ini()
 
   if(APP_CFG.Log_IsActive())
     {
-      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activando sistema LOG"));
+      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activating LOG system"));
       console->PrintMessage(string.Get(), 1, true, false);
 
       status = APP_LOG.Ini(&APP_CFG, APPLICATION_NAMEFILE , APPLICATION_VERSION
@@ -262,7 +246,7 @@ bool SCRIPTS::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------
 
-  SetEvent(SCRIPTS_XFSMEVENT_INI);
+  SetEvent(#*[jig]_XFSMEVENT_INI);
 
   return true;
 }
@@ -270,16 +254,16 @@ bool SCRIPTS::AppProc_Ini()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::AppProc_FirstUpdate
+* @fn         #*[jig]::AppProc_FirstUpdate
 * @brief      First Update
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::AppProc_FirstUpdate()
+bool #*[jig]::AppProc_FirstUpdate()
 {
   //--------------------------------------------------------------------------------------
 
@@ -294,27 +278,27 @@ bool SCRIPTS::AppProc_FirstUpdate()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::AppProc_Update
+* @fn         #*[jig]::AppProc_Update
 * @brief      Update Application
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::AppProc_Update()
+bool #*[jig]::AppProc_Update()
 {
-  if(GetEvent()==SCRIPTS_XFSMEVENT_NONE) // Not new event
+  if(GetEvent()==#*[jig]_XFSMEVENT_NONE) // Not new event
     {
       switch(GetCurrentState())
         {
-          case SCRIPTS_XFSMSTATE_NONE       : break;
+          case #*[jig]_XFSMSTATE_NONE       : break;
 
-          case SCRIPTS_XFSMSTATE_INI        : SetEvent(SCRIPTS_XFSMEVENT_UPDATE);
+          case #*[jig]_XFSMSTATE_INI        : SetEvent(#*[jig]_XFSMEVENT_UPDATE);
                                               break;
 
-          case SCRIPTS_XFSMSTATE_UPDATE     : if(GetExitType() == APPBASE_EXITTYPE_UNKNOWN)
+          case #*[jig]_XFSMSTATE_UPDATE     : if(GetExitType() == APPBASE_EXITTYPE_UNKNOWN)
                                                 {
                                                   if(xtimerupdateconsole)
                                                     {
@@ -334,25 +318,25 @@ bool SCRIPTS::AppProc_Update()
                                                 }
                                               break;
 
-          case SCRIPTS_XFSMSTATE_END        : break;
+          case #*[jig]_XFSMSTATE_END        : break;
 
         }
     }
    else //  New event
     {
-      if(GetEvent()<SCRIPTS_LASTEVENT)
+      if(GetEvent()<#*[jig]_LASTEVENT)
         {
           CheckTransition();
 
           switch(GetCurrentState())
             {
-              case SCRIPTS_XFSMSTATE_NONE   : break;
+              case #*[jig]_XFSMSTATE_NONE   : break;
 
-              case SCRIPTS_XFSMSTATE_INI    : break;
+              case #*[jig]_XFSMSTATE_INI    : break;
 
-              case SCRIPTS_XFSMSTATE_UPDATE : break;
+              case #*[jig]_XFSMSTATE_UPDATE : break;
 
-              case SCRIPTS_XFSMSTATE_END    : break;
+              case #*[jig]_XFSMSTATE_END    : break;
             }
         }
     }
@@ -363,23 +347,23 @@ bool SCRIPTS::AppProc_Update()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::AppProc_End
+* @fn         #*[jig]::AppProc_End
 * @brief      End Application
-* @ingroup
+* @ingroup    [#*[jig]]  
 *
 * @param
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::AppProc_End()
+bool #*[jig]::AppProc_End()
 {
   XSTRING string;
   XSTRING stringresult;
 
   //--------------------------------------------------------------------------------------
 
-  SetEvent(SCRIPTS_XFSMEVENT_END);
+  SetEvent(#*[jig]_XFSMEVENT_END);
 
   //--------------------------------------------------------------------------------------
 
@@ -413,16 +397,16 @@ bool SCRIPTS::AppProc_End()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPTS::KeyValidSecuences(int key)
+* @fn         bool #*[jig]::KeyValidSecuences(int key)
 * @brief      KeyValidSecuences
-* @ingroup    APPLICATION
+* @ingroup    [#*[jig]]
 *
 * @param[in]  key :
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::KeyValidSecuences(int key)
+bool #*[jig]::KeyValidSecuences(int key)
 {
   XCHAR character = (XCHAR)key;
 
@@ -444,9 +428,9 @@ bool SCRIPTS::KeyValidSecuences(int key)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPT::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
+* @fn         bool #*[jig]::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
 * @brief      Show_Line
-* @ingroup    APPLICATION
+* @ingroup    [#*[jig]]
 *
 * @param[in]  string :
 * @param[in]  string2 :
@@ -456,7 +440,7 @@ bool SCRIPTS::KeyValidSecuences(int key)
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
+bool #*[jig]::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
 {
   XSTRING line1;
   XSTRING line2;
@@ -483,14 +467,14 @@ bool SCRIPTS::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefee
 *
 * @fn         bool SCRIPT::Show_Header(bool separator)
 * @brief      Show_Header
-* @ingroup    APPLICATION
+* @ingroup    [#*[jig]]
 *
 * @param[in]  separator :
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::Show_Header(bool separator)
+bool #*[jig]::Show_Header(bool separator)
 {
   XSTRING header;
 
@@ -508,12 +492,12 @@ bool SCRIPTS::Show_Header(bool separator)
 *
 * @fn         bool SCRIPT::Show_AppStatus()
 * @brief      Show_AppStatus
-* @ingroup    APPLICATION
+* @ingroup    [#*[jig]]
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::Show_AppStatus()
+bool #*[jig]::Show_AppStatus()
 {
   XSTRING string;
   XSTRING string2;
@@ -523,8 +507,8 @@ bool SCRIPTS::Show_AppStatus()
 
   GEN_XSYSTEM.GetMemoryInfo(total,free);
 
-  string  = __L("Memoria total");
-  string2.Format(__L("%d Kb, libre %d Kb (el %d%%%%)"), total, free, GEN_XSYSTEM.GetFreeMemoryPercent());
+  string  = __L("Total memory");
+  string2.Format(__L("%d Kb, Free %d Kb (el %d%%%%)"), total, free, GEN_XSYSTEM.GetFreeMemoryPercent());
   Show_Line(string, string2);
 
 
@@ -543,7 +527,7 @@ bool SCRIPTS::Show_AppStatus()
 
   if(xtimerglobal)
     {
-      string  = __L("Tiempo de funcionamiento");
+      string  = __L("Operating time");
       xtimerglobal->GetMeasureString(string2, true);
       Show_Line(string, string2);
     }
@@ -554,21 +538,21 @@ bool SCRIPTS::Show_AppStatus()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         bool SCRIPTS::Show_AllStatus()
+* @fn         bool #*[jig]::Show_AllStatus()
 * @brief      Show_AllStatus
-* @ingroup    APPLICATION
+* @ingroup    [#*[jig]]
 *
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-bool SCRIPTS::Show_AllStatus()
+bool #*[jig]::Show_AllStatus()
 {
   console->Clear();
 
   if(xmutexshowallstatus) xmutexshowallstatus->Lock();
 
   if(Show_Header(false))  console->PrintMessage(__L(""),0, false, true);
-  if(Show_AppStatus())            console->PrintMessage(__L(""),0, false, true);
+  if(Show_AppStatus())    console->PrintMessage(__L(""),0, false, true);
 
   if(xmutexshowallstatus) xmutexshowallstatus->UnLock();
 
@@ -578,16 +562,16 @@ bool SCRIPTS::Show_AllStatus()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         SCRIPTS::HandleEvent
+* @fn         #*[jig]::HandleEvent
 * @brief      Handle Events
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @param[]    xevent : event send to control
 *
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void SCRIPTS::HandleEvent(XEVENT* xevent)
+void #*[jig]::HandleEvent(XEVENT* xevent)
 {
   if(!xevent) return;
 }
@@ -595,15 +579,15 @@ void SCRIPTS::HandleEvent(XEVENT* xevent)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void SCRIPTS::Clean()
+* @fn         void #*[jig]::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup
+* @ingroup    [#*[jig]]
 *
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void SCRIPTS::Clean()
+void #*[jig]::Clean()
 {
   xtimerupdateconsole         = NULL;
   xmutexshowallstatus         = NULL;

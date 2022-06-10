@@ -58,19 +58,28 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 	if(!cfg) return;
 
 
-  Left                          = cfg->GetXPos();
-  Top                           = cfg->GetYPos();
+  Left                            = cfg->GetXPos();
+  Top                             = cfg->GetYPos();
 
-  EditAppPath->Text             = cfg->GetAppPath()->Get();
-  EditGENPath->Text             = cfg->GetGENPath()->Get();
+  EditAppPath->Text               = cfg->GetAppPath()->Get();
+  EditGENPath->Text               = cfg->GetGENPath()->Get();
+  EditCopyright->Text             = cfg->GetAppCopyright()->Get();
 
-  RadioGroupTypeApp->ItemIndex  = cfg->GetAPPType();
+  RadioGroupAppType->ItemIndex    = cfg->GetAPPType();
+  RadioGroupAppFormat->ItemIndex  = cfg->GetAPPFormat();
 
-  CDirectoryOutline->Visible    = false;
-  CDirectoryOutline->Left       = 96;
-  CDirectoryOutline->Top        = 32;
+  CheckBoxTrace->State            = cfg->GetAddTraceSystem();
+  CheckBoxLog->State              = cfg->GetAddLogSystem();
+  CheckBoxMemControl->State       = cfg->GetAddMemCtrlSystem();
+  CheckBoxCFGFile->State          = cfg->GetAddCFGSystem();
 
-  ButtonCreate->Enabled = false;
+
+
+  CDirectoryOutline->Visible      = false;
+  CDirectoryOutline->Left         = 96;
+  CDirectoryOutline->Top          = 32;
+
+  ButtonCreate->Enabled           = false;
 }
 //---------------------------------------------------------------------------
 
@@ -127,8 +136,16 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 
   cfg->GetAppPath()->Set(EditAppPath->Text.c_str());
   cfg->GetGENPath()->Set(EditGENPath->Text.c_str());
+  cfg->GetAppCopyright()->Set(EditCopyright->Text.c_str());
 
-  cfg->SetAPPType(RadioGroupTypeApp->ItemIndex);
+  cfg->SetAPPType(RadioGroupAppType->ItemIndex);
+  cfg->SetAPPFormat(RadioGroupAppFormat->ItemIndex);
+
+  cfg->SetAddTraceSystem(CheckBoxTrace->State);
+  cfg->SetAddMemCtrlSystem(CheckBoxMemControl->State);
+  cfg->SetAddLogSystem(CheckBoxLog->State);
+  cfg->SetAddCFGSystem(CheckBoxCFGFile->State);
+
 
   cfg->Save();
 

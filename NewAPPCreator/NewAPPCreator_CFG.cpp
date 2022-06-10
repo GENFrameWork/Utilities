@@ -44,16 +44,15 @@
 /*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/
 
 
-
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 * @brief      Constructor
 * @ingroup    UTILITIES
 *
-* @param[in]  XCHAR* : 
+* @param[in]  XCHAR* :
 *
-* @return     Does not return anything. 
+* @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
@@ -66,19 +65,28 @@ NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 	//-----------------------------------------------------
 	// GENERAL
 
-	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		, NEWAPPCREATOR_CFG_XPOS						            , &xpos);
-	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		, NEWAPPCREATOR_CFG_YPOS					    	        , &ypos);
-	AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_GENERAL		, NEWAPPCREATOR_CFG_APPPATH					            , &app_path);
-	AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_GENERAL		, NEWAPPCREATOR_CFG_GENPATH   		    	        , &gen_path);
-  AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		, NEWAPPCREATOR_CFG_APPTYPE 			    	        , &app_type);
+	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_XPOS					      , &xpos);
+	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_YPOS					      , &ypos);
+	AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_APPPATH				      , &app_path);
+	AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_GENPATH   		      , &gen_path);
+  AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_APPCOPYRIGHT	      , &app_copyright);
+  AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_APPTYPE 			      , &app_type);
+  AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_APPFORMAT			      , &app_format);
 
+  
+	//-----------------------------------------------------
+	// Additional
+
+	AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_TRACESYSTEM	    , &trace_system);
+  AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_MEMCTRLSYSTEM	  , &memctrl_system);
+	AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_LOGSYSTEM  		  , &log_system);
+  AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_CFGSYSTEM 			  , &cfg_system);
 
 	Default();
 
 	Ini();
 }
 
-		
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
@@ -87,7 +95,7 @@ NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 * @note       VIRTUAL
 * @ingroup    UTILITIES
 *
-* @return     Does not return anything. 
+* @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 NEWAPPCREATOR_CFG::~NEWAPPCREATOR_CFG()
@@ -97,21 +105,19 @@ NEWAPPCREATOR_CFG::~NEWAPPCREATOR_CFG()
 }
 
 
-
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         int NEWAPPCREATOR_CFG::GetXPos()
 * @brief      GetXPos
 * @ingroup    UTILITIES
 *
-* @return     int : 
+* @return     int :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-int NEWAPPCREATOR_CFG::GetXPos()                      
-{	
-  return xpos;																					
+int NEWAPPCREATOR_CFG::GetXPos()
+{
+  return xpos;
 }
-
 
 
 /**-------------------------------------------------------------------------------------------------------------------
@@ -120,16 +126,15 @@ int NEWAPPCREATOR_CFG::GetXPos()
 * @brief      SetXPos
 * @ingroup    UTILITIES
 *
-* @param[in]  xpos : 
+* @param[in]  xpos :
 *
-* @return     void : does not return anything. 
+* @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void NEWAPPCREATOR_CFG::SetXPos(int xpos)             
+void NEWAPPCREATOR_CFG::SetXPos(int xpos)
 {
-  this->xpos = xpos;																		
+  this->xpos = xpos;
 }
-
 
 
 /**-------------------------------------------------------------------------------------------------------------------
@@ -138,17 +143,16 @@ void NEWAPPCREATOR_CFG::SetXPos(int xpos)
 * @brief      GetYPos
 * @ingroup    UTILITIES
 *
-* @author     Abraham J. Velez 
+* @author     Abraham J. Velez
 * @date       01/03/2016 12:00
 *
 * @return     int :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-int NEWAPPCREATOR_CFG::GetYPos()                      
-{	
-  return ypos;																					
+int NEWAPPCREATOR_CFG::GetYPos()
+{
+  return ypos;
 }
-
 
 
 /**-------------------------------------------------------------------------------------------------------------------
@@ -199,13 +203,28 @@ XSTRING* NEWAPPCREATOR_CFG::GetGENPath()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
+* @fn         XSTRING* NEWAPPCREATOR_CFG::GetAppCopyright()
+* @brief      GetAppCopyright
+* @ingroup    UTILITIES
+*
+* @return     XSTRING*:
+*
+*---------------------------------------------------------------------------------------------------------------------*/
+XSTRING* NEWAPPCREATOR_CFG::GetAppCopyright()
+{
+  return &app_copyright;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+*
 * @fn         XDWORD NEWAPPCREATOR_CFG::GetAPPType()
 * @brief      GetAPPType
-* @ingroup    
-* 
-* @return     XDWORD : 
-* 
+* @ingroup
+*
+* @return     XDWORD :
+*
 * --------------------------------------------------------------------------------------------------------------------*/
 XDWORD NEWAPPCREATOR_CFG::GetAPPType()
 {
@@ -230,6 +249,165 @@ void NEWAPPCREATOR_CFG::SetAPPType(XDWORD app_type)
 }
 
 
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         XDWORD NEWAPPCREATOR_CFG::GetAPPFormat()
+* @brief      GetAPPFormat
+* @ingroup    
+* 
+* @return     XDWORD : 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+XDWORD NEWAPPCREATOR_CFG::GetAPPFormat()
+{
+  return app_format;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         void NEWAPPCREATOR_CFG::SetAPPFormat(XDWORD app_format)
+* @brief      SetAPPFormat
+* @ingroup    
+* 
+* @param[in]  app_format : 
+* 
+* @return     void : does not return anything. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+void NEWAPPCREATOR_CFG::SetAPPFormat(XDWORD app_format)
+{
+  this->app_format = app_format;
+}
+    
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         bool NEWAPPCREATOR_CFG::GetAddTraceSystem()
+* @brief      GetAddTraceSystem
+* @ingroup    
+* 
+* @return     bool : true if is succesful. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::GetAddTraceSystem()
+{
+  return trace_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         void NEWAPPCREATOR_CFG::SetAddTraceSystem(bool trace_system)
+* @brief      SetAddTraceSystem
+* @ingroup    
+* 
+* @param[in]  trace_system : 
+* 
+* @return     void : does not return anything. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+void NEWAPPCREATOR_CFG::SetAddTraceSystem(bool trace_system)
+{
+  this->trace_system = trace_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         bool NEWAPPCREATOR_CFG::GetAddMemCtrlSystem()
+* @brief      GetAddMemCtrlSystem
+* @ingroup    
+* 
+* @return     bool : true if is succesful. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::GetAddMemCtrlSystem()
+{
+  return memctrl_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         void NEWAPPCREATOR_CFG::SetAddMemCtrlSystem(bool memctrl_system)
+* @brief      SetAddMemCtrlSystem
+* @ingroup    
+* 
+* @param[in]  memctrl_system : 
+* 
+* @return     void : does not return anything. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+void NEWAPPCREATOR_CFG::SetAddMemCtrlSystem(bool memctrl_system)
+{
+  this->memctrl_system = memctrl_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         bool NEWAPPCREATOR_CFG::GetAddLogSystem()
+* @brief      GetAddLogSystem
+* @ingroup    
+* 
+* @return     bool : true if is succesful. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::GetAddLogSystem()
+{
+  return log_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         void NEWAPPCREATOR_CFG::SetAddLogSystem(bool log_system)
+* @brief      SetAddLogSystem
+* @ingroup    
+* 
+* @param[in]  log_system : 
+* 
+* @return     void : does not return anything. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+void NEWAPPCREATOR_CFG::SetAddLogSystem(bool log_system)
+{
+  this->log_system = log_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         bool NEWAPPCREATOR_CFG::GetAddCFGSystem()
+* @brief      GetAddCFGSystem
+* @ingroup    
+* 
+* @return     bool : true if is succesful. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::GetAddCFGSystem()
+{
+  return cfg_system;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+*
+* @fn         void NEWAPPCREATOR_CFG::SetAddCFGSystem(bool cfg_system)
+* @brief      SetAddCFGSystem
+* @ingroup
+*
+* @param[in]  cfg_system :
+*
+* @return     void : does not return anything.
+*
+* --------------------------------------------------------------------------------------------------------------------*/
+void NEWAPPCREATOR_CFG::SetAddCFGSystem(bool cfg_system)
+{
+  this->cfg_system = cfg_system;
+}
+
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
@@ -237,22 +415,28 @@ void NEWAPPCREATOR_CFG::SetAPPType(XDWORD app_type)
 * @brief      Default
 * @ingroup    UTILITIES
 *
-* @return     bool : true if is succesful. 
+* @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool NEWAPPCREATOR_CFG::Default()
 {
-	xpos			 = 613;
-	ypos			 = 349;
+	xpos			        = 613;
+	ypos			        = 349;
 
-  app_path   = __L("");
-  gen_path   = __L("");
+  app_path          = __L("");
+  gen_path          = __L("");
+  app_copyright     = __L("GEN Group");
 
-  app_type   = 0;
+  app_type          = 0;
+  app_format        = 0;
+
+  trace_system      = true;
+  memctrl_system    = true;
+  log_system        = true;
+  cfg_system        = true;
 
 	return true;
 }
-
 
 
 /**-------------------------------------------------------------------------------------------------------------------
@@ -267,12 +451,19 @@ bool NEWAPPCREATOR_CFG::Default()
 *---------------------------------------------------------------------------------------------------------------------*/
 void NEWAPPCREATOR_CFG::Clean()
 {
-	xpos	     = 0;
-	ypos	     = 0;
+	xpos	            = 0;
+	ypos	            = 0;
 
-  app_path   = __L("");
-  gen_path   = __L("");
+  app_path.Empty();
+  gen_path.Empty();
+  app_copyright.Empty();
 
-  app_type   = 0;
+  app_type          = 0;
+  app_format        = 0;
+
+  trace_system      = false;
+  memctrl_system    = false;
+  log_system        = false;
+  cfg_system        = false;
 }
 

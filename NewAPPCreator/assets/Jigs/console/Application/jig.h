@@ -1,17 +1,17 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       Scripts.h
+* @file       #@[jig].h
 *
-* @class      SCRIPTS
-* @brief      Main class
-* @ingroup    TEMPLATE
+* @class      #*[jig]
+* @brief      #@[jig] Main Module
+* @ingroup    #*[jig]
 *
-* @copyright  GEN Group. All right reserved.
+* @copyright  #=[jig]. All right reserved.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 
-#ifndef _SCRIPTS_H_
-#define _SCRIPTS_H_
+#ifndef _#*[jig]_H_
+#define _#*[jig]_H_
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 
@@ -22,25 +22,25 @@
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
-enum SCRIPTSXFSMEVENTS
+enum #*[jig]XFSMEVENTS
 {
-  SCRIPTS_XFSMEVENT_NONE                = 0 ,
-  SCRIPTS_XFSMEVENT_INI                     ,
-  SCRIPTS_XFSMEVENT_UPDATE                  ,
-  SCRIPTS_XFSMEVENT_END                     ,
+  #*[jig]_XFSMEVENT_NONE                = 0 ,
+  #*[jig]_XFSMEVENT_INI                     ,
+  #*[jig]_XFSMEVENT_UPDATE                  ,
+  #*[jig]_XFSMEVENT_END                     ,
 
-  SCRIPTS_LASTEVENT
+  #*[jig]_LASTEVENT
 };
 
 
-enum SCRIPTSXFSMSTATES
+enum #*[jig]XFSMSTATES
 {
-  SCRIPTS_XFSMSTATE_NONE                = 0 ,
-  SCRIPTS_XFSMSTATE_INI                     ,
-  SCRIPTS_XFSMSTATE_UPDATE                  ,
-  SCRIPTS_XFSMSTATE_END                     ,
+  #*[jig]_XFSMSTATE_NONE                = 0 ,
+  #*[jig]_XFSMSTATE_INI                     ,
+  #*[jig]_XFSMSTATE_UPDATE                  ,
+  #*[jig]_XFSMSTATE_END                     ,
 
-  SCRIPTS_LASTSTATE
+  #*[jig]_LASTSTATE
 };
 
 
@@ -48,12 +48,12 @@ enum SCRIPTSXFSMSTATES
 #define APPLICATION_SUBVERSION                  1
 #define APPLICATION_SUBVERSIONERR               0
 
-#define APPLICATION_NAMEAPP                     __L("Scripts")
+#define APPLICATION_NAMEAPP                     __L("#@[jig]")
 #define APPLICATION_ENTERPRISE                  __L("GEN Group")
 
-#define APPLICATION_NAMEFILE                    __L("scripts")
+#define APPLICATION_NAMEFILE                    __L("#![jig]")
 
-#define APPLICATION_YEAROFCREATION              2022
+#define APPLICATION_YEAROFCREATION              #%[jig]
 
 
 /*---- CLASS ---------------------------------------------------------------------------------------------------------*/
@@ -61,11 +61,11 @@ enum SCRIPTSXFSMSTATES
 class XTIMER;
 class XMUTEX;
 
-class SCRIPTS : public APPCONSOLE, public XFSMACHINE
+class #*[jig] : public APPCONSOLE, public XFSMACHINE
 {
   public:
-                                    SCRIPTS                                 ();
-    virtual                        ~SCRIPTS                                 ();
+                                    #*[jig]                                 ();
+    virtual                        ~#*[jig]                                 ();
 
     bool                            InitFSMachine                           ();
 

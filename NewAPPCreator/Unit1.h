@@ -46,14 +46,21 @@ class TForm1 : public TForm
     TLabel*                 VersionLabel;
     TImage*                 IMGMain;
     TEdit*                  EditAppName;
-    TLabel*                 LabelNameApp;
+    TLabel*                 LabelAppName;
     TLabel*                 LabelGENPath;
     TEdit*                  EditGENPath;
     TCDirectoryOutline*     CDirectoryOutline;
-    TRadioGroup*            RadioGroupTypeApp;
+    TRadioGroup*            RadioGroupAppType;
     TEdit*                  EditAppPath;
     TLabel*                 LabelAppPath;
     TTimer*                 TimerCheckStateButtonCreate;
+    TCheckBox*              CheckBoxLog;
+    TCheckBox*              CheckBoxTrace;
+    TEdit*                  EditCopyright;
+    TLabel*                 LabelCopyright;
+    TCheckBox*              CheckBoxCFGFile;
+    TCheckBox*              CheckBoxMemControl;
+    TRadioGroup*            RadioGroupAppFormat;
 
     void __fastcall         ButtonExitClick                     (TObject *Sender);
     void __fastcall         FormCreate                          (TObject *Sender);
