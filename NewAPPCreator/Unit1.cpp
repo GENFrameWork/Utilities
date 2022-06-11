@@ -68,10 +68,10 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
   RadioGroupAppType->ItemIndex    = cfg->GetAPPType();
   RadioGroupAppFormat->ItemIndex  = cfg->GetAPPFormat();
 
-  CheckBoxTrace->State            = cfg->GetAddTraceSystem();
-  CheckBoxLog->State              = cfg->GetAddLogSystem();
-  CheckBoxMemControl->State       = cfg->GetAddMemCtrlSystem();
-  CheckBoxCFGFile->State          = cfg->GetAddCFGSystem();
+  CheckBoxTrace->State            = cfg->GetAddTraceSystem()?cbChecked:cbUnchecked;
+  CheckBoxLog->State              = cfg->GetAddLogSystem()?cbChecked:cbUnchecked;
+  CheckBoxMemControl->State       = cfg->GetAddMemCtrlSystem()?cbChecked:cbUnchecked;
+  CheckBoxCFGFile->State          = cfg->GetAddCFGSystem()?cbChecked:cbUnchecked;
 
 
 
@@ -141,10 +141,10 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
   cfg->SetAPPType(RadioGroupAppType->ItemIndex);
   cfg->SetAPPFormat(RadioGroupAppFormat->ItemIndex);
 
-  cfg->SetAddTraceSystem(CheckBoxTrace->State);
-  cfg->SetAddMemCtrlSystem(CheckBoxMemControl->State);
-  cfg->SetAddLogSystem(CheckBoxLog->State);
-  cfg->SetAddCFGSystem(CheckBoxCFGFile->State);
+  cfg->SetAddTraceSystem((CheckBoxTrace->State==cbChecked)?true:false);
+  cfg->SetAddMemCtrlSystem((CheckBoxMemControl->State==cbChecked)?true:false);
+  cfg->SetAddLogSystem((CheckBoxLog->State==cbChecked)?true:false);
+  cfg->SetAddCFGSystem((CheckBoxCFGFile->State==cbChecked)?true:false);
 
 
   cfg->Save();
