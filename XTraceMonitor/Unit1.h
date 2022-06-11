@@ -58,7 +58,7 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			      __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL              __L("Version 7.4.0")
+#define XTRACEMONITOR_VERSIONLABEL              __L("Version 7.4.2")
 
 #define XTRACEMONITOR_MASKLEVELBLACK            0x00000001
 #define XTRACEMONITOR_MASKLEVELPURPLE           0x00000002
@@ -142,6 +142,7 @@ class DBGMESSAGE
 
     bool                          iserase;
     XDWORD                        publicIP;
+    bool                          publicIPnopacket;
     XDWORD                        localIP;
     XBYTE                         level;
     XDWORD                        sequence;
@@ -152,11 +153,12 @@ class DBGMESSAGE
 
     void                          Clean()
                                   {
-                                    iserase     = false;
-                                    publicIP    = 0;
-                                    localIP     = 0;
-                                    level       = 0;
-                                    sequence    = 0;
+                                    iserase           = false;
+                                    publicIP          = 0;
+                                    publicIPnopacket  = false;
+                                    localIP           = 0;
+                                    level             = 0;
+                                    sequence          = 0;
                                   }
 };
 
@@ -285,7 +287,7 @@ class TMainForm : public TForm
     TValueListEditor*             CreateValueListEditor         ();
     ORIGIN*                       CreateOrigin                  (ORIGIN* father, XTRACEMONITOR_ORIGINCFG* origincfg);
     bool                          CreateOriginsFromConfig       (bool addUART);
-    ORIGIN*                       CreateOriginsFromIP           (XDWORD publicIP, XDWORD localIP);
+    ORIGIN*                       CreateOriginsFromIP           (XDWORD publicIP, bool publicIPnopacket, XDWORD localIP);
     ORIGIN*                       GetOriginFromIP               (XDWORD publicIP, XDWORD localIP);
     bool                          CreateOriginFromUART          ();
     bool                          DeleteOriginFromUART          ();
@@ -295,7 +297,7 @@ class TMainForm : public TForm
 
     bool                          AddLineTrace                  (ORIGIN* origin, DBGMESSAGE* DBGmessage);
     void                          UpdateRunStopButton           (bool run);
-    bool                          AddDBGMessage                 (XDWORD publicIP, XDWORD localIP, XBYTE level, XDWORD sequence, XDATETIME& xtime, XSTRING& string);
+    bool                          AddDBGMessage                 (XDWORD publicIP, bool publicIPnopacket, XDWORD localIP, XBYTE level, XDWORD sequence, XDATETIME& xtime, XSTRING& string);
 
     void                          GenerateIPString              (XDWORD IP, XSTRING& IPstring);
     void                          UpdateLevelFilterStatus       ();
