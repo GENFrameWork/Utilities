@@ -2,7 +2,6 @@ object MainForm: TMainForm
   Left = 554
   Top = 275
   Width = 1746
-  Height = 682
   BorderIcons = []
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -64,7 +63,7 @@ object MainForm: TMainForm
     TabOrder = 0
     object IMGMain: TImage
       Left = 12
-      Top = 32
+      Top = 40
       Width = 96
       Height = 98
       AutoSize = True
@@ -956,7 +955,10 @@ object MainForm: TMainForm
       Transparent = True
     end
     object VersionLabel: TLabel
+      Left = 2
+      Top = 132
       Left = 10
+      Left = 2
       Top = 140
       Width = 100
       Height = 13
@@ -971,7 +973,10 @@ object MainForm: TMainForm
       ParentFont = False
     end
     object IPFilterImage: TImage
+      Left = 18
+      Top = 4
       Left = 26
+      Left = 18
       Top = 12
       Width = 16
       Height = 16
@@ -979,7 +984,10 @@ object MainForm: TMainForm
       OnClick = IPFilterImageClick
     end
     object IPFilterLabel: TLabel
+      Left = 40
+      Top = 4
       Left = 48
+      Left = 40
       Top = 12
       Width = 45
       Height = 13
@@ -993,7 +1001,10 @@ object MainForm: TMainForm
       ParentFont = False
     end
     object BufferStatusPanel: TPanel
+      Left = 922
+      Top = 4
       Left = 962
+      Left = 922
       Top = 12
       Width = 103
       Height = 141
@@ -1054,7 +1065,10 @@ object MainForm: TMainForm
       end
     end
     object PanelLevelFilter: TPanel
+      Left = 104
+      Top = 56
       Left = 120
+      Left = 104
       Top = 64
       Width = 179
       Height = 90
@@ -1167,7 +1181,10 @@ object MainForm: TMainForm
       end
     end
     object ButtonClear: TBitBtn
+      Left = 408
+      Top = 12
       Left = 448
+      Left = 408
       Top = 20
       Width = 57
       Height = 57
@@ -1250,7 +1267,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object ButtonStop: TBitBtn
+      Left = 480
+      Top = 2
       Left = 520
+      Left = 480
       Top = 10
       Width = 57
       Height = 57
@@ -1287,7 +1307,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object ButtonExit: TBitBtn
+      Left = 536
+      Top = 84
       Left = 576
+      Left = 536
       Top = 92
       Width = 57
       Height = 57
@@ -1370,7 +1393,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object ButtonMinimize: TBitBtn
+      Left = 472
+      Top = 84
       Left = 512
+      Left = 472
       Top = 92
       Width = 57
       Height = 57
@@ -1453,7 +1479,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object ButtonRun: TBitBtn
+      Left = 472
+      Top = 12
       Left = 512
+      Left = 472
       Top = 20
       Width = 57
       Height = 57
@@ -1536,7 +1565,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object TextTracingCheckBox: TCheckBox
+      Left = 296
+      Top = 44
       Left = 320
+      Left = 296
       Top = 52
       Width = 105
       Height = 17
@@ -1553,7 +1585,10 @@ object MainForm: TMainForm
       OnClick = TextTracingCheckBoxClick
     end
     object ButtonCopy: TBitBtn
+      Left = 544
+      Top = 2
       Left = 584
+      Left = 544
       Top = 10
       Width = 57
       Height = 57
@@ -1637,7 +1672,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object FilterEdit: TEdit
+      Left = 104
+      Top = 24
       Left = 120
+      Left = 104
       Top = 32
       Width = 179
       Height = 19
@@ -1651,7 +1689,10 @@ object MainForm: TMainForm
       TabOrder = 7
     end
     object FilterCheckBox: TCheckBox
+      Left = 104
+      Top = 4
       Left = 120
+      Left = 104
       Top = 12
       Width = 129
       Height = 17
@@ -1668,7 +1709,10 @@ object MainForm: TMainForm
       OnClick = FilterCheckBoxClick
     end
     object ButtonDNSUpdate: TBitBtn
+      Left = 536
+      Top = 12
       Left = 576
+      Left = 536
       Top = 20
       Width = 57
       Height = 57
@@ -1783,7 +1827,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object AddTimeMarkCheckBox: TCheckBox
+      Left = 296
+      Top = 24
       Left = 320
+      Left = 296
       Top = 32
       Width = 105
       Height = 17
@@ -1873,7 +1920,10 @@ object MainForm: TMainForm
       end
     end
     object ShowIPsCheckBox: TCheckBox
+      Left = 296
+      Top = 64
       Left = 320
+      Left = 296
       Top = 72
       Width = 105
       Height = 17
@@ -1888,7 +1938,10 @@ object MainForm: TMainForm
       OnClick = ShowIPsCheckBoxClick
     end
     object ButtonSave: TBitBtn
+      Left = 408
+      Top = 84
       Left = 448
+      Left = 408
       Top = 92
       Width = 57
       Height = 57
@@ -1962,7 +2015,10 @@ object MainForm: TMainForm
       Layout = blGlyphTop
     end
     object ServerPanel: TPanel
+      Left = 672
+      Top = 4
       Left = 712
+      Left = 672
       Top = 12
       Width = 241
       Height = 141
@@ -2031,7 +2087,10 @@ object MainForm: TMainForm
       end
     end
     object CheckBoxMsgStatus: TCheckBox
+      Left = 296
+      Top = 4
       Left = 320
+      Left = 296
       Top = 12
       Width = 105
       Height = 17
@@ -2048,7 +2107,10 @@ object MainForm: TMainForm
       OnClick = CheckBoxMsgStatusClick
     end
     object ButtonClearStatus: TBitBtn
+      Left = 600
+      Top = 12
       Left = 640
+      Left = 600
       Top = 20
       Width = 57
       Height = 57
