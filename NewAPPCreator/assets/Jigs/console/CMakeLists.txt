@@ -1,12 +1,12 @@
 # --------------------------------------------------------------------
-# [Template] : Template console GEN FrameWork
+# BinConnPro : Example of console GEN FrameWork (Binary protocol example)
 # --------------------------------------------------------------------
 
  cmake_minimum_required(VERSION 3.3.0)
- project(scripts)
+ project(binconnpro)
 
 
- set(GEN_DIRECTORY "../../../../../../../GENFrameWork") 
+ set(GEN_DIRECTORY "../../../../") 
 
 
 # --------------------------------------------------------------------
@@ -24,18 +24,21 @@
  set(XMEMORY_CONTROL_FEATURE                 true    CACHE BOOL "Activate XMemory Control"                       FORCE)
                   
  set(APP_FEATURE                             true    CACHE BOOL "Activate Application modules"                   FORCE)
+ set(APP_CHECKRESOURCESHARDWARE_FEATURE      true    CACHE BOOL "Activate Application Check Resources Hardwar"   FORCE)
  set(APP_CONSOLE_FEATURE                     true    CACHE BOOL "Activate Application Console"                   FORCE)
+ set(APP_INTERNETSERVICES_FEATURE            true    CACHE BOOL "Activate Application Internet Services"         FORCE)
  set(APP_LOG_FEATURE                         true    CACHE BOOL "Activate Application Log"                       FORCE)
 
  set(APP_CFG_GENERAL_FEATURE                 true    CACHE BOOL "Activate Application CFG General"               FORCE)  
  set(APP_CFG_LOG_FEATURE                     true    CACHE BOOL "Activate Application CFG LOG"                   FORCE)
+ set(APP_CFG_INTERNETSERVICES_FEATURE        true    CACHE BOOL "Activate Application CFG Internet services"     FORCE)      
  
 
 # --------------------------------------------------------------------
 # Config Application Macro
 
- set(APP_CFG_SCRIPTS "-DAPP_CFG=SCRIPTS_CFG::GetInstance()")
- add_definitions(${APP_CFG_SCRIPTS})
+ set(APP_CFG_BINCONNPRO "-DAPP_CFG=BINCONNPRO_CFG::GetInstance()")
+ add_definitions(${APP_CFG_BINCONNPRO})
 
 
 # --------------------------------------------------------------------
@@ -50,11 +53,16 @@
  set(APP_DIRECTORY_APPLICATION   "../Application")
  list(APPEND INCLUDES_DIR ${APP_DIRECTORY_APPLICATION})
 
+
 # --------------------------------------------------------------------
 # Source code of the Application
 
- list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/Scripts.cpp")
- list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/Scripts_CFG.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro_CFG.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro_ApplicationData.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro_ConnectionsManager.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro_Protocol.cpp")
+ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/BinConnPro_Protocol_Device.cpp")
 
 
 # --------------------------------------------------------------------

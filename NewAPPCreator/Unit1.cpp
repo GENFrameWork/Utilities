@@ -45,6 +45,8 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 
   XBUFFER::SetHardwareUseLittleEndian(GEN_XSYSTEM.HardwareUseLittleEndian());
 
+
+
   AnsiString exefile = Application->ExeName;
   AnsiString exepath = ExtractFilePath(exefile);
   XPATH      xpath;
@@ -81,18 +83,21 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 
   ButtonCreate->Enabled           = false;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::ButtonExitClick(TObject *Sender)
 {
   Close();
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FormCreate(TObject *Sender)
 {
    VersionLabel->Caption = NEWAPPCREATOR_VERSIONLABEL;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::EditAppPathEnter(TObject *Sender)
@@ -102,6 +107,7 @@ void __fastcall TForm1::EditAppPathEnter(TObject *Sender)
   CDirectoryOutline->Left     = NEWAPPCREATOR_SELECDIRECTORY_XPOS;
   CDirectoryOutline->Top      = NEWAPPCREATOR_SELECDIRECTORY_APP_YPOS;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::CDirectoryOutlineDblClick(TObject *Sender)
@@ -112,6 +118,7 @@ void __fastcall TForm1::CDirectoryOutlineDblClick(TObject *Sender)
         EditAppPath->Text = CDirectoryOutline->Directory;
    else EditGENPath->Text = CDirectoryOutline->Directory;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::EditGENPathEnter(TObject *Sender)
@@ -121,12 +128,14 @@ void __fastcall TForm1::EditGENPathEnter(TObject *Sender)
   CDirectoryOutline->Left     = NEWAPPCREATOR_SELECDIRECTORY_XPOS;
   CDirectoryOutline->Top      = NEWAPPCREATOR_SELECDIRECTORY_GEN_YPOS;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::TimerCheckStateButtonCreateTimer(TObject *Sender)
 {
   ButtonCreate->Enabled = (EditAppPath->Text.Length() && EditGENPath->Text.Length() && EditAppName->Text.Length())?true:false;
 }
+
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
@@ -134,6 +143,23 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
   cfg->SetXPos(Left);
   cfg->SetYPos(Top);
 
+  AjustUserInterfaceToCFG();
+
+  cfg->Save();
+
+//if(DIOFACTORY::GetIsInstanced()) DIOFACTORY::DelInstance();
+
+  if(XSLEEP::GetIsInstanced()) XSLEEP::DelInstance();
+
+  if(XSYSTEM::GetIsInstanced()) XSYSTEM::DelInstance();
+
+  if(XFACTORY::GetIsInstanced()) XFACTORY::DelInstance();
+}
+
+//---------------------------------------------------------------------------
+
+bool TForm1::AjustUserInterfaceToCFG()
+{
   cfg->GetAppPath()->Set(EditAppPath->Text.c_str());
   cfg->GetGENPath()->Set(EditGENPath->Text.c_str());
   cfg->GetAppCopyright()->Set(EditCopyright->Text.c_str());
@@ -146,16 +172,62 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
   cfg->SetAddLogSystem((CheckBoxLog->State==cbChecked)?true:false);
   cfg->SetAddCFGSystem((CheckBoxCFGFile->State==cbChecked)?true:false);
 
+  return true;
+}
 
-  cfg->Save();
+//---------------------------------------------------------------------------
 
-//if(DIOFACTORY::GetIsInstanced()) DIOFACTORY::DelInstance();
+XSTRING* TForm1::CreateFileName(XCHAR* namefileliteral)
+{
+  XSTRING* namefile = new XSTRING();
+  if(!namefile) return NULL;
 
-  if(XSLEEP::GetIsInstanced()) XSLEEP::DelInstance();
+  namefile->Add(namefileliteral);
 
-  if(XSYSTEM::GetIsInstanced()) XSYSTEM::DelInstance();
+  return namefile;
+}
 
-  if(XFACTORY::GetIsInstanced()) XFACTORY::DelInstance();
+//---------------------------------------------------------------------------
+
+bool TForm1::LoadToMemoryFiles(NEWAPPCREATOR_APPTYPE apptype)
+{
+  XVECTOR<XSTRING*> listfiles;
+
+  listfiles.Add(CreateFileName(__L("APP_GEN_Defines.h")));
+  listfiles.Add(CreateFileName(__L("jit.h")));
+  listfiles.Add(CreateFileName(__L("jit.cpp")));
+
+  if(cfg->GetAddCFGSystem())
+    {
+      listfiles.Add(CreateFileName(__L("jit_CFG.h")));
+      listfiles.Add(CreateFileName(__L("jit_CFG.cpp")));
+    }
+    
+  listfiles.Add(CreateFileName(__L("CMakeLists.txt")));
+  listfiles.Add(CreateFileName(__L("CMakeSettings.json")));
+
+  switch(apptype)
+    {
+      case NEWAPPCREATOR_APPTYPE_BASE       : break;
+      case NEWAPPCREATOR_APPTYPE_CONSOLE    : break;
+      case NEWAPPCREATOR_APPTYPE_GRAPHICS   : break;
+    }
+
+
+
+  listfiles.DeleteContents();
+  listfiles.DeleteAll();
+
+  return true;
+}
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ButtonCreateClick(TObject *Sender)
+{
+  AjustUserInterfaceToCFG();
+
+  LoadToMemoryFiles(cfg->GetAPPType());
 }
 //---------------------------------------------------------------------------
 
