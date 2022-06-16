@@ -1,6 +1,6 @@
 object MainForm: TMainForm
-  Left = 554
-  Top = 275
+  Left = 331
+  Top = 273
   Width = 1746
   Height = 682
   BorderIcons = []

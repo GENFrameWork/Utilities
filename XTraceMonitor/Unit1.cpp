@@ -2506,7 +2506,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
   XSTRING     line;
   TColor      color         = clBlack;
   XSTRING     datetimestring;
-  int         maxsize       = ((cfg->GetMaxTextSize()-10)*1024);
+  int         maxsize       = ((cfg->GetMaxTextSize())*1024);
   int         sizetext      =  origin->ritchtext->GetTextLen();
   int         indexcommand  = DBGmessage->string.Find(XTRACE_IDMSGSCREENCLEAR, false);
 
@@ -2518,10 +2518,16 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
       origin->ritchtext->Lines->Clear();
       origin->ritchtext->Visible = visible;
 
+      XSTRING line;
       XSTRING namenode;
       GetNameNode(origin, namenode);
 
-      PrintStatus(__L("Clear screen from %s (overlapped limit)"), namenode.Get());
+      line.Format(__L("Clear screen from %s"), namenode.Get());
+
+      if(sizetext >= maxsize)              line.AddFormat(__L(" for overlapped size %dk > %dk"), (sizetext/1024), (maxsize/1024));
+      if(indexcommand != XSTRING_NOTFOUND) line.AddFormat(__L(" for command clear screen"));
+
+      PrintStatus(line.Get());
 
       if(indexcommand != XSTRING_NOTFOUND)
         {
