@@ -6,7 +6,6 @@
 
 #include "XVector.h"
 #include "XBuffer.h"
-#include "XPathsManager.h"
 #include "XWINDOWSFactory.h"
 #include "XWINDOWSSleep.h"
 #include "XWINDOWSSystem.h"
@@ -31,6 +30,14 @@ TForm1 *Form1;
 
 //---------------------------------------------------------------------------
 
+
+void APPMODULEELEMENT::Clean()
+{
+  dirtype = NEWAPPCREATOR_DIRTYPE_UNKNOWN;
+  namefile.Empty();
+}
+
+
 __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
 {
 
@@ -50,11 +57,22 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
   AnsiString exefile = Application->ExeName;
   AnsiString exepath = ExtractFilePath(exefile);
   XPATH      xpath;
+  XPATH      xpath2;
 
   xpath  = exepath.c_str();
   xpath += NEWAPPCREATOR_ROOTDIR;
 
-  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_ROOT, xpath);
+  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_ROOT                  , xpath);
+
+  xpath2.Set(__L("Jigs\\base"));
+  GEN_XPATHSMANAGER.AddPathSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_BASE       , xpath2);
+
+  xpath2.Set(__L("Jigs\\console"));
+  GEN_XPATHSMANAGER.AddPathSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_CONSOLE    , xpath2);
+
+  xpath2.Set(__L("Jigs\\graphics"));
+  GEN_XPATHSMANAGER.AddPathSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_GRAPHICS   , xpath2);
+
 
   cfg  = new NEWAPPCREATOR_CFG(NEWAPPCREATOR_CFGNAMEFILE);
 	if(!cfg) return;
@@ -104,8 +122,8 @@ void __fastcall TForm1::EditAppPathEnter(TObject *Sender)
 {
   CDirectoryOutline->Visible  = true;
 
-  CDirectoryOutline->Left     = NEWAPPCREATOR_SELECDIRECTORY_XPOS;
-  CDirectoryOutline->Top      = NEWAPPCREATOR_SELECDIRECTORY_APP_YPOS;
+  CDirectoryOutline->Left     = NEWAPPCREATOR_SELECTDIRECTORY_XPOS;
+  CDirectoryOutline->Top      = NEWAPPCREATOR_SELECTDIRECTORY_APP_YPOS;
 }
 
 //---------------------------------------------------------------------------
@@ -114,7 +132,7 @@ void __fastcall TForm1::CDirectoryOutlineDblClick(TObject *Sender)
 {
   CDirectoryOutline->Visible  = false;
 
-  if(CDirectoryOutline->Top == NEWAPPCREATOR_SELECDIRECTORY_APP_YPOS)
+  if(CDirectoryOutline->Top == NEWAPPCREATOR_SELECTDIRECTORY_APP_YPOS)
         EditAppPath->Text = CDirectoryOutline->Directory;
    else EditGENPath->Text = CDirectoryOutline->Directory;
 }
@@ -125,8 +143,8 @@ void __fastcall TForm1::EditGENPathEnter(TObject *Sender)
 {
   CDirectoryOutline->Visible  = true;
 
-  CDirectoryOutline->Left     = NEWAPPCREATOR_SELECDIRECTORY_XPOS;
-  CDirectoryOutline->Top      = NEWAPPCREATOR_SELECDIRECTORY_GEN_YPOS;
+  CDirectoryOutline->Left     = NEWAPPCREATOR_SELECTDIRECTORY_XPOS;
+  CDirectoryOutline->Top      = NEWAPPCREATOR_SELECTDIRECTORY_GEN_YPOS;
 }
 
 //---------------------------------------------------------------------------
@@ -177,43 +195,78 @@ bool TForm1::AjustUserInterfaceToCFG()
 
 //---------------------------------------------------------------------------
 
-XSTRING* TForm1::CreateFileName(XCHAR* namefileliteral)
+APPMODULEELEMENT* TForm1::CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE dirtype, XCHAR* namefileliteral)
 {
-  XSTRING* namefile = new XSTRING();
-  if(!namefile) return NULL;
+  APPMODULEELEMENT* appmoduleelement = new APPMODULEELEMENT();
+  if(!appmoduleelement) return NULL;
 
-  namefile->Add(namefileliteral);
+  appmoduleelement->dirtype = dirtype;
+  appmoduleelement->namefile.Add(namefileliteral);
 
-  return namefile;
+  return appmoduleelement;
 }
 
 //---------------------------------------------------------------------------
 
 bool TForm1::LoadToMemoryFiles(NEWAPPCREATOR_APPTYPE apptype)
 {
-  XVECTOR<XSTRING*> listfiles;
+  XVECTOR<APPMODULEELEMENT*>  listfiles;
+  XPATH                       path;
 
-  listfiles.Add(CreateFileName(__L("APP_GEN_Defines.h")));
-  listfiles.Add(CreateFileName(__L("jit.h")));
-  listfiles.Add(CreateFileName(__L("jit.cpp")));
+  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("APP_GEN_Defines.h")));
+  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.h")));
+  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.cpp")));
 
   if(cfg->GetAddCFGSystem())
     {
-      listfiles.Add(CreateFileName(__L("jit_CFG.h")));
-      listfiles.Add(CreateFileName(__L("jit_CFG.cpp")));
+      listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig_CFG.h")));
+      listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION,__L("jig_CFG.cpp")));
     }
-    
-  listfiles.Add(CreateFileName(__L("CMakeLists.txt")));
-  listfiles.Add(CreateFileName(__L("CMakeSettings.json")));
+
+  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeLists.txt")));
+  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeSettings.json")));
 
   switch(apptype)
     {
-      case NEWAPPCREATOR_APPTYPE_BASE       : break;
-      case NEWAPPCREATOR_APPTYPE_CONSOLE    : break;
-      case NEWAPPCREATOR_APPTYPE_GRAPHICS   : break;
+      case NEWAPPCREATOR_APPTYPE_BASE       : GEN_XPATHSMANAGER.GetPathOfSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_BASE, path);         break;
+      case NEWAPPCREATOR_APPTYPE_CONSOLE    : GEN_XPATHSMANAGER.GetPathOfSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_CONSOLE, path);      break;
+      case NEWAPPCREATOR_APPTYPE_GRAPHICS   : GEN_XPATHSMANAGER.GetPathOfSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_GRAPHICS, path);     break;
+    }
+
+  bool status = false;
+
+  for(XDWORD c=0; c<listfiles.GetSize(); c++)
+    {
+      XFILETXT* fileTXT = new XFILETXT();
+      if(fileTXT)
+        {
+          XPATH path2;
+
+          path2 = path;
+          path2.Slash_Add();
+          path2.Add(listfiles.Get(c)->namefile.Get());
+
+          path2.Slash_Normalize(true);
+
+          if(fileTXT->Open(path2))
+            {
+              status = fileTXT->ReadAllFile();
+
+              fileTXT->Close();
+            }
+
+          if(status)
+            {
+              filestocreate.Add(fileTXT);
+
+            } else delete fileTXT;
+        }
     }
 
 
+
+
+    
 
   listfiles.DeleteContents();
   listfiles.DeleteAll();
@@ -227,7 +280,7 @@ void __fastcall TForm1::ButtonCreateClick(TObject *Sender)
 {
   AjustUserInterfaceToCFG();
 
-  LoadToMemoryFiles(cfg->GetAPPType());
+  LoadToMemoryFiles((NEWAPPCREATOR_APPTYPE)cfg->GetAPPType());
 }
 //---------------------------------------------------------------------------
 

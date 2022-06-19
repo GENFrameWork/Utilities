@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 495
-  Top = 716
+  Left = 660
+  Top = 596
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   BorderStyle = bsDialog

@@ -22,29 +22,55 @@
 #include "XString.h"
 #include "XVector.h"
 #include "XFileTXT.h"
+#include "XPathsManager.h"
 
 #include "NewAPPCreator_CFG.h"
 
 //---------------------------------------------------------------------------
 
-#define NEWAPPCREATOR_CFGNAMEFILE	 	 			        __L("NewAPPCreator")
-#define NEWAPPCREATOR_VERSIONLABEL                __L("Version 0.1.0")
-#define NEWAPPCREATOR_ROOTDIR                     __L("assets")
+#define NEWAPPCREATOR_CFGNAMEFILE	 	 			            __L("NewAPPCreator")
+#define NEWAPPCREATOR_VERSIONLABEL                    __L("Version 0.1.0")
+#define NEWAPPCREATOR_ROOTDIR                         __L("assets")
 
 
-#define NEWAPPCREATOR_SELECDIRECTORY_XPOS         96
-#define NEWAPPCREATOR_SELECDIRECTORY_APP_YPOS     32
-#define NEWAPPCREATOR_SELECDIRECTORY_GEN_YPOS     96
+#define NEWAPPCREATOR_SELECTDIRECTORY_XPOS            96
+#define NEWAPPCREATOR_SELECTDIRECTORY_APP_YPOS        32
+#define NEWAPPCREATOR_SELECTDIRECTORY_GEN_YPOS        96
+
+#define NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_BASE      XPATHSMANAGERSECTIONTYPE_GENERIC1
+#define NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_CONSOLE   XPATHSMANAGERSECTIONTYPE_GENERIC2
+#define NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_GRAPHICS  XPATHSMANAGERSECTIONTYPE_GENERIC3
 
 enum NEWAPPCREATOR_APPTYPE
 {
-  NEWAPPCREATOR_APPTYPE_BASE          = 0 ,
+  NEWAPPCREATOR_APPTYPE_UNKNOWN       = -1,
+  NEWAPPCREATOR_APPTYPE_BASE              ,
   NEWAPPCREATOR_APPTYPE_CONSOLE           ,
   NEWAPPCREATOR_APPTYPE_GRAPHICS          ,
 };
 
+enum NEWAPPCREATOR_DIRTYPE
+{
+  NEWAPPCREATOR_DIRTYPE_UNKNOWN       = 0 ,
+  NEWAPPCREATOR_DIRTYPE_APPLICATION       ,
+  NEWAPPCREATOR_DIRTYPE_PLATFORMS         ,
+};
 
 //---------------------------------------------------------------------------
+
+class APPMODULEELEMENT
+{
+  public:
+
+    NEWAPPCREATOR_DIRTYPE   dirtype;
+    XSTRING                 namefile;
+
+  private:
+
+    void                    Clean                               ();
+};
+
+
 
 class TForm1 : public TForm
 {
@@ -91,7 +117,7 @@ class TForm1 : public TForm
     __fastcall              TForm1                              (TComponent* Owner);
 
     bool                    AjustUserInterfaceToCFG             ();
-    XSTRING*                CreateFileName                      (XCHAR* namefileliteral);
+    APPMODULEELEMENT*       CreateAppModuleElement              (NEWAPPCREATOR_DIRTYPE dirtype, XCHAR* namefileliteral);
     bool                    LoadToMemoryFiles                   (NEWAPPCREATOR_APPTYPE apptype);
 };
 
