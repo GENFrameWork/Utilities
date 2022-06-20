@@ -35,6 +35,7 @@ void APPMODULEELEMENT::Clean()
 {
   dirtype = NEWAPPCREATOR_DIRTYPE_UNKNOWN;
   namefile.Empty();
+  fileTXT = NULL;
 }
 
 
@@ -73,25 +74,23 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
   xpath2.Set(__L("Jigs\\graphics"));
   GEN_XPATHSMANAGER.AddPathSection(NEWAPPCREATOR_XPATHSECTIONTYPE_JIGS_GRAPHICS   , xpath2);
 
-
   cfg  = new NEWAPPCREATOR_CFG(NEWAPPCREATOR_CFGNAMEFILE);
 	if(!cfg) return;
 
-
   Left                            = cfg->GetXPos();
   Top                             = cfg->GetYPos();
-
-  EditAppPath->Text               = cfg->GetAppPath()->Get();
   EditGENPath->Text               = cfg->GetGENPath()->Get();
-  EditCopyright->Text             = cfg->GetAppCopyright()->Get();
 
-  RadioGroupAppType->ItemIndex    = cfg->GetAPPType();
-  RadioGroupAppFormat->ItemIndex  = cfg->GetAPPFormat();
+  EditAppPath->Text               = cfg->Application_GetPath()->Get();
+  EditAppName->Text               = cfg->Application_GetName()->Get();
+  EditCopyright->Text             = cfg->Application_GetCopyright()->Get();
+  RadioGroupAppType->ItemIndex    = cfg->Application_GetType();
+  RadioGroupAppFormat->ItemIndex  = cfg->Application_GetFormat();
 
-  CheckBoxTrace->State            = cfg->GetAddTraceSystem()?cbChecked:cbUnchecked;
-  CheckBoxLog->State              = cfg->GetAddLogSystem()?cbChecked:cbUnchecked;
-  CheckBoxMemControl->State       = cfg->GetAddMemCtrlSystem()?cbChecked:cbUnchecked;
-  CheckBoxCFGFile->State          = cfg->GetAddCFGSystem()?cbChecked:cbUnchecked;
+  CheckBoxTrace->State            = cfg->Additional_GetTraceSystem()?cbChecked:cbUnchecked;
+  CheckBoxLog->State              = cfg->Additional_GetLogSystem()?cbChecked:cbUnchecked;
+  CheckBoxMemControl->State       = cfg->Additional_GetMemCtrlSystem()?cbChecked:cbUnchecked;
+  CheckBoxCFGFile->State          = cfg->Additional_GetCFGSystem()?cbChecked:cbUnchecked;
 
 
 
@@ -158,6 +157,9 @@ void __fastcall TForm1::TimerCheckStateButtonCreateTimer(TObject *Sender)
 
 void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 {
+  appmoduleselements.DeleteContents();
+  appmoduleselements.DeleteAll();
+
   cfg->SetXPos(Left);
   cfg->SetYPos(Top);
 
@@ -178,17 +180,18 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 
 bool TForm1::AjustUserInterfaceToCFG()
 {
-  cfg->GetAppPath()->Set(EditAppPath->Text.c_str());
   cfg->GetGENPath()->Set(EditGENPath->Text.c_str());
-  cfg->GetAppCopyright()->Set(EditCopyright->Text.c_str());
 
-  cfg->SetAPPType(RadioGroupAppType->ItemIndex);
-  cfg->SetAPPFormat(RadioGroupAppFormat->ItemIndex);
+  cfg->Application_GetPath()->Set(EditAppPath->Text.c_str());
+  cfg->Application_GetName()->Set(EditAppName->Text.c_str());
+  cfg->Application_GetCopyright()->Set(EditCopyright->Text.c_str());
+  cfg->Application_SetType(RadioGroupAppType->ItemIndex);
+  cfg->Application_SetFormat(RadioGroupAppFormat->ItemIndex);
 
-  cfg->SetAddTraceSystem((CheckBoxTrace->State==cbChecked)?true:false);
-  cfg->SetAddMemCtrlSystem((CheckBoxMemControl->State==cbChecked)?true:false);
-  cfg->SetAddLogSystem((CheckBoxLog->State==cbChecked)?true:false);
-  cfg->SetAddCFGSystem((CheckBoxCFGFile->State==cbChecked)?true:false);
+  cfg->Additional_SetTraceSystem((CheckBoxTrace->State==cbChecked)?true:false);
+  cfg->Additional_SetMemCtrlSystem((CheckBoxMemControl->State==cbChecked)?true:false);
+  cfg->Additional_SetLogSystem((CheckBoxLog->State==cbChecked)?true:false);
+  cfg->Additional_SetCFGSystem((CheckBoxCFGFile->State==cbChecked)?true:false);
 
   return true;
 }
@@ -210,21 +213,23 @@ APPMODULEELEMENT* TForm1::CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE dirtype, 
 
 bool TForm1::LoadToMemoryFiles(NEWAPPCREATOR_APPTYPE apptype)
 {
-  XVECTOR<APPMODULEELEMENT*>  listfiles;
-  XPATH                       path;
+  XPATH path;
 
-  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("APP_GEN_Defines.h")));
-  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.h")));
-  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.cpp")));
+  appmoduleselements.DeleteContents();
+  appmoduleselements.DeleteAll();
 
-  if(cfg->GetAddCFGSystem())
+  appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("APP_GEN_Defines.h")));
+  appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.h")));
+  appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig.cpp")));
+
+  if(cfg->Additional_GetCFGSystem())
     {
-      listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig_CFG.h")));
-      listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION,__L("jig_CFG.cpp")));
+      appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION, __L("jig_CFG.h")));
+      appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_APPLICATION,__L("jig_CFG.cpp")));
     }
 
-  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeLists.txt")));
-  listfiles.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeSettings.json")));
+  appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeLists.txt")));
+  appmoduleselements.Add(CreateAppModuleElement(NEWAPPCREATOR_DIRTYPE_PLATFORMS, __L("CMakeSettings.json")));
 
   switch(apptype)
     {
@@ -235,41 +240,36 @@ bool TForm1::LoadToMemoryFiles(NEWAPPCREATOR_APPTYPE apptype)
 
   bool status = false;
 
-  for(XDWORD c=0; c<listfiles.GetSize(); c++)
+  for(XDWORD c=0; c<appmoduleselements.GetSize(); c++)
     {
-      XFILETXT* fileTXT = new XFILETXT();
-      if(fileTXT)
+      APPMODULEELEMENT* appmoduleelement = appmoduleselements.Get(c);
+      if(appmoduleelement)
         {
-          XPATH path2;
-
-          path2 = path;
-          path2.Slash_Add();
-          path2.Add(listfiles.Get(c)->namefile.Get());
-
-          path2.Slash_Normalize(true);
-
-          if(fileTXT->Open(path2))
+          appmoduleelement->fileTXT = new XFILETXT();
+          if(appmoduleelement->fileTXT)
             {
-              status = fileTXT->ReadAllFile();
+              XPATH path2;
 
-              fileTXT->Close();
+              path2 = path;
+              path2.Slash_Add();
+              path2.Add(appmoduleelement->namefile.Get());
+
+              path2.Slash_Normalize(true);
+
+              if(appmoduleelement->fileTXT->Open(path2))
+                {
+                  status = appmoduleelement->fileTXT->ReadAllFile();
+                  appmoduleelement->fileTXT->Close();
+                }
+
+              if(!status)
+                {
+                  delete appmoduleelement->fileTXT;
+                  appmoduleelement->fileTXT = NULL;
+                }
             }
-
-          if(status)
-            {
-              filestocreate.Add(fileTXT);
-
-            } else delete fileTXT;
         }
     }
-
-
-
-
-    
-
-  listfiles.DeleteContents();
-  listfiles.DeleteAll();
 
   return true;
 }
@@ -280,7 +280,35 @@ void __fastcall TForm1::ButtonCreateClick(TObject *Sender)
 {
   AjustUserInterfaceToCFG();
 
-  LoadToMemoryFiles((NEWAPPCREATOR_APPTYPE)cfg->GetAPPType());
+  LoadToMemoryFiles((NEWAPPCREATOR_APPTYPE)cfg->Application_GetType());
+
+  for(XDWORD c=0; c<appmoduleselements.GetSize(); c++)
+    {
+      APPMODULEELEMENT* appmoduleelement = appmoduleselements.Get(c);
+      if(appmoduleelement)
+        {
+          XSTRING* appname;
+          XSTRING* appname_uppercase;
+          XSTRING* appname_lowercase;
+
+          ChangeFileInMemory(appmoduleelement, __L("#@[jig]"), __L("pepe2"));
+        }
+    }
 }
+
 //---------------------------------------------------------------------------
+
+bool TForm1::ChangeFileInMemory(APPMODULEELEMENT* appmoduleelement, XCHAR* search, XCHAR* changeto)
+{
+  if(!appmoduleelement) return false;
+
+  if(!appmoduleelement->fileTXT) return false;
+
+  for(int c=0; c<appmoduleelement->fileTXT->GetNLines(); c++)
+    {
+      XSTRING* line = appmoduleelement->fileTXT->GetLine(c);
+      if(line) line->Replace(search, changeto);
+    }
+  return true;
+}
 

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 660
-  Top = 596
+  Left = 712
+  Top = 523
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   BorderStyle = bsDialog
@@ -18,6 +18,62 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object LabelAppPath: TLabel
+    Left = 16
+    Top = 20
+    Width = 64
+    Height = 16
+    Caption = 'App Path'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Transparent = True
+  end
+  object LabelAppName: TLabel
+    Left = 16
+    Top = 50
+    Width = 74
+    Height = 16
+    Caption = 'App Name'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Transparent = True
+  end
+  object LabelCopyright: TLabel
+    Left = 16
+    Top = 116
+    Width = 67
+    Height = 16
+    Caption = 'Copyright'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Transparent = True
+  end
+  object LabelGENPath: TLabel
+    Left = 16
+    Top = 84
+    Width = 68
+    Height = 16
+    Caption = 'GEN Path'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Transparent = True
+  end
   object VersionLabel: TLabel
     Left = 18
     Top = 360
@@ -925,62 +981,6 @@ object Form1: TForm1
       F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1F1
       F0F0F0F1F1F1}
   end
-  object LabelAppName: TLabel
-    Left = 16
-    Top = 50
-    Width = 74
-    Height = 16
-    Caption = 'App Name'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Transparent = True
-  end
-  object LabelGENPath: TLabel
-    Left = 16
-    Top = 84
-    Width = 68
-    Height = 16
-    Caption = 'GEN Path'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Transparent = True
-  end
-  object LabelAppPath: TLabel
-    Left = 16
-    Top = 20
-    Width = 64
-    Height = 16
-    Caption = 'App Path'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Transparent = True
-  end
-  object LabelCopyright: TLabel
-    Left = 16
-    Top = 116
-    Width = 67
-    Height = 16
-    Caption = 'Copyright'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Transparent = True
-  end
   object CheckBoxCFGFile: TCheckBox
     Left = 192
     Top = 152
@@ -1013,6 +1013,22 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 7
   end
+  object CheckBoxMemControl: TCheckBox
+    Left = 16
+    Top = 176
+    Width = 161
+    Height = 17
+    Caption = 'Add Mem Control'
+    Ctl3D = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 11
+  end
   object CheckBoxTrace: TCheckBox
     Left = 16
     Top = 152
@@ -1028,6 +1044,44 @@ object Form1: TForm1
     ParentCtl3D = False
     ParentFont = False
     TabOrder = 8
+  end
+  object EditAppPath: TEdit
+    Left = 96
+    Top = 16
+    Width = 641
+    Height = 22
+    BevelInner = bvLowered
+    BevelOuter = bvNone
+    Ctl3D = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    MaxLength = 256
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 6
+    OnEnter = EditAppPathEnter
+  end
+  object EditAppName: TEdit
+    Left = 96
+    Top = 48
+    Width = 177
+    Height = 22
+    BevelInner = bvLowered
+    BevelOuter = bvNone
+    Ctl3D = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    MaxLength = 24
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 2
+    Text = 'NewApp'
   end
   object EditCopyright: TEdit
     Left = 96
@@ -1046,6 +1100,25 @@ object Form1: TForm1
     ParentCtl3D = False
     ParentFont = False
     TabOrder = 9
+  end
+  object EditGENPath: TEdit
+    Left = 96
+    Top = 80
+    Width = 641
+    Height = 22
+    BevelInner = bvLowered
+    BevelOuter = bvNone
+    Ctl3D = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    MaxLength = 256
+    ParentCtl3D = False
+    ParentFont = False
+    TabOrder = 3
+    OnEnter = EditGENPathEnter
   end
   object ButtonExit: TBitBtn
     Left = 856
@@ -1277,44 +1350,6 @@ object Form1: TForm1
       F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0F0}
     Layout = blGlyphTop
   end
-  object EditAppName: TEdit
-    Left = 96
-    Top = 48
-    Width = 177
-    Height = 22
-    BevelInner = bvLowered
-    BevelOuter = bvNone
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    MaxLength = 24
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 2
-    Text = 'NewApp'
-  end
-  object EditGENPath: TEdit
-    Left = 96
-    Top = 80
-    Width = 641
-    Height = 22
-    BevelInner = bvLowered
-    BevelOuter = bvNone
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    MaxLength = 256
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 3
-    OnEnter = EditGENPathEnter
-  end
   object RadioGroupAppType: TRadioGroup
     Left = 752
     Top = 8
@@ -1330,24 +1365,18 @@ object Form1: TForm1
     ParentCtl3D = False
     TabOrder = 5
   end
-  object EditAppPath: TEdit
-    Left = 96
-    Top = 16
-    Width = 641
-    Height = 22
-    BevelInner = bvLowered
-    BevelOuter = bvNone
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    MaxLength = 256
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 6
-    OnEnter = EditAppPathEnter
+  object RadioGroupAppFormat: TRadioGroup
+    Left = 752
+    Top = 120
+    Width = 169
+    Height = 137
+    Caption = 'Application format'
+    Items.Strings = (
+      'Normal application'
+      'Static library'
+      'Dinamic library'
+      'Service (windows)')
+    TabOrder = 12
   end
   object CDirectoryOutline: TCDirectoryOutline
     Left = 176
@@ -1390,35 +1419,6 @@ object Form1: TForm1
     Style = otOwnerDraw
     TabOrder = 4
     Data = {10}
-  end
-  object CheckBoxMemControl: TCheckBox
-    Left = 16
-    Top = 176
-    Width = 169
-    Height = 17
-    Caption = 'Add Mem Control'
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 11
-  end
-  object RadioGroupAppFormat: TRadioGroup
-    Left = 752
-    Top = 120
-    Width = 169
-    Height = 137
-    Caption = 'Application format'
-    Items.Strings = (
-      'Normal application'
-      'Static library'
-      'Dinamic library'
-      'Service (windows)')
-    TabOrder = 12
   end
   object TimerCheckStateButtonCreate: TTimer
     OnTimer = TimerCheckStateButtonCreateTimer

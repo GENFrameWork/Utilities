@@ -43,11 +43,14 @@
 #define NEWAPPCREATOR_CFG_SECTION_GENERAL				          __L("general")
 #define NEWAPPCREATOR_CFG_GENERAL_XPOS							      __L("xpos")
 #define NEWAPPCREATOR_CFG_GENERAL_YPOS									  __L("ypos")
-#define NEWAPPCREATOR_CFG_GENERAL_APPPATH									__L("app_path")
 #define NEWAPPCREATOR_CFG_GENERAL_GENPATH									__L("gen_path")
-#define NEWAPPCREATOR_CFG_GENERAL_APPCOPYRIGHT						__L("app_copyright")
-#define NEWAPPCREATOR_CFG_GENERAL_APPTYPE                 __L("app_type")
-#define NEWAPPCREATOR_CFG_GENERAL_APPFORMAT               __L("app_format")
+
+#define NEWAPPCREATOR_CFG_SECTION_APPLICATION 	          __L("general")
+#define NEWAPPCREATOR_CFG_APPLICATION_PATH								__L("path")
+#define NEWAPPCREATOR_CFG_APPLICATION_NAME								__L("name")
+#define NEWAPPCREATOR_CFG_APPLICATION_COPYRIGHT						__L("copyright")
+#define NEWAPPCREATOR_CFG_APPLICATION_TYPE                __L("type")
+#define NEWAPPCREATOR_CFG_APPLICATION_FORMAT              __L("format")
 
 #define NEWAPPCREATOR_CFG_SECTION_ADDITIONAL		          __L("additional")
 #define NEWAPPCREATOR_CFG_ADDITIONAL_TRACESYSTEM	        __L("tracesystem")
@@ -69,28 +72,24 @@ class NEWAPPCREATOR_CFG : public XFILECFG
     void														SetXPos																					(int xpos);
     int															GetYPos																					();
     void														SetYPos																					(int ypos);
-
-    XSTRING*                        GetAppPath                                      ();
     XSTRING*                        GetGENPath                                      ();
-    XSTRING*                        GetAppCopyright                                 ();
 
-    XDWORD                          GetAPPType                                      ();
-    void                            SetAPPType                                      (XDWORD app_type);
+    XSTRING*                        Application_GetPath                             ();
+    XSTRING*                        Application_GetName                             ();
+    XSTRING*                        Application_GetCopyright                        ();
+    XDWORD                          Application_GetType                             ();
+    void                            Application_SetType                             (XDWORD type);
+    XDWORD                          Application_GetFormat                           ();
+    void                            Application_SetFormat                           (XDWORD format);
 
-    XDWORD                          GetAPPFormat                                    ();
-    void                            SetAPPFormat                                    (XDWORD app_format);
-
-    bool                            GetAddTraceSystem                               ();
-    void                            SetAddTraceSystem                               (bool trace_system);
-
-    bool                            GetAddMemCtrlSystem                             ();
-    void                            SetAddMemCtrlSystem                             (bool memctrl_system);
-
-    bool                            GetAddLogSystem                                 ();
-    void                            SetAddLogSystem                                 (bool log_system);
-
-    bool                            GetAddCFGSystem                                 ();
-    void                            SetAddCFGSystem                                 (bool cfg_system);
+    bool                            Additional_GetTraceSystem                       ();
+    void                            Additional_SetTraceSystem                       (bool tracesystem);
+    bool                            Additional_GetMemCtrlSystem                     ();
+    void                            Additional_SetMemCtrlSystem                     (bool memctrlsystem);
+    bool                            Additional_GetLogSystem                         ();
+    void                            Additional_SetLogSystem                         (bool logsystem);
+    bool                            Additional_GetCFGSystem                         ();
+    void                            Additional_SetCFGSystem                         (bool cfgsystem);
 
 		virtual bool										Default																					();
 
@@ -100,18 +99,18 @@ class NEWAPPCREATOR_CFG : public XFILECFG
 
 		int															xpos;
 		int															ypos;
-
-    XSTRING                         app_path;
     XSTRING                         gen_path;
-    XSTRING                         app_copyright;
 
-    XDWORD                          app_type;
-    XDWORD                          app_format;
+    XSTRING                         application_path;
+    XSTRING                         application_name;
+    XSTRING                         application_copyright;
+    XDWORD                          application_type;
+    XDWORD                          application_format;
 
-    bool                            trace_system;
-    bool                            memctrl_system;  
-  	bool                            log_system;
-    bool                            cfg_system;
+    bool                            additional_tracesystem;
+    bool                            additional_memctrlsystem;
+  	bool                            additional_logsystem;
+    bool                            additional_cfgsystem;
 };
 
 

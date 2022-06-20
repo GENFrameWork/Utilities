@@ -64,6 +64,7 @@ class APPMODULEELEMENT
 
     NEWAPPCREATOR_DIRTYPE   dirtype;
     XSTRING                 namefile;
+    XFILETXT*               fileTXT;
 
   private:
 
@@ -76,49 +77,49 @@ class TForm1 : public TForm
 {
   __published:	// IDE-managed Components
 
-    TBitBtn*                ButtonExit;
-    TBitBtn*                ButtonCreate;
-    TLabel*                 VersionLabel;
-    TImage*                 IMGMain;
-    TEdit*                  EditAppName;
-    TLabel*                 LabelAppName;
-    TLabel*                 LabelGENPath;
-    TEdit*                  EditGENPath;
-    TCDirectoryOutline*     CDirectoryOutline;
-    TRadioGroup*            RadioGroupAppType;
-    TEdit*                  EditAppPath;
-    TLabel*                 LabelAppPath;
-    TTimer*                 TimerCheckStateButtonCreate;
-    TCheckBox*              CheckBoxLog;
-    TCheckBox*              CheckBoxTrace;
-    TEdit*                  EditCopyright;
-    TLabel*                 LabelCopyright;
-    TCheckBox*              CheckBoxCFGFile;
-    TCheckBox*              CheckBoxMemControl;
-    TRadioGroup*            RadioGroupAppFormat;
+    TBitBtn*                        ButtonExit;
+    TBitBtn*                        ButtonCreate;
+    TLabel*                         VersionLabel;
+    TImage*                         IMGMain;
+    TEdit*                          EditAppName;
+    TLabel*                         LabelAppName;
+    TLabel*                         LabelGENPath;
+    TEdit*                          EditGENPath;
+    TCDirectoryOutline*             CDirectoryOutline;
+    TRadioGroup*                    RadioGroupAppType;
+    TEdit*                          EditAppPath;
+    TLabel*                         LabelAppPath;
+    TTimer*                         TimerCheckStateButtonCreate;
+    TCheckBox*                      CheckBoxLog;
+    TCheckBox*                      CheckBoxTrace;
+    TEdit*                          EditCopyright;
+    TLabel*                         LabelCopyright;
+    TCheckBox*                      CheckBoxCFGFile;
+    TCheckBox*                      CheckBoxMemControl;
+    TRadioGroup*                    RadioGroupAppFormat;
 
-    void __fastcall         ButtonExitClick                     (TObject *Sender);
-    void __fastcall         FormCreate                          (TObject *Sender);
-    void __fastcall         EditAppPathEnter                    (TObject *Sender);
-    void __fastcall         CDirectoryOutlineDblClick           (TObject *Sender);
-    void __fastcall         EditGENPathEnter                    (TObject *Sender);
-    void __fastcall         TimerCheckStateButtonCreateTimer    (TObject *Sender);
-    void __fastcall         FormClose                           (TObject *Sender, TCloseAction &Action);
-    void __fastcall         ButtonCreateClick                   (TObject *Sender);
+    void __fastcall                 ButtonExitClick                     (TObject *Sender);
+    void __fastcall                 FormCreate                          (TObject *Sender);
+    void __fastcall                 EditAppPathEnter                    (TObject *Sender);
+    void __fastcall                 CDirectoryOutlineDblClick           (TObject *Sender);
+    void __fastcall                 EditGENPathEnter                    (TObject *Sender);
+    void __fastcall                 TimerCheckStateButtonCreateTimer    (TObject *Sender);
+    void __fastcall                 FormClose                           (TObject *Sender, TCloseAction &Action);
+    void __fastcall                 ButtonCreateClick                   (TObject *Sender);
 
   private:	// User declarations
 
-    NEWAPPCREATOR_CFG*		  cfg;
-    XVECTOR<XFILETXT*>      filestocreate;
-
+    NEWAPPCREATOR_CFG*		          cfg;
+    XVECTOR<APPMODULEELEMENT*>      appmoduleselements;
 
   public:		// User declarations
 
-    __fastcall              TForm1                              (TComponent* Owner);
+    __fastcall                      TForm1                              (TComponent* Owner);
 
-    bool                    AjustUserInterfaceToCFG             ();
-    APPMODULEELEMENT*       CreateAppModuleElement              (NEWAPPCREATOR_DIRTYPE dirtype, XCHAR* namefileliteral);
-    bool                    LoadToMemoryFiles                   (NEWAPPCREATOR_APPTYPE apptype);
+    bool                            AjustUserInterfaceToCFG             ();
+    APPMODULEELEMENT*               CreateAppModuleElement              (NEWAPPCREATOR_DIRTYPE dirtype, XCHAR* namefileliteral);
+    bool                            LoadToMemoryFiles                   (NEWAPPCREATOR_APPTYPE apptype);
+    bool                            ChangeFileInMemory                  (APPMODULEELEMENT* appmoduleelement, XCHAR* search, XCHAR* changeto); 
 };
 
 //---------------------------------------------------------------------------
