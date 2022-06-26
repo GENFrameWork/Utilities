@@ -4,7 +4,7 @@
 *
 * @class      UNIT1
 * @brief      Unit1
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez 
 * @date       01/03/2016 12:00

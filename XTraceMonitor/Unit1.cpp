@@ -4,7 +4,7 @@
 *
 * @class      UNIT1
 * @brief      Unit1
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez 
 * @date       01/03/2016 12:00
@@ -104,7 +104,7 @@ TMainForm *MainForm;
 *
 * @fn         void __fastcall TMainForm::FormCreate(TObject*Sender)
 * @brief      FormCreate
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -287,7 +287,7 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 *
 * @fn         void __fastcall TMainForm::FormClose(TObject*Sender, TCloseAction &Action)
 * @brief      FormClose
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -402,7 +402,7 @@ void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
 *
 * @fn         void __fastcall TMainForm::ActivarMensajeria1Click(TObject*Sender)
 * @brief      ActivarMensajeria1Click
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -422,7 +422,7 @@ void __fastcall TMainForm::ActivarMensajeria1Click(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::FormCanResize(TObject*Sender, int &NewWidth, int &NewHeight, bool &Resize)
 * @brief      FormCanResize
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -446,7 +446,7 @@ void __fastcall TMainForm::FormCanResize(TObject *Sender, int &NewWidth, int &Ne
 *
 * @fn         void __fastcall TMainForm::ButtonClearClick(TObject*Sender)
 * @brief      ButtonClearClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -474,7 +474,7 @@ void __fastcall TMainForm::ButtonClearClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonStopClick(TObject*Sender)
 * @brief      ButtonStopClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -504,7 +504,7 @@ void __fastcall TMainForm::ButtonStopClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonMinimizeClick(TObject*Sender)
 * @brief      ButtonMinimizeClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -524,7 +524,7 @@ void __fastcall TMainForm::ButtonMinimizeClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonExitClick(TObject*Sender)
 * @brief      ButtonExitClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -544,7 +544,7 @@ void __fastcall TMainForm::ButtonExitClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::Clearmessages1Click(TObject*Sender)
 * @brief      Clearmessages1Click
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -564,7 +564,7 @@ void __fastcall TMainForm::Clearmessages1Click(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::Exit1Click(TObject*Sender)
 * @brief      Exit1Click
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -584,7 +584,7 @@ void __fastcall TMainForm::Exit1Click(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::Minimizewindow1Click(TObject*Sender)
 * @brief      Minimizewindow1Click
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -604,7 +604,7 @@ void __fastcall TMainForm::Minimizewindow1Click(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonCopyClick(TObject*Sender)
 * @brief      ButtonCopyClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -627,7 +627,7 @@ void __fastcall TMainForm::ButtonCopyClick(TObject *Sender)
 *
 * @fn         bool __fastcall TMainForm::GenerateTab(int ntab,AnsiString& tab)
 * @brief      GenerateTab
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -655,7 +655,7 @@ bool __fastcall TMainForm::GenerateTab(int ntab,AnsiString& tab)
 *
 * @fn         void __fastcall TMainForm::FilterCheckBoxClick(TObject*Sender)
 * @brief      FilterCheckBoxClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -677,7 +677,7 @@ void __fastcall TMainForm::FilterCheckBoxClick(TObject *Sender)
 *
 * @fn         bool __fastcall TMainForm::CheckFilterLine(AnsiString& line)
 * @brief      CheckFilterLine
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -702,7 +702,7 @@ bool __fastcall TMainForm::CheckFilterLine(AnsiString& line)
 *
 * @fn         void __fastcall TMainForm::ButtonDNSUpdateClick(TObject*Sender)
 * @brief      ButtonDNSUpdateClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -786,7 +786,7 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject*Sender)
 * @brief      ResolvedOriginTimerTimer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -808,7 +808,7 @@ void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::InternetUpdateTimerTimer(TObject*Sender)
 * @brief      InternetUpdateTimerTimer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -828,7 +828,7 @@ void __fastcall TMainForm::InternetUpdateTimerTimer(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::OriginsTreeViewChange(TObject* sender, TTreeNode* node)
 * @brief      OriginsTreeViewChange
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -880,7 +880,7 @@ void __fastcall TMainForm::OriginsTreeViewChange(TObject* sender, TTreeNode* nod
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterBlackClick(TObject*Sender)
 * @brief      CheckLevelFilterBlackClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -900,7 +900,7 @@ void __fastcall TMainForm::CheckLevelFilterBlackClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterBlueClick(TObject*Sender)
 * @brief      CheckLevelFilterBlueClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -920,7 +920,7 @@ void __fastcall TMainForm::CheckLevelFilterBlueClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterGreenClick(TObject*Sender)
 * @brief      CheckLevelFilterGreenClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -940,7 +940,7 @@ void __fastcall TMainForm::CheckLevelFilterGreenClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterPurpleClick(TObject*Sender)
 * @brief      CheckLevelFilterPurpleClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -960,7 +960,7 @@ void __fastcall TMainForm::CheckLevelFilterPurpleClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterRedClick(TObject*Sender)
 * @brief      CheckLevelFilterRedClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -980,7 +980,7 @@ void __fastcall TMainForm::CheckLevelFilterRedClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckLevelFilterGrayClick(TObject*Sender)
 * @brief      CheckLevelFilterGrayClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1000,7 +1000,7 @@ void __fastcall TMainForm::CheckLevelFilterGrayClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::PanelLevelFilterClick(TObject*Sender)
 * @brief      PanelLevelFilterClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1028,7 +1028,7 @@ void __fastcall TMainForm::PanelLevelFilterClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::AddTimeMarkCheckBoxClick(TObject*Sender)
 * @brief      AddTimeMarkCheckBoxClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1048,7 +1048,7 @@ void __fastcall TMainForm::AddTimeMarkCheckBoxClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::TextTracingCheckBoxClick(TObject*Sender)
 * @brief      TextTracingCheckBoxClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1068,7 +1068,7 @@ void __fastcall TMainForm::TextTracingCheckBoxClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ShowIPsCheckBoxClick(TObject*Sender)
 * @brief      ShowIPsCheckBoxClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1088,7 +1088,7 @@ void __fastcall TMainForm::ShowIPsCheckBoxClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::FormActivate(TObject*Sender)
 * @brief      FormActivate
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1111,7 +1111,7 @@ void __fastcall TMainForm::FormActivate(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonSaveClick(TObject*Sender)
 * @brief      ButtonSaveClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1194,7 +1194,7 @@ void __fastcall TMainForm::ButtonSaveClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::AddDBMsgTimerTimer(TObject*Sender)
 * @brief      AddDBMsgTimerTimer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1214,7 +1214,7 @@ void __fastcall TMainForm::AddDBMsgTimerTimer(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::IPFilterImageClick(TObject*Sender)
 * @brief      IPFilterImageClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1249,7 +1249,7 @@ void __fastcall TMainForm::IPFilterImageClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::SplitterIPFilterMoved(TObject*Sender)
 * @brief      SplitterIPFilterMoved
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1285,7 +1285,7 @@ void __fastcall TMainForm::SplitterIPFilterMoved(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ServerIPComboBoxChange(TObject*Sender)
 * @brief      ServerIPComboBoxChange
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1322,7 +1322,7 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ServerUARTComboBoxChange(TObject*Sender)
 * @brief      ServerUARTComboBoxChange
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1367,7 +1367,7 @@ void __fastcall TMainForm::ServerUARTComboBoxChange(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::SplitterStatusMsgMoved(TObject *Sender)
 * @brief      SplitterStatusMsgMoved
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1399,7 +1399,7 @@ void __fastcall TMainForm::SplitterStatusMsgMoved(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::CheckBoxMsgStatusClick(TObject *Sender)
 * @brief      CheckBoxMsgStatusClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1427,7 +1427,7 @@ void __fastcall TMainForm::CheckBoxMsgStatusClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ButtonClearStatusClick(TObject*Sender)
 * @brief      ButtonClearClick
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1457,7 +1457,7 @@ void __fastcall TMainForm::ButtonClearStatusClick(TObject *Sender)
 *
 * @fn         void __fastcall TMainForm::ValueListEditorDrawCell(TObject*Sender, int ACol, int ARow, const TRect &Rect, TGridDrawState State)
 * @brief      ValueListEditorDrawCell
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1538,7 +1538,7 @@ void __fastcall TMainForm::ValueListEditorDrawCell(TObject *Sender, int ACol, in
 *
 * @fn         void __fastcall TMainForm::TimerStatusMSGTimer(TObject *Sender)
 * @brief      TimerStatusMSGTimer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1558,7 +1558,7 @@ void __fastcall TMainForm::TimerStatusMSGTimer(TObject *Sender)
 *
 * @fn         void TMainForm::AddDBGmessageManager()
 * @brief      AddDBGmessageManager
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1705,7 +1705,7 @@ void TMainForm::AddDBGmessageManager()
 *
 * @fn         __fastcall TMainForm::TMainForm(TComponent* Owner)
 * @brief      TMainForm
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1735,7 +1735,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner) : TForm(Owner)
 *
 * @fn         void __fastcall TMainForm::CheckCopyData(Messages::TMessage &Message)
 * @brief      CheckCopyData
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1793,7 +1793,7 @@ void __fastcall TMainForm::CheckCopyData(Messages::TMessage &Message)
 *
 * @fn         bool TMainForm::UpdateInternetStatus()
 * @brief      UpdateInternetStatus
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1830,7 +1830,7 @@ bool TMainForm::UpdateInternetStatus()
 *
 * @fn         bool TMainForm::ActivateButtons(bool active)
 * @brief      ActivateButtons
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1859,7 +1859,7 @@ bool TMainForm::ActivateButtons(bool active)
 *
 * @fn         bool TMainForm::RefreshStatusTextFilter()
 * @brief      RefreshStatusTextFilter
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1886,7 +1886,7 @@ bool TMainForm::RefreshStatusTextFilter()
 *
 * @fn         TRichEdit* TMainForm::CreateRitchText()
 * @brief      CreateRitchText
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1927,7 +1927,7 @@ TRichEdit* TMainForm::CreateRitchText()
 *
 * @fn         TValueListEditor* TMainForm::CreateValueListEditor()
 * @brief      CreateValueListEditor
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -1974,7 +1974,7 @@ TValueListEditor* TMainForm::CreateValueListEditor()
 *
 * @fn         ORIGIN* TMainForm::CreateOrigin(ORIGIN* father, XTRACEMONITOR_ORIGINCFG* origincfg)
 * @brief      CreateOrigin
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2048,7 +2048,7 @@ ORIGIN* TMainForm::CreateOrigin(ORIGIN* father, XTRACEMONITOR_ORIGINCFG* originc
 *
 * @fn         bool TMainForm::CreateOriginsFromConfig()
 * @brief      CreateOriginsFromConfig
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2153,7 +2153,7 @@ bool TMainForm::CreateOriginsFromConfig(bool addUART)
 *
 * @fn         ORIGIN* TMainForm::CreateOriginsFromIP(XDWORD publicIP, bool publicIPnopacket, XDWORD localIP)
 * @brief      CreateOriginsFromIP
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2258,7 +2258,7 @@ ORIGIN* TMainForm::CreateOriginsFromIP(XDWORD publicIP, bool publicIPnopacket, X
 *
 * @fn         bool TMainForm::CreateOriginsFromUART()
 * @brief      CreateOriginsFromUART
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2299,7 +2299,7 @@ bool TMainForm::CreateOriginFromUART()
 *
 * @fn         bool TMainForm::DeleteOriginFromUART()
 * @brief      DeleteOriginFromUART
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2326,7 +2326,7 @@ bool TMainForm::DeleteOriginFromUART()
 *
 * @fn         ORIGIN* TMainForm::GetOriginFromIP(XDWORD publicIP, XDWORD localIP)
 * @brief      GetOriginFromIP
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2365,7 +2365,7 @@ ORIGIN* TMainForm::GetOriginFromIP(XDWORD publicIP, XDWORD localIP)
 *
 * @fn         ORIGIN* TMainForm::GetOriginFromTreeNode(TTreeNode* node)
 * @brief      GetOriginFromTreeNode
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2399,7 +2399,7 @@ ORIGIN* TMainForm::GetOriginFromTreeNode(TTreeNode* node)
 *
 * @fn         ORIGIN* TMainForm::GetActualOrigin()
 * @brief      GetActualOrigin
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2420,7 +2420,7 @@ ORIGIN* TMainForm::GetActualOrigin()
 *
 * @fn         void TMainForm::ResolvedAllURLOrigins()
 * @brief      ResolvedAllURLOrigins
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2486,7 +2486,7 @@ void TMainForm::ResolvedAllURLOrigins()
 *
 * @fn         bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
 * @brief      AddLineTrace
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2682,7 +2682,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
 *
 * @fn         void TMainForm::UpdateRunStopButton(bool run)
 * @brief      UpdateRunStopButton
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2703,7 +2703,7 @@ void TMainForm::UpdateRunStopButton(bool run)
 *
 * @fn         bool TMainForm::AddDBGMessage(XDWORD publicIP, bool publicIPnopacket, XDWORD localIP, XBYTE level, XDWORD sequence, XDATETIME& xtime, XSTRING& string)
 * @brief      AddDBGMessage
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2745,7 +2745,7 @@ bool TMainForm::AddDBGMessage(XDWORD publicIP, bool publicIPnopacket, XDWORD loc
 *
 * @fn         void TMainForm::GenerateIPString(XDWORD IP, XSTRING& IPstring)
 * @brief      GenerateIPString
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2766,7 +2766,7 @@ void TMainForm::GenerateIPString(XDWORD IP, XSTRING& IPstring)
 *
 * @fn         void TMainForm::UpdateLevelFilterStatus()
 * @brief      UpdateLevelFilterStatus
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2789,7 +2789,7 @@ void TMainForm::UpdateLevelFilterStatus()
 *
 * @fn         void TMainForm::CheckLevelFilter(TCheckBox* checkbox, XDWORD mask)
 * @brief      CheckLevelFilter
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2816,7 +2816,7 @@ void TMainForm::CheckLevelFilter(TCheckBox* checkbox, XDWORD mask)
 *
 * @fn         bool TMainForm::IsActiveLevelFilter(int level)
 * @brief      IsActiveLevelFilter
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2857,7 +2857,7 @@ bool TMainForm::IsActiveLevelFilter(int level)
 *
 * @fn         void TMainForm::UpdateIPFilterImage()
 * @brief      UpdateIPFilterImage
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2884,7 +2884,7 @@ void TMainForm::UpdateIPFilterImage()
 *
 * @fn         bool TMainForm::PrintStatus(XCHAR* mask, ...)
 * @brief      PrintStatus
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2923,7 +2923,7 @@ bool TMainForm::PrintStatus(XCHAR* mask, ...)
 *
 * @fn         bool TMainForm::GetNameNode(ORIGIN* origin, XSTRING& namenode)
 * @brief      GetNameNode
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -2977,7 +2977,7 @@ bool TMainForm::GetNameNode(ORIGIN* origin, XSTRING& namenode)
 *
 * @fn         void TMainForm::InitServerList()
 * @brief      InitServerList
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3016,7 +3016,7 @@ void TMainForm::InitServerList()
 *
 * @fn         bool TMainForm::OpenUDPServer(XSTRING* servercfg)
 * @brief      OpenUDPServer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3065,7 +3065,7 @@ bool TMainForm::OpenUDPServer(XSTRING* servercfg)
 *
 * @fn         bool TMainForm::CloseUDPServer()
 * @brief      CloseUDPServer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3098,7 +3098,7 @@ bool TMainForm::CloseUDPServer()
 *
 * @fn         bool TMainForm::OpenUARTServer(XSTRING* servercfg)
 * @brief      OpenUARTServer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3142,7 +3142,7 @@ bool TMainForm::OpenUARTServer(XSTRING* servercfg)
 *
 * @fn         bool TMainForm::CloseUARTServer()
 * @brief      CloseUARTServer
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3173,7 +3173,7 @@ bool TMainForm::CloseUARTServer()
 *
 * @fn         bool TMainForm::RedrawStatusMsgList()
 * @brief      RedrawStatusMsgList
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3235,7 +3235,7 @@ bool TMainForm::RedrawStatusMsgList(ORIGIN* origin)
 *
 * @fn         void TMainForm::ThreadReadUDPFunction(void* param)
 * @brief      ThreadReadUDPFunction
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3333,7 +3333,7 @@ void TMainForm::ThreadReadUDPFunction(void* param)
 *
 * @fn         void TMainForm::ThreadReadUARTFunction(void* param)
 * @brief      ThreadReadUARTFunction
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -3401,7 +3401,7 @@ void TMainForm::ThreadReadUARTFunction(void* param)
 * @fn         void TMainForm::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00

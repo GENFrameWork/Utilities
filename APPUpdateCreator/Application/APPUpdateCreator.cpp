@@ -98,7 +98,7 @@ APPLICATIONCREATEINSTANCE(APPUPDATECREATOR, appupdatecreator)
 *
 * @fn         APPUPDATECREATOR::APPUPDATECREATOR()
 * @brief      Constructor
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -117,7 +117,7 @@ APPUPDATECREATOR::APPUPDATECREATOR():  XFSMACHINE(0)
 * @fn         APPUPDATECREATOR::~APPUPDATECREATOR()
 * @brief      Destructor
 * @note       VIRTUAL
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -136,7 +136,7 @@ APPUPDATECREATOR::~APPUPDATECREATOR()
 *
 * @fn         bool APPUPDATECREATOR::InitFSMachine()
 * @brief      Init FS Machine
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -173,7 +173,7 @@ bool APPUPDATECREATOR::InitFSMachine()
 *
 * @fn         bool APPUPDATECREATOR::AppProc_Ini()
 * @brief      AppProc_Ini
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -256,7 +256,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
 *
 * @fn         bool APPUPDATECREATOR::AppProc_FirstUpdate()
 * @brief      Application callback First Update
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -278,7 +278,7 @@ bool APPUPDATECREATOR::AppProc_FirstUpdate()
 *
 * @fn         bool APPUPDATECREATOR::AppProc_Update()
 * @brief      Application Callback Update
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -354,7 +354,7 @@ bool APPUPDATECREATOR::AppProc_Update()
 *
 * @fn         bool APPUPDATECREATOR::AppProc_End()
 * @brief      Application Callback End
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -398,7 +398,7 @@ bool APPUPDATECREATOR::AppProc_End()
 *
 * @fn         bool APPUPDATECREATOR::Show_Header(bool separator)
 * @brief      Show Header
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -427,7 +427,7 @@ bool APPUPDATECREATOR::Show_Header(bool separator)
 *
 * @fn         bool APPUPDATECREATOR::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
 * @brief      Show_Line
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez 
 * @date       01/03/2016 12:00
@@ -468,7 +468,7 @@ bool APPUPDATECREATOR::Show_Line(XSTRING& string, XSTRING& string2, int tab, boo
 *
 * @fn         bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata)
 * @brief      GetApplicationParam
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -559,7 +559,7 @@ bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VE
 *
 * @fn         bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefiles)
 * @brief      CreateListOfFiles
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -610,7 +610,7 @@ bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefi
 *
 * @fn         bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata, XDWORD& nfiles, XDWORD& sizetotal)
 * @brief      GenerateUpdateFile
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -708,7 +708,7 @@ bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VER
 * @fn         void APPUPDATECREATOR::HandleEvent(XEVENT* xevent)
 * @brief      Handle Event for the observer manager of this class
 * @note       INTERNAL
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00
@@ -729,7 +729,7 @@ void APPUPDATECREATOR::HandleEvent(XEVENT* xevent)
 * @fn         void APPUPDATECREATOR::Clean()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
-* @ingroup    UTILS
+* @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
 * @date       01/03/2016 12:00

@@ -165,7 +165,7 @@ namespace Remarks
               {
                 // Types
                 if (directory.Contains("Application"))              groupID = "APPLICATION";
-                if (directory.Contains("Utils"))                    groupID = "UTILS";
+                if (directory.Contains("XUtils"))                   groupID = "XUTILS";
                 if (directory.Contains("DataIO"))                   groupID = "DATAIO";
                 if (directory.Contains("Graphic"))                  groupID = "GRAPHIC";
                 if (directory.Contains("Sound"))                    groupID = "SOUND";
