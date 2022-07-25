@@ -15,7 +15,6 @@ D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\VSCT.read.1.tlog
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\VSCT.write.1.tlog
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\resources.json
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\ctoFiles.json
-D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\_EmptyResource.resources.original
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\mergeCto.cache
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\Remarks.csproj.CoreCompileInputs.cache
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\Remarks.csproj.CopyComplete
@@ -26,3 +25,4 @@ D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\Remarks.latest.pk
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\extension.vsixmanifest
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\files.json
 D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\createTemplateManifests.cache
+D:\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Debug\_EmptyResource.resources.original

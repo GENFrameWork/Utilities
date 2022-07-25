@@ -132,8 +132,9 @@ namespace Remarks
             Instance = new FunctionGEN(package);
         }
 
-        private void GetGroupID(string directory, ref bool isGEN, ref string groupID)
+        private void GetGroupID(string directory, ref bool isGEN, ref bool isUnitTest, ref string groupID)
         {
+            isUnitTest = false;
             isGEN = false;
 
             groupID = "";
@@ -163,6 +164,11 @@ namespace Remarks
                 if (directory.Contains("Media"))                    groupID = "MEDIA";
                 if (directory.Contains("Physics"))                  groupID = "PHYSICS";
                 if (directory.Contains("ArtificialIntelligence"))   groupID = "ARTIFICIALINTELLIGENCE";
+                if (directory.Contains("UnitTests"))                
+                  {
+                    isUnitTest = true;
+                    groupID = "UNIT TEST";
+                  }
 
                 // Platforms
                 if (directory.Contains("Windows"))                  groupID = "PLATFORM_WINDOWS";
@@ -298,11 +304,12 @@ namespace Remarks
                 string  date        = DateTime.Now.ToString();
                 string  directory   = "";
                 bool    isGEN       = false;
+                bool    isUnitTest  = false;
                 string  group       = "";
 
                 directory = Path.GetDirectoryName(dtename);
 
-                GetGroupID(directory, ref isGEN, ref group);
+                GetGroupID(directory, ref isGEN, ref isUnitTest, ref group);
 
                 string   result;
 
@@ -332,39 +339,53 @@ namespace Remarks
 
                 result  = "/**-------------------------------------------------------------------------------------------------------------------\n";
                 result += "\n";
-                result += "@fn \t\t\t\t"    + text        + "\n";
-                result += "@brief\t\t\t"    + description + "\n";
-                if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
-                if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";
-                result += "@ingroup\t\t"    + group       + "\n";
-                //result += "\n";
-                //result += "@author \t\t"    + author      + "\n";
-                //result += "@date\t\t\t\t"   + date        + "\n";
 
-                if(parameters != null)
+                if(isUnitTest)
                   {
-                    if(parameters.Length != 0)
+                    result += "@fn \t\t\t\t"    + text        + "\n";
+                    result += "@brief\t\t\t"    + "Unit test of " + parameters[0] + ": " + parameters[1] + "\n";
+                    if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
+                    if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";
+                    result += "@ingroup\t\t"    + group       + "\n";
+                    //result += "\n";
+                    //result += "@author \t\t"    + author      + "\n";
+                    //result += "@date\t\t\t\t"   + date        + "\n";  
+                  }
+                 else
+                  { 
+                    result += "@fn \t\t\t\t"    + text        + "\n";
+                    result += "@brief\t\t\t"    + description + "\n";
+                    if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
+                    if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";
+                    result += "@ingroup\t\t"    + group       + "\n";
+                    //result += "\n";
+                    //result += "@author \t\t"    + author      + "\n";
+                    //result += "@date\t\t\t\t"   + date        + "\n";
+
+                    if(parameters != null)
                       {
-                        if(parameters[0].Length != 0)
+                        if(parameters.Length != 0)
                           {
-                            result += "\n";
-
-                            for(i = 0; i < parameters.Length; i++)
+                            if(parameters[0].Length != 0)
                               {
-                                // Default use param["in"] because is it is more likely
+                                result += "\n";
 
-                                if(parameters[i].Length != 0) result += "@param[in]\t" + parameters[i] + " : \n";
+                                for(i = 0; i < parameters.Length; i++)
+                                  {
+                                    // Default use param["in"] because is it is more likely
 
+                                    if(parameters[i].Length != 0) result += "@param[in]\t" + parameters[i] + " : \n";
+
+                                  }
                               }
                           }
                       }
-                  }
-
+                  }  
+                
                 result += "\n";
 
                 if(returntype.Length == 0)
                   {
-
                     result += "@return\t\t\t" +"Does not return anything. \n";
                   }
                  else
@@ -373,24 +394,23 @@ namespace Remarks
                       {
                         result += "@return\t\t\t" + returntype + " : does not return anything. \n";
                       }
-                     else
+                      else
                       {
                         if(returntype == "bool")
                           {
                             result += "@return\t\t\t" + returntype + " : true if is succesful. \n";
                           }
-                         else
+                          else
                           {
                             result += "@return\t\t\t" + returntype + " : \n";
                           }
                       }
                   }
-
+                           
                 result += "\n";
                 result += "--------------------------------------------------------------------------------------------------------------------*/\n";
                 result += selection.Text;
-
-                selection.Text = result;
+                selection.Text = result;                
             }
         }
     }
