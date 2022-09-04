@@ -1993,10 +1993,11 @@ object MainForm: TMainForm
         Left = 10
         Top = 38
         Width = 223
-        Height = 22
+        Height = 20
         BevelEdges = []
         BevelInner = bvNone
         BevelOuter = bvNone
+        Style = csOwnerDrawFixed
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText
@@ -2013,10 +2014,11 @@ object MainForm: TMainForm
         Left = 10
         Top = 99
         Width = 223
-        Height = 22
+        Height = 20
         BevelEdges = []
         BevelInner = bvNone
         BevelOuter = bvNone
+        Style = csOwnerDrawFixed
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clWindowText

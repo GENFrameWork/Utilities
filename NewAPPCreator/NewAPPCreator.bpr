@@ -31,7 +31,7 @@
       inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
       bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
       indy.bpi bcb2kaxserver.bpi"/>
-    <PATHCPP value=".;..\..\GEN\Platforms\Windows;..\..\GEN\Utils;..\..\GEN\Cipher"/>
+    <PATHCPP value=".;..\..\GEN\Platforms\Windows;..\..\GEN\XUtils;..\..\GEN\Cipher"/>
     <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
@@ -41,15 +41,15 @@
     <USERDEFINES value="WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE"/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
     <MAINSOURCE value="NewAPPCreator.cpp"/>
-    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher"/>
-    <LIBPATH value="..\..\GEN\Cipher;..\..\GEN\Utils;..\..\GEN\Platforms\Windows;&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;.;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher"/>
+    <LIBPATH value="..\..\GEN\Cipher;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;.;$(BCB)\lib\obj;$(BCB)\lib"/>
     <WARNINGS value="-w-par"/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
     <IDLCFLAGS value="-I$(BCB)\include -I$(BCB)\include\vcl 
       -I&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot; -I. -I..\..\GEN 
-      -I..\..\GEN\Common -I..\..\GEN\Utils -I..\..\GEN\DataIO 
+      -I..\..\GEN\Common -I..\..\GEN\XUtils -I..\..\GEN\DataIO 
       -I..\..\GEN\Platforms\Windows -I..\..\GEN\Cipher -src_suffix cpp -DWIN32 
       -DWINDOWS -DLARGE_ADDRESS_AWARE -DHW_PC -DBUILDER -DXDEBUG_TRACE -DUNICODE 
       -DDIO_ACTIVE -DDIOUDP_ACTIVE -boa"/>
@@ -79,37 +79,37 @@
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSThread.cpp" FORMNAME="" UNITNAME="XWINDOWSThread.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSTimer.cpp" FORMNAME="" UNITNAME="XWINDOWSTimer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSTrace.cpp" FORMNAME="" UNITNAME="XWINDOWSTrace.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XBase.cpp" FORMNAME="" UNITNAME="XBase.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XBuffer.cpp" FORMNAME="" UNITNAME="XBuffer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XDateTime.cpp" FORMNAME="" UNITNAME="XDateTime.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XDir.cpp" FORMNAME="" UNITNAME="XDir.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFactory.cpp" FORMNAME="" UNITNAME="XFactory.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFile.cpp" FORMNAME="" UNITNAME="XFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XSleep.cpp" FORMNAME="" UNITNAME="XSleep.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XString.cpp" FORMNAME="" UNITNAME="XString.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XVariant.cpp" FORMNAME="" UNITNAME="XVariant.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XLanguage_ISO_639_3.cpp" FORMNAME="" UNITNAME="XLanguage_ISO_639_3.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XSystem.cpp" FORMNAME="" UNITNAME="XSystem.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XTranslation.cpp" FORMNAME="" UNITNAME="XTranslation.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XTranslation_GEN.cpp" FORMNAME="" UNITNAME="XTranslation_GEN.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFileJSON.cpp" FORMNAME="" UNITNAME="XFileJSON.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFileTXT.cpp" FORMNAME="" UNITNAME="XFileTXT.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XPath.cpp" FORMNAME="" UNITNAME="XPath.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XPathsManager.cpp" FORMNAME="" UNITNAME="XPathsManager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XThread.cpp" FORMNAME="" UNITNAME="XThread.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XTimer.cpp" FORMNAME="" UNITNAME="XTimer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XRand.cpp" FORMNAME="" UNITNAME="XRand" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XBase.cpp" FORMNAME="" UNITNAME="XBase.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XBuffer.cpp" FORMNAME="" UNITNAME="XBuffer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XDateTime.cpp" FORMNAME="" UNITNAME="XDateTime.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XDir.cpp" FORMNAME="" UNITNAME="XDir.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFactory.cpp" FORMNAME="" UNITNAME="XFactory.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFile.cpp" FORMNAME="" UNITNAME="XFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XSleep.cpp" FORMNAME="" UNITNAME="XSleep.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XString.cpp" FORMNAME="" UNITNAME="XString.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XVariant.cpp" FORMNAME="" UNITNAME="XVariant.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XLanguage_ISO_639_3.cpp" FORMNAME="" UNITNAME="XLanguage_ISO_639_3.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XSystem.cpp" FORMNAME="" UNITNAME="XSystem.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XTranslation.cpp" FORMNAME="" UNITNAME="XTranslation.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XTranslation_GEN.cpp" FORMNAME="" UNITNAME="XTranslation_GEN.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFileJSON.cpp" FORMNAME="" UNITNAME="XFileJSON.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFileTXT.cpp" FORMNAME="" UNITNAME="XFileTXT.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XPath.cpp" FORMNAME="" UNITNAME="XPath.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XPathsManager.cpp" FORMNAME="" UNITNAME="XPathsManager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XThread.cpp" FORMNAME="" UNITNAME="XThread.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XTimer.cpp" FORMNAME="" UNITNAME="XTimer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XRand.cpp" FORMNAME="" UNITNAME="XRand" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Cipher\Cipher.cpp" FORMNAME="" UNITNAME="Cipher" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSDir.cpp" FORMNAME="" UNITNAME="XWINDOWSDir.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSRand.cpp" FORMNAME="" UNITNAME="XWINDOWSRand.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSRegistryManager.cpp" FORMNAME="" UNITNAME="XWINDOWSRegistryManager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="NewAPPCreator_CFG.cpp" FORMNAME="" UNITNAME="NewAPPCreator_CFG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFileCFG.cpp" FORMNAME="" UNITNAME="XFileCFG.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XFileINI.cpp" FORMNAME="" UNITNAME="XFileINI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XEvent.cpp" FORMNAME="" UNITNAME="XEvent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XObserver.cpp" FORMNAME="" UNITNAME="XObserver.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XPublisher.cpp" FORMNAME="" UNITNAME="XPublisher.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\Utils\XSubject.cpp" FORMNAME="" UNITNAME="XSubject.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFileCFG.cpp" FORMNAME="" UNITNAME="XFileCFG.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFileINI.cpp" FORMNAME="" UNITNAME="XFileINI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XEvent.cpp" FORMNAME="" UNITNAME="XEvent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XObserver.cpp" FORMNAME="" UNITNAME="XObserver.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XPublisher.cpp" FORMNAME="" UNITNAME="XPublisher.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XSubject.cpp" FORMNAME="" UNITNAME="XSubject.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
@@ -144,19 +144,19 @@ Comments=
 
 [HistoryLists\hlIncludePath]
 Count=9
-Item0=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher
-Item1=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows
-Item2=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\Platforms\DataIO;..\..\GEN\Platforms\Windows
-Item3=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\Platforms\DIO;..\..\GEN\Platforms\Windows
-Item4=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils;..\..\GEN\Platforms\Windows
-Item5=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\Utils
-Item6=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\include;$(BCB)\include\vcl;..\..\..\GEN;..\..\..\GEN\Common;..\..\..\GEN\Utils
-Item7=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Utils
+Item0=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher
+Item1=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\DataIO;..\..\GEN\Platforms\Windows
+Item2=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\Platforms\DataIO;..\..\GEN\Platforms\Windows
+Item3=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\Platforms\DIO;..\..\GEN\Platforms\Windows
+Item4=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
+Item5=$(BCB)\include;$(BCB)\include\vcl;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;..\..\GEN;..\..\GEN\Common;..\..\GEN\XUtils
+Item6=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\include;$(BCB)\include\vcl;..\..\..\GEN;..\..\..\GEN\Common;..\..\..\GEN\XUtils
+Item7=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\XUtils
 Item8=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\include;$(BCB)\include\vcl
 
 [HistoryLists\hlLibraryPath]
 Count=4
-Item0=..\..\GEN\Cipher;..\..\GEN\Utils;..\..\GEN\Platforms\Windows;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;$(BCB)\lib\obj;$(BCB)\lib
+Item0=..\..\GEN\Cipher;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;$(BCB)\lib\obj;$(BCB)\lib
 Item1=..\..\GEN\Platforms\Windows;C:\Program Files (x86)\Borland\CBuilder6\Projects;.;$(BCB)\lib\obj;$(BCB)\lib
 Item2=C:\Program Files (x86)\Borland\CBuilder6\Projects;.;$(BCB)\lib\obj;$(BCB)\lib
 Item3=C:\Program Files (x86)\Borland\CBuilder6\Projects;D:\GENFrameWork\Utils\NewAPPCreator;$(BCB)\lib\obj;$(BCB)\lib
