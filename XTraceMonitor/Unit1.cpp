@@ -2594,6 +2594,8 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
       line += __L("] ");
     }
 
+  line += DBGmessage->string.Get();
+
   if(DBGmessage->level)
 	  {
     	if((DBGmessage->level & XTRACE_LEVEL_WITHCOLOR) == XTRACE_LEVEL_WITHCOLOR)
@@ -2609,8 +2611,6 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
              case 4 : color = clRed;     break;
              case 5 : color = clGray;    break;
            }
-
-          line += DBGmessage->string.Get();
   			}
        else
 		    {
@@ -2620,7 +2620,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
     		  		//GenerateTab(DBGmessage->level & 0x0F, tabstr);
 
               //line += tabstr.c_str();
-              line += DBGmessage->string.Get();
+
 				    }
     			 else
 		    	  {
@@ -2631,7 +2631,6 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
                   //levelstr.Format(__L("%02d: %s"), (DBGmessage->level & 0x0F), DBGmessage->string.Get());
 
                   //line += (XCHAR*)levelstr.Get();
-                  line += DBGmessage->string.Get();
 				      	}
     				}
 		 		}
