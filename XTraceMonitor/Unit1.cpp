@@ -2594,14 +2594,12 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
       line += __L("] ");
     }
 
-  line += DBGmessage->string.Get();
-
   if(DBGmessage->level)
 	  {
-      if(!IsActiveLevelFilter(DBGmessage->level & 0x0f)) return false;
-
     	if((DBGmessage->level & XTRACE_LEVEL_WITHCOLOR) == XTRACE_LEVEL_WITHCOLOR)
 		 		{
+          if(!IsActiveLevelFilter(DBGmessage->level & 0x0f)) return false;
+
           switch(DBGmessage->level & 0x0f)
            {
              case 0 : color = clBlack;   break;
@@ -2611,34 +2609,32 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
              case 4 : color = clRed;     break;
              case 5 : color = clGray;    break;
            }
-  			}
 
-       /*
+          line += DBGmessage->string.Get();
+  			}
        else
 		    {
-          /*
     	  	if((DBGmessage->level & XTRACE_LEVEL_WITHTAB) == XTRACE_LEVEL_WITHTAB)
 		    		{
-				 			AnsiString tabstr;
-    		  		GenerateTab(DBGmessage->level & 0x0F, tabstr);
+				 			//AnsiString tabstr;
+    		  		//GenerateTab(DBGmessage->level & 0x0F, tabstr);
 
-              line += tabstr;
+              //line += tabstr.c_str();
               line += DBGmessage->string.Get();
-
 				    }
     			 else
 		    	  {
 				    	if((DBGmessage->level & XTRACE_LEVEL_WITHCODE) == XTRACE_LEVEL_WITHCODE)
 						 		{
-                  XSTRING levelstr;
+                  //XSTRING levelstr;
 
-                  levelstr.Format(__L("%02d: %s"), (DBGmessage->level & 0x0F), DBGmessage->string.Get());
+                  //levelstr.Format(__L("%02d: %s"), (DBGmessage->level & 0x0F), DBGmessage->string.Get());
 
-                  line  = (XCHAR*)levelstr.Get();
+                  //line += (XCHAR*)levelstr.Get();
+                  line += DBGmessage->string.Get();
 				      	}
     				}
 		 		}
-       */
    	}
 
   if(origin)
