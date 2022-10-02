@@ -56,30 +56,32 @@
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
-#define XTRACEMONITOR_CFGNAMEFILE	 	 			      __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL              __L("Version 7.5.0")
-#define XTRACEMONITOR_ROOTDIR                   __L("assets")
+#define XTRACEMONITOR_CFGNAMEFILE	 	 			                __L("XTraceMonitor")
+#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.5.0")
+#define XTRACEMONITOR_ROOTDIR                             __L("assets")
 
-#define XTRACEMONITOR_MASKLEVELBLACK            0x00000001
-#define XTRACEMONITOR_MASKLEVELPURPLE           0x00000002
-#define XTRACEMONITOR_MASKLEVELGREEN            0x00000004
-#define XTRACEMONITOR_MASKLEVELBLUE             0x00000008
-#define XTRACEMONITOR_MASKLEVELRED              0x00000010
-#define XTRACEMONITOR_MASKLEVELGRAY             0x00000020
+#define XTRACEMONITOR_MASKLEVELBLACK                      0x00000001
+#define XTRACEMONITOR_MASKLEVELPURPLE                     0x00000002
+#define XTRACEMONITOR_MASKLEVELGREEN                      0x00000004
+#define XTRACEMONITOR_MASKLEVELBLUE                       0x00000008
+#define XTRACEMONITOR_MASKLEVELRED                        0x00000010
+#define XTRACEMONITOR_MASKLEVELGRAY                       0x00000020
 
-#define XTRACEMONITOR_MAXSIZEINKUDPBUFFER       1024
-#define XTRACEMONITOR_MAXSIZEINKUARTBUFFER      1024
+#define XTRACEMONITOR_MAXSIZEINKUDPBUFFER                 1024
+#define XTRACEMONITOR_MAXSIZEINKUARTBUFFER                1024
 
-#define XTRACEMONITOR_MINBLOCKADDMSG            100000
+#define XTRACEMONITOR_MINBLOCKADDMSG                      100000
 
-#define XTRACEMONITOR_MINPUBLICIPFILTERWIDTH    0
-#define XTRACEMONITOR_MAXPUBLICIPFILTERWIDTH    450
+#define XTRACEMONITOR_MINPUBLICIPFILTERWIDTH              0
+#define XTRACEMONITOR_MAXPUBLICIPFILTERWIDTH              450
 
-#define XTRACEMONITOR_MINPUBLICSTATUSMSGWIDTH   200
-#define XTRACEMONITOR_MAXPUBLICSTATUSMSGWIDTH   350
+#define XTRACEMONITOR_MINPUBLICSTATUSMSGWIDTH             200
+#define XTRACEMONITOR_MAXPUBLICSTATUSMSGWIDTH             350
 
+#define XTRACEMONITOR_NODEORIGINDEFAULTNAME              __L("IP")
+#define XTRACEMONITOR_NODEORIGINDEFAULTNAMENOTPACKET     __L("IP*")
 
-#define XTRACEMONITOR_GRPVIEWPORT_ID_MAIN      __L("mainviewport")
+#define XTRACEMONITOR_GRPVIEWPORT_ID_MAIN                __L("mainviewport")
 
 /*---- CLASS ---------------------------------------------------------------------------------------------------------*/
 

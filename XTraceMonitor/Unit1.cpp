@@ -2168,8 +2168,8 @@ bool TMainForm::CreateOriginsFromConfig(bool addUART)
 ORIGIN* TMainForm::CreateOriginsFromIP(XDWORD publicIP, bool publicIPnopacket, XDWORD localIP)
 {
   XTRACEMONITOR_ORIGINCFG nodeorigincfg;
-  ORIGIN*               fatherorigin  = NULL;
-  ORIGIN*               origin;
+  ORIGIN*                 fatherorigin  = NULL;
+  ORIGIN*                 origin;
 
   if(!publicIP && !localIP)
     {
@@ -2193,11 +2193,11 @@ ORIGIN* TMainForm::CreateOriginsFromIP(XDWORD publicIP, bool publicIPnopacket, X
 
       nodeorigincfg.isactive = true;
       nodeorigincfg.showip   = true;
-
+      
       if(publicIPnopacket)
-            nodeorigincfg.name     = __L("*IP");
-       else nodeorigincfg.name     = __L("IP");
-       
+            nodeorigincfg.name     = XTRACEMONITOR_NODEORIGINDEFAULTNAMENOTPACKET;
+       else nodeorigincfg.name     = XTRACEMONITOR_NODEORIGINDEFAULTNAME;
+
       nodeorigincfg.URL      = __L("");
       nodeorigincfg.IP       = publicIPstring.Get();
 
@@ -2504,13 +2504,34 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
   if(!xdatetime)  return false;
 
   XSTRING     line;
-  TColor      color         = clBlack;
+  TColor      color                 = clBlack;
   XSTRING     datetimestring;
-  int         maxsize       = ((cfg->GetMaxTextSize())*1024);
-  int         sizetext      =  origin->ritchtext->GetTextLen();
-  int         indexcommand  = DBGmessage->string.Find(XTRACE_IDMSGSCREENCLEAR, false);
+  int         maxsize               = ((cfg->GetMaxTextSize())*1024);
+  int         sizetext              =  origin->ritchtext->GetTextLen();
+  int         indexcmdscreenclear   = DBGmessage->string.Find(XTRACE_IDMSGSCREENCLEAR  , false);
+  int         indexcmdchangestatus  = DBGmessage->string.Find(XTRACE_IDMSGSTATUS       , false);
+  int         indexcmdclearstatus   = DBGmessage->string.Find( XTRACE_IDMSGSTATUSCLEAR , false);
+  XSTRING     publicIP;
+  XSTRING     localIP;
+  bool        eraseorigin           = false;
 
-  if((sizetext >= maxsize) || (indexcommand != XSTRING_NOTFOUND))
+  if(indexcmdscreenclear != XSTRING_NOTFOUND)
+    {
+      XSTRING namenode;
+      GetNameNode(origin, namenode);
+
+      if(namenode.Find(__L("_"), true) != XSTRING_NOTFOUND)
+        {
+          eraseorigin   = true;
+        }
+    }
+
+  if(sizetext >= maxsize)
+    {
+      eraseorigin = true;
+    }
+
+  if(eraseorigin)
     {
       bool visible = origin->ritchtext->Visible;
 
@@ -2524,33 +2545,13 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
 
       line.Format(__L("Clear screen from %s"), namenode.Get());
 
-      if(sizetext >= maxsize)              line.AddFormat(__L(" for overlapped size %dk > %dk"), (sizetext/1024), (maxsize/1024));
-      if(indexcommand != XSTRING_NOTFOUND) line.AddFormat(__L(" for command clear screen"));
+      if(sizetext >= maxsize)                     line.AddFormat(__L(" for overlapped size %dk > %dk"), (sizetext/1024), (maxsize/1024));
+      if(indexcmdscreenclear != XSTRING_NOTFOUND) line.AddFormat(__L(" for command clear screen"));
 
       PrintStatus(line.Get());
 
-      if(indexcommand != XSTRING_NOTFOUND)
-        {
-          if(!cfg->IsShowCommandMsg())
-            {
-               return true;
-            }
-        }
-    }
-
-  indexcommand  = DBGmessage->string.Find(XTRACE_IDMSGSTATUSCLEAR, false);
-  if(indexcommand != XSTRING_NOTFOUND)
-    {
-      //ButtonClearStatusClick(NULL);
-
       origin->valuelisteditor->Strings->Clear();
       origin->status_msgs.StatusMsg_DeleteAll();
-
-
-      if(!cfg->IsShowCommandMsg())
-        {
-          return true;
-        }
     }
 
   if(cfg->IsShowIPs())
@@ -2612,28 +2613,6 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
              case 5 : color = clGray;    break;
            }
   			}
-       else
-		    {
-    	  	if((DBGmessage->level & XTRACE_LEVEL_WITHTAB) == XTRACE_LEVEL_WITHTAB)
-		    		{
-				 			//AnsiString tabstr;
-    		  		//GenerateTab(DBGmessage->level & 0x0F, tabstr);
-
-              //line += tabstr.c_str();
-
-				    }
-    			 else
-		    	  {
-				    	if((DBGmessage->level & XTRACE_LEVEL_WITHCODE) == XTRACE_LEVEL_WITHCODE)
-						 		{
-                  //XSTRING levelstr;
-
-                  //levelstr.Format(__L("%02d: %s"), (DBGmessage->level & 0x0F), DBGmessage->string.Get());
-
-                  //line += (XCHAR*)levelstr.Get();
-				      	}
-    				}
-		 		}
    	}
 
   if(origin)
@@ -2651,6 +2630,13 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
               if(!cfg->IsShowCommandMsg()) return true;
             }
 
+          if((indexcmdscreenclear  != XSTRING_NOTFOUND) || (indexcmdchangestatus != XSTRING_NOTFOUND) || (indexcmdclearstatus  != XSTRING_NOTFOUND))
+            {
+              if(!cfg->IsShowCommandMsg())
+                {
+                  return true;
+                }
+            }
 
           AnsiString  line_builder;
 
@@ -3276,6 +3262,7 @@ void TMainForm::ThreadReadUDPFunction(void* param)
             {
               if(!mainform->run) return;
 
+
               if((!publicIP) && (!address.IsEmpty()))
                 {
                   DIOIP pIP;
@@ -3293,11 +3280,10 @@ void TMainForm::ThreadReadUDPFunction(void* param)
                         {
                           publicIPnopacket = true;
                         }
-
-
                     }
                 }
-                
+
+
               XTRACE::instance->SetTraceDataToText(data, string);
 
               mainform->AddDBGMessage(publicIP, publicIPnopacket, localIP, level, sequence, xtime, string);
