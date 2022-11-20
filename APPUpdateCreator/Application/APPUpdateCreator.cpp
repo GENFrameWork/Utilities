@@ -41,6 +41,8 @@
 #include <string.h>
 #include <math.h>
 
+#include "Version.h"
+
 #include "XBase.h"
 #include "XPath.h"
 #include "XFactory.h"
@@ -412,9 +414,9 @@ bool APPUPDATECREATOR::Show_Header(bool separator)
 {
   XSTRING header;
 
-  if(!console->TipicalHeader_Create(2014, APPLICATION_NAMEAPP, APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR, APPLICATION_ENTERPRISE, header)) return false;
-
-  console->Printf(header.Get());
+  header = GEN_VERSION.GetAppTitle()->Get();
+  
+  console->Printf(__L(" %s"),header.Get());
   console->Printf(__L("\n"));
   if(separator) console->Printf(__L("\n"));
 

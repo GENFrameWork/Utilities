@@ -165,7 +165,7 @@ APPUPDATECREATOR_CFG::APPUPDATECREATOR_CFG(XCHAR* namefile) : APPCFG(namefile)
 
   Default();
 
-  Ini();
+  Ini<APPUPDATECREATOR_CFG>();
 }
 
 
