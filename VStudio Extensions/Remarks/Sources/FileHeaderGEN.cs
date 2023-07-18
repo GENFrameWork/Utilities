@@ -277,45 +277,53 @@ namespace Remarks
             selection.Text += "--------------------------------------------------------------------------------------------------------------------*/\n";
             selection.Text += "\n";
 
-            selection.Text += "/*---- PRECOMPILATION CONTROL ----------------------------------------------------------------------------------------*/\n";
+            selection.Text += "/*---- PRECOMPILATION INCLUDES ----------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region PRECOMPILATION_INCLUDES\n";
             selection.Text += "\n";
-            selection.Text += "#include \"GEN_Defines.h\"\n";
-            selection.Text += "\n";
-            selection.Text += "\n";
-
-            selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#include \"GEN_Defines.h\"\n"; 
             selection.Text += "\n";
             selection.Text += "#include \"" + namewithoutext + ".h\"\n";
-            selection.Text += "\n";
-            selection.Text += "#include \"XMemory_Control.h\"\n";
-            selection.Text += "\n";
-            selection.Text += "\n";
-
-            selection.Text += "/*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "\n";
-            selection.Text += "\n";
-
-            selection.Text += "/*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/\n"; 
+            selection.Text += "\n";        
+            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
+            
+            selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region INCLUDES\n";
+            selection.Text += "\n\n";
+            selection.Text += "#include \"XMemory_Control.h\"\n";
+            selection.Text += "\n\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+            
+            selection.Text += "/*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region GENERAL_VARIABLE\n";
+            selection.Text += "\n\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+            
+            selection.Text += "/*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/\n";            
+            selection.Text += "#pragma region CLASS_MEMBERS\n";
+            selection.Text += "\n";
             selection.Text += namewithoutext.ToUpper() + "::" + namewithoutext.ToUpper() + "()\n";
             selection.Text += "{\n";
             selection.Text += "  Clean();\n";
             selection.Text += "}\n";
-            selection.Text += "\n";
-            selection.Text += "\n";            
+            selection.Text += "\n\n";
             selection.Text += namewithoutext.ToUpper() + "::~" + namewithoutext.ToUpper() + "()\n";
             selection.Text += "{\n";
             selection.Text += "  Clean();\n";
             selection.Text += "}\n";
-            selection.Text += "\n";
-            selection.Text += "\n";            
+            selection.Text += "\n\n";
             selection.Text += "void " + namewithoutext.ToUpper() + "::Clean()\n";
             selection.Text += "{\n";
-            selection.Text += "}\n";                   
-        }
+            selection.Text += "}\n";
+            selection.Text += "\n\n"; 
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+    }
 
-        private void ProcessHHeader(DTE dte, bool isGEN, string name, string ext, string group)
-        {
+    private void ProcessHHeader(DTE dte, bool isGEN, string name, string ext, string group)
+    {
             ThreadHelper.ThrowIfNotOnUIThread();
 
             var     selection       = (TextSelection)dte.ActiveDocument.Selection;
@@ -347,14 +355,19 @@ namespace Remarks
             selection.Text += "\n";              
 
             selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "\n";
-            selection.Text += "\n";
-
+            selection.Text += "#pragma region INCLUDES\n";
+            selection.Text += "\n\n";       
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+            
             selection.Text += "/*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "\n";
-            selection.Text += "\n";
-
-            selection.Text += "/*---- CLASS ---------------------------------------------------------------------------------------------------------*/\n";            
+            selection.Text += "#pragma region DEFINES_ENUMS\n";
+            selection.Text += "\n\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+            
+            selection.Text += "/*---- CLASS ---------------------------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region CLASS\n";
             selection.Text += "\n";
             selection.Text += "class " + namewithoutext.ToUpper() + "\n";
             selection.Text += "{\n";
@@ -369,9 +382,16 @@ namespace Remarks
             selection.Text += "    void            Clean    ();\n";
             selection.Text += "};";           
             selection.Text += "\n\n";
-
-            selection.Text += "/*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/\n\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+            
+            selection.Text += "/*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region FUNCTIONS_PROTOTYPES\n";
+            selection.Text += "\n\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";            
             selection.Text += "#endif\n";
+            selection.Text += "\n\n";
         }
     }
 }
