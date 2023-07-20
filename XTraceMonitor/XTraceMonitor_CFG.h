@@ -144,9 +144,11 @@ class XTRACEMONITOR_ORIGINCFG
 class XTRACEMONITOR_CFG : public XFILECFG
 {
 	public:
-																	  XTRACEMONITOR_CFG																(XCHAR* namefile);																		
-		virtual												 ~XTRACEMONITOR_CFG																();
-																		
+                                    XTRACEMONITOR_CFG                               (XCHAR* namefile);
+    virtual                        ~XTRACEMONITOR_CFG                               ();
+
+    bool                            DoVariableMapping                               ();
+    bool                            DoDefault                                       ();
 
 		int															GetXPos																					();
     void														SetXPos																					(int xpos);
@@ -194,15 +196,12 @@ class XTRACEMONITOR_CFG : public XFILECFG
     int     												Filters_GetStatusMsgWidth			  		     				();
     void    												Filters_SetStatusMsgWidth			        					(int status);
 
-
     XTRACEMONITOR_SERVERCFG*        GetServer                                       (int index, XTRACEMONITOR_CFG_TYPESERVER typeserver);
 		XTRACEMONITOR_ORIGINCFG*				GetOrigin																				(int index);
 
-		virtual bool										Default																					();
-
 	private:
 
-		void														Clean																						();
+    void                            Clean                                           ();
 
 		int															xpos;
 		int															ypos;
@@ -231,14 +230,13 @@ class XTRACEMONITOR_CFG : public XFILECFG
     int                             filters_treewidth;
     int                             filters_statusmsgwidth;
 
-		
+
     bool                            dyndns_ischangeavailable;
     XSTRING                         dyndns_login;
     XSTRING                         dyndns_password;
 
     XTRACEMONITOR_SERVERCFG         servers[XTRACEMONITOR_CFG_MAXSERVERS];
 		XTRACEMONITOR_ORIGINCFG				  origins[XTRACEMONITOR_CFG_MAXORIGINS];
-
 };
 
 

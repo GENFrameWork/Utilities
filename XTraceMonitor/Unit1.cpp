@@ -166,10 +166,10 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
   cfg  = new XTRACEMONITOR_CFG(XTRACEMONITOR_CFGNAMEFILE);
 	if(!cfg) return;
 
-  Left                            = cfg->GetXPos();
-  Top                             = cfg->GetYPos();
-  Width                           = cfg->GetWidth();
-  Height                          = cfg->GetHeight();
+  Left    = cfg->GetXPos();
+  Top     = cfg->GetYPos();
+  Width   = cfg->GetWidth();
+  Height  = cfg->GetHeight();
 
   FilterEdit->Text                = cfg->Filters_GetText()->Get();
   FilterCheckBox->Checked         = cfg->Filters_IsTextActive();
@@ -1104,6 +1104,14 @@ void __fastcall TMainForm::FormActivate(TObject *Sender)
   Top        = cfg->GetYPos();
   Width      = cfg->GetWidth();
   Height     = cfg->GetHeight();
+
+  if(IsWindowOutsideExtendedDesktop(MainForm->Handle))
+    {
+      Left    = 613;
+      Top     = 349;
+      Width   = 694;
+      Height  = 381;
+    }
 }
 
 
@@ -3210,6 +3218,50 @@ bool TMainForm::RedrawStatusMsgList(ORIGIN* origin)
 
   return true;
 }
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+*
+* @fn         bool TMainForm::IsWindowOutsideExtendedDesktop(HWND hwnd)
+* @brief      IsWindowOutsideExtendedDesktop
+* @ingroup
+*
+* @author     Abraham J. Velez
+* @date       01/03/2016 12:00
+*
+* @return     bool : true if is succesful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
+bool TMainForm::IsWindowOutsideExtendedDesktop(HWND hwnd)
+{
+  HMONITOR hmonitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONULL);
+  if(hmonitor)
+    {
+      MONITORINFO monitorinfo;
+      monitorinfo.cbSize = sizeof(MONITORINFO);
+
+      if(GetMonitorInfo(hmonitor, &monitorinfo))
+        {
+          RECT windowrect;
+          if(GetWindowRect(hwnd, &windowrect))
+            {
+              int windowWidth = windowrect.right - windowrect.left;
+              int windowHeight = windowrect.bottom - windowrect.top;
+
+              if(windowrect.left < monitorinfo.rcMonitor.left     ||
+                  windowrect.right > monitorinfo.rcMonitor.right  ||
+                  windowrect.top < monitorinfo.rcMonitor.top      ||
+                  windowrect.bottom > monitorinfo.rcMonitor.bottom)
+                {
+                  return true; // Window is partially or fully outside the extended desktop
+                }
+            }
+        }
+    }
+    
+  return false; // Window is within the extended desktop
+}
+
 
 
 /**-------------------------------------------------------------------------------------------------------------------

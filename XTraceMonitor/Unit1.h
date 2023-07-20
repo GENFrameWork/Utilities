@@ -57,7 +57,7 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			                __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.5.0")
+#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.5.1")
 #define XTRACEMONITOR_ROOTDIR                             __L("assets")
 
 #define XTRACEMONITOR_MASKLEVELBLACK                      0x00000001
@@ -163,9 +163,6 @@ class DBGMESSAGE
                                     sequence         = 0;
                                   }
 };
-
-
-
 
 
 class TMainForm : public TForm
@@ -320,6 +317,8 @@ class TMainForm : public TForm
     bool                          CloseUARTServer               ();
 
     bool                          RedrawStatusMsgList           (ORIGIN* origin);
+
+    bool                          IsWindowOutsideExtendedDesktop(HWND hwnd);
 
     static void									  ThreadReadUDPFunction			    (void* param);
     static void									  ThreadReadUARTFunction		    (void* param);
