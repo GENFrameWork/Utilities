@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "Scripts",
+      "project": "CMakeLists.txt",
+      "projectTarget": "compilerbuilder.exe",
+      "name": "compilerbuilder.exe",
+      "args": [
+        "D:\Projects\GENFrameWork\Examples",
+      ]
+    }
+  ]
+}

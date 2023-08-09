@@ -1,0 +1,39 @@
+﻿{
+  "configurations": [
+    {
+      "name": "1 - Windows x32",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\Windows\\x32",
+      "installRoot": "${projectDir}\\Windows\\x32",
+      "cmakeCommandArgs": "-DTARGET=pc",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x86_x64" ]
+    },
+    {
+      "name": "2 - Windows x64",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\Windows\\x64",
+      "installRoot": "${projectDir}\\Windows\\x64",
+      "cmakeCommandArgs": "-DTARGET=pc",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "msvc_x64_x64" ]
+    },
+    {
+      "name": "3 - Linux PC x64",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\Linux\\x64",
+      "installRoot": "${projectDir}\\Linux\\x64",
+      "cmakeExecutable": "cmake",
+      "cmakeCommandArgs": "-DTARGET=pc",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_x64" ],
+      "wslPath": "${defaultWSLPath}"
+    }
+  ]
+}
