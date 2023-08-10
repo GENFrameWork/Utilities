@@ -334,7 +334,8 @@ bool CBUILDER::AppProc_FirstUpdate()
 
   //--------------------------------------------------------------------------------------
 
-  scriptlibio             = new SCRIPT_LIB_IO();
+  scriptlibconsole        = new SCRIPT_LIB_CONSOLE();
+  scriptliblog            = new SCRIPT_LIB_LOG();
   scriptlibmath           = new SCRIPT_LIB_MATH();
   scriptlibpath           = new SCRIPT_LIB_PATH();
   scriptlibrand           = new SCRIPT_LIB_RAND();
@@ -455,9 +456,14 @@ bool CBUILDER::AppProc_End()
   UnSubscribeEvent(SCRIPT_XEVENT_TYPE_ERROR, this);
   UnSubscribeEvent(SCRIPT_XEVENT_TYPE_BREAK, this);
 
-  if(scriptlibio)       
+  if(scriptlibconsole)       
     {
-      delete scriptlibio;
+      delete scriptlibconsole;
+    }
+
+  if(scriptliblog)       
+    {
+      delete scriptliblog;
     }
 
   if(scriptlibmath)     
@@ -583,7 +589,8 @@ SCRIPT* CBUILDER::CreateScripToExec(XCHAR* _namefilescript)
       return NULL;
     }
 
-  script->AddLibrary((SCRIPT_LIB*)scriptlibio);
+  script->AddLibrary((SCRIPT_LIB*)scriptlibconsole);
+  script->AddLibrary((SCRIPT_LIB*)scriptliblog);
   script->AddLibrary((SCRIPT_LIB*)scriptlibmath);
   script->AddLibrary((SCRIPT_LIB*)scriptlibpath);
   script->AddLibrary((SCRIPT_LIB*)scriptlibrand);
@@ -770,7 +777,8 @@ void CBUILDER::Clean()
 
   xmutexshowallstatus         = NULL;
 
-  scriptlibio                 = NULL;
+  scriptlibconsole            = NULL;
+  scriptliblog                = NULL;
   scriptlibmath               = NULL;
   scriptlibpath               = NULL;
   scriptlibrand               = NULL;

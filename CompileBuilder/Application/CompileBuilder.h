@@ -41,7 +41,8 @@
 #include "DIOURL.h"
 
 #include "Script_XEvent.h"
-#include "Script_Lib_IO.h"
+#include "Script_Lib_Console.h"
+#include "Script_Lib_Log.h"
 #include "Script_Lib_Math.h"
 #include "Script_Lib_Path.h"
 #include "Script_Lib_Rand.h"
@@ -154,7 +155,8 @@ class CBUILDER : public APPCONSOLE, public XFSMACHINE
 
     XMUTEX*                         xmutexshowallstatus;
 
-    SCRIPT_LIB_IO*                  scriptlibio;
+    SCRIPT_LIB_CONSOLE*             scriptlibconsole;
+    SCRIPT_LIB_LOG*                 scriptliblog;
     SCRIPT_LIB_MATH*                scriptlibmath;
     SCRIPT_LIB_PATH*                scriptlibpath;
     SCRIPT_LIB_RAND*                scriptlibrand;
