@@ -3,12 +3,12 @@
   "defaults": {},
   "configurations": [
     {
-      "type": "Scripts",
+      "type": "default",
       "project": "CMakeLists.txt",
       "projectTarget": "compilerbuilder.exe",
       "name": "compilerbuilder.exe",
       "args": [
-        "D:\Projects\GENFrameWork\Examples",
+        "../../../../../Examples"
       ]
     }
   ]

@@ -204,11 +204,6 @@ bool CBUILDER::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------------------
 
-  ACTIVATEXTHREADGROUP(XTHREADGROUPID_SCHEDULER);
-  ACTIVATEXTHREADGROUP(XTHREADGROUPID_DIOSTREAM);
-
-  //--------------------------------------------------------------------------------------------------
-
   XTRACE_SETAPPLICATIONNAME((*GetApplicationName()));
   XTRACE_SETAPPLICATIONVERSION(APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR);
   XTRACE_SETAPPLICATIONID(string);
@@ -336,12 +331,15 @@ bool CBUILDER::AppProc_FirstUpdate()
 
   scriptlibconsole        = new SCRIPT_LIB_CONSOLE();
   scriptliblog            = new SCRIPT_LIB_LOG();
+  scriptlibsystem         = new SCRIPT_LIB_SYSTEM();
+
   scriptlibmath           = new SCRIPT_LIB_MATH();
   scriptlibpath           = new SCRIPT_LIB_PATH();
   scriptlibrand           = new SCRIPT_LIB_RAND();
   scriptlibstring         = new SCRIPT_LIB_STRING();
   scriptlibtimer          = new SCRIPT_LIB_TIMER();
   scriptlibprocess        = new SCRIPT_LIB_PROCESS();
+  scriptlibdir            = new SCRIPT_LIB_DIR();
 
   SubscribeEvent(SCRIPT_XEVENT_TYPE_ERROR, this);
   SubscribeEvent(SCRIPT_XEVENT_TYPE_BREAK, this);
@@ -391,7 +389,7 @@ bool CBUILDER::AppProc_Update()
                                                 break;
 
               case CBUILDER_XFSMSTATE_UPDATE  : { Show_AllStatus();
-
+                                                    
                                                   XVECTOR<XSTRING*>* listscripts = APP_CFG.Scripts_GetAll();
                                                   if(listscripts)
                                                     {                                                                                                    
@@ -422,7 +420,13 @@ bool CBUILDER::AppProc_Update()
                                                         }
                                                     }
 
-                                                  SetExitType(APPBASE_EXITTYPE_BY_USER);  
+                                                  XSTRING string;
+                                                  XSTRING string2;
+
+                                                  Show_Line(string, string2);
+                                                  Show_Line(string, string2);
+
+                                                  SetExitType(APPBASE_EXITTYPE_BY_APPLICATION);  
                                                   SetEvent(CBUILDER_XFSMEVENT_END);                                                 
                                                 }
                                                 break;
@@ -466,6 +470,11 @@ bool CBUILDER::AppProc_End()
       delete scriptliblog;
     }
 
+  if(scriptlibsystem)       
+    {
+      delete scriptlibsystem;
+    }
+
   if(scriptlibmath)     
     {
       delete scriptlibmath;
@@ -496,6 +505,10 @@ bool CBUILDER::AppProc_End()
       delete scriptlibprocess;
     }
 
+  if(scriptlibdir)  
+    {
+      delete scriptlibdir;
+    }
   //--------------------------------------------------------------------------------------
 
   SetEvent(CBUILDER_XFSMEVENT_END);
@@ -591,6 +604,8 @@ SCRIPT* CBUILDER::CreateScripToExec(XCHAR* _namefilescript)
 
   script->AddLibrary((SCRIPT_LIB*)scriptlibconsole);
   script->AddLibrary((SCRIPT_LIB*)scriptliblog);
+  script->AddLibrary((SCRIPT_LIB*)scriptlibsystem);
+
   script->AddLibrary((SCRIPT_LIB*)scriptlibmath);
   script->AddLibrary((SCRIPT_LIB*)scriptlibpath);
   script->AddLibrary((SCRIPT_LIB*)scriptlibrand);
@@ -598,6 +613,7 @@ SCRIPT* CBUILDER::CreateScripToExec(XCHAR* _namefilescript)
   script->AddLibrary((SCRIPT_LIB*)scriptlibrand);
   script->AddLibrary((SCRIPT_LIB*)scriptlibtimer);
   script->AddLibrary((SCRIPT_LIB*)scriptlibprocess);
+  script->AddLibrary((SCRIPT_LIB*)scriptlibdir);
   
   XPATH xpath;
 
@@ -779,12 +795,15 @@ void CBUILDER::Clean()
 
   scriptlibconsole            = NULL;
   scriptliblog                = NULL;
+  scriptlibsystem             = NULL;
+
   scriptlibmath               = NULL;
   scriptlibpath               = NULL;
   scriptlibrand               = NULL;
   scriptlibstring             = NULL;
   scriptlibtimer              = NULL;
   scriptlibprocess            = NULL;
+  scriptlibdir                = NULL;
   
   script                      = NULL;
 }
