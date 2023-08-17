@@ -89,9 +89,10 @@
 
 #include "APPLog.h"
 
-#include "Script_G.h"
-#include "Script_Lua.h"
-#include "Script_Javascript.h"
+#include "Script_Language_G.h"
+#include "Script_Language_Lua.h"
+#include "Script_Language_Javascript.h"
+#include "Script_Lib_CFG.h"
 
 #include "CompileBuilder_CFG.h"
 
@@ -329,18 +330,6 @@ bool CBUILDER::AppProc_FirstUpdate()
 
   //--------------------------------------------------------------------------------------
 
-  scriptlibconsole        = new SCRIPT_LIB_CONSOLE();
-  scriptliblog            = new SCRIPT_LIB_LOG();
-  scriptlibsystem         = new SCRIPT_LIB_SYSTEM();
-
-  scriptlibmath           = new SCRIPT_LIB_MATH();
-  scriptlibpath           = new SCRIPT_LIB_PATH();
-  scriptlibrand           = new SCRIPT_LIB_RAND();
-  scriptlibstring         = new SCRIPT_LIB_STRING();
-  scriptlibtimer          = new SCRIPT_LIB_TIMER();
-  scriptlibprocess        = new SCRIPT_LIB_PROCESS();
-  scriptlibdir            = new SCRIPT_LIB_DIR();
-
   SubscribeEvent(SCRIPT_XEVENT_TYPE_ERROR, this);
   SubscribeEvent(SCRIPT_XEVENT_TYPE_BREAK, this);
 
@@ -388,7 +377,8 @@ bool CBUILDER::AppProc_Update()
               case CBUILDER_XFSMSTATE_INI     : SetEvent(CBUILDER_XFSMEVENT_UPDATE);                                                
                                                 break;
 
-              case CBUILDER_XFSMSTATE_UPDATE  : { Show_AllStatus();
+              case CBUILDER_XFSMSTATE_UPDATE  : {                                                  
+                                                  Show_AllStatus();
                                                     
                                                   XVECTOR<XSTRING*>* listscripts = APP_CFG.Scripts_GetAll();
                                                   if(listscripts)
@@ -400,7 +390,7 @@ bool CBUILDER::AppProc_Update()
                                                             {
                                                               if(!namescript->IsEmpty())
                                                                 {
-                                                                  SCRIPT* script = CreateScripToExec(namescript->Get());                                                  
+                                                                  SCRIPT* script = NULL; // CreateScripToExec(namescript->Get());                                                  
                                                                   if(script)
                                                                     {                                                  
                                                                       XSTRING measurestr;
@@ -425,7 +415,7 @@ bool CBUILDER::AppProc_Update()
 
                                                   Show_Line(string, string2);
                                                   Show_Line(string, string2);
-
+                                                  
                                                   SetExitType(APPBASE_EXITTYPE_BY_APPLICATION);  
                                                   SetEvent(CBUILDER_XFSMEVENT_END);                                                 
                                                 }
@@ -460,55 +450,6 @@ bool CBUILDER::AppProc_End()
   UnSubscribeEvent(SCRIPT_XEVENT_TYPE_ERROR, this);
   UnSubscribeEvent(SCRIPT_XEVENT_TYPE_BREAK, this);
 
-  if(scriptlibconsole)       
-    {
-      delete scriptlibconsole;
-    }
-
-  if(scriptliblog)       
-    {
-      delete scriptliblog;
-    }
-
-  if(scriptlibsystem)       
-    {
-      delete scriptlibsystem;
-    }
-
-  if(scriptlibmath)     
-    {
-      delete scriptlibmath;
-    }
-
-  if(scriptlibpath)     
-    {
-      delete scriptlibpath;
-    }
-
-  if(scriptlibrand)     
-    {
-      delete scriptlibrand;
-    }
-
-  if(scriptlibstring)   
-    {
-      delete scriptlibstring;
-    }
-
-  if(scriptlibtimer)    
-    {
-      delete scriptlibtimer;
-    }
-
-  if(scriptlibprocess)  
-    {
-      delete scriptlibprocess;
-    }
-
-  if(scriptlibdir)  
-    {
-      delete scriptlibdir;
-    }
   //--------------------------------------------------------------------------------------
 
   SetEvent(CBUILDER_XFSMEVENT_END);
@@ -551,69 +492,25 @@ bool CBUILDER::AppProc_End()
 
 /**-------------------------------------------------------------------------------------------------------------------
 * 
-* @fn         bool CBUILDER::LoadScriptLibraries(SCRIPT* script)
-* @brief      LoadScriptLibraries
-* @ingroup    APPLICATION
-* 
-* @param[in]  script : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
-bool CBUILDER::LoadScriptLibraries(SCRIPT* script)
-{
-
-  return true;
-}
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         bool CBUILDER::CreateScripToExec(XCHAR* _namefilescript)
+* @fn         bool CBUILDER::CreateScripToExec(XCHAR* namefilescript)
 * @brief      CreateScripToExec
 * @ingroup    APPLICATION
 * 
-* @param[in]  _namefilescript : 
+* @param[in]  namefilescript : 
 * 
 * @return     bool : true if is succesful. 
 * 
 * --------------------------------------------------------------------------------------------------------------------*/
-SCRIPT* CBUILDER::CreateScripToExec(XCHAR* _namefilescript)
+SCRIPT* CBUILDER::CreateScripToExec(XCHAR* namefilescript)
 {  
-  SCRIPT* script        = NULL;
-  XPATH   namefilescript;
-  XSTRING ext;
-
-  namefilescript = _namefilescript;
-
-  if(namefilescript.IsEmpty()) 
-    {
-      return NULL;
-    }
-
-  namefilescript.GetExt(ext);
-
-  if(!ext.Compare(__L(".g")   , true))   script = new SCRIPT_G();
-  if(!ext.Compare(__L(".lua") , true))   script = new SCRIPT_LUA();
-  if(!ext.Compare(__L(".js")  , true))   script = new SCRIPT_JAVASCRIPT();
+  SCRIPT* script = SCRIPT::Create(namefilescript);
 
   if(!script) 
     {
       return NULL;
     }
 
-  script->AddLibrary((SCRIPT_LIB*)scriptlibconsole);
-  script->AddLibrary((SCRIPT_LIB*)scriptliblog);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibsystem);
-
-  script->AddLibrary((SCRIPT_LIB*)scriptlibmath);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibpath);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibrand);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibstring);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibrand);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibtimer);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibprocess);
-  script->AddLibrary((SCRIPT_LIB*)scriptlibdir);
+  SCRIPT_SET_LIB_CFG(APP_CFG);
   
   XPATH xpath;
 
@@ -791,19 +688,7 @@ void CBUILDER::Clean()
   xtimerupdateconsole         = NULL;
   xtimerscriptrun             = NULL;
 
-  xmutexshowallstatus         = NULL;
-
-  scriptlibconsole            = NULL;
-  scriptliblog                = NULL;
-  scriptlibsystem             = NULL;
-
-  scriptlibmath               = NULL;
-  scriptlibpath               = NULL;
-  scriptlibrand               = NULL;
-  scriptlibstring             = NULL;
-  scriptlibtimer              = NULL;
-  scriptlibprocess            = NULL;
-  scriptlibdir                = NULL;
+  xmutexshowallstatus         = NULL;  
   
   script                      = NULL;
 }

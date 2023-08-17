@@ -137,8 +137,6 @@ class CBUILDER : public APPCONSOLE, public XFSMACHINE
     bool                            AppProc_Update                          ();
     bool                            AppProc_End                             ();
     
-    bool                            LoadScriptLibraries                     (SCRIPT* script);
-    
     SCRIPT*                         CreateScripToExec                       (XCHAR* _namefilescript);
     bool                            DeleteScripToExec                       (SCRIPT* script);
 
@@ -157,17 +155,6 @@ class CBUILDER : public APPCONSOLE, public XFSMACHINE
 
     XMUTEX*                         xmutexshowallstatus;
 
-    SCRIPT_LIB_CONSOLE*             scriptlibconsole;
-    SCRIPT_LIB_LOG*                 scriptliblog;
-    SCRIPT_LIB_SYSTEM*              scriptlibsystem;
-
-    SCRIPT_LIB_MATH*                scriptlibmath;
-    SCRIPT_LIB_PATH*                scriptlibpath;
-    SCRIPT_LIB_RAND*                scriptlibrand;
-    SCRIPT_LIB_STRING*              scriptlibstring;
-    SCRIPT_LIB_TIMER*               scriptlibtimer;
-    SCRIPT_LIB_PROCESS*             scriptlibprocess;    
-    SCRIPT_LIB_DIR*                 scriptlibdir;    
     SCRIPT*                         script;
 
 };
