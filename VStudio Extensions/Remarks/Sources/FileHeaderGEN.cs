@@ -189,6 +189,7 @@ namespace Remarks
                 if (directory.Contains("Android"))                  groupID = "PLATFORM_ANDROID";
                 if (directory.Contains("Common"))                   groupID = "PLATFORM_COMMON";
                 if (directory.Contains("STM32"))                    groupID = "PLATFORM_STM32";
+                if (directory.Contains("ESP32"))                    groupID = "PLATFORM_ESP32";
                 if (directory.Contains("SAMD5xE5x"))                groupID = "PLATFORM_SAMD5XE5X";
                 
 
@@ -280,30 +281,30 @@ namespace Remarks
             selection.Text += "/*---- PRECOMPILATION INCLUDES ----------------------------------------------------------------------------------------*/\n";
             selection.Text += "#pragma region PRECOMPILATION_INCLUDES\n";
             selection.Text += "\n";
-            selection.Text += "#include \"GEN_Defines.h\"\n"; 
+            selection.Text += "#include \"GEN_Defines.h\"\n";
             selection.Text += "\n";
-            selection.Text += "#include \"" + namewithoutext + ".h\"\n";
-            selection.Text += "\n";        
             selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
             selection.Text += "#pragma region INCLUDES\n";
-            selection.Text += "\n\n";
+            selection.Text += "\n";
+            selection.Text += "#include \"" + namewithoutext + ".h\"\n";
+            selection.Text += "\n";                  
             selection.Text += "#include \"XMemory_Control.h\"\n";
-            selection.Text += "\n\n";
+            selection.Text += "\n";
             selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/\n";
             selection.Text += "#pragma region GENERAL_VARIABLE\n";
-            selection.Text += "\n\n";
+            selection.Text += "\n";
             selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/\n";            
             selection.Text += "#pragma region CLASS_MEMBERS\n";
-            selection.Text += "\n";
+            selection.Text += "\n\n";
             selection.Text += namewithoutext.ToUpper() + "::" + namewithoutext.ToUpper() + "()\n";
             selection.Text += "{\n";
             selection.Text += "  Clean();\n";

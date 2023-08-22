@@ -176,6 +176,7 @@ namespace Remarks
                 if (directory.Contains("Android"))                  groupID = "PLATFORM_ANDROID";
                 if (directory.Contains("Common"))                   groupID = "PLATFORM_COMMON";
                 if (directory.Contains("STM32"))                    groupID = "PLATFORM_STM32";
+                if (directory.Contains("ESP32"))                    groupID = "PLATFORM_ESP32";
                 if (directory.Contains("SAMD5xE5x"))                groupID = "PLATFORM_SAMD5XE5X";
 
                 if (groupID.Length == 0)
