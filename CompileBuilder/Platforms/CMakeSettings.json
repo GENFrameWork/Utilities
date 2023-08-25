@@ -6,7 +6,7 @@
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\Windows\\x32",
       "installRoot": "${projectDir}\\Windows\\x32",
-      "cmakeCommandArgs": "-DTARGET=pc",
+      "cmakeCommandArgs": "-DTARGET=PC",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x86_x64" ]
@@ -17,7 +17,7 @@
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\Windows\\x64",
       "installRoot": "${projectDir}\\Windows\\x64",
-      "cmakeCommandArgs": "-DTARGET=pc",
+      "cmakeCommandArgs": "-DTARGET=PC",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "msvc_x64_x64" ]
@@ -29,7 +29,7 @@
       "buildRoot": "${projectDir}\\Linux\\x64",
       "installRoot": "${projectDir}\\Linux\\x64",
       "cmakeExecutable": "cmake",
-      "cmakeCommandArgs": "-DTARGET=pc",
+      "cmakeCommandArgs": "-DTARGET=PC",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "linux_x64" ],

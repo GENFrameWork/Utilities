@@ -1,0 +1,149 @@
+- Corregir una línea en Examples.bat
+- Cambiar ejemplo de NotANumber por Indefinite...
+
++ Tratar de corregir el "subtle bug"
+- Añadir comas y semicolon como separadores
+
+- Type conversions:
+]STO Store a 64-bits int in FP memory.  RCL[ Recall FP memory as a 64-bits int.
+
+
+- Copiar printf-Examples.bat en my DropBox, NO! mejor no...
+-> Publicarlo!
+
+
+Emulates printf C run-time function; evaluates RPN arithmetic expressions.
+
+    printf "format specification" {number [operator]|'c'|"string"|variable} ...
+
+This program is a wrapper for the C run-time printf function described at
+https://msdn.microsoft.com/en-us/library/wc7014hz.aspx
+so all specifications and requirements described at that site apply.
+
+Additionally, this program evaluates arithmetic expressions in RPN.
+
+
+The first parameter is a standard printf format specification given as
+"string literal" or in a Batch variable. This is a quick reference guide of it:
+
+                 %[flags][width][.precision][size]type
+                   -+ 0#  -----  ----------  ---- cCdiouxXeEfgGaAps
+Insert "ll"        - | left align                 c | character
+in [size]          + | insert + sign if positive  C | wide (16 bits) Character
+for 64-bits          | insert space for + sign    d | integer (Decimal)
+"long-long"        0 | zero pad                   i | Integer = d
+integers.          # | insert . in g type, or     o | integer (Octal)
+                     | insert 0|0x in o|x types   u | integer (Unsigned)
+                                                  x | integer (hexadecimal)
+[width]  Minimum/total width (no truncate):       X | integer (HEXADECIMAL)
+printf "%05i" 3  =  "00003"                       e | double  ([-]d.ddddeñddd)
+                                                  E | double  (like e, with E)
+[.precision]  Maximum width (truncate/round):     f | double  ([-]ddd.dddddd)
+printf "%.4f" 3.141592654 = "3.1416"              g | double  (shorter of f|e)
+                                                  G | double  (like g, with E)
+An asterisk in place of width and/or precision    a | double  ([-]0xh.hhhpñddd)
+get its value from the next (int) parameter:      A | double  (like a, with P)
+printf "%0*i" 5 3  =  "00003"                     p | string  (address in hex)
+printf "%0*.*f" 8 4 3.141592654 = "003.1416"      s | string
+
+String literals can not include embedded quotes, but Batch variables can.
+Standard control characters \n \r \t \a \b are valid in string literals only;
+to insert control characters in a format specification stored in a variable,
+use %c format with the Ascii code of the character given as int. For example:
+   printf "Line one\n\t\tLine two\n"
+   set "format=Line one%c%c%cLine two%c"
+   printf format       10 9 9        10
+
+
+The parameters after the first one can be of one of these types:
+- A number, if it start in digit or minus sign.
+- A character, if it is enclosed in apostrophes (managed as a 32-bits integer).
+- A string literal, if it is enclosed in quotes.
+- A string Batch variable otherwise.
+
+Numbers are converted into one of the following sub-types:
+- A double-precision 64-bits floating-point number if it includes a decimal
+  point or an exponent of ten greater than 0 (standard floating-point format).
+- A "long-long" 64-bits integer number if its value exceed the maximum of a
+  32-bits integer one, or if the number ends in "ll" size specification.
+- A 32-bits integer number otherwise.
+An integer number may be given in the standard octal/hexadecimal notation;
+the largest integer may have: {18 decimal|16 hexadecimal|21 octal} digits.
+
+--> If the format specifications does not match the type of the parameters,
+    or there are more specifications than parameters, this program may fail.
+
+
+Arithmetic operations in Reverse Polish Notation (RPN) may be evaluated via
+two *separate sets* of operations for integer and floating-point numbers.
+Reference: https://en.wikipedia.org/wiki/Reverse_Polish_notation
+You may learn RPN at: http://www.hpmuseum.org/rpn.htm
+or in this extensive tutorial: http://hansklav.home.xs4all.nl/rpn/index.html
+
+
+Most integer operations works on 64-bits numbers. One-operand operators:
+! BoolNot, ~ BitNot, _ ChngSign, $ Signum, ] Store, [ Recall, @ Dup, ? Random.
+Two-operands operators: + Add, - Subtract, * Multiply, / Quotient, % Remainder,
+< Min, > Max, << BitSHL, >> BitSHR, & BitAnd, | BitOr, ^ BitXor, # Exchange.
+
+The * operator multiply two 32-bits numbers and produce a 64-bits result.
+In / % << >> operators the second operand must be a 32-bits number. Quotient
+and Remainder produce a 32-bits result; if the divisor is zero, these operators
+return the high or low 32-bits part of the number, respectively. If "u" letter
+is added after * / % << >> operators, an unsigned operation is performed.
+The ? operator enter a random number between 0 and 32767 as a 32-Bits integer.
+
+To convert a 32-bits number to a 64-bits one, multiply it by 1:
+   printf "Random as 32-bits: %i. Random as 64-bits: %lli.\n"  ?  ? 1 *
+To convert a 64-bits number to a 32-bits one, get its remainder by 0:
+   printf "Random as 64-bits: %lli, and as 32-bits: %i.\n"  ? 1 *  @  0 %
+
+
+Floating-point functions operate float numbers *only*. One-operand functions:
+NOT, CHS, ABS, SIGN, INT, FRAC, INV, X^2, SQRT; SIN, COS, TAN, ASIN, ACOS, ATAN
+(in radians), to DEGrees, to RADians; LN, LOG, EXP, EXPT; DUP, STO.   RCL, PI.
+Two-operands functions: ADD, SUB, MUL, DIV, MOD, POW, MAX, MIN, XCHG.   CLST.
+
+Float operations use the FPU stack, so a run-time error is never issued: the
+"special values" defined in IEEE 754 floating-point specification are returned.
+Reference: https://en.wikipedia.org/wiki/Floating_point#Special_values
+FRAC, TAN, ASIN, ACOS, ATAN, LN, LOG, EXP, EXPT require one empty FPU register.
+
+
+--> If numbers and operator types don't match (32-bits int/64-bits int/float),
+    or there are not enough numbers for an operation, this program will fail.
+
+
+A couple simple examples:
+   printf "3 plus 5 = %lli, 3 minus 5 = %lli\n"  3ll 5ll +  3ll 5ll -
+   printf  "The result of (4+5)/(6+7) is: %f\n"  4. 5. Add 6. 7. Add Div
+
+The $ Signum operator used after a subtract allows to perform comparisons:
+%A%ll %B%ll - $  = -1 if A < B, 0 if A == B, 1 if A > B. After that:
+     1ll + !     =  1 if A < B, 0 if A >= B; OR
+     1ll - !     =  1 if A > B, 0 if A <= B.
+%A%ll %B%ll - !  =  1 if A == B, 0 if A != B.
+
+If the [.precision] part in a string format is zero, the string parameter is
+not shown. This part can be calculated and passed to a format specification via
+an asterisk, so another string can be conditionally shown, like a message. Note
+that Remainder by zero is used to convert a 64-bits number to a 32-bits one:
+set /A A=%random%, B=%random%
+printf "%i is%.*s less %i" %A%  %A%ll %B%ll - $ 1ll - ! 0 % 4 * 0 % " not"  %B%
+
+More examples on most operators/functions are shown in:  printf-Examples.bat
+
+
+==> Remember: One-character operators works on integer numbers; three letters
+              functions works on floating-point numbers. Do NOT mix they!
+
+
+At end, the total number of characters shown is returned in ERRORLEVEL.
+If an error is found, a negative value is returned this way:
+
+-1 = printf function internal error
+-2 = Closing quote/apostrophe missing or bad placed
+-3 = Number wrong or too large
+-4 = Invalid operator
+-5 = Invalid function or undefined variable
+
