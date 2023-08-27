@@ -10,17 +10,7 @@ set(GEN_DIRECTORY "../../../../GENFrameWork")
 
 
 # --------------------------------------------------------------------
-# Compile Selection
- include("${GEN_DIRECTORY}/GEN/CMake/GEN_CMakeLists_Platform-Compiler.txt") 
-
-# --------------------------------------------------------------------
-# Warnings control
- include("${GEN_DIRECTORY}/GEN/CMake/GEN_CMakeLists_Warnings.txt") 
-
-
-# --------------------------------------------------------------------
 # Activate features/Defines
-
 
 option(DEBUG_FEATURE                           "Activate Debug mode"                            true )
 
@@ -48,7 +38,7 @@ add_definitions(${APP_CFG_APPUPDATECREATOR})
 # --------------------------------------------------------------------
 # Source code of the GEN in this Application
 
-include("${GEN_DIRECTORY}/GEN/CMake/GEN_CMakeLists.txt") 
+include("${GEN_DIRECTORY}/GEN/CMake/GEN_CMakeLists_Main.txt") 
                    
                    
 # --------------------------------------------------------------------
@@ -67,9 +57,8 @@ list(APPEND SOURCES "${APP_DIRECTORY_APPLICATION}/APPUpdateCreator_CFG.cpp")
 # --------------------------------------------------------------------
 # Create proyect 
 
-include_directories(${INCLUDES_DIR})
+ include("${GEN_DIRECTORY}/GEN/CMake/GEN_CMakeLists_CreateProject.txt") 
 
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 
 # --------------------------------------------------------------------
 # Add Libraries
