@@ -275,7 +275,7 @@ bool CBUILDER::AppProc_Ini()
 
   if(APP_CFG.Log_IsActive())
     {
-      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activando sistema LOG"));
+      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activating LOG system"));
       if(!APP_CFG.IsSilentMode())
         {
           console->PrintMessage(string.Get(), 1, true, false);
@@ -300,7 +300,7 @@ bool CBUILDER::AppProc_Ini()
       stringresult.Format((status)?__L("Ok."):__L("ERROR!"));
       APP_LOG_ENTRY(((status)?XLOGLEVEL_INFO:XLOGLEVEL_ERROR), APP_CFG_LOG_SECTIONID_INITIATION, false, __L("%s: %s") , string.Get(), stringresult.Get());
            
-      APP_LOG_ENTRY(((status)?XLOGLEVEL_INFO:XLOGLEVEL_ERROR), APP_CFG_LOG_SECTIONID_INITIATION, false,  __L("Identificacion SO: %s"), SO_ID.Get());
+      APP_LOG_ENTRY(((status)?XLOGLEVEL_INFO:XLOGLEVEL_ERROR), APP_CFG_LOG_SECTIONID_INITIATION, false,  __L("Identification SO: %s"), SO_ID.Get());
 
       XDWORD total = 0;
       XDWORD free  = 0;
@@ -421,7 +421,7 @@ bool CBUILDER::AppProc_Update()
                                                                         
                                                                       xtimerscriptrun->GetMeasureString(measurestr, true);
   
-                                                                      XTRACE_PRINTCOLOR(XTRACE_COLOR_PURPLE, __L("[%s] Ejecucion en %s."), namescript->Get(), measurestr.Get());    
+                                                                      XTRACE_PRINTCOLOR(XTRACE_COLOR_PURPLE, __L("[%s] Ejecution script: %s."), namescript->Get(), measurestr.Get());    
 
                                                                       DeleteScripToExec(script);                                                   
                                                                     }
@@ -435,11 +435,9 @@ bool CBUILDER::AppProc_Update()
                                                   if(xtimerglobal)
                                                     { 
                                                       XSTRING string;
-                                                      XSTRING string2;
-
-                                                      string  = __L("Tiempo de funcionamiento");
-                                                      xtimerglobal->GetMeasureString(string2, true);
-                                                      Show_Line(string, string2);                                                      
+                                                      
+                                                      xtimerglobal->GetMeasureString(string, true);
+                                                      console->Printf(__L("Total working time %s"), string.Get());                                                      
                                                     }
 
                                                   Show_BlankLine();
@@ -598,8 +596,8 @@ bool CBUILDER::Show_AppStatus()
 
   GEN_XSYSTEM.GetMemoryInfo(total,free);
 
-  string  = __L("Memoria total");
-  string2.Format(__L("%d Kb, libre %d Kb (el %d%%%%)"), total, free, GEN_XSYSTEM.GetFreeMemoryPercent());
+  string  = __L("Total memory");
+  string2.Format(__L("%d Kb, free %d Kb (%d%%%%)"), total, free, GEN_XSYSTEM.GetFreeMemoryPercent());
   Show_Line(string, string2);
 
 
