@@ -133,6 +133,11 @@ bool CBUILDER_CFG::DoVariableMapping()
       return false;
     }
 
+  //-----------------------------------------------------
+  // GENERAL
+  
+  AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , CBUILDER_CFG_SECTION_GENERAL  , CBUILDER_CFG_GENERAL_SILENTMODE                                 , &silentmode);
+                                                                                                 
 
   //-----------------------------------------------------
   // SCRIPTS
@@ -164,6 +169,8 @@ bool CBUILDER_CFG::DoDefault()
   //------------------------------------------------------------------------------
 
   GEN_XTRACE_NET_CFG_DEFAULT_01
+
+  silentmode                            = false;
   
   //------------------------------------------------------------------------------
 
@@ -212,6 +219,21 @@ bool CBUILDER_CFG::End()
   scriptslist.DeleteAll();
   
   return true;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         bool CBUILDER_CFG::IsSilentMode()
+* @brief      IsSilentMode
+* @ingroup    APPLICATION
+* 
+* @return     bool : true if is succesful. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+bool CBUILDER_CFG::IsSilentMode()
+{
+  return silentmode;
 }
 
 
@@ -302,7 +324,8 @@ CBUILDER_CFG::~CBUILDER_CFG()
 * --------------------------------------------------------------------------------------------------------------------*/
 void CBUILDER_CFG::Clean()
 {
-
+  nscripts    = 0;  
+  silentmode  = false;
 }
 
 #pragma endregion

@@ -40,6 +40,9 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 #pragma region DEFINES_ENUMS
 
+#define CBUILDER_CFG_SECTION_GENERAL        __L("general")
+#define CBUILDER_CFG_GENERAL_SILENTMODE     __L("silentmode")
+
 #define CBUILDER_CFG_SECTION_SCRIPTS        __L("scripts")
 #define CBUILDER_CFG_SCRIPTS_SCRIPT         __L("script")
 
@@ -63,6 +66,8 @@ class CBUILDER_CFG : public APPCFG
 
     bool                            End                                     ();
 
+    bool                            IsSilentMode                            ();
+
     XVECTOR<XSTRING*>*              Scripts_GetAll                          ();
     XSTRING*                        Scripts_GetScript                       (int index);
 
@@ -76,6 +81,8 @@ class CBUILDER_CFG : public APPCFG
     void                            Clean                                   ();
 
     static CBUILDER_CFG*            instance;
+
+    bool                            silentmode;
 
     int                             nscripts;
     XVECTOR<XSTRING*>               scriptslist;

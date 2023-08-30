@@ -31,13 +31,13 @@
 
 #include "GEN_Defines.h"
 
-#include "CompileBuilder.h"
-
 #pragma endregion
 
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 #pragma region INCLUDES
+
+#include "CompileBuilder.h"
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -266,21 +266,30 @@ bool CBUILDER::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------
 
-  Show_Header(true);
+  if(!APP_CFG.IsSilentMode())
+    {
+      Show_Header(true);
+    }
 
   //--------------------------------------------------------------------------------------
 
   if(APP_CFG.Log_IsActive())
     {
       string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activando sistema LOG"));
-      console->PrintMessage(string.Get(), 1, true, false);
+      if(!APP_CFG.IsSilentMode())
+        {
+          console->PrintMessage(string.Get(), 1, true, false);
+        }
 
       status = APP_LOG.Ini(&APP_CFG, APPLICATION_NAMEFILE , APPLICATION_VERSION
                                                           , APPLICATION_SUBVERSION
                                                           , APPLICATION_SUBVERSIONERR);
 
       stringresult.Format((status)?__L("Ok."):__L("ERROR!"));
-      console->PrintMessage(stringresult.Get(), 0, false, true);
+      if(!APP_CFG.IsSilentMode())
+        {
+          console->PrintMessage(stringresult.Get(), 0, false, true);
+        }
 
       XSTRING SO_ID;
       status = GEN_XSYSTEM.GetOperativeSystemID(SO_ID);
@@ -377,9 +386,20 @@ bool CBUILDER::AppProc_Update()
               case CBUILDER_XFSMSTATE_INI     : SetEvent(CBUILDER_XFSMEVENT_UPDATE);                                                
                                                 break;
 
-              case CBUILDER_XFSMSTATE_UPDATE  : {                                                  
-                                                  Show_AllStatus();
+              case CBUILDER_XFSMSTATE_UPDATE  : { if(!APP_CFG.IsSilentMode())                                             
+                                                    {
+                                                      Show_AllStatus();
+                                                    }
+                                                   else
+                                                    {
+                                                      Show_BlankLine();
+                                                    }        
                                                     
+                                                  if(xtimerglobal)
+                                                    {
+                                                      xtimerglobal->Reset();
+                                                    }
+
                                                   XVECTOR<XSTRING*>* listscripts = APP_CFG.Scripts_GetAll();
                                                   if(listscripts)
                                                     {                                                                                                    
@@ -390,7 +410,7 @@ bool CBUILDER::AppProc_Update()
                                                             {
                                                               if(!namescript->IsEmpty())
                                                                 {
-                                                                  SCRIPT* script = NULL; // CreateScripToExec(namescript->Get());                                                  
+                                                                  SCRIPT* script = CreateScripToExec(namescript->Get());                                                  
                                                                   if(script)
                                                                     {                                                  
                                                                       XSTRING measurestr;
@@ -409,15 +429,26 @@ bool CBUILDER::AppProc_Update()
                                                             } 
                                                         }
                                                     }
+                                                 
+                                                  Show_BlankLine();
+                                                  
+                                                  if(xtimerglobal)
+                                                    { 
+                                                      XSTRING string;
+                                                      XSTRING string2;
 
-                                                  XSTRING string;
-                                                  XSTRING string2;
+                                                      string  = __L("Tiempo de funcionamiento");
+                                                      xtimerglobal->GetMeasureString(string2, true);
+                                                      Show_Line(string, string2);                                                      
+                                                    }
 
-                                                  Show_Line(string, string2);
-                                                  Show_Line(string, string2);
+                                                  Show_BlankLine();
+                                                  Show_BlankLine();
                                                   
                                                   SetExitType(APPBASE_EXITTYPE_BY_APPLICATION);  
-                                                  SetEvent(CBUILDER_XFSMEVENT_END);                                                 
+                                                  SetEvent(CBUILDER_XFSMEVENT_END); 
+
+                                                  PrintExitMessage_Active(false);                                                
                                                 }
                                                 break;
 
@@ -584,14 +615,6 @@ bool CBUILDER::Show_AppStatus()
       GEN_XFACTORY.DeleteDateTime(datetime);
     }
 
-
-  if(xtimerglobal)
-    {
-      string  = __L("Tiempo de funcionamiento");
-      xtimerglobal->GetMeasureString(string2, true);
-      Show_Line(string, string2);
-    }
-
   return true;
 }
 
@@ -636,11 +659,11 @@ void CBUILDER::HandleEvent_Script(SCRIPT_XEVENT* event)
 {
   switch(event->GetEventType())
     {
-      case SCRIPT_XEVENT_TYPE_ERROR    : XTRACE_PRINTCOLOR(4,__L("Script ERROR [%d]: %s line %d -> \"%s\""), event->GetError(), event->GetErrorText()->Get(), event->GetNLine(), event->GetCurrentToken()->Get());
-                                        break;
+      case SCRIPT_XEVENT_TYPE_ERROR     : XTRACE_PRINTCOLOR(4,__L("Script ERROR [%d]: %s line %d -> \"%s\""), event->GetError(), event->GetErrorText()->Get(), event->GetNLine(), event->GetCurrentToken()->Get());
+                                          break;
 
-      case SCRIPT_XEVENT_TYPE_BREAK    : XTRACE_PRINTCOLOR(4,__L("Script BREAK: line %d -> \"%s\""), event->GetNLine(), event->GetCurrentToken()->Get());
-                                        break;
+      case SCRIPT_XEVENT_TYPE_BREAK     : XTRACE_PRINTCOLOR(4,__L("Script BREAK: line %d -> \"%s\""), event->GetNLine(), event->GetCurrentToken()->Get());
+                                          break;
 
     }
 }
@@ -664,11 +687,12 @@ void CBUILDER::HandleEvent(XEVENT* xevent)
 
   switch(xevent->GetEventFamily())
     {
-       case XEVENT_TYPE_SCRIPT     : { SCRIPT_XEVENT* event = (SCRIPT_XEVENT*)xevent;
-                                      if(!event) return;
+       case XEVENT_TYPE_SCRIPT      : { SCRIPT_XEVENT* event = (SCRIPT_XEVENT*)xevent;
+                                        if(!event) return;
 
-                                      HandleEvent_Script(event);
-                                    }
+                                        HandleEvent_Script(event);
+                                      }
+                                      break;
     }
 }
 

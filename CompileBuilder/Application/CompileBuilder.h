@@ -136,7 +136,7 @@ class CBUILDER : public APPCONSOLE, public XFSMACHINE
     bool                            AppProc_FirstUpdate                     ();
     bool                            AppProc_Update                          ();
     bool                            AppProc_End                             ();
-    
+
     SCRIPT*                         CreateScripToExec                       (XCHAR* _namefilescript);
     bool                            DeleteScripToExec                       (SCRIPT* script);
 
