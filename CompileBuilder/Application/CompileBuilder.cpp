@@ -400,35 +400,7 @@ bool CBUILDER::AppProc_Update()
                                                       xtimerglobal->Reset();
                                                     }
 
-                                                  XVECTOR<XSTRING*>* listscripts = APP_CFG.Scripts_GetAll();
-                                                  if(listscripts)
-                                                    {                                                                                                    
-                                                      for(XDWORD c=0; c<listscripts->GetSize(); c++)
-                                                        {  
-                                                          XSTRING* namescript = listscripts->Get(c);    
-                                                          if(namescript)
-                                                            {
-                                                              if(!namescript->IsEmpty())
-                                                                {
-                                                                  SCRIPT* script = CreateScripToExec(namescript->Get());                                                  
-                                                                  if(script)
-                                                                    {                                                  
-                                                                      XSTRING measurestr;
-
-                                                                      xtimerscriptrun->Reset();
-                                                                  
-                                                                      script->Run();
-                                                                        
-                                                                      xtimerscriptrun->GetMeasureString(measurestr, true);
-  
-                                                                      XTRACE_PRINTCOLOR(XTRACE_COLOR_PURPLE, __L("[%s] Ejecution script: %s."), namescript->Get(), measurestr.Get());    
-
-                                                                      DeleteScripToExec(script);                                                   
-                                                                    }
-                                                                }
-                                                            } 
-                                                        }
-                                                    }
+                                                  SCRIPT::LoadScriptAndRun(APP_CFG.Scripts_GetAll());
                                                  
                                                   Show_BlankLine();
                                                   
@@ -514,64 +486,6 @@ bool CBUILDER::AppProc_End()
   APP_CFG.DelInstance();
 
   //--------------------------------------------------------------------------------------
-
-  return true;
-}
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         bool CBUILDER::CreateScripToExec(XCHAR* namefilescript)
-* @brief      CreateScripToExec
-* @ingroup    APPLICATION
-* 
-* @param[in]  namefilescript : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
-SCRIPT* CBUILDER::CreateScripToExec(XCHAR* namefilescript)
-{  
-  SCRIPT* script = SCRIPT::Create(namefilescript);
-
-  if(!script) 
-    {
-      return NULL;
-    }
-
-  SCRIPT_SET_LIB_CFG(APP_CFG);
-  
-  XPATH xpath;
-
-  GEN_XPATHSMANAGER.GetPathOfSection(XPATHSMANAGERSECTIONTYPE_SCRIPTS, xpath);
-  xpath.Slash_Add();
-  xpath += namefilescript;
-
-  if(!script->Load(xpath))
-    {
-      delete script;
-      return NULL;    
-    }
-
-  return script;
-}
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         bool CBUILDER::DeleteScripToExec()
-* @brief      DeleteScripToExec
-* @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
-bool CBUILDER::DeleteScripToExec(SCRIPT* script)
-{
-  if(!script) return false;
-
-  delete script;
-  script = NULL;
 
   return true;
 }

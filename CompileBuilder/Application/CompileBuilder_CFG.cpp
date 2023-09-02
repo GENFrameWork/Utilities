@@ -138,14 +138,6 @@ bool CBUILDER_CFG::DoVariableMapping()
   
   AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , CBUILDER_CFG_SECTION_GENERAL  , CBUILDER_CFG_GENERAL_SILENTMODE                                 , &silentmode);
                                                                                                  
-
-  //-----------------------------------------------------
-  // SCRIPTS
-
-  AddValueSecuence<XSTRING>(XFILECFG_VALUETYPE_STRING, CBUILDER_CFG_SECTION_SCRIPTS        ,  CBUILDER_CFG_SCRIPTS_SCRIPT                 , __L("%03d"), 3, 999 
-                                                                                                                                          , scriptslist
-                                                                                                                                          , nscripts                                                                      , __L("Script of compilation")        , APP_CFG_DEFAULT_REMARK_COLUMN);
-
   return true;
 }
 
@@ -239,41 +231,6 @@ bool CBUILDER_CFG::IsSilentMode()
 
 /**-------------------------------------------------------------------------------------------------------------------
 * 
-* @fn         XVECTOR<XSTRING*>* CBUILDER_CFG::Scripts_GetAll()
-* @brief      Scripts_GetAll
-* @ingroup    APPLICATION
-* 
-* @return     XVECTOR<XSTRING*>* : 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
-XVECTOR<XSTRING*>* CBUILDER_CFG::Scripts_GetAll()
-{
-  return &scriptslist;
-}
-    
-
-/**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         XSTRING* CBUILDER_CFG::Scripts_GetScript(int index)
-* @brief      Scripts_GetScript
-* @ingroup    APPLICATION
-* 
-* @param[in]  index : 
-* 
-* @return     XSTRING* : 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
-XSTRING* CBUILDER_CFG::Scripts_GetScript(int index)
-{
-  if(index <  0)                      return NULL;
-  if(index >= scriptslist.GetSize())  return NULL;
-
-  return scriptslist.Get(index);
-}
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-* 
 * @fn         CBUILDER_CFG::CBUILDER_CFG(XCHAR* namefile)
 * @brief      Constructor
 * @ingroup    APPLICATION
@@ -324,7 +281,6 @@ CBUILDER_CFG::~CBUILDER_CFG()
 * --------------------------------------------------------------------------------------------------------------------*/
 void CBUILDER_CFG::Clean()
 {
-  nscripts    = 0;  
   silentmode  = false;
 }
 

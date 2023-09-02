@@ -24,6 +24,7 @@
 
  option(APP_CFG_GENERAL_FEATURE                             "Application CFG General"                                   true )
  option(APP_CFG_LOG_FEATURE                                 "Application CFG LOG"                                       true )
+ option(APP_CFG_SCRIPTS_FEATURE                             "Application Scripts List"                                  true )  
  
  option(SCRIPT_FEATURE                                      "Scripts"                                                   true )
  option(SCRIPT_G_FEATURE                                    "Script G Language"                                         true ) 

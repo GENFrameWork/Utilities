@@ -43,9 +43,6 @@
 #define CBUILDER_CFG_SECTION_GENERAL        __L("general")
 #define CBUILDER_CFG_GENERAL_SILENTMODE     __L("silentmode")
 
-#define CBUILDER_CFG_SECTION_SCRIPTS        __L("scripts")
-#define CBUILDER_CFG_SCRIPTS_SCRIPT         __L("script")
-
 #pragma endregion
 
 
@@ -67,10 +64,7 @@ class CBUILDER_CFG : public APPCFG
     bool                            End                                     ();
 
     bool                            IsSilentMode                            ();
-
-    XVECTOR<XSTRING*>*              Scripts_GetAll                          ();
-    XSTRING*                        Scripts_GetScript                       (int index);
-
+    
   private:
                                     CBUILDER_CFG                            (XCHAR* namefile);
                                     CBUILDER_CFG                            (CBUILDER_CFG const&);        // Don't implement
