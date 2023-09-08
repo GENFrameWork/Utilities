@@ -89,10 +89,13 @@
 
 #include "APPLog.h"
 
+#ifdef SCRIPT_LIB_CFG_ACTIVE
+#include "Script_Lib_CFG.h"
+#endif
+#include "Script.h"
 #include "Script_Language_G.h"
 #include "Script_Language_Lua.h"
 #include "Script_Language_Javascript.h"
-#include "Script_Lib_CFG.h"
 
 #include "CompileBuilder_CFG.h"
 
@@ -400,7 +403,7 @@ bool CBUILDER::AppProc_Update()
                                                       xtimerglobal->Reset();
                                                     }
 
-                                                  SCRIPT::LoadScriptAndRun(APP_CFG.Scripts_GetAll());
+                                                  SCRIPT::LoadScriptAndRun(APP_CFG.Scripts_GetAll(), CBUILDER::AdjustLibraries);
                                                  
                                                   Show_BlankLine();
                                                   
@@ -552,6 +555,27 @@ bool CBUILDER::Show_AllStatus()
   if(xmutexshowallstatus) xmutexshowallstatus->UnLock();
 
   return true;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+* 
+* @fn         void CBUILDER::AdjustLibraries(SCRIPT* script)
+* @brief      AdjustLibraries
+* @ingroup    APPLICATION
+* 
+* @param[in]  script : 
+* 
+* @return     void : does not return anything. 
+* 
+* --------------------------------------------------------------------------------------------------------------------*/
+void CBUILDER::AdjustLibraries(SCRIPT* script)
+{
+  #ifdef SCRIPT_LIB_CFG_ACTIVE
+  
+  SCRIPT_SET_LIB_CFG(script, APP_CFG);
+
+  #endif
 }
 
 
