@@ -2516,7 +2516,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
   XSTRING     datetimestring;
   int         maxsize               = ((cfg->GetMaxTextSize())*1024);
   int         sizetext              =  origin->ritchtext->GetTextLen();
-  int         indexcmdscreenclear   = DBGmessage->string.Find(XTRACE_IDMSGSCREENCLEAR  , false);
+  int         indexcmdscreenclear   = DBGmessage->string.Find(XTRACE_IDMSGCLEARSCREEN  , false);
   int         indexcmdchangestatus  = DBGmessage->string.Find(XTRACE_IDMSGSTATUS       , false);
   int         indexcmdclearstatus   = DBGmessage->string.Find(XTRACE_IDMSGSTATUSCLEAR  , false);
   XSTRING     publicIP;

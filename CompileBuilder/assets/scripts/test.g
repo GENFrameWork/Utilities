@@ -37,7 +37,7 @@ int main()
     	Printf("%d ", i);
     } 
  
-	XTRACE_PRINTCOLOR(1, "Prueba de envio %d con cadena %s", 10, "hola radiola"); 
+	TracePrintColor(1, "Prueba de envio %d con cadena %s", 10, "hola radiola"); 
   
   Printf("\nIntroduce una tecla:"); 
   Printf("[%c]\n", GetChar());
