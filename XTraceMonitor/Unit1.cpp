@@ -2518,17 +2518,25 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
   int         sizetext              =  origin->ritchtext->GetTextLen();
   int         indexcmdscreenclear   = DBGmessage->string.Find(XTRACE_IDMSGSCREENCLEAR  , false);
   int         indexcmdchangestatus  = DBGmessage->string.Find(XTRACE_IDMSGSTATUS       , false);
-  int         indexcmdclearstatus   = DBGmessage->string.Find( XTRACE_IDMSGSTATUSCLEAR , false);
+  int         indexcmdclearstatus   = DBGmessage->string.Find(XTRACE_IDMSGSTATUSCLEAR  , false);
   XSTRING     publicIP;
   XSTRING     localIP;
   bool        eraseorigin           = false;
+  bool        erasemsgstatus        = false;
 
   if(indexcmdscreenclear != XSTRING_NOTFOUND)
     {
       XSTRING namenode;
       GetNameNode(origin, namenode);
 
-      if(namenode.Find(__L("_"), true) != XSTRING_NOTFOUND)
+      if(!DBGmessage->level)
+        {
+          if(namenode.Find(__L("_"), true) != XSTRING_NOTFOUND)
+            {
+              eraseorigin   = true;
+            }
+        }
+       else
         {
           eraseorigin   = true;
         }
@@ -2557,10 +2565,39 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
       if(indexcmdscreenclear != XSTRING_NOTFOUND) line.AddFormat(__L(" for command clear screen"));
 
       PrintStatus(line.Get());
+    }
+
+  if(indexcmdclearstatus != XSTRING_NOTFOUND)
+    {
+      XSTRING namenode;
+      GetNameNode(origin, namenode);
+
+      if(!DBGmessage->level)
+        {
+          if(namenode.Find(__L("_"), true) != XSTRING_NOTFOUND)
+            {
+              erasemsgstatus   = true;
+            }
+        }
+       else
+        {
+          erasemsgstatus   = true;
+        }
+    }
+
+  if(erasemsgstatus)
+    {
+      XSTRING line;
+      XSTRING namenode;
+
+      GetNameNode(origin, namenode);
+
+      line.Format(__L("Clear Msg status from %s for command"), namenode.Get());
 
       origin->valuelisteditor->Strings->Clear();
       origin->status_msgs.StatusMsg_DeleteAll();
     }
+
 
   if(cfg->IsShowIPs())
     {

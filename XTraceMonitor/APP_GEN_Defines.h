@@ -36,6 +36,21 @@
 
 #define XTRACE_ACTIVE
 
+#define DIO_ACTIVE
+#define DIO_PING_ACTIVE
+//#define DIOPING_USEWINDOWDLL
+#define ANYTYPEOFDIOSTREAMIO
+#define DIO_STREAM_ACTIVE
+#define DIO_STREAMICMP_ACTIVE
+#define DIO_STREAMUART_ACTIVE
+#define DIO_STREAMUDP_ACTIVE
+#define DIO_STREAMTCPIP_ACTIVE
+
+
+
+
+
+
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
