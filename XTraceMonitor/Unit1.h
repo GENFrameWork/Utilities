@@ -47,6 +47,8 @@
 #include <Grids.hpp>
 #include <ValEdit.hpp>
 
+#include <vector>
+
 #include "XBase.h"
 #include "XPath.h"
 #include "XString.h"
@@ -57,7 +59,7 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			                __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.5.2")
+#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.5.3")
 #define XTRACEMONITOR_ROOTDIR                             __L("assets")
 
 #define XTRACEMONITOR_MASKLEVELBLACK                      0x00000001
@@ -101,6 +103,26 @@ class GRPSCREEN;
 class GRPWINDOWSSCREEN;
 class GRPCANVAS;
 
+
+struct MONITOR_RECTS
+{
+    std::vector<RECT>   rcMonitors;
+    RECT                rcCombined;
+
+    static BOOL CALLBACK MonitorEnum(HMONITOR hMon,HDC hdc,LPRECT lprcMonitor,LPARAM pData)
+    {
+        MONITOR_RECTS* pThis = reinterpret_cast<MONITOR_RECTS*>(pData);
+        pThis->rcMonitors.push_back(*lprcMonitor);
+        UnionRect(&pThis->rcCombined, &pThis->rcCombined, lprcMonitor);
+        return TRUE;
+    }
+
+    MONITOR_RECTS()
+    {
+        SetRectEmpty(&rcCombined);
+        EnumDisplayMonitors(0, 0, MonitorEnum, (LPARAM)this);
+    }
+};
 
 
 class ORIGIN

@@ -153,7 +153,6 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 
   //---------------------------------------------------------------
 
-
   AnsiString exefile = Application->ExeName;
   AnsiString exepath = ExtractFilePath(exefile);
   XPATH      xpath;
@@ -166,10 +165,6 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
   cfg  = new XTRACEMONITOR_CFG(XTRACEMONITOR_CFGNAMEFILE);
 	if(!cfg) return;
 
-  Left    = cfg->GetXPos();
-  Top     = cfg->GetYPos();
-  Width   = cfg->GetWidth();
-  Height  = cfg->GetHeight();
 
   FilterEdit->Text                = cfg->Filters_GetText()->Get();
   FilterCheckBox->Checked         = cfg->Filters_IsTextActive();
@@ -180,6 +175,10 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
   CheckBoxMsgStatus->Checked      = cfg->IsShowStatusMsg();
 
   RefreshStatusTextFilter();
+
+  //--------------------------------------------------------------------------------------
+
+  FormActivate(NULL);
 
   //--------------------------------------------------------------------------------------
 
@@ -3271,33 +3270,27 @@ bool TMainForm::RedrawStatusMsgList(ORIGIN* origin)
 *---------------------------------------------------------------------------------------------------------------------*/
 bool TMainForm::IsWindowOutsideExtendedDesktop(HWND hwnd)
 {
-  HMONITOR hmonitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONULL);
-  if(hmonitor)
+  MONITOR_RECTS monitorrect;
+  RECT          windowrect;
+
+  if(GetWindowRect(hwnd, &windowrect))
     {
-      MONITORINFO monitorinfo;
-      monitorinfo.cbSize = sizeof(MONITORINFO);
+      int windowWidth = windowrect.right - windowrect.left;
+      int windowHeight = windowrect.bottom - windowrect.top;
 
-      if(GetMonitorInfo(hmonitor, &monitorinfo))
+      if(windowrect.left   < monitorrect.rcCombined.left     ||
+         windowrect.right  > monitorrect.rcCombined.right    ||
+         windowrect.top    < monitorrect.rcCombined.top      ||
+         windowrect.bottom > monitorrect.rcCombined.bottom)
         {
-          RECT windowrect;
-          if(GetWindowRect(hwnd, &windowrect))
-            {
-              int windowWidth = windowrect.right - windowrect.left;
-              int windowHeight = windowrect.bottom - windowrect.top;
-
-              if(windowrect.left < monitorinfo.rcMonitor.left     ||
-                  windowrect.right > monitorinfo.rcMonitor.right  ||
-                  windowrect.top < monitorinfo.rcMonitor.top      ||
-                  windowrect.bottom > monitorinfo.rcMonitor.bottom)
-                {
-                  return true; // Window is partially or fully outside the extended desktop
-                }
-            }
+          return true; // Window is partially or fully outside the extended desktop
         }
     }
-    
+
   return false; // Window is within the extended desktop
 }
+
+
 
 
 
