@@ -66,7 +66,7 @@
 #include "DIOCheckTCPIPConnections.h"
 #include "DIOCheckInternetConnection.h"
 #include "DIOWINDOWSFactory.h"
-#include "DIODNSResolved.h"
+#include "DIODNSResolver.h"
 #include "DIOStream.h"
 #include "DIOStreamUDPConfig.h"
 #include "DIOStreamUDP.h"
@@ -241,7 +241,7 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 
   if(cfg->DynDNS_IsChangeAvailable())
     {
-      ResolvedOriginTimer->Enabled  = true;
+      OriginTimer->Enabled  = true;
     }
    else ButtonDNSUpdate->Enabled  = false;
 
@@ -304,7 +304,7 @@ void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
 
   InternetUpdateTimer->Enabled  = false;
   AddDBMsgTimer->Enabled        = false;
-  ResolvedOriginTimer->Enabled  = false;
+  OriginTimer->Enabled  = false;
 
   Application->OnIdle = NULL;
 
@@ -757,7 +757,7 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
             {
               PrintStatus(__L("DNS changed to Public IP: %s."), newIPstring.Get());
 
-              ResolvedAllURLOrigins();
+              AllURLOrigins();
             }
            else
             {
@@ -783,8 +783,8 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject*Sender)
-* @brief      ResolvedOriginTimerTimer
+* @fn         void __fastcall TMainForm::OriginTimerTimer(TObject*Sender)
+* @brief      OriginTimerTimer
 * @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
@@ -795,11 +795,11 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject *Sender)
+void __fastcall TMainForm::OriginTimerTimer(TObject *Sender)
 {
   if(!haveinternet) return;
 
-  ResolvedAllURLOrigins();
+  AllURLOrigins();
 }
 
 
@@ -1317,7 +1317,7 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 
   CreateOriginsFromConfig(Sender?false:true);
 
-  if(haveinternet) ResolvedAllURLOrigins();
+  if(haveinternet) AllURLOrigins();
 
   OpenUDPServer(&servercfg);
 
@@ -2425,8 +2425,8 @@ ORIGIN* TMainForm::GetActualOrigin()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void TMainForm::ResolvedAllURLOrigins()
-* @brief      ResolvedAllURLOrigins
+* @fn         void TMainForm::AllURLOrigins()
+* @brief      AllURLOrigins
 * @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
@@ -2435,7 +2435,7 @@ ORIGIN* TMainForm::GetActualOrigin()
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void TMainForm::ResolvedAllURLOrigins()
+void TMainForm::AllURLOrigins()
 {
   if(!haveinternet) return;
 

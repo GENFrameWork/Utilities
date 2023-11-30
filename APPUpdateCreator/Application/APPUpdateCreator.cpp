@@ -41,7 +41,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "Version.h"
+#include "VersionFrameWork.h"
 
 #include "XBase.h"
 #include "XPath.h"
