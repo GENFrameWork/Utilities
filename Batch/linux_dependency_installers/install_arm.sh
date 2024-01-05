@@ -40,6 +40,7 @@ echo "Sound"
 echo "Sound Linux"
 apt-get install libasound2-dev:armhf -y
 apt-get install pulseaudio:armhf -y
+apt-get install libpulse-dev:armhf -y
 echo "-----------------------------------------------------------------------"
 echo "Databases"
 echo "PosgreSQL client"

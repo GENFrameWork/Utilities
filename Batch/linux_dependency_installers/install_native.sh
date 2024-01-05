@@ -54,6 +54,7 @@ echo "Sound"
 echo "Sound Linux"
 apt-get install libasound2-dev -y
 apt-get install pulseaudio -y
+apt-get install libpulse-dev -y
 echo "-----------------------------------------------------------------------"
 echo "Databases"
 echo "PosgreSQL client"
