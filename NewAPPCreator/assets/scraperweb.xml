@@ -4,7 +4,11 @@
 
 	<webservice name="PUBLICIP">
     
-    <web url="www.vermiip.es" method="GET" format="HTML" > 
+    <web url="ipecho.net" method="GET" format="HTML" > 
+	    <value name="IP" priority="1" start="<h1>Your IP is " end="</h1>" />      
+	  </web>    
+      
+    <web url="vermiip.es" method="GET" format="HTML" > 
 	    <value name="IP" priority="1" start="<h2>Tu IP p&uacute;blica es:" end="</h2>" />      
 	  </web>    
 	
