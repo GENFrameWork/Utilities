@@ -15,6 +15,7 @@ D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\VSCT.r
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\VSCT.write.1.tlog
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\resources.json
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\ctoFiles.json
+D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\_EmptyResource.resources.original
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\mergeCto.cache
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.csproj.CoreCompileInputs.cache
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.csproj.CopyComplete
@@ -25,4 +26,3 @@ D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remark
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\extension.vsixmanifest
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\files.json
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\createTemplateManifests.cache
-D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\_EmptyResource.resources.original

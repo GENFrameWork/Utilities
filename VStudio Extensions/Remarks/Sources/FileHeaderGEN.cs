@@ -167,7 +167,7 @@ namespace Remarks
                 // Types
                 if (directory.Contains("Application"))     groupID = "APPLICATION";
                 if (directory.Contains("XUtils"))          groupID = "XUTILS";
-                if (directory.Contains("DataIO"))          groupID = "DATAIO";
+                if (directory.Contains("DataIO"))          groupID = "DATAIO";               
                 if (directory.Contains("Graphic"))         groupID = "GRAPHIC";
                 if (directory.Contains("Sound"))           groupID = "SOUND";
                 if (directory.Contains("Input"))           groupID = "INPUT";
@@ -175,7 +175,7 @@ namespace Remarks
                 if (directory.Contains("Compress"))        groupID = "COMPRESS";
                 if (directory.Contains("MainProc"))        groupID = "MAIN PROCEDURE";
                 if (directory.Contains("Script"))          groupID = "SCRIPT";
-                if (directory.Contains("DatabasesSQL"))    groupID = "DATABASESSQL";
+                if (directory.Contains("Databases"))       groupID = "DATABASES";
                 if (directory.Contains("UserInterface"))   groupID = "USERINTERFACE";
                 if (directory.Contains("Video"))           groupID = "VIDEO";
                 if (directory.Contains("Examples"))        groupID = "EXAMPLES";
