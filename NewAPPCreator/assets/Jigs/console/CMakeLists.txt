@@ -51,7 +51,7 @@
 # Directorys of the Application
 
  set(APP_DIRECTORY_APPLICATION   "../Application")
- list(APPEND INCLUDES_DIR ${APP_DIRECTORY_APPLICATION})
+ list(APPEND INCLUDES_DIR_LIST ${APP_DIRECTORY_APPLICATION})
 
 
 # --------------------------------------------------------------------
@@ -73,7 +73,7 @@
 # --------------------------------------------------------------------
 # Create proyect 
 
- include_directories(${INCLUDES_DIR})
+ include_directories(${INCLUDES_DIR_LIST})
 
  add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 

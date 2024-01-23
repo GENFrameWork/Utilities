@@ -2,6 +2,7 @@
 
 echo -------------------------------------------------------------
 echo [Remove directorys]
+
 echo -------------------------------------------------------------
 echo [Examples]
 echo [Examples Base]
@@ -17,6 +18,7 @@ sh internal/erase_artifacts.sh ../../Examples/Console/ScriptsExample
 echo [Examples Graphics]
 sh internal/erase_artifacts.sh ../../Examples/Graphics/Canvas2D
 sh internal/erase_artifacts.sh ../../Examples/Graphics/UI_Options
+
 echo -------------------------------------------------------------
 echo [Tests]
 echo [Development tests]
@@ -25,6 +27,11 @@ sh internal/erase_artifacts.sh ../../Tests/DevTestsDevices
 sh internal/erase_artifacts.sh ../../Tests/DevTestsCanvas2D
 echo [Unit tests]           
 sh internal/erase_artifacts.sh ../../Tests/UnitTests
-echo
+
+echo -------------------------------------------------------------
+echo [Utilities]
+sh internal/erase_artifacts.sh "../../Utilities/APPUpdateCreator"
+sh internal/erase_artifacts.sh "../../Utilities/CompileBuilder"
+
 exit 0
 

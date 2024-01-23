@@ -1,7 +1,21 @@
 @echo off
 call erase_all_windows.bat
 set vctype=%1
+
+if exist "C:\Program Files\Microsoft Visual Studio\2022\Community" (
+  set vctype=Community
+)
+
+if exist "C:\Program Files\Microsoft Visual Studio\2022\Professional" (
+  set vctype=Professional
+)
+
+if exist "C:\Program Files\Microsoft Visual Studio\2022\Enterprise" (
+  set vctype=Enterprise
+)
+
 if "%vctype%"=="" (set vctype=Enterprise)
+
 echo %DATE% %TIME% >> Output.txt
 for /f "tokens=1-4 delims=:.," %%a in ("%time%") do (
     set /a "start_time=(((%%a*60+1%%b %% 100)*60+1%%c %% 100)*100+1%%d %% 100)"
@@ -47,6 +61,14 @@ call internal/compile_windows.bat ../../Tests/DevTestsCanvas2D/Platforms/Windows
 
 ..\printf\printf " * [Unit tests x32]\n\n"
 call internal/compile_windows.bat ../../Tests/UnitTests/Platforms/Windows \x32 unit     
+
+
+set "OUTFILE=..\..\..\..\..\Utilities\Batch\Output.txt"
+set "PRINTF=..\..\..\..\..\Utilities\printf\printf"
+..\printf\printf "[Utilities Windows PC x32]\n\n"
+
+call internal/compile_windows.bat ../../Utilities/APPUpdateCreator/Platforms/Windows \x32 appupdatecreator
+call internal/compile_windows.bat ../../Utilities/CompileBuilder/Platforms/Windows \x32 compilerbuilder
                           
       
 set "OUTFILE=..\..\..\..\..\..\Utilities\Batch\Output.txt"
@@ -72,6 +94,7 @@ call internal/compile_windows.bat ../../Examples/Console/ScriptsExample/Platform
 call internal/compile_windows.bat ../../Examples/Graphics/Canvas2D/Platforms/Windows /x64 canvas2d
 call internal/compile_windows.bat ../../Examples/Graphics/UI_Options/Platforms/Windows /x64 ui_options
    
+   
 set "OUTFILE=..\..\..\..\..\Utilities\Batch\Output.txt"
 set "PRINTF=..\..\..\..\..\Utilities\printf\printf"   
 ..\printf\printf "[Tests Windows PC x64]\n\n"
@@ -84,6 +107,13 @@ call internal/compile_windows.bat ../../Tests/DevTestsCanvas2D/Platforms/Windows
 ..\printf\printf " * [Unit tests x64]\n\n"
 call internal/compile_windows.bat ../../Tests/UnitTests/Platforms/Windows \x64 unit
 
+
+set "OUTFILE=..\..\..\..\..\Utilities\Batch\Output.txt"
+set "PRINTF=..\..\..\..\..\Utilities\printf\printf"
+..\printf\printf "[Utilities Windows PC x64]\n\n"
+
+call internal/compile_windows.bat ../../Utilities/APPUpdateCreator/Platforms/Windows \x64 appupdatecreator
+call internal/compile_windows.bat ../../Utilities/CompileBuilder/Platforms/Windows \x64 compilerbuilder
 
 
 for /f "tokens=1-4 delims=:.," %%a in ("%time%") do (
