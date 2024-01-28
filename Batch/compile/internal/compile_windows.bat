@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 
 set "DIR=%1%2"
 set "OLDPATH=%CD%"
