@@ -35,7 +35,7 @@ call internal/erase_artifacts "../../../Utilities/CompileBuilder"
 
 
 if exist "Output.txt" ( 
-  delete Output.txt
+  del Output.txt
 )
 
 echo -------------------------------------------------------------
