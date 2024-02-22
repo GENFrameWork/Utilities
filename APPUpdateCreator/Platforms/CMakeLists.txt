@@ -12,20 +12,19 @@ set(GEN_DIRECTORY "../../../../GENFrameWork")
 # --------------------------------------------------------------------
 # Activate features/Defines
 
-option(DEBUG_FEATURE                           "Activate Debug mode"                            true )
-
-option(XTRACE_FEATURE                          "Activate XTrace"                                true )
-option(XMEMORY_CONTROL_FEATURE                 "Activate XMemory Control"                       true )
-                  
-option(APP_FEATURE                             "Activate Application modules"                   true )
-option(APP_CONSOLE_FEATURE                     "Activate Application Console"                   true )
-option(APP_LOG_FEATURE                         "Activate Application Log"                       true )
-
-option(APP_CFG_GENERAL_FEATURE                 "Activate Application CFG General"               true )  
-option(APP_CFG_LOG_FEATURE                     "Activate Application CFG LOG"                   true )
-
-option(DIO_APPLICATIONUPDATE_FEATURE           "Activate Data Input/Output Application Update"  true )
-
+option(DEBUG_FEATURE                                          "Activate Debug mode"                                     true )
+                            
+option(XTRACE_FEATURE                                         "Activate XTrace"                                         true )
+option(XMEMORY_CONTROL_FEATURE                                "Activate XMemory Control"                                true )
+                                              
+option(APP_FEATURE                                            "Activate Application modules"                            true )
+option(APP_CONSOLE_FEATURE                                    "Activate Application Console"                            true )
+option(APP_LOG_FEATURE                                        "Activate Application Log"                                true )
+                            
+option(APP_CFG_GENERAL_FEATURE                                "Activate Application CFG General"                        true )  
+option(APP_CFG_LOG_FEATURE                                    "Activate Application CFG LOG"                            true )
+                            
+option(DIO_APPLICATIONUPDATE_FEATURE                          "Activate Data Input/Output Application Update"           true )
 
 
 # --------------------------------------------------------------------
@@ -57,7 +56,7 @@ list(APPEND GEN_SOURCES_MODULES_LIST "${APP_DIRECTORY_APPLICATION}/APPUpdateCrea
 # --------------------------------------------------------------------
 # Create proyect 
 
- include("${GEN_DIRECTORY}/Common/CMake/GEN_CMakeLists_CreateProject.txt") 
+include("${GEN_DIRECTORY}/Common/CMake/GEN_CMakeLists_CreateProject.txt") 
 
 
 # --------------------------------------------------------------------
