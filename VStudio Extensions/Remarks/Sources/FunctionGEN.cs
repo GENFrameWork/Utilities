@@ -387,28 +387,29 @@ namespace Remarks
 
                 if(returntype.Length == 0)
                   {
-                    result += "@return\t\t\t" +"Does not return anything. \n";
+                    // result += "@return\t\t\t" +"Does not return anything. \n";
                   }
                  else
                   {
                     if(returntype == "void")
                       {
-                        result += "@return\t\t\t" + returntype + " : does not return anything. \n";
+                        // result += "@return\t\t\t" + returntype + " : does not return anything. \n";
                       }
                       else
                       {
                         if(returntype == "bool")
                           {
                             result += "@return\t\t\t" + returntype + " : true if is succesful. \n";
-                          }
+                            result += "\n";
+            }
                           else
                           {
                             result += "@return\t\t\t" + returntype + " : \n";
+                            result += "\n";
                           }
                       }
                   }
-                           
-                result += "\n";
+                                           
                 result += "--------------------------------------------------------------------------------------------------------------------*/\n";
                 result += selection.Text;
                 selection.Text = result;                
