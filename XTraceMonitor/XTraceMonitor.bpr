@@ -35,7 +35,7 @@
       obj\DIOCheckInternetConnection.obj obj\DIOCheckTCPIPConnections.obj 
       obj\DIOPing_XEvent.obj obj\XVariant.obj obj\XWINDOWSRegistryManager.obj 
       obj\DIOWebServer_XEvent.obj obj\DIOWebClient_XEvent.obj 
-      obj\DIODNSProtocol.obj obj\DIODNSResolved.obj 
+      obj\DIODNSProtocol_Client.obj obj\DIODNSResolver.obj 
       obj\DIOStreamConfigString.obj obj\HashMD5.obj obj\XWINDOWSTrace.obj"/>
     <RESFILES value="XTraceMonitor.res"/>
     <IDLFILES value=""/>
@@ -57,7 +57,7 @@
       bdertl.bpi ibxpress.bpi bcbie.bpi vclie.bpi inetdb.bpi inet.bpi vcldbx.bpi 
       dclocx.bpi bcb2kaxserver.bpi qrpt.bpi teeui.bpi teedb.bpi tee.bpi 
       teeqr.bpi nmfast.bpi"/>
-    <PATHCPP value=".;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN\XUtils;..\..\GEN\DataIO;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\Cipher;..\..\GEN\Platforms\Windows"/>
+    <PATHCPP value=".;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN\XUtils;..\..\GEN\XUtils\XFiles;..\..\GEN\DataIO;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\Cipher;..\..\GEN\Platforms\Windows"/>
     <PATHPAS value=".;FastMM4991\FastMM"/>
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
@@ -67,8 +67,8 @@
     <USERDEFINES value="WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE"/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="XTraceMonitor.cpp"/>
-    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;&quot;Microsoft Platform SDK\include&quot;"/>
-    <LIBPATH value="..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D"/>
+    <INCLUDEPATH value="$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\XUtils\XFiles;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;&quot;Microsoft Platform SDK\include&quot;"/>
+    <LIBPATH value="..\..\GEN\XUtils\XFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D"/>
     <WARNINGS value="-w-pia -w-par -w-8027 -w-hid"/>
     <OTHERFILES value=""/>
   </MACROS>
@@ -79,8 +79,8 @@
       -I..\..\GEN\DataIO -I..\..\GEN\DataIO\Protocols -I..\..\GEN\DataIO\Streams 
       -I..\..\GEN\DataIO\Web -I..\..\GEN\DataIO\ScraperWeb 
       -I..\..\GEN\DataIO\Drivers -I..\..\GEN\Graphic -I..\..\GEN\XUtils 
-      -I..\..\GEN\Graphic\2D -I..\..\GEN\Platforms\Windows 
-      -I..\..\ThirdPartyLibraries\agg\src 
+      -I..\..\GEN\XUtils\XFiles -I..\..\GEN\Graphic\2D 
+      -I..\..\GEN\Platforms\Windows -I..\..\ThirdPartyLibraries\agg\src 
       -I..\..\ThirdPartyLibraries\agg\include -I&quot;Microsoft Platform SDK\include&quot; 
       -src_suffix cpp -DWIN32 -DWINDOWS -DLARGE_ADDRESS_AWARE -DHW_PC -DBUILDER 
       -DXDEBUG_TRACE -DUNICODE -DDIO_ACTIVE -DDIOUDP_ACTIVE -DDIOUART_ACTIVE 
@@ -113,10 +113,10 @@
       <FILE FILENAME="..\..\GEN\XUtils\XDateTime.cpp" FORMNAME="" UNITNAME="XDateTime.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XTrace.cpp" FORMNAME="" UNITNAME="XTrace.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XFactory.cpp" FORMNAME="" UNITNAME="XFactory.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFile.cpp" FORMNAME="" UNITNAME="XFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFileCFG.cpp" FORMNAME="" UNITNAME="XFileCFG.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFileINI.cpp" FORMNAME="" UNITNAME="XFileINI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFileTXT.cpp" FORMNAME="" UNITNAME="XFileTXT.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFile.cpp" FORMNAME="" UNITNAME="XFile.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFileCFG.cpp" FORMNAME="" UNITNAME="XFileCFG.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFileINI.cpp" FORMNAME="" UNITNAME="XFileINI.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFileTXT.cpp" FORMNAME="" UNITNAME="XFileTXT.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XSleep.cpp" FORMNAME="" UNITNAME="XSleep.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XString.cpp" FORMNAME="" UNITNAME="XString.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XSystem.cpp" FORMNAME="" UNITNAME="XSystem" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -138,9 +138,9 @@
       <FILE FILENAME="..\..\GEN\DataIO\ScraperWeb\DIOScraperWebPublicIP.cpp" FORMNAME="" UNITNAME="DIOScraperWebPublicIP.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\ScraperWeb\DIOScraperWeb.cpp" FORMNAME="" UNITNAME="DIOScraperWeb.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\ScraperWeb\DIOScraperWebCache.cpp" FORMNAME="" UNITNAME="DIOScraperWebCache.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFileXML.cpp" FORMNAME="" UNITNAME="XFileXML.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFileXML.cpp" FORMNAME="" UNITNAME="XFileXML.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\XUtils\XPublisher.cpp" FORMNAME="" UNITNAME="XPublisher.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\XUtils\XFileJSON.cpp" FORMNAME="" UNITNAME="XFileJSON" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\XUtils\XFiles\XFileJSON.cpp" FORMNAME="" UNITNAME="XFileJSON" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\Streams\DIOStreamTCPIPConfig.cpp" FORMNAME="" UNITNAME="DIOStreamTCPIPConfig" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Cipher\Hash.cpp" FORMNAME="" UNITNAME="Hash.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Cipher\HashCRC32.cpp" FORMNAME="" UNITNAME="HashCRC32.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -192,8 +192,8 @@
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSRegistryManager.cpp" FORMNAME="" UNITNAME="XWINDOWSRegistryManager" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\Web\DIOWebServer_XEvent.cpp" FORMNAME="" UNITNAME="DIOWebServer_XEvent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\Web\DIOWebClient_XEvent.cpp" FORMNAME="" UNITNAME="DIOWebClient_XEvent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\DataIO\Protocols\DIODNSProtocol.cpp" FORMNAME="" UNITNAME="DIODNSProtocol.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="..\..\GEN\DataIO\DIODNSResolved.cpp" FORMNAME="" UNITNAME="DIODNSResolved.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\DataIO\Protocols\DIODNSProtocol_Client.cpp" FORMNAME="" UNITNAME="DIODNSProtocol.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\DataIO\DIODNSResolver.cpp" FORMNAME="" UNITNAME="DIODNSResolver.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\DataIO\Streams\DIOStreamConfigString.cpp" FORMNAME="" UNITNAME="DIOStreamConfigString" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Cipher\HashMD5.cpp" FORMNAME="" UNITNAME="HashMD5.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSTrace.cpp" FORMNAME="" UNITNAME="XWINDOWSTrace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -232,36 +232,36 @@ Comments=
 
 [HistoryLists\hlIncludePath]
 Count=30
-Item0=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item1=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item2=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include;..\..\GEN\DataIO\Web
-Item3=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item4=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item5=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item6=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item0=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\XUtils\XFiles;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item1=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item2=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item3=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include;..\..\GEN\DataIO\Web
+Item4=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item5=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item6=..\..\GEN\XUtils;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
 Item7=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item8=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item9=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item10=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainApp;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item11=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item12=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item13=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
-Item14=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;Microsoft Platform SDK\include
-Item15=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
-Item16=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphics;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
-Item17=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
-Item18=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
-Item19=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
-Item20=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
-Item21=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\Microsoft Platform SDK\include
-Item22=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\GEN\Platforms\Windows
-Item23=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
-Item24=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
-Item25=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
-Item26=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
-Item27=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
-Item28=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
-Item29=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;D:\GENFrameWork\GEN\Libraries\Microsoft\Microsoft Platform SDK\include;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
+Item8=$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;FastMM4991\FastMM\CPP Builder Support;..\..\GEN;..\..\GEN\Common;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item9=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item10=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item11=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\MainApp;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item12=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item13=..\..\ThirdPartyLibraries\agg\src;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item14=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\include;Microsoft Platform SDK\include
+Item15=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;Microsoft Platform SDK\include
+Item16=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphic;..\..\GEN\Graphic\2D;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
+Item17=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\Graphics;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
+Item18=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include;Microsoft Platform SDK\share
+Item19=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
+Item20=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
+Item21=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;Microsoft Platform SDK\include
+Item22=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\Microsoft Platform SDK\include
+Item23=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows;..\GEN\Platforms\Windows
+Item24=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
+Item25=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
+Item26=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
+Item27=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Application;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\Platforms\Windows
+Item28=..\GEN\Platforms\Windows;..\GEN\Cipher;..\GEN\DataIO;..\GEN\XUtils;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
+Item29=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(BCB)\include\vcl;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
 
 [HistoryLists\hlLibraryPath]
 Count=30

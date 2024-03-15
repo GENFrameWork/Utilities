@@ -57,39 +57,12 @@
 *---------------------------------------------------------------------------------------------------------------------*/
 NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 {
-	XSTRING section;
-	XSTRING key;
+  Clean();
 
-	Clean();
-
-	//-----------------------------------------------------
-	// GENERAL
-
-	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_XPOS					      , &xpos);
-	AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_YPOS					      , &ypos);
-  AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_GENPATH   		      , &gen_path);
-
-	//-----------------------------------------------------
-	// Aplication
-
-	AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_PATH				    , &application_path);
-  AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_NAME				    , &application_name);
-  AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_COPYRIGHT	      , &application_copyright);
-  AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_TYPE 			      , &application_type);
-  AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_FORMAT		      , &application_format);
-
-	//-----------------------------------------------------
-	// Additional
-
-	AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_TRACESYSTEM	    , &additional_tracesystem);
-  AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_MEMCTRLSYSTEM	  , &additional_memctrlsystem);
-	AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_LOGSYSTEM  		  , &additional_logsystem);
-  AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_CFGSYSTEM 			  , &additional_cfgsystem);
-
-
-	Default();
-
-	Ini();
+  if(namefile)
+    {
+      Ini<NEWAPPCREATOR_CFG>();
+    }
 }
 
 
@@ -105,9 +78,84 @@ NEWAPPCREATOR_CFG::NEWAPPCREATOR_CFG(XCHAR* namefile) : XFILECFG(namefile)
 *---------------------------------------------------------------------------------------------------------------------*/
 NEWAPPCREATOR_CFG::~NEWAPPCREATOR_CFG()
 {
-	End();
-
 	Clean();
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+*
+* @fn         bool XTRACEMONITOR_CFG::DoVariableMapping()
+* @brief      DoVariableMapping
+* @ingroup    APPLICATION
+*
+* @return     bool : true if is succesful.
+*
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::DoVariableMapping()
+{
+  XSTRING section;
+
+  if(!XFILECFG::DoVariableMapping())
+    {
+      return false;
+    }
+
+  
+	//-----------------------------------------------------
+// GENERAL
+
+AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_XPOS					      , &xpos);
+AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_YPOS					      , &ypos);
+AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_GENERAL		  , NEWAPPCREATOR_CFG_GENERAL_GENPATH   		      , &gen_path);
+
+//-----------------------------------------------------
+// Aplication
+
+AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_PATH				    , &application_path);
+AddValue(XFILECFG_VALUETYPE_STRING	  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_NAME				    , &application_name);
+AddValue(XFILECFG_VALUETYPE_STRING    , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_COPYRIGHT	      , &application_copyright);
+AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_TYPE 			      , &application_type);
+AddValue(XFILECFG_VALUETYPE_INT			  , NEWAPPCREATOR_CFG_SECTION_APPLICATION , NEWAPPCREATOR_CFG_APPLICATION_FORMAT		      , &application_format);
+
+//-----------------------------------------------------
+// Additional
+
+AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_TRACESYSTEM	    , &additional_tracesystem);
+AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_MEMCTRLSYSTEM	  , &additional_memctrlsystem);
+AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_LOGSYSTEM  		  , &additional_logsystem);
+AddValue(XFILECFG_VALUETYPE_BOOLEAN	  , NEWAPPCREATOR_CFG_SECTION_ADDITIONAL  , NEWAPPCREATOR_CFG_ADDITIONAL_CFGSYSTEM 			  , &additional_cfgsystem);
+
+  return true;
+}
+
+
+/**-------------------------------------------------------------------------------------------------------------------
+*
+* @fn         bool NEWAPPCREATOR_CFG::DoDefault()
+* @brief      DoDefault
+* @ingroup    APPLICATION
+*
+* @return     bool : true if is succesful.
+*
+* --------------------------------------------------------------------------------------------------------------------*/
+bool NEWAPPCREATOR_CFG::DoDefault()
+{
+ 	xpos			                  = 613;
+	ypos			                  = 349;
+  gen_path                    = __L("");
+
+  application_path            = __L("");
+  application_name            = __L("");
+  application_copyright       = __L("GEN Group");
+  application_type            = 0;
+  application_format          = 0;
+
+  additional_tracesystem      = true;
+  additional_memctrlsystem    = true;
+  additional_logsystem        = true;
+  additional_cfgsystem        = true;
+
+  return true;
 }
 
 
@@ -427,36 +475,6 @@ bool NEWAPPCREATOR_CFG::Additional_GetCFGSystem()
 void NEWAPPCREATOR_CFG::Additional_SetCFGSystem(bool cfgsystem)
 {
   additional_cfgsystem = cfgsystem;
-}
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-*
-* @fn         bool NEWAPPCREATOR_CFG::Default()
-* @brief      Default
-* @ingroup    UTILITIES
-*
-* @return     bool : true if is succesful.
-*
-*---------------------------------------------------------------------------------------------------------------------*/
-bool NEWAPPCREATOR_CFG::Default()
-{
-	xpos			                  = 613;
-	ypos			                  = 349;
-  gen_path                    = __L("");
-
-  application_path            = __L("");
-  application_name            = __L("");
-  application_copyright       = __L("GEN Group");
-  application_type            = 0;
-  application_format          = 0;
-
-  additional_tracesystem      = true;
-  additional_memctrlsystem    = true;
-  additional_logsystem        = true;
-  additional_cfgsystem        = true;
-
-	return true;
 }
 
 

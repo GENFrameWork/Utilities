@@ -205,7 +205,7 @@ class TMainForm : public TForm
     TCheckBox*                    FilterCheckBox;
     TBitBtn*                      ButtonDNSUpdate;
     TCheckBox*                    AddTimeMarkCheckBox;
-    TTimer*                       OriginTimer;
+    TTimer*                       ResolvedOriginTimer;
     TImage*                       InternetImage;
     TImageList*                   InternetImageList;
     TLabel*                       InternetLabel;
@@ -264,7 +264,7 @@ class TMainForm : public TForm
     void __fastcall               FilterCheckBoxClick           (TObject *Sender);
     bool __fastcall               CheckFilterLine               (AnsiString& line);
     void __fastcall               ButtonDNSUpdateClick          (TObject *Sender);
-    void __fastcall               OriginTimerTimer      (TObject *Sender);
+    void __fastcall               ResolvedOriginTimerTimer      (TObject *Sender);
     void __fastcall               InternetUpdateTimerTimer      (TObject *Sender);
     void __fastcall               OriginsTreeViewChange         (TObject *Sender, TTreeNode *Node);
     void __fastcall               CheckLevelFilterBlackClick    (TObject *Sender);
@@ -314,7 +314,7 @@ class TMainForm : public TForm
     bool                          DeleteOriginFromUART          ();
     ORIGIN*                       GetOriginFromTreeNode         (TTreeNode* node);
     ORIGIN*                       GetActualOrigin               ();
-    void                          AllURLOrigins         ();
+    void                          ResolvedAllURLOrigins         ();
 
     bool                          AddLineTrace                  (ORIGIN* origin, DBGMESSAGE* DBGmessage);
     void                          UpdateRunStopButton           (bool run);

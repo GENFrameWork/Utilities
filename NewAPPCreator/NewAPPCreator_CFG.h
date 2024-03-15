@@ -67,7 +67,9 @@ class NEWAPPCREATOR_CFG : public XFILECFG
 																	  NEWAPPCREATOR_CFG																(XCHAR* namefile);
 		virtual												 ~NEWAPPCREATOR_CFG																();
 
-
+    bool                            DoVariableMapping                               ();
+    bool                            DoDefault                                       ();
+    
 		int															GetXPos																					();
     void														SetXPos																					(int xpos);
     int															GetYPos																					();
@@ -90,8 +92,6 @@ class NEWAPPCREATOR_CFG : public XFILECFG
     void                            Additional_SetLogSystem                         (bool logsystem);
     bool                            Additional_GetCFGSystem                         ();
     void                            Additional_SetCFGSystem                         (bool cfgsystem);
-
-		virtual bool										Default																					();
 
 	private:
 

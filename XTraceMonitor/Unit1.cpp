@@ -146,7 +146,7 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
   XSYSTEM::SetInstance(new XWINDOWSSYSTEM());
   if(!XSYSTEM::GetIsInstanced()) return;
 
-  XBUFFER::SetHardwareUseLittleEndian(GEN_XSYSTEM.HardwareUseLittleEndian());
+  //XBUFFER::SetHardwareUseLittleEndian(GEN_XSYSTEM.HardwareUseLittleEndian());
 
  	DIOFACTORY::SetInstance(new DIOWINDOWSFACTORY());
   if(!DIOFACTORY::GetIsInstanced()) return;
@@ -241,7 +241,7 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 
   if(cfg->DynDNS_IsChangeAvailable())
     {
-      OriginTimer->Enabled  = true;
+      ResolvedOriginTimer->Enabled  = true;
     }
    else ButtonDNSUpdate->Enabled  = false;
 
@@ -304,7 +304,7 @@ void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
 
   InternetUpdateTimer->Enabled  = false;
   AddDBMsgTimer->Enabled        = false;
-  OriginTimer->Enabled  = false;
+  ResolvedOriginTimer->Enabled  = false;
 
   Application->OnIdle = NULL;
 
@@ -757,7 +757,7 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
             {
               PrintStatus(__L("DNS changed to Public IP: %s."), newIPstring.Get());
 
-              AllURLOrigins();
+              ResolvedAllURLOrigins();
             }
            else
             {
@@ -783,8 +783,8 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void __fastcall TMainForm::OriginTimerTimer(TObject*Sender)
-* @brief      OriginTimerTimer
+* @fn         void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject*Sender)
+* @brief      ResolvedOriginTimerTimer
 * @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
@@ -795,11 +795,11 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void __fastcall TMainForm::OriginTimerTimer(TObject *Sender)
+void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject *Sender)
 {
   if(!haveinternet) return;
 
-  AllURLOrigins();
+  ResolvedAllURLOrigins();
 }
 
 
@@ -1317,7 +1317,7 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 
   CreateOriginsFromConfig(Sender?false:true);
 
-  if(haveinternet) AllURLOrigins();
+  if(haveinternet) ResolvedAllURLOrigins();
 
   OpenUDPServer(&servercfg);
 
@@ -2425,8 +2425,8 @@ ORIGIN* TMainForm::GetActualOrigin()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         void TMainForm::AllURLOrigins()
-* @brief      AllURLOrigins
+* @fn         void TMainForm::ResolvedAllURLOrigins()
+* @brief      ResolvedAllURLOrigins
 * @ingroup    XUTILS
 *
 * @author     Abraham J. Velez
@@ -2435,7 +2435,7 @@ ORIGIN* TMainForm::GetActualOrigin()
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-void TMainForm::AllURLOrigins()
+void TMainForm::ResolvedAllURLOrigins()
 {
   if(!haveinternet) return;
 

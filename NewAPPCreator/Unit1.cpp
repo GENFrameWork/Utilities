@@ -51,7 +51,7 @@ __fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
   XSYSTEM::SetInstance(new XWINDOWSSYSTEM());
   if(!XSYSTEM::GetIsInstanced()) return;
 
-  XBUFFER::SetHardwareUseLittleEndian(GEN_XSYSTEM.HardwareUseLittleEndian());
+  //XBUFFER::SetHardwareUseLittleEndian(GEN_XSYSTEM.HardwareUseLittleEndian());
 
 
 
