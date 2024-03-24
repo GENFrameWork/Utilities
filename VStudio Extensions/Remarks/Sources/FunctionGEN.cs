@@ -148,42 +148,41 @@ namespace Remarks
             if(isGEN)
               {
                 // Types
-                if (directory.Contains("Application"))        groupID = "APPLICATION";
-                if (directory.Contains("XUtils"))             groupID = "XUTILS";
-                if (directory.Contains("DataIO"))             groupID = "DATAIO";
-                if (directory.Contains("Graphic"))            groupID = "GRAPHIC";
-                if (directory.Contains("Sound"))              groupID = "SOUND";
-                if (directory.Contains("Input"))              groupID = "INPUT";
-                if (directory.Contains("Cipher"))             groupID = "CIPHER";
-                if (directory.Contains("Compress"))           groupID = "COMPRESS";
-                if (directory.Contains("MainProc"))           groupID = "MAIN PROCEDURE";
-                if (directory.Contains("Script"))             groupID = "SCRIPT";
-                if (directory.Contains("Databases"))          groupID = "DATABASES";
-                if (directory.Contains("UserInterface"))      groupID = "USERINTERFACE";
-                if (directory.Contains("Video"))              groupID = "VIDEO";
-                if (directory.Contains("Examples"))           groupID = "EXAMPLES";
-                if (directory.Contains("Location"))           groupID = "LOCATION";
-                if (directory.Contains("Tests"))              groupID = "TESTS";
-                if (directory.Contains("UnitTests"))          
-                  {
-                    isUnitTest = true;
-                    groupID = "UNIT TEST";
-                  }
+                if (directory.Contains("Application")) groupID = "APPLICATION";
+                if (directory.Contains("Cipher")) groupID = "CIPHER";
+                if (directory.Contains("Common")) groupID = "COMMON";
+                if (directory.Contains("Compress")) groupID = "COMPRESS";
+                if (directory.Contains("DataIO")) groupID = "DATAIO";
+                if (directory.Contains("Graphic")) groupID = "GRAPHIC";
+                if (directory.Contains("Identification")) groupID = "IDENTIFICATION";
+                if (directory.Contains("Input")) groupID = "INPUT";
+                if (directory.Contains("MainProc")) groupID = "MAIN PROCEDURE";
+                if (directory.Contains("Script")) groupID = "SCRIPT";
+                if (directory.Contains("Sound")) groupID = "SOUND";
+                if (directory.Contains("UserInterface")) groupID = "USERINTERFACE";
+                if (directory.Contains("XUtils")) groupID = "XUTILS";
+                if (directory.Contains("Examples")) groupID = "EXAMPLES";
+                if (directory.Contains("Tests")) groupID = "TESTS";
+                if (directory.Contains("UnitTests"))
+                {
+                  isUnitTest = true;
+                  groupID = "UNIT TEST";
+                }
 
                 // Platforms
-                if (directory.Contains("Windows"))            groupID = "PLATFORM_WINDOWS";
-                if (directory.Contains("Linux"))              groupID = "PLATFORM_LINUX";
-                if (directory.Contains("Android"))            groupID = "PLATFORM_ANDROID";
-                if (directory.Contains("Common"))             groupID = "PLATFORM_COMMON";
-                if (directory.Contains("STM32"))              groupID = "PLATFORM_STM32";
-                if (directory.Contains("ESP32"))              groupID = "PLATFORM_ESP32";
-                if (directory.Contains("SAMD5xE5x"))          groupID = "PLATFORM_SAMD5XE5X";
+                if (directory.Contains("Windows")) groupID = "PLATFORM_WINDOWS";
+                if (directory.Contains("Linux")) groupID = "PLATFORM_LINUX";
+                if (directory.Contains("Android")) groupID = "PLATFORM_ANDROID";
+                if (directory.Contains("Common")) groupID = "PLATFORM_COMMON";
+                if (directory.Contains("STM32")) groupID = "PLATFORM_STM32";
+                if (directory.Contains("ESP32")) groupID = "PLATFORM_ESP32";
+                if (directory.Contains("SAMD5xE5x")) groupID = "PLATFORM_SAMD5XE5X";
 
                 if (groupID.Length == 0)
-                  {
-                    if (directory.Contains("/Examples/"))     groupID = "EXAMPLE";
-                  }
-             }
+                {
+                  if (directory.Contains("/Examples/")) groupID = "EXAMPLE";
+                }
+            }
         }
 
         /// <summary>

@@ -18,6 +18,7 @@ D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\ctoFil
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\_EmptyResource.resources.original
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\mergeCto.cache
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.csproj.CoreCompileInputs.cache
+D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.csproj.Up2Date
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.dll
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.pdb
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.pkgdef
@@ -25,4 +26,3 @@ D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remark
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\extension.vsixmanifest
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\files.json
 D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\createTemplateManifests.cache
-D:\Projects\GENFrameWork\Utilities\VStudio Extensions\Remarks\obj\Release\Remarks.csproj.Up2Date
