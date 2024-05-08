@@ -280,7 +280,7 @@ namespace Remarks
             selection.Text += "--------------------------------------------------------------------------------------------------------------------*/\n";
             selection.Text += "\n";
 
-            selection.Text += "/*---- PRECOMPILATION INCLUDES ----------------------------------------------------------------------------------------*/\n";
+            selection.Text += "/*---- PRECOMPILATION INCLUDES ---------------------------------------------------------------------------------------*/\n";
             selection.Text += "#pragma region PRECOMPILATION_INCLUDES\n";
             selection.Text += "\n";
             selection.Text += "#include \"GEN_Defines.h\"\n";
