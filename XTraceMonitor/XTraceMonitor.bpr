@@ -36,7 +36,8 @@
       obj\DIOPing_XEvent.obj obj\XVariant.obj obj\XWINDOWSRegistryManager.obj 
       obj\DIOWebServer_XEvent.obj obj\DIOWebClient_XEvent.obj 
       obj\DIODNSProtocol_Client.obj obj\DIODNSResolver.obj 
-      obj\DIOStreamConfigString.obj obj\HashMD5.obj obj\XWINDOWSTrace.obj"/>
+      obj\DIOStreamConfigString.obj obj\HashMD5.obj obj\XWINDOWSTrace.obj 
+      obj\DIOPublicInternetIP.obj"/>
     <RESFILES value="XTraceMonitor.res"/>
     <IDLFILES value=""/>
     <IDLGENFILES value=""/>
@@ -198,6 +199,7 @@
       <FILE FILENAME="..\..\GEN\Cipher\HashMD5.cpp" FORMNAME="" UNITNAME="HashMD5.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="..\..\GEN\Platforms\Windows\XWINDOWSTrace.cpp" FORMNAME="" UNITNAME="XWINDOWSTrace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="APP_GEN_Defines.h" FORMNAME="" UNITNAME="APP_GEN_Defines.h" CONTAINERID="" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\GEN\DataIO\DIOPublicInternetIP.cpp" FORMNAME="" UNITNAME="DIOPublicInternetIP" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>
