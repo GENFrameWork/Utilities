@@ -12,19 +12,19 @@ set(GEN_DIRECTORY "../../../../GENFrameWork")
 # --------------------------------------------------------------------
 # Activate features/Defines
 
-option(DEBUG_FEATURE                                          "Activate Debug mode"                                     true )
+option(DEBUG_FEATURE                                          "Activate Debug mode"                                     ON )
                             
-option(XTRACE_FEATURE                                         "Activate XTrace"                                         true )
-option(XMEMORY_CONTROL_FEATURE                                "Activate XMemory Control"                                true )
+option(XTRACE_FEATURE                                         "Activate XTrace"                                         ON )
+option(XMEMORY_CONTROL_FEATURE                                "Activate XMemory Control"                                ON )
                                               
-option(APP_FEATURE                                            "Activate Application modules"                            true )
-option(APP_CONSOLE_FEATURE                                    "Activate Application Console"                            true )
-option(APP_LOG_FEATURE                                        "Activate Application Log"                                true )
+option(APP_FEATURE                                            "Activate Application modules"                            ON )
+option(APP_CONSOLE_FEATURE                                    "Activate Application Console"                            ON )
+option(APP_LOG_FEATURE                                        "Activate Application Log"                                ON )
                             
-option(APP_CFG_GENERAL_FEATURE                                "Activate Application CFG General"                        true )  
-option(APP_CFG_LOG_FEATURE                                    "Activate Application CFG LOG"                            true )
+option(APP_CFG_GENERAL_FEATURE                                "Activate Application CFG General"                        ON )  
+option(APP_CFG_LOG_FEATURE                                    "Activate Application CFG LOG"                            ON )
                             
-option(DIO_APPLICATIONUPDATE_FEATURE                          "Activate Data Input/Output Application Update"           true )
+option(DIO_APPLICATIONUPDATE_FEATURE                          "Activate Data Input/Output Application Update"           ON )
 
 
 # --------------------------------------------------------------------
