@@ -82,6 +82,7 @@
 #include "HashCRC32.h"
 
 #include "APPLog.h"
+#include "APPExtended.h"
 
 #include "APPUpdateCreator_CFG.h"
 
@@ -187,8 +188,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
 {
   XSTRING string;
   XSTRING stringresult;
-  bool    status;
-
+  
   //-------------------------------------------------------------------------------------------------
 
   GetApplicationName()->Set(APPLICATION_NAMEAPP);
@@ -230,18 +230,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
   
   //--------------------------------------------------------------------------------------
 
-  if(APP_CFG.Log_IsActive())
-    {
-      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activando sistema LOG"));
-      console->PrintMessage(string.Get(), 1, true, false);
-
-      status = APP_LOG.Ini(&APP_CFG, APPLICATION_NAMEFILE , APPLICATION_VERSION
-                                                          , APPLICATION_SUBVERSION
-                                                          , APPLICATION_SUBVERSIONERR);
-
-      stringresult.Format((status)?__L("Ok."):__L("ERROR!"));
-      console->PrintMessage(stringresult.Get(), 0, false, true);
-    }
+  APP_EXTENDED.APPStart(&APP_CFG, console);
 
   //------------------------------------------------------------------------------------
 
@@ -383,11 +372,9 @@ bool APPUPDATECREATOR::AppProc_End()
 
   //--------------------------------------------------------------------------------------
 
-  APP_LOG.DelInstance();
-
-  //--------------------------------------------------------------------------------------
-
+  APP_LOG.DelInstance();  
   APP_CFG.DelInstance();
+  APP_EXTENDED.DelInstance();
 
   //--------------------------------------------------------------------------------------
 
