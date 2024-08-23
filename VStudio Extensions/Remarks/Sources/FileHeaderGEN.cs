@@ -247,7 +247,7 @@ namespace Remarks
              }
             else
              {
-                copyright  = "@copyright  " + enterprise + " All rights reserved.\n";
+                copyright  = "@copyright  " + enterprise + ". All rights reserved.\n";
                 copyright += "\n";
              }
         }
