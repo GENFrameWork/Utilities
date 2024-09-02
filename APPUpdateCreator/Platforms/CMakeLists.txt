@@ -18,7 +18,9 @@ option(XTRACE_FEATURE                                           "Activate XTrace
 option(XMEMORY_CONTROL_FEATURE                                  "Activate XMemory Control"                                ON )
                                               
 option(APP_FEATURE                                              "Activate Application modules"                            ON )
-option(APP_EXTENDED_FEATURE                                     "Application Extended"                                    ON )
+option(APP_EXTENDED_FEATURE                                     "Application Extended"                                    ON )  
+option(APP_EXTENDED_APPLICATIONHEADER_FEATURE                   "Application Extended Aplication Header"                  ON )  
+option(APP_EXTENDED_APPLICATIONSTATUS_FEATURE                   "Application Extended Aplication Status"                  ON )  
 option(APP_CONSOLE_FEATURE                                      "Activate Application Console"                            ON )
 option(APP_LOG_FEATURE                                          "Activate Application Log"                                ON )
                             

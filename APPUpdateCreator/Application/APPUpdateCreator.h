@@ -73,14 +73,16 @@ enum APPUPDATEXFSMSTATES
 };
 
 
-#define APPLICATION_VERSION                             1
-#define APPLICATION_SUBVERSION                          0
-#define APPLICATION_SUBVERSIONERR                       0
+#define APPLICATION_VERSION                       0
+#define APPLICATION_SUBVERSION                    1
+#define APPLICATION_SUBVERSIONERR                 0
 
-#define APPLICATION_NAMEAPP                             __L("APP Update Creator")
-#define APPLICATION_ENTERPRISE                          __L("GEN Group")
+#define APPLICATION_NAMEAPP                       __L("APP Update Creator")
+#define APPLICATION_NAMEFILE                      __L("appupdatecreator")
 
-#define APPLICATION_NAMEFILE                            __L("appupdatecreator")
+#define APPLICATION_OWNER                         __L("GEN Group")
+
+#define APPLICATION_YEAROFCREATION                2018
 
 
 /*---- CLASS ---------------------------------------------------------------------------------------------------------*/
@@ -99,9 +101,6 @@ class APPUPDATECREATOR : public APPCONSOLE, public XFSMACHINE
     bool                              AppProc_FirstUpdate                 ();
     bool                              AppProc_Update                      ();
     bool                              AppProc_End                         ();
-
-    bool                              Show_Header                         (bool separator);
-    bool                              Show_Line                           (XSTRING& string, XSTRING& string2, int tab = 3, bool linefeed = true);
 
     bool                              GetApplicationParam                 (XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata);
     bool                              CreateListOfFiles                   (XPATH& xpath, XVECTOR<XPATH*>* updatefiles);

@@ -36,6 +36,8 @@
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 
+#include "APPUpdateCreator.h"
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
@@ -85,8 +87,6 @@
 #include "APPExtended.h"
 
 #include "APPUpdateCreator_CFG.h"
-
-#include "APPUpdateCreator.h"
 
 #include "XMemory_Control.h"
 
@@ -193,6 +193,15 @@ bool APPUPDATECREATOR::AppProc_Ini()
 
   GetApplicationName()->Set(APPLICATION_NAMEAPP);
 
+ 
+  GEN_SET_VERSION(APPLICATION_NAMEAPP, APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR, APPLICATION_OWNER, APPLICATION_YEAROFCREATION)
+  GetApplicationName()->Set(APPLICATION_NAMEAPP);
+
+  XTRACE_SETAPPLICATIONNAME((*GetApplicationName()));
+  XTRACE_SETAPPLICATIONVERSION(APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR);
+  XTRACE_SETAPPLICATIONID(string);
+
+
   //--------------------------------------------------------------------------------------------------
 
   GEN_XPATHSMANAGER.AdjustRootPathDefault(APPDEFAULT_DIRECTORY_ROOT);
@@ -221,16 +230,9 @@ bool APPUPDATECREATOR::AppProc_Ini()
 
   GEN_XTRANSLATION.SetActual( XLANGUAGE_ISO_639_3_CODE_SPA);
 
-
-  //--------------------------------------------------------------------------------------
-  
-  console->Clear();
-  Show_Header(true);
-
-  
   //--------------------------------------------------------------------------------------
 
-  APP_EXTENDED.APPStart(&APP_CFG, console);
+  APP_EXTENDED.APPStart(&APP_CFG, this);
 
   //------------------------------------------------------------------------------------
 
@@ -372,7 +374,7 @@ bool APPUPDATECREATOR::AppProc_End()
 
   //--------------------------------------------------------------------------------------
 
-  APP_EXTENDED.APPEnd(&APP_CFG, console);
+  APP_EXTENDED.APPEnd();
   APP_EXTENDED.DelInstance();  
   APP_CFG.DelInstance();
 
@@ -380,77 +382,6 @@ bool APPUPDATECREATOR::AppProc_End()
 
   return true;
 }
-
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-*
-* @fn         bool APPUPDATECREATOR::Show_Header(bool separator)
-* @brief      Show Header
-* @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
-* @param[in]  separator :
-*
-* @return     bool : true if is succesful.
-*
-*---------------------------------------------------------------------------------------------------------------------*/
-bool APPUPDATECREATOR::Show_Header(bool separator)
-{
-  XSTRING header;
-
-  header = GEN_VERSION.GetAppTitle()->Get();
-  
-  console->Printf(__L(" %s"),header.Get());
-  console->Printf(__L("\n"));
-  if(separator) console->Printf(__L("\n"));
-
-  return true;
-}
-
-
-
-/**-------------------------------------------------------------------------------------------------------------------
-*
-* @fn         bool APPUPDATECREATOR::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
-* @brief      Show_Line
-* @ingroup    XUTILS
-*
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
-*
-* @param[in]  string : 
-* @param[in]  string2 : 
-* @param[in]  tab : 
-* @param[in]  linefeed : 
-*
-* @return     bool : true if is succesful. 
-*
-*---------------------------------------------------------------------------------------------------------------------*/
-bool APPUPDATECREATOR::Show_Line(XSTRING& string, XSTRING& string2, int tab, bool linefeed)
-{
-  XSTRING line1;
-  XSTRING line2;
-
-  console->Format_Message(string.Get(), tab , false, false, line1);
-  if(tab)
-    {
-      int _tab = tab;
-
-      if(_tab<37) _tab = 37;
-      line1.AdjustSize(_tab, false, __L(" "));
-    }
-
-  console->Format_Message(string2.Get(), 0 , false, linefeed, line2);
-
-  console->Print(line1.Get());
-  console->Print(line2.Get());
-
-  return true;
-}
-
 
 
 /**-------------------------------------------------------------------------------------------------------------------
