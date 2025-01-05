@@ -281,7 +281,7 @@ namespace Remarks
             selection.Text += "\n";
 
             selection.Text += "/*---- PRECOMPILATION INCLUDES ---------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region PRECOMPILATION_INCLUDES\n";
+            selection.Text += "#pragma region PRECOMPILATION_DEFINE_INCLUDE\n";
             selection.Text += "\n";
             selection.Text += "#include \"GEN_Defines.h\"\n";
             selection.Text += "\n";
@@ -293,11 +293,17 @@ namespace Remarks
             selection.Text += "\n";
             selection.Text += "#include \"" + namewithoutext + ".h\"\n";
             selection.Text += "\n";                  
-            selection.Text += "#include \"XMemory_Control.h\"\n";
+            selection.Text += "#pragma endregion\n";
+            selection.Text += "\n\n";
+
+            selection.Text += "/*---- PRECOMPILATION INCLUDES ---------------------------------------------------------------------------------------*/\n";
+            selection.Text += "#pragma region PRECOMPILATION_CONTROL_INCLUDE\n";
+            selection.Text += "\n";
+            selection.Text += "#include \"GEN_Control.h\"\n";
             selection.Text += "\n";
             selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
-            
+
             selection.Text += "/*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/\n";
             selection.Text += "#pragma region GENERAL_VARIABLE\n";
             selection.Text += "\n";

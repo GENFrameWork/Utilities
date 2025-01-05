@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {}
+    "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {
+    "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+        "projectUniqueName": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
         "projectName": "Remarks",
-        "projectPath": "C:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
-        "packagesPath": "C:\\Users\\17737\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\obj\\",
+        "projectPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+        "packagesPath": "C:\\Users\\SirGraham\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\17737\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SirGraham\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
