@@ -83,8 +83,8 @@
 
 #include "HashCRC32.h"
 
-#include "APPLog.h"
-#include "APPExtended.h"
+#include "APPFlowLog.h"
+#include "APPFlowExtended.h"
 
 #include "APPUpdateCreator_CFG.h"
 
@@ -191,20 +191,20 @@ bool APPUPDATECREATOR::AppProc_Ini()
   
   //-------------------------------------------------------------------------------------------------
 
-  GetApplicationName()->Set(APPLICATION_NAMEAPP);
+  Application_GetName()->Set(APPLICATION_NAMEAPP);
 
  
   GEN_SET_VERSION(APPLICATION_NAMEAPP, APPLICATION_NAMEFILE, APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR, APPLICATION_OWNER, APPLICATION_YEAROFCREATION)
-  GetApplicationName()->Set(APPLICATION_NAMEAPP);
+  Application_GetName()->Set(APPLICATION_NAMEAPP);
 
-  XTRACE_SETAPPLICATIONNAME((*GetApplicationName()));
+  XTRACE_SETAPPLICATIONNAME((*Application_GetName()));
   XTRACE_SETAPPLICATIONVERSION(APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR);
   XTRACE_SETAPPLICATIONID(string);
 
 
   //--------------------------------------------------------------------------------------------------
 
-  GEN_XPATHSMANAGER.AdjustRootPathDefault(APPDEFAULT_DIRECTORY_ROOT);
+  GEN_XPATHSMANAGER.AdjustRootPathDefault(APPFLOW_DEFAULT_DIRECTORY_ROOT);
 
   GEN_XPATHSMANAGER.CreateAllPathSectionOnDisk();
 
@@ -214,7 +214,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------------------
  
-  APP_CFG_SETAUTOMATICTRACETARGETS
+  APPFLOW_CFG_SETAUTOMATICTRACETARGETS
 
   //--------------------------------------------------------------------------------------
 
@@ -232,7 +232,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------
 
-  APP_EXTENDED.APPStart(&APP_CFG, this);
+  APPFLOW_EXTENDED.APPStart(&APPFLOW_CFG, this);
 
   //------------------------------------------------------------------------------------
 
@@ -327,7 +327,7 @@ bool APPUPDATECREATOR::AppProc_Update()
 
                                                         console->Printf(__L("\n"));
 
-                                                        SetExitType(APPBASE_EXITTYPE_BY_APPLICATION);
+                                                        SetExitType(APPFLOWBASE_EXITTYPE_BY_APPLICATION);
                                                         SetEvent(APPUPDATECREATOR_XFSMEVENT_END);
                                                       }
               case APPUPDATECREATOR_XFSMSTATE_RUN   : break;
@@ -374,9 +374,9 @@ bool APPUPDATECREATOR::AppProc_End()
 
   //--------------------------------------------------------------------------------------
 
-  APP_EXTENDED.APPEnd();
-  APP_EXTENDED.DelInstance();  
-  APP_CFG.DelInstance();
+  APPFLOW_EXTENDED.APPEnd();
+  APPFLOW_EXTENDED.DelInstance();  
+  APPFLOW_CFG.DelInstance();
 
   //--------------------------------------------------------------------------------------
 

@@ -18,7 +18,7 @@
 #include "XFSMachine.h"
 #include "XString.h"
 
-#include "APPConsole.h"
+#include "APPFlowConsole.h"
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
@@ -61,7 +61,7 @@ enum #*[jig]XFSMSTATES
 class XTIMER;
 class XMUTEX;
 
-class #*[jig] : public APPCONSOLE, public XFSMACHINE
+class #*[jig] : public APPFLOWCONSOLE, public XFSMACHINE
 {
   public:
                                     #*[jig]                                 ();

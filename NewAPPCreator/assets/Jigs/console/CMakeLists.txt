@@ -19,25 +19,25 @@
 
  include("${GEN_DIRECTORY}/Common/CMake/GEN_CMakeLists_Default.txt") 
 
- set(DEBUG_FEATURE                           true    CACHE BOOL "Activate Debug mode"                            FORCE)
- set(XTRACE_FEATURE                          true    CACHE BOOL "Activate XTrace"                                FORCE)
- set(XMEMORY_CONTROL_FEATURE                 true    CACHE BOOL "Activate XMemory Control"                       FORCE)
+ set(DEBUG_FEATURE                                true    CACHE BOOL "Debug mode"                                         ON )
+ set(XTRACE_FEATURE                               true    CACHE BOOL "XTrace"                                             ON )
+ set(XMEMORY_CONTROL_FEATURE                      true    CACHE BOOL "XMemory Control"                                    ON )
                   
- set(APP_FEATURE                             true    CACHE BOOL "Activate Application modules"                   FORCE)
- set(APP_CHECKRESOURCESHARDWARE_FEATURE      true    CACHE BOOL "Activate Application Check Resources Hardwar"   FORCE)
- set(APP_CONSOLE_FEATURE                     true    CACHE BOOL "Activate Application Console"                   FORCE)
- set(APP_INTERNETSERVICES_FEATURE            true    CACHE BOOL "Activate Application Internet Services"         FORCE)
- set(APP_LOG_FEATURE                         true    CACHE BOOL "Activate Application Log"                       FORCE)
-
- set(APP_CFG_GENERAL_FEATURE                 true    CACHE BOOL "Activate Application CFG General"               FORCE)  
- set(APP_CFG_LOG_FEATURE                     true    CACHE BOOL "Activate Application CFG LOG"                   FORCE)
- set(APP_CFG_INTERNETSERVICES_FEATURE        true    CACHE BOOL "Activate Application CFG Internet services"     FORCE)      
+ set(APPFLOW_FEATURE                              true    CACHE BOOL "Application Flow modules"                           ON )
+ set(APPFLOW_CHECKRESOURCESHARDWARE_FEATURE       true    CACHE BOOL "Application Flow Check Resources Hardwar"           ON )
+ set(APPFLOW_CONSOLE_FEATURE                      true    CACHE BOOL "Application Flow Console"                           ON )
+ set(APPFLOW_INTERNETSERVICES_FEATURE             true    CACHE BOOL "Application Flow Internet Services"                 ON )
+ set(APPFLOW_LOG_FEATURE                          true    CACHE BOOL "Application Flow Log"                               ON )
+                                                                                          
+ set(APPFLOW_CFG_GENERAL_FEATURE                  true    CACHE BOOL "Application Flow CFG General"                       ON )  
+ set(APPFLOW_CFG_LOG_FEATURE                      true    CACHE BOOL "Application Flow CFG LOG"                           ON )
+ set(APPFLOW_CFG_INTERNETSERVICES_FEATURE         true    CACHE BOOL "Application Flow CFG Internet services"             ON )      
  
 
 # --------------------------------------------------------------------
 # Config Application Macro
 
- set(APP_CFG_BINCONNPRO "-DAPP_CFG=BINCONNPRO_CFG::GetInstance()")
+ set(APP_CFG_BINCONNPRO "-DAPPFLOW_CFG=BINCONNPRO_CFG::GetInstance()")
  add_definitions(${APP_CFG_BINCONNPRO})
 
 

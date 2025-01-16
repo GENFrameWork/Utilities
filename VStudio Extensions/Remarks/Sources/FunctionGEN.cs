@@ -9,6 +9,7 @@ using System.Globalization;
 using Microsoft.VisualStudio.Shell;
 using EnvDTE;
 using System.IO;
+using System.Text;
 
 namespace Remarks
 {
@@ -148,7 +149,7 @@ namespace Remarks
             if(isGEN)
               {
                 // Types
-                if (directory.Contains("Application")) groupID = "APPLICATION";
+                if (directory.Contains("AppFlow")) groupID = "APPFLOW";
                 if (directory.Contains("Cipher")) groupID = "CIPHER";
                 if (directory.Contains("Common")) groupID = "COMMON";
                 if (directory.Contains("Compress")) groupID = "COMPRESS";
@@ -185,6 +186,96 @@ namespace Remarks
             }
         }
 
+        static string TransformString(string input)
+        {
+          if (string.IsNullOrEmpty(input)) return input;
+
+          StringBuilder output = new StringBuilder();
+          bool inUpperCaseGroup = false;
+
+          for (int i = 0; i < input.Length; i++)
+          {
+            char current = input[i];
+
+            if (current == '_')
+            {
+              if (i > 0) // Replace '_' with space unless it's the first character
+              {
+                output.Append(' ');
+              }
+            }
+            else if (char.IsUpper(current))
+            {
+              if (!inUpperCaseGroup) // Start of a new uppercase group
+              {
+                if (output.Length > 0) // Add a space before the group if not the start
+                {
+                  output.Append(' ');
+                }
+                inUpperCaseGroup = true;
+              }
+
+              // Add the uppercase character as is (to determine if it's a single char later)
+              output.Append(current);
+            }
+            else
+            {
+              // Non-uppercase character ends any active uppercase group
+              if (inUpperCaseGroup)
+              {
+                // Convert the previous uppercase group to the proper format
+                FormatUpperCaseGroup(output);
+                inUpperCaseGroup = false;
+              }
+
+              output.Append(current);
+            }
+          }
+
+          // Handle a trailing uppercase group
+          if (inUpperCaseGroup)
+          {
+            FormatUpperCaseGroup(output);
+          }
+
+          // If the first character is a space, remove it
+          if (output.Length > 0 && output[0] == ' ')
+          {
+            output.Remove(0, 1);
+          }
+
+          return output.ToString();
+        }
+
+
+        private static void FormatUpperCaseGroup(StringBuilder output)
+        {
+          int startIndex = output.Length - 1;
+
+          // Find the start of the uppercase group
+          while (startIndex >= 0 && char.IsUpper(output[startIndex]))
+          {
+            startIndex--;
+          }
+
+          startIndex++; // Adjust to the first uppercase character
+
+          int length = output.Length - startIndex;
+
+          if (length == 1) // Single uppercase character
+          {
+            char singleChar = char.ToLower(output[startIndex]);
+            output[startIndex] = singleChar;
+          }
+          else // Uppercase group
+          {
+            // Insert space before the last uppercase character and convert it to lowercase
+            char lastChar = char.ToLower(output[output.Length - 1]);
+            output[output.Length - 1] = lastChar;
+          }
+        }
+
+
         /// <summary>
         /// This function is the callback used to execute the command when the menu item is clicked.
         /// See the constructor to see how the menu item is associated with this function using
@@ -201,22 +292,23 @@ namespace Remarks
 
             if(dte.ActiveDocument != null)
               {
-                var    selection    = (TextSelection)dte.ActiveDocument.Selection;
-                string text         = selection.Text;
+                var       selection     = (TextSelection)dte.ActiveDocument.Selection;
+                string    text          = selection.Text;
 
-                string funcname     = "";
-                string description  = "";
+                string    funcname      = "";
+                string    description   = "";
 
-                string version      = "";
-                string returntype   = "";
+                string    version       = "";
+                string    returntype    = "";
 
-                string[] parameters = null;
+                string[]  parameters    = null;
 
-                DateTime localDate  = DateTime.Now;
-                var      culture    = new CultureInfo("es-ES");
+                DateTime  localDate     = DateTime.Now;
+                var       culture       = new CultureInfo("es-ES");
 
-                bool     isvirtual  = false;
-                bool     isinternal = false;
+                bool      isvirtual     = false;
+                bool      isinternal    = false;
+                bool      consanddes    = false;  
 
                 version = localDate.ToString(culture);
 
@@ -242,34 +334,47 @@ namespace Remarks
 
                 //------------ buscamos el return type y el contexto
                 int parenthesis = text.IndexOf('(');
+                int parenthesis2 = text.IndexOf(')');
                 int space = text.IndexOf(' ');
-                int i;
-                if((space == -1) || (parenthesis < space)) //no tiene return type (constructor)
+                int i;             
+                if((space == -1) || (parenthesis < space)) //no tiene return type (constructor/destructor)
                   {
                     returntype = "";
 
+                    consanddes = true;
+
                     if(text.IndexOf('~') == -1)
-                       {
-                         description = "Constructor";
-                       }
-                      else
-                       {
-                         description = "Destructor";
-                         isvirtual = true;
+                      {
+                        description = "Constructor";                          
+                      }
+                     else
+                      {
+                        description = "Destructor";
+                        isvirtual = true;
                        }
 
                     if(parenthesis < 0) return;
 
-                    if(parenthesis >= text.Length) return;
+                    if(parenthesis >= parenthesis2) return;
 
                     funcname = text.Substring(0, parenthesis);
-                    parameters = text.Substring(parenthesis + 1, text.Length - parenthesis - 2).Split(',');
+                    parameters = text.Substring(parenthesis + 1, parenthesis2 - parenthesis - 1).Split(',');
 
-                    for(i = 0; i < parameters.Length; i++)
-                       {
-                         int index = parameters[i].IndexOf(' ');
-                         if(index >0 )  parameters[i] = parameters[i].Substring(0, index);
-                       }
+                    for (i = 0; i < parameters.Length; i++)
+                      {
+                        parameters[i] = parameters[i].Trim();
+
+                        int size = parameters[i].Length;
+                        int pos = parameters[i].IndexOf(' ');
+
+                        if (pos != -1)
+                          {
+                            if (size > pos + 1)
+                              {
+                                parameters[i] = parameters[i].Substring(pos + 1, (size - (pos + 1)));
+                              }
+                          }
+                      }
                   }
 
                 if((space != -1) && (parenthesis > space))
@@ -281,7 +386,7 @@ namespace Remarks
                     returntype = text.Substring(0, space);
                     funcname   = text.Substring(space, parenthesis-space);
 
-                    parameters = text.Substring(parenthesis + 1, text.Length - parenthesis-2).Split(',');
+                    parameters = text.Substring(parenthesis + 1, parenthesis2 - parenthesis-1).Split(',');
 
                     for(i=0; i<parameters.Length; i++)
                        {
@@ -334,6 +439,7 @@ namespace Remarks
                     if(index2points !=0)
                       {
                         description = description.Substring(index2points + 2);
+                        description = TransformString(description);
                       }
                   }
 

@@ -165,7 +165,7 @@ namespace Remarks
             if(isGEN)
             {
               // Types
-              if (directory.Contains("Application")) groupID = "APPLICATION";
+              if (directory.Contains("AppFlow")) groupID = "APPFLOW";
               if (directory.Contains("Cipher")) groupID = "CIPHER";
               if (directory.Contains("Common")) groupID = "COMMON";
               if (directory.Contains("Compress")) groupID = "COMPRESS";

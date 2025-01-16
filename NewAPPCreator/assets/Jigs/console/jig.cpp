@@ -63,7 +63,7 @@
 #include "DIOScraperWebGeolocationIP.h"
 #include "DIOScraperWebUserAgentID.h"
 
-#include "APPLog.h"
+#include "APPFlowLog.h"
 
 #include "#@[jig]_CFG.h"
 
@@ -172,7 +172,7 @@ bool #*[jig]::AppProc_Ini()
 
   //-------------------------------------------------------------------------------------------------
 
-  GetApplicationName()->Set(APPLICATION_NAMEAPP);
+  Application_GetName()->Set(APPLICATION_NAMEAPP);
 
   //--------------------------------------------------------------------------------------------------
 
@@ -181,15 +181,15 @@ bool #*[jig]::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------------------
 
-  XTRACE_SETAPPLICATIONNAME((*GetApplicationName()));
+  XTRACE_SETAPPLICATIONNAME((*Application_GetName()));
   XTRACE_SETAPPLICATIONVERSION(APPLICATION_VERSION, APPLICATION_SUBVERSION, APPLICATION_SUBVERSIONERR);
   XTRACE_SETAPPLICATIONID(string);
 
   //--------------------------------------------------------------------------------------------------
 
-  GEN_XPATHSMANAGER.AdjustRootPathDefault(APPDEFAULT_DIRECTORY_ROOT);
+  GEN_XPATHSMANAGER.AdjustRootPathDefault(APPFLOW_DEFAULT_DIRECTORY_ROOT);
 
-  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_#*[jig], APPDEFAULT_DIRECTORY_#*[jig]);
+  GEN_XPATHSMANAGER.AddPathSection(XPATHSMANAGERSECTIONTYPE_#*[jig], APPFLOW_DEFAULT_DIRECTORY_#*[jig]);
 
   GEN_XPATHSMANAGER.CreateAllPathSectionOnDisk();
 
@@ -204,7 +204,7 @@ bool #*[jig]::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------
 
-  APP_CFG_SETAUTOMATICTRACETARGETS
+  APPFLOW_CFG_SETAUTOMATICTRACETARGETS
 
   //--------------------------------------------------------------------------------------
 
@@ -231,14 +231,15 @@ bool #*[jig]::AppProc_Ini()
 
   //--------------------------------------------------------------------------------------
 
-  if(APP_CFG.Log_IsActive())
+  if(APPFLOW_CFG.Log_IsActive())
     {
-      string.Format(APPCONSOLE_DEFAULTMESSAGEMASK, __L("Activating LOG system"));
+      string.Format(APPFLOWCONSOLE_DEFAULT_MESSAGEMASK, __L("Activating LOG system"));
       console->PrintMessage(string.Get(), 1, true, false);
 
-      status = APP_LOG.Ini(&APP_CFG, APPLICATION_NAMEFILE , APPLICATION_VERSION
-                                                          , APPLICATION_SUBVERSION
-                                                          , APPLICATION_SUBVERSIONERR);
+      status = APPFLOW_LOG.Ini(&APPFLOW_CFG , APPLICATION_NAMEFILE 
+                                            , APPLICATION_VERSION
+                                            , APPLICATION_SUBVERSION
+                                            , APPLICATION_SUBVERSIONERR);
 
       stringresult.Format((status)?__L("Ok."):__L("ERROR!"));
       console->PrintMessage(stringresult.Get(), 0, false, true);
@@ -298,7 +299,7 @@ bool #*[jig]::AppProc_Update()
           case #*[jig]_XFSMSTATE_INI        : SetEvent(#*[jig]_XFSMEVENT_UPDATE);
                                               break;
 
-          case #*[jig]_XFSMSTATE_UPDATE     : if(GetExitType() == APPBASE_EXITTYPE_UNKNOWN)
+          case #*[jig]_XFSMSTATE_UPDATE     : if(GetExitType() == APPFLOWBASE_EXITTYPE_UNKNOWN)
                                                 {
                                                   if(xtimerupdateconsole)
                                                     {
@@ -383,11 +384,11 @@ bool #*[jig]::AppProc_End()
 
   //--------------------------------------------------------------------------------------
 
-  APP_LOG.DelInstance();
+  APPFLOW_LOG.DelInstance();
 
   //--------------------------------------------------------------------------------------
 
-  APP_CFG.DelInstance();
+  APPFLOW_CFG.DelInstance();
 
   //--------------------------------------------------------------------------------------
 
@@ -411,14 +412,14 @@ bool #*[jig]::KeyValidSecuences(int key)
   XCHAR character = (XCHAR)key;
 
   if((character<32) || (character>127)) character = __C('?');
-  APP_LOG_ENTRY(XLOGLEVEL_WARNING, APP_CFG_LOG_SECTIONID_STATUSAPP, false, __L("Key pressed: 0x%02X [%c]"), key, character);
+  APPFLOW_LOG_ENTRY(XLOGLEVEL_WARNING, APPFLOW_CFG_LOG_SECTIONID_STATUSAPP, false, __L("Key pressed: 0x%02X [%c]"), key, character);
 
   console->Printf(__L("\r    \r"));
 
   switch(key)
     {
       case 0x1B : // ESC Exit application
-                  SetExitType(APPBASE_EXITTYPE_BY_USER);
+                  SetExitType(APPFLOWBASE_EXITTYPE_BY_USER);
                   break;
     }
 

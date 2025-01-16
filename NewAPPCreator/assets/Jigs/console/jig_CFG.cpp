@@ -115,13 +115,13 @@ bool #*[jig]_CFG::Default()
 
   log_activesectionsID.Empty();
 
-  log_activesectionsID                 += APP_CFG_LOG_SECTIONID_INITIATION;
+  log_activesectionsID                 += APPFLOW_CFG_LOG_SECTIONID_INITIATION;
   log_activesectionsID                 += __L(",");
-  log_activesectionsID                 += APP_CFG_LOG_SECTIONID_GENERIC;
+  log_activesectionsID                 += APPFLOW_CFG_LOG_SECTIONID_GENERIC;
   log_activesectionsID                 += __L(",");
-  log_activesectionsID                 += APP_CFG_LOG_SECTIONID_STATUSAPP;
+  log_activesectionsID                 += APPFLOW_CFG_LOG_SECTIONID_STATUSAPP;
   log_activesectionsID                 += __L(",");
-  log_activesectionsID                 += APP_CFG_LOG_SECTIONID_ENDING;
+  log_activesectionsID                 += APPFLOW_CFG_LOG_SECTIONID_ENDING;
 
   log_levelmask                         = XLOGLEVEL_ALL;
   log_maxsize                           = 3000;
@@ -144,7 +144,7 @@ bool #*[jig]_CFG::Default()
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
-#*[jig]_CFG::#*[jig]_CFG(XCHAR* namefile) : APPCFG(namefile)
+#*[jig]_CFG::#*[jig]_CFG(XCHAR* namefile) : APPFLOWCFG(namefile)
 {
   Clean();
 

@@ -13,7 +13,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR command, int)
     {
       Application->Initialize();
       Application->CreateForm(__classid(TMainForm), &MainForm);
-     if(command[0]) MainForm->Caption = command;
+                 if(command[0]) MainForm->Caption = command;
 
       Application->Run();
     }

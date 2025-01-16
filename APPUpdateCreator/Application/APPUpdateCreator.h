@@ -47,7 +47,7 @@
 #include "DIOApplicationUpdate_XEvent.h"
 #include "DIOApplicationUpdate.h"
 
-#include "APPConsole.h"
+#include "APPFlowConsole.h"
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
@@ -89,7 +89,7 @@ enum APPUPDATEXFSMSTATES
 
 class XSCHEDULER;
 
-class APPUPDATECREATOR : public APPCONSOLE, public XFSMACHINE
+class APPUPDATECREATOR : public APPFLOWCONSOLE, public XFSMACHINE
 {
   public:
                                       APPUPDATECREATOR                    ();

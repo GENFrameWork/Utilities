@@ -61,6 +61,9 @@
 #include "XTrace.h"
 #include "XDir.h"
 #include "XFile.h"
+#include "XTranslation.h"
+#include "XTranslation_GEN.h"
+#include "XLanguage_ISO_639_3.h"
 
 #include "DIODynDNS.h"
 #include "DIOCheckTCPIPConnections.h"
@@ -151,6 +154,9 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
  	DIOFACTORY::SetInstance(new DIOWINDOWSFACTORY());
   if(!DIOFACTORY::GetIsInstanced()) return;
 
+
+  XTRANSLATION_GEN::GetInstance().Sentences_AddToTranslation(XLANGUAGE_ISO_639_3_CODE_ENG);
+
   //---------------------------------------------------------------
 
   AnsiString exefile = Application->ExeName;
@@ -184,7 +190,7 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 
   if(cfg->IsCheckInternetAvailable())
     {
-    	checkinternetconnection	= new DIOCHECKINTERNETCONNECTION();
+      checkinternetconnection	= new DIOCHECKINTERNETCONNECTION();
     	if(!checkinternetconnection) return;
 
     	haveinternet = checkinternetconnection->Check();
