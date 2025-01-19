@@ -34,6 +34,7 @@
 
 #include "XVector.h"
 #include "XPath.h"
+#include "XFileTXT.h"
 
 #pragma endregion
 
@@ -41,6 +42,8 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 #pragma region DEFINES_ENUMS
 
+typedef bool (*TRANSLANTESCAN_FOUNDINFILE_PTRFUNC)(XPATH* pathfile, XFILETXT* filetxt, int line, int index, XSTRING& result);
+typedef bool (*TRANSLANTESCAN_CHANGEINFILE_PTRFUNC)(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring,int line, int index, XSTRING& result);
 
 #pragma endregion
 
@@ -51,15 +54,15 @@
 class TRANSLATESCAN_FILETARGET
 {
   public:
-                    TRANSLATESCAN_FILETARGET    ();
-    virtual        ~TRANSLATESCAN_FILETARGET    ();
+                             TRANSLATESCAN_FILETARGET                   ();
+    virtual                 ~TRANSLATESCAN_FILETARGET                   ();
 
-    XPATH*          GetXPathFile                ();
+    XPATH*                   GetXPathFile                               ();
   
   private:
 
-    void            Clean                       ();
-    XPATH           xpathfile;
+    void                     Clean                                      ();
+    XPATH                    xpathfile;
 };
 
 
@@ -67,15 +70,26 @@ class TRANSLATESCAN_FILETARGET
 class TRANSLATESCAN_MANAGER
 {
   public:
-                    TRANSLATESCAN_MANAGER       ();
-    virtual        ~TRANSLATESCAN_MANAGER       ();
+                             TRANSLATESCAN_MANAGER                      ();
+    virtual                 ~TRANSLATESCAN_MANAGER                      ();
 
-    bool            SearchFilesTarget           (XCHAR* inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget);
-    bool            SearchFilesTarget           (XPATH& inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget);
+    bool                     SearchFilesTarget                          (XCHAR* inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget);
+    bool                     SearchFilesTarget                          (XPATH& inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget);
+
+    bool                     SearchInFile                               (XPATH& pathfile, XCHAR* searchstring, TRANSLANTESCAN_FOUNDINFILE_PTRFUNC foundinfileptrfunc, TRANSLANTESCAN_CHANGEINFILE_PTRFUNC changeinfileptrfunc = NULL);
+
+    bool                     Operation_Remark_Brief                     (XPATH& operationdir);
+    static bool              Operation_Remark_Brief_SearchLine          (XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& brief);
+    static bool              Operation_Remark_Brief_ChangeLine          (XPATH* pathfile, XFILETXT* filetxt, XSTRING& seachstring, int nline, int index, XSTRING& result);
+    static bool              Operation_Remark_Brief_Construct           (XSTRING& brief_origin, XSTRING& brief_target);
+
+    bool                     Operation_Remark_InGroup                   (XPATH& operationdir);
+    static bool              Operation_Remark_InGroup_SearchLine        (XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& result);
+    static bool              Operation_Remark_InGroup_ChangeLine        (XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring, int nline, int index, XSTRING& result);
 
   private:
 
-    void            Clean                       ();
+    void                     Clean                                      ();
 };
 
 #pragma endregion

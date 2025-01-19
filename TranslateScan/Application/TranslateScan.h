@@ -144,6 +144,9 @@ class TRANSLATESCAN : public APPFLOWCONSOLE, public XOBSERVER, public XFSMACHINE
     XMUTEX*                                     xmutexshowallstatus;   
 
     TRANSLATESCAN_MANAGER*                      manager;
+
+    XPATH                                       operationdir;
+
 };
 
 #pragma endregion

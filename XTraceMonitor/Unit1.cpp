@@ -2680,7 +2680,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
               if(!cfg->IsShowCommandMsg()) return true;
             }
 
-          if((indexcmdscreenclear  != XSTRING_NOTFOUND) || (indexcmdchangestatus != XSTRING_NOTFOUND) || (indexcmdclearstatus  != XSTRING_NOTFOUND))
+          if((indexcmdscreenclear != XSTRING_NOTFOUND) || (indexcmdchangestatus != XSTRING_NOTFOUND) || (indexcmdclearstatus  != XSTRING_NOTFOUND))
             {
               if(!cfg->IsShowCommandMsg())
                 {

@@ -212,8 +212,19 @@ bool TRANSLATESCAN::AppProc_Ini()
     {
       XSTRING* param = (XSTRING*)GetExecParams()->Get(0);
       if(param)
-        {
-          // if(!param->Compare(__L("SERVER"), true))  modeserver = true;
+        { 
+          operationdir = param->Get();
+
+          if(operationdir.IsEmpty())  
+            {
+              XDIR* xdir = GEN_XFACTORY.Create_Dir();
+              if(xdir)
+                {   
+                  xdir->GetActual(operationdir);   
+
+                  GEN_XFACTORY.Delete_Dir(xdir);
+                }
+            }
         }
     }
 
@@ -336,23 +347,23 @@ bool TRANSLATESCAN::AppProc_Update()
           case TRANSLATESCAN_XFSMSTATE_INI        : break;
 
           case TRANSLATESCAN_XFSMSTATE_UPDATE     : if(GetExitType() == APPFLOWBASE_EXITTYPE_UNKNOWN)
-                                                {
-                                                  if(xtimerupdateconsole)
-                                                    {
-                                                      if(xtimerupdateconsole->GetMeasureMilliSeconds() >= 100)
-                                                        {
-                                                          Show_AllStatus();
-                                                          xtimerupdateconsole->Reset(); 
-                                                        }
+                                                      {
+                                                        if(xtimerupdateconsole)
+                                                          {
+                                                            if(xtimerupdateconsole->GetMeasureMilliSeconds() >= 100)
+                                                              {
+                                                                Show_AllStatus();
+                                                                xtimerupdateconsole->Reset(); 
+                                                              }
 
-                                                      if(console->KBHit())
-                                                        {
-                                                          int key = console->GetChar();
-                                                          KeyValidSecuences(key);
-                                                        }
-                                                    }
-                                                }
-                                             break;
+                                                            if(console->KBHit())
+                                                              {
+                                                                int key = console->GetChar();
+                                                                KeyValidSecuences(key);
+                                                              }
+                                                          }
+                                                      }
+                                                   break;
 
           case TRANSLATESCAN_XFSMSTATE_END       : break;
 
@@ -463,18 +474,33 @@ bool TRANSLATESCAN::KeyValidSecuences(int key)
                   SetExitType(APPFLOWBASE_EXITTYPE_BY_USER);
                   break;
 
-      case 'T'  : { XVECTOR<TRANSLATESCAN_FILETARGET*> filestarget;
-
-                    if(manager->SearchFilesTarget(__L("D:\\Projects\\GENFrameWork\\GEN\\"), &filestarget))
+      case 'T'  : { if(manager)
                       {
-
-
+                        manager->Operation_Remark_Brief(operationdir);
                       }
-
-                    filestarget.DeleteContents();
-                    filestarget.DeleteAll();  
                   }
-                  break;     
+                  break;   
+
+
+      case 'Y'  : { if(manager)
+                      {
+                        manager->Operation_Remark_InGroup(operationdir);
+                      }
+                  }
+                  break;   
+
+
+      case 'R'  : { if(manager)
+                      {
+                        XSTRING brief_origin;
+                        XSTRING brief_target;
+
+                        brief_origin = __L("Sender_SMTPConfig");
+
+                        manager->Operation_Remark_Brief_Construct(brief_origin, brief_target);
+                      }
+                  }
+                  break;                 
     }
 
   return true;

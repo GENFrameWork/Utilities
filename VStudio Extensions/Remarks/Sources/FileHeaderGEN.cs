@@ -122,17 +122,18 @@ namespace Remarks
             if (dte.ActiveDocument != null)
             {
                 dte.ActiveDocument.Save();
-                var  dtename = dte.ActiveDocument.FullName;
-                var  ext     = Path.GetExtension(dtename);
-                var  name    = Path.GetFileName(dtename);
-                var  group   = "";
-                bool isGEN   = false;
+                var  dtename    = dte.ActiveDocument.FullName;
+                var  ext        = Path.GetExtension(dtename);
+                var  name       = Path.GetFileName(dtename);
+                var  group      = "";
+                bool isGEN      = false;
+                bool isUnitTest = false;
 
                 string directory = "";
 
                 directory = Path.GetDirectoryName(dtename);
 
-                GetGroupID(directory, ref isGEN, ref group);
+                GetGroupID(directory, ref isGEN, ref isUnitTest, ref group);
 
                 if((ext == ".cpp") || (ext == ".c"))
                   {
@@ -149,57 +150,59 @@ namespace Remarks
             }
         }
 
-        private void GetGroupID(string directory, ref bool isGEN, ref string groupID)
+        private void GetGroupID(string directory, ref bool isGEN, ref bool isUnitTest, ref string groupID)
         {
-            bool isUnitTest = false;
-            isGEN = false;
+          isUnitTest = false;
+          isGEN = false;
 
-            groupID = "";
+          groupID = "";
 
-            // is GEN?
-            if((directory.Contains("/GEN/"))          ||
-               (directory.Contains("\\GEN\\"))        ||
-               (directory.Contains("/GENFrameWork/")) ||
-               (directory.Contains("\\GENFrameWork\\"))) isGEN = true;
+          // is GEN?
+          if ((directory.Contains("/GEN/")) ||
+              (directory.Contains("\\GEN\\")) ||
+              (directory.Contains("/GENFrameWork/")) ||
+              (directory.Contains("\\GENFrameWork\\"))) isGEN = true;
 
-            if(isGEN)
+          if (isGEN)
+          {
+            // Types
+            if (directory.Contains("AppFlow")) groupID = "APPFLOW";
+            if (directory.Contains("Cipher")) groupID = "CIPHER";
+            if (directory.Contains("Common")) groupID = "COMMON";
+            if (directory.Contains("Compress")) groupID = "COMPRESS";
+            if (directory.Contains("Databases")) groupID = "DATABASE";
+            if (directory.Contains("DataIO")) groupID = "DATAIO";
+            if (directory.Contains("Graphic")) groupID = "GRAPHIC";
+            if (directory.Contains("Identification")) groupID = "IDENTIFICATION";
+            if (directory.Contains("Input")) groupID = "INPUT";
+            if (directory.Contains("MainProc")) groupID = "MAIN_PROCEDURE";
+            if (directory.Contains("Script")) groupID = "SCRIPT";
+            if (directory.Contains("Sound")) groupID = "SOUND";
+            if (directory.Contains("UserInterface")) groupID = "USERINTERFACE";
+            if (directory.Contains("XUtils")) groupID = "XUTILS";
+
+            if (directory.Contains("Examples")) groupID = "EXAMPLES";
+            if (directory.Contains("Tests")) groupID = "TESTS";
+            if (directory.Contains("UnitTests"))
             {
-              // Types
-              if (directory.Contains("AppFlow")) groupID = "APPFLOW";
-              if (directory.Contains("Cipher")) groupID = "CIPHER";
-              if (directory.Contains("Common")) groupID = "COMMON";
-              if (directory.Contains("Compress")) groupID = "COMPRESS";
-              if (directory.Contains("DataIO")) groupID = "DATAIO";
-              if (directory.Contains("Graphic")) groupID = "GRAPHIC";
-              if (directory.Contains("Identification")) groupID = "IDENTIFICATION";
-              if (directory.Contains("Input")) groupID = "INPUT";
-              if (directory.Contains("MainProc")) groupID = "MAIN PROCEDURE";
-              if (directory.Contains("Script")) groupID = "SCRIPT";
-              if (directory.Contains("Sound")) groupID = "SOUND";
-              if (directory.Contains("UserInterface")) groupID = "USERINTERFACE";
-              if (directory.Contains("XUtils")) groupID = "XUTILS";
-              if (directory.Contains("Examples")) groupID = "EXAMPLES";
-              if (directory.Contains("Tests")) groupID = "TESTS";
-              if (directory.Contains("UnitTests"))
-              {
-                isUnitTest = true;
-                groupID = "UNIT TEST";
-              }
-
-              // Platforms
-              if (directory.Contains("Windows")) groupID = "PLATFORM_WINDOWS";
-              if (directory.Contains("Linux")) groupID = "PLATFORM_LINUX";
-              if (directory.Contains("Android")) groupID = "PLATFORM_ANDROID";
-              if (directory.Contains("Common")) groupID = "PLATFORM_COMMON";
-              if (directory.Contains("STM32")) groupID = "PLATFORM_STM32";
-              if (directory.Contains("ESP32")) groupID = "PLATFORM_ESP32";
-              if (directory.Contains("SAMD5xE5x")) groupID = "PLATFORM_SAMD5XE5X";
-
-              if (groupID.Length == 0)
-              {
-                if (directory.Contains("/Examples/")) groupID = "EXAMPLE";
-              }
+              isUnitTest = true;
+              groupID = "UNIT_TEST";
             }
+
+            // Platforms
+            if (directory.Contains("Windows")) groupID = "PLATFORM_WINDOWS";
+            if (directory.Contains("Linux")) groupID = "PLATFORM_LINUX";
+            if (directory.Contains("Android")) groupID = "PLATFORM_ANDROID";
+            if (directory.Contains("Common")) groupID = "PLATFORM_COMMON";
+            if (directory.Contains("STM32")) groupID = "PLATFORM_STM32";
+            if (directory.Contains("ESP32")) groupID = "PLATFORM_ESP32";
+            if (directory.Contains("SAMD5xE5x")) groupID = "PLATFORM_SAMD5XE5X";
+
+            if (groupID.Length == 0)
+            {
+              groupID = "APPLICATION";
+            }
+          }
         }
 
         private void CreateInfo(bool isGEN, string name, string description, string group, ref string info)

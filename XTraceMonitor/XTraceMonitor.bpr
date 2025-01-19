@@ -66,7 +66,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE;_DEBUG"/>
+    <USERDEFINES value="WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE"/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="XTraceMonitor.cpp"/>
     <INCLUDEPATH value="..\..\GEN\XUtils\XFiles;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN;..\..\GEN\Common;..\..\GEN\AppFlow;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\XUtils\FormatFiles;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;&quot;Microsoft Platform SDK\include&quot;"/>
@@ -87,13 +87,13 @@
       -I..\..\ThirdPartyLibraries\agg\include -I&quot;Microsoft Platform SDK\include&quot; 
       -src_suffix cpp -DWIN32 -DWINDOWS -DLARGE_ADDRESS_AWARE -DHW_PC -DBUILDER 
       -DXDEBUG_TRACE -DUNICODE -DDIO_ACTIVE -DDIOUDP_ACTIVE -DDIOUART_ACTIVE 
-      -DDIOTCPIP_ACTIVE -DDIOICMP_ACTIVE -DDIOPING_ACTIVE -D_DEBUG UNICODE -boa"/>
-    <CFLAG1 value="-Od -Vx -Ve -X- -r- -a1 -b- -k -y -v -vi- -c -tW -tWM"/>
-    <PFLAGS value="-N2obj -N0obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+      -DDIOTCPIP_ACTIVE -DDIOICMP_ACTIVE -DDIOPING_ACTIVE UNICODE -boa"/>
+    <CFLAG1 value="-Od -Vx -Ve -X- -a1 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-N2obj -N0obj -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
+    <AFLAGS value="/mx /w2 /zn"/>
     <LFLAGS value="-Iobj -D&quot;&quot; -H:0x1000000 -Hc:0x100000 -B:0xF00000 -Sc:0x10000 -aa -Tpe -GD 
-      -s -M -w-rty -v"/>
+      -s -M -w-rty"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
@@ -272,9 +272,9 @@ Item29=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\include;$(
 
 [HistoryLists\hlLibraryPath]
 Count=30
-Item0=..\..\GEN\XUtils\FormatFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D;..\..\GEN\XUtils\FormatFiles
-Item1=..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D;..\..\GEN\XUtils\FormatFiles
-Item2=..\..\GEN\XUtils\FormatFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D
+Item0=..\..\GEN\XUtils\FormatFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D
+Item1=..\..\GEN\XUtils\FormatFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D;..\..\GEN\XUtils\FormatFiles
+Item2=..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D;..\..\GEN\XUtils\FormatFiles
 Item3=..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D
 Item4=FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D
 Item5=..\..\GEN\MainProc;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D;..\..\GEN\Graphic;FastMM4991\FastMM\CPP Builder Support;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils
@@ -309,8 +309,8 @@ Item0=$(BCB)\source\vcl
 
 [HistoryLists\hlConditionals]
 Count=30
-Item0=WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE;_DEBUG
-Item1=WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE
+Item0=WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE
+Item1=WIN32;WINDOWS;LARGE_ADDRESS_AWARE;HW_PC;BUILDER;XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE;_DEBUG
 Item2=WIN32;LARGE_ADDRESS_AWARE;XDEBUG;HW_PC;BUILDER;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE
 Item3=LARGE_ADDRESS_AWARE;HW_PC;WINDOWS;BUILDER;__XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE;_DEBUG
 Item4=LARGE_ADDRESS_AWARE;HW_PC;WINDOWS;BUILDER;__XDEBUG_TRACE;UNICODE;DIO_ACTIVE;DIOUDP_ACTIVE;DIOUART_ACTIVE;DIOTCPIP_ACTIVE;DIOICMP_ACTIVE;DIOPING_ACTIVE

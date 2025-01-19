@@ -6,9 +6,9 @@
       "type": "translatescan",
       "project": "CMakeLists.txt",
       "projectTarget": "translatescan.exe",
-      "name": "translatescan",
+      "name": "translatescan [GEN]",
       "args": [
-        ""
+        "D:/Projects/GENFrameWork/GEN/"
       ]
     }    
   ]

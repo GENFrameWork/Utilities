@@ -153,21 +153,23 @@ namespace Remarks
                 if (directory.Contains("Cipher")) groupID = "CIPHER";
                 if (directory.Contains("Common")) groupID = "COMMON";
                 if (directory.Contains("Compress")) groupID = "COMPRESS";
+                if (directory.Contains("Databases")) groupID = "DATABASE";
                 if (directory.Contains("DataIO")) groupID = "DATAIO";
                 if (directory.Contains("Graphic")) groupID = "GRAPHIC";
                 if (directory.Contains("Identification")) groupID = "IDENTIFICATION";
                 if (directory.Contains("Input")) groupID = "INPUT";
-                if (directory.Contains("MainProc")) groupID = "MAIN PROCEDURE";
+                if (directory.Contains("MainProc")) groupID = "MAIN_PROCEDURE";
                 if (directory.Contains("Script")) groupID = "SCRIPT";
                 if (directory.Contains("Sound")) groupID = "SOUND";
                 if (directory.Contains("UserInterface")) groupID = "USERINTERFACE";
                 if (directory.Contains("XUtils")) groupID = "XUTILS";
+
                 if (directory.Contains("Examples")) groupID = "EXAMPLES";
                 if (directory.Contains("Tests")) groupID = "TESTS";
                 if (directory.Contains("UnitTests"))
                 {
                   isUnitTest = true;
-                  groupID = "UNIT TEST";
+                  groupID = "UNIT_TEST";
                 }
 
                 // Platforms
@@ -181,7 +183,7 @@ namespace Remarks
 
                 if (groupID.Length == 0)
                 {
-                  if (directory.Contains("/Examples/")) groupID = "EXAMPLE";
+                  groupID = "APPLICATION";
                 }
             }
         }
@@ -345,11 +347,11 @@ namespace Remarks
 
                     if(text.IndexOf('~') == -1)
                       {
-                        description = "Constructor";                          
+                        description = "Constructor of class";                          
                       }
                      else
                       {
-                        description = "Destructor";
+                        description = "Destructor of class";
                         isvirtual = true;
                        }
 
@@ -421,7 +423,7 @@ namespace Remarks
                 if(((funcname.Contains("::Clean")) && (description.Length == 0)))
                   {
                     isinternal  = true;
-                    description = "Clean the attributes of the class: Default initialice";
+                    description = "Clean the attributes of the class: Default initialize";
                   }
 
                 if(((funcname.Contains("::HandleEvent")) && (description.Length == 0)))
@@ -449,10 +451,10 @@ namespace Remarks
                 if(isUnitTest)
                   {
                     result += "@fn \t\t\t\t"    + text        + "\n";
-                    result += "@brief\t\t\t"    + "Unit test of " + parameters[0] + ": " + parameters[1] + "\n";
-                    if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
-                    if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";
+                    result += "@brief\t\t\t"    + "Unit test of " + parameters[0] + ": " + parameters[1] + "\n"; 
                     result += "@ingroup\t\t"    + group       + "\n";
+                    if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
+                    if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";                   
                     //result += "\n";
                     //result += "@author \t\t"    + author      + "\n";
                     //result += "@date\t\t\t\t"   + date        + "\n";  
@@ -461,9 +463,10 @@ namespace Remarks
                   { 
                     result += "@fn \t\t\t\t"    + text        + "\n";
                     result += "@brief\t\t\t"    + description + "\n";
+                    result += "@ingroup\t\t"    + group       + "\n";
                     if(isinternal)  result += "@note\t\t\t\tINTERNAL\n";
                     if(isvirtual)   result += "@note\t\t\t\tVIRTUAL\n";
-                    result += "@ingroup\t\t"    + group       + "\n";
+                    
                     //result += "\n";
                     //result += "@author \t\t"    + author      + "\n";
                     //result += "@date\t\t\t\t"   + date        + "\n";
