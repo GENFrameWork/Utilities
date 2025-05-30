@@ -126,6 +126,9 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 
   haveinternet = false;
 
+  exitapp      = false;
+  changeorigin = false; 
+
   Caption = XTRACE_DEFAULT_SPECIALAIM;
 
   DBGmessages.SetAddInLimit(XTRACEMONITOR_MINBLOCKADDMSG);
@@ -541,6 +544,8 @@ void __fastcall TMainForm::ButtonMinimizeClick(TObject *Sender)
 *---------------------------------------------------------------------------------------------------------------------*/
 void __fastcall TMainForm::ButtonExitClick(TObject *Sender)
 {
+  exitapp = true;
+
   Close();
 }
 
@@ -1312,7 +1317,27 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 {
   cfg->SetServerIPSelected(ServerIPComboBox->ItemIndex);
 
-  if(!cfg->GetServer(ServerIPComboBox->ItemIndex, XTRACEMONITOR_CFG_TYPESERVER_UDP)) return;
+  if(!cfg->GetServer(ServerIPComboBox->ItemIndex, XTRACEMONITOR_CFG_TYPESERVER_UDP))
+    {
+      return;
+    }
+
+  changeorigin = true;
+
+  bool _run = run;
+
+  run = false;
+
+  OriginsPanel->Update();
+  OriginsTreeView->Update();
+  StatusMSGPanel->Update();
+  TextPanel->Update();
+
+  StatusMSGPanel->Hide();
+  TextPanel->Hide();
+  OriginsPanel->Hide();
+  OriginsTreeView->Hide();
+
 
   XSTRING servercfg;
   servercfg = cfg->GetServer(ServerIPComboBox->ItemIndex, XTRACEMONITOR_CFG_TYPESERVER_UDP)->config;
@@ -1323,11 +1348,24 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 
   CreateOriginsFromConfig(Sender?false:true);
 
-  if(haveinternet) ResolvedAllURLOrigins();
+  if(haveinternet)
+    {
+      ResolvedAllURLOrigins();
+    }
 
   OpenUDPServer(&servercfg);
 
   cfg->Save();
+
+  OriginsPanel->Show();
+  OriginsTreeView->Show();
+  TextPanel->Show();
+  StatusMSGPanel->Show();
+ 
+
+  run = _run;
+
+  changeorigin = false;
 }
 
 
@@ -1349,7 +1387,14 @@ void __fastcall TMainForm::ServerUARTComboBoxChange(TObject *Sender)
 {
   cfg->SetServerUARTSelected(ServerUARTComboBox->ItemIndex);
 
-  if(!cfg->GetServer(ServerUARTComboBox->ItemIndex, XTRACEMONITOR_CFG_TYPESERVER_UART)) return;
+  if(!cfg->GetServer(ServerUARTComboBox->ItemIndex, XTRACEMONITOR_CFG_TYPESERVER_UART))
+    {
+      return;
+    }
+
+  changeorigin =true;
+
+  Sleep(1000);
 
   XSTRING servercfg;
   servercfg  = __L("COM");
@@ -1373,6 +1418,8 @@ void __fastcall TMainForm::ServerUARTComboBoxChange(TObject *Sender)
   UARTBufferStatusProgressBar->Enabled = openuart;
 
   cfg->Save();
+
+  changeorigin = false;
 }
 
 
@@ -2073,26 +2120,12 @@ bool TMainForm::CreateOriginsFromConfig(bool addUART)
 {
   bool status = true;
 
+  if(xmutexaddorigin) xmutexaddorigin->Lock();
+
   OriginsTreeView->RowSelect      = false;
   OriginsTreeView->HideSelection  = false;
 
   if(OriginsTreeView->Items->GetFirstNode())  OriginsTreeView->Items->Delete(OriginsTreeView->Items->GetFirstNode());
-
-  int c=0;
-  while(c<(int)origins.GetSize())
-    {
-      ORIGIN* origin = origins.Get(c);
-      if(origin)
-        {
-          if(!origin->isuart)
-            {
-              origins.Delete(origin);
-              delete origin;
-
-            } else c++;
-
-        } else break;
-    }
 
   XTRACEMONITOR_ORIGINCFG rootorigincfg;
 
@@ -2112,7 +2145,21 @@ bool TMainForm::CreateOriginsFromConfig(bool addUART)
   localnointernetorigincfg.URL      = __L("");
   localnointernetorigincfg.IP       = __L("");
 
-  if(xmutexaddorigin) xmutexaddorigin->Lock();
+  int c=0;
+  while(c<(int)origins.GetSize())
+    {
+      ORIGIN* origin = origins.Get(c);
+      if(origin)
+        {
+          if(!origin->isuart)
+            {
+              origins.Delete(origin);
+              delete origin;
+
+            } else c++;
+
+        } else break;
+    }
 
   rootorigin = CreateOrigin(NULL, &rootorigincfg);
   if(rootorigin)
@@ -3281,8 +3328,8 @@ bool TMainForm::IsWindowOutsideExtendedDesktop(HWND hwnd)
 
   if(GetWindowRect(hwnd, &windowrect))
     {
-      int windowWidth = windowrect.right - windowrect.left;
-      int windowHeight = windowrect.bottom - windowrect.top;
+      //int windowWidth = windowrect.right - windowrect.left;
+      //int windowHeight = windowrect.bottom - windowrect.top;
 
       if(windowrect.left   < monitorrect.rcCombined.left     ||
          windowrect.right  > monitorrect.rcCombined.right    ||
@@ -3321,6 +3368,16 @@ void TMainForm::ThreadReadUDPFunction(void* param)
 
   bool addmessage = true;
 
+  if(mainform->exitapp)
+    {
+      return;
+    }
+
+  if(mainform->changeorigin)
+    {
+      return;
+    }
+
   while(addmessage)
     {
       XDWORD     publicIP   = 0;
@@ -3330,6 +3387,16 @@ void TMainForm::ThreadReadUDPFunction(void* param)
       XDATETIME  xtime;
       XBUFFER    data;
       XSTRING    string;
+
+      if(mainform->exitapp)
+        {
+          break;
+        }
+
+      if(mainform->changeorigin)
+        {
+          break;
+        }
 
       xtime.SetToZero();
       string.Empty();
@@ -3419,6 +3486,16 @@ void TMainForm::ThreadReadUARTFunction(void* param)
 
   bool addmessage = true;
 
+  if(mainform->exitapp)
+    {
+      return;
+    }
+
+  if(mainform->changeorigin)
+    {
+      return;
+    }
+
   while(addmessage)
     {
       XDWORD     publicIP   = 0;
@@ -3428,6 +3505,16 @@ void TMainForm::ThreadReadUARTFunction(void* param)
       XDATETIME  xtime;
       XBUFFER    data;
       XSTRING    string;
+
+      if(mainform->exitapp)
+        {
+          break;
+        }
+
+      if(mainform->changeorigin)
+        {
+          break;
+        }
 
       xtime.SetToZero();
       string.Empty();

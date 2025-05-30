@@ -71,7 +71,7 @@
     <MAINSOURCE value="XTraceMonitor.cpp"/>
     <INCLUDEPATH value="..\..\GEN\XUtils\XFiles;$(BCB)\include;$(BCB)\include\vcl;FastMM4991\FastMM;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;..\..\GEN;..\..\GEN\Common;..\..\GEN\AppFlow;..\..\GEN\MainProc;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Drivers;..\..\GEN\Graphic;..\..\GEN\XUtils;..\..\GEN\XUtils\FormatFiles;..\..\GEN\Graphic\2D;..\..\GEN\Platforms\Windows;..\..\ThirdPartyLibraries\agg\src;..\..\ThirdPartyLibraries\agg\include;&quot;Microsoft Platform SDK\include&quot;"/>
     <LIBPATH value="..\..\GEN\XUtils\FormatFiles;..\..\GEN\DataIO\ScraperWeb;..\..\GEN\DataIO\Web;..\..\GEN\DataIO\Protocols;..\..\GEN\DataIO\Streams;&quot;FastMM4991\FastMM\CPP Builder Support&quot;;FastMM4991\FastMM;$(BCB)\lib;$(BCB)\lib\obj;..\..\GEN\Platforms\Windows;..\..\GEN\Cipher;..\..\GEN\DataIO;..\..\GEN\XUtils;..\..\GEN\MainProc;..\..\GEN\Graphic;..\..\ThirdPartyLibraries\agg\src;..\..\GEN\Graphic\2D"/>
-    <WARNINGS value="-w-pia -w-par -w-8027 -w-hid"/>
+    <WARNINGS value="-w-pia -w-pck -w-par -w-8027 -w-8026 -w-hid"/>
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>

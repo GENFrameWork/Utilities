@@ -59,7 +59,7 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			                __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.6.0")
+#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.6.1")
 #define XTRACEMONITOR_ROOTDIR                             __L("assets")
 
 #define XTRACEMONITOR_MASKLEVELBLACK                      0x00000001
@@ -131,7 +131,7 @@ class ORIGIN
 
 
                                   ORIGIN                        ()    { Clean();                                  }
-    virtual							 	       ~ORIGIN                        ()    {                                           }
+    virtual							 	       ~ORIGIN                        ()    { Clean();                                  }
 
     bool                          showip;
     XSTRING                       name;
@@ -352,6 +352,9 @@ class TMainForm : public TForm
     bool                          haveinternet;
 
     bool                          run;
+
+    bool                          exitapp;
+    bool                          changeorigin;
 
     XTRACEMONITOR_CFG*		 		    cfg;
 
