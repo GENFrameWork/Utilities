@@ -6,9 +6,6 @@
 * @brief       Application Update class
 * @ingroup     UTILS
 *
-* @author      Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @copyright   Copyright(c) 2005 - 2018 GEN Group.
 *
 * @cond
@@ -103,9 +100,6 @@ APPLICATIONCREATEINSTANCE(APPUPDATECREATOR, appupdatecreator)
 * @brief      Constructor
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -122,9 +116,6 @@ APPUPDATECREATOR::APPUPDATECREATOR():  XFSMACHINE(0)
 * @note       VIRTUAL
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -140,9 +131,6 @@ APPUPDATECREATOR::~APPUPDATECREATOR()
 * @fn         bool APPUPDATECREATOR::InitFSMachine()
 * @brief      Init FS Machine
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @return     bool : true if is succesful.
 *
@@ -177,9 +165,6 @@ bool APPUPDATECREATOR::InitFSMachine()
 * @fn         bool APPUPDATECREATOR::AppProc_Ini()
 * @brief      AppProc_Ini
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @return     bool : true if is succesful.
 *
@@ -250,9 +235,7 @@ bool APPUPDATECREATOR::AppProc_Ini()
 * @fn         bool APPUPDATECREATOR::AppProc_FirstUpdate()
 * @brief      Application callback First Update
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @return     bool : true if is succesful.
 *
@@ -272,9 +255,7 @@ bool APPUPDATECREATOR::AppProc_FirstUpdate()
 * @fn         bool APPUPDATECREATOR::AppProc_Update()
 * @brief      Application Callback Update
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @return     bool : true if is succesful.
 *
@@ -348,9 +329,7 @@ bool APPUPDATECREATOR::AppProc_Update()
 * @fn         bool APPUPDATECREATOR::AppProc_End()
 * @brief      Application Callback End
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @return     bool : true if is succesful.
 *
@@ -389,9 +368,7 @@ bool APPUPDATECREATOR::AppProc_End()
 * @fn         bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata)
 * @brief      GetApplicationParam
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @param[in]  xpath :
 * @param[in]  applicationversiondata :
@@ -480,9 +457,7 @@ bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VE
 * @fn         bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefiles)
 * @brief      CreateListOfFiles
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @param[in]  xpath :
 * @param[in]  updatefiles :
@@ -531,9 +506,7 @@ bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefi
 * @fn         bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata, XDWORD& nfiles, XDWORD& sizetotal)
 * @brief      GenerateUpdateFile
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @param[in]  xpath :
 * @param[in]  applicationversiondata :
@@ -629,9 +602,7 @@ bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VER
 * @brief      Handle Event for the observer manager of this class
 * @note       INTERNAL
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @param[in]  xevent :
 *
@@ -650,9 +621,7 @@ void APPUPDATECREATOR::HandleEvent(XEVENT* xevent)
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
+
 *
 * @return     void : does not return anything.
 *

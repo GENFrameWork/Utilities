@@ -197,9 +197,6 @@ void NEWAPPCREATOR_CFG::SetXPos(int xpos)
 * @brief      GetYPos
 * @ingroup    UTILITIES
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     int :
 *
 *---------------------------------------------------------------------------------------------------------------------*/

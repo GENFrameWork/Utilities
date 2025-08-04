@@ -6,9 +6,6 @@
 * @brief      Unit1
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
-*
 * @copyright  Copyright(c) 2008 - 2016 GEN Group.
 *
 * @cond

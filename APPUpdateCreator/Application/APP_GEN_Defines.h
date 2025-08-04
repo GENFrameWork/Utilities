@@ -6,9 +6,6 @@
 * @brief      GEN Defines of the Application
 * @ingroup
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @copyright  Copyright(c) 2005 - 2018 GEN Group.
 *
 * @cond

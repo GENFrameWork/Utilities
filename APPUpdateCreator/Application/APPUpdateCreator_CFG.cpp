@@ -6,9 +6,6 @@
 * @brief       Application update CFG
 * @ingroup     UTILS
 *
-* @author      Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @copyright   Copyright(c) 2005 - 2018 GEN Group.
 *
 * @cond
@@ -60,9 +57,6 @@ APPUPDATECREATOR_CFG* APPUPDATECREATOR_CFG::instance = NULL;
 * @brief      GetIsInstanced
 * @ingroup
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -78,9 +72,6 @@ bool APPUPDATECREATOR_CFG::GetIsInstanced()
 * @fn         APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
 * @brief      GetInstance
 * @ingroup
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @return     APPUPDATECREATOR_CFG& :
 *
@@ -98,9 +89,6 @@ APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
 * @fn         bool APPUPDATECREATOR_CFG::DelInstance()
 * @brief      DelInstance
 * @ingroup
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @return     bool : true if is succesful.
 *
@@ -128,9 +116,6 @@ bool APPUPDATECREATOR_CFG::DelInstance()
 * @brief      Set Default parameters
 * @ingroup
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -147,9 +132,6 @@ bool APPUPDATECREATOR_CFG::Default()
 * @fn         APPUPDATECREATOR_CFG::APPUPDATECREATOR_CFG(XCHAR* namefile)
 * @brief      Constructor
 * @ingroup
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @param[in]  namefile: namefile of the CFG file.
 *
@@ -177,9 +159,6 @@ APPUPDATECREATOR_CFG::APPUPDATECREATOR_CFG(XCHAR* namefile) : APPFLOWCFG(namefil
 * @note       VIRTUAL
 * @ingroup
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @return     Does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -198,9 +177,6 @@ APPUPDATECREATOR_CFG::~APPUPDATECREATOR_CFG()
 * @brief      Clean the attributes of the class: Default initialice
 * @note       INTERNAL
 * @ingroup
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @return     void : does not return anything.
 *

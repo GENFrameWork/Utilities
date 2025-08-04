@@ -6,9 +6,6 @@
 * @brief      Unit1
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez 
-* @date       01/03/2016 12:00
-*
 * @copyright  Copyright(c) 2008 - 2016 GEN Group.
 *
 * @cond
@@ -108,9 +105,6 @@ TMainForm *MainForm;
 * @fn         void __fastcall TMainForm::FormCreate(TObject*Sender)
 * @brief      FormCreate
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @param[in]  TObject* Sender :
 *
@@ -297,9 +291,6 @@ void __fastcall TMainForm::FormCreate(TObject* Sender)
 * @brief      FormClose
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @param[in]  TObject*Sender :
 * @param[in]  &Action :
 *
@@ -412,9 +403,6 @@ void __fastcall TMainForm::FormClose(TObject *Sender, TCloseAction &Action)
 * @brief      ActivarMensajeria1Click
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -432,9 +420,7 @@ void __fastcall TMainForm::ActivarMensajeria1Click(TObject *Sender)
 * @brief      FormCanResize
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 * @param[in]  &NewWidth :
 * @param[in]  &NewHeight :
@@ -455,9 +441,6 @@ void __fastcall TMainForm::FormCanResize(TObject *Sender, int &NewWidth, int &Ne
 * @fn         void __fastcall TMainForm::ButtonClearClick(TObject*Sender)
 * @brief      ButtonClearClick
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @param[in]  TObject*Sender :
 *
@@ -483,9 +466,6 @@ void __fastcall TMainForm::ButtonClearClick(TObject *Sender)
 * @fn         void __fastcall TMainForm::ButtonStopClick(TObject*Sender)
 * @brief      ButtonStopClick
 * @ingroup    XUTILS
-*
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
 *
 * @param[in]  TObject*Sender :
 *
@@ -514,9 +494,7 @@ void __fastcall TMainForm::ButtonStopClick(TObject *Sender)
 * @brief      ButtonMinimizeClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -534,9 +512,7 @@ void __fastcall TMainForm::ButtonMinimizeClick(TObject *Sender)
 * @brief      ButtonExitClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -556,9 +532,7 @@ void __fastcall TMainForm::ButtonExitClick(TObject *Sender)
 * @brief      Clearmessages1Click
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -576,9 +550,7 @@ void __fastcall TMainForm::Clearmessages1Click(TObject *Sender)
 * @brief      Exit1Click
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -596,9 +568,7 @@ void __fastcall TMainForm::Exit1Click(TObject *Sender)
 * @brief      Minimizewindow1Click
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -616,9 +586,7 @@ void __fastcall TMainForm::Minimizewindow1Click(TObject *Sender)
 * @brief      ButtonCopyClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -639,9 +607,7 @@ void __fastcall TMainForm::ButtonCopyClick(TObject *Sender)
 * @brief      GenerateTab
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  ntab :
 * @param[in]  tab :
 *
@@ -667,9 +633,7 @@ bool __fastcall TMainForm::GenerateTab(int ntab,AnsiString& tab)
 * @brief      FilterCheckBoxClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -689,9 +653,7 @@ void __fastcall TMainForm::FilterCheckBoxClick(TObject *Sender)
 * @brief      CheckFilterLine
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  line :
 *
 * @return     bool : true if is succesful.
@@ -714,9 +676,7 @@ bool __fastcall TMainForm::CheckFilterLine(AnsiString& line)
 * @brief      ButtonDNSUpdateClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -798,9 +758,7 @@ void __fastcall TMainForm::ButtonDNSUpdateClick(TObject *Sender)
 * @brief      ResolvedOriginTimerTimer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -820,9 +778,7 @@ void __fastcall TMainForm::ResolvedOriginTimerTimer(TObject *Sender)
 * @brief      InternetUpdateTimerTimer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -840,9 +796,7 @@ void __fastcall TMainForm::InternetUpdateTimerTimer(TObject *Sender)
 * @brief      OriginsTreeViewChange
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  sender :
 * @param[in]  node :
 *
@@ -892,9 +846,7 @@ void __fastcall TMainForm::OriginsTreeViewChange(TObject* sender, TTreeNode* nod
 * @brief      CheckLevelFilterBlackClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -912,9 +864,7 @@ void __fastcall TMainForm::CheckLevelFilterBlackClick(TObject *Sender)
 * @brief      CheckLevelFilterBlueClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -932,9 +882,7 @@ void __fastcall TMainForm::CheckLevelFilterBlueClick(TObject *Sender)
 * @brief      CheckLevelFilterGreenClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -952,9 +900,7 @@ void __fastcall TMainForm::CheckLevelFilterGreenClick(TObject *Sender)
 * @brief      CheckLevelFilterPurpleClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -972,9 +918,7 @@ void __fastcall TMainForm::CheckLevelFilterPurpleClick(TObject *Sender)
 * @brief      CheckLevelFilterRedClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -992,9 +936,7 @@ void __fastcall TMainForm::CheckLevelFilterRedClick(TObject *Sender)
 * @brief      CheckLevelFilterGrayClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1012,9 +954,7 @@ void __fastcall TMainForm::CheckLevelFilterGrayClick(TObject *Sender)
 * @brief      PanelLevelFilterClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1040,9 +980,7 @@ void __fastcall TMainForm::PanelLevelFilterClick(TObject *Sender)
 * @brief      AddTimeMarkCheckBoxClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1060,9 +998,7 @@ void __fastcall TMainForm::AddTimeMarkCheckBoxClick(TObject *Sender)
 * @brief      TextTracingCheckBoxClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1080,9 +1016,7 @@ void __fastcall TMainForm::TextTracingCheckBoxClick(TObject *Sender)
 * @brief      ShowIPsCheckBoxClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1100,9 +1034,7 @@ void __fastcall TMainForm::ShowIPsCheckBoxClick(TObject *Sender)
 * @brief      FormActivate
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1131,9 +1063,7 @@ void __fastcall TMainForm::FormActivate(TObject *Sender)
 * @brief      ButtonSaveClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1214,9 +1144,7 @@ void __fastcall TMainForm::ButtonSaveClick(TObject *Sender)
 * @brief      AddDBMsgTimerTimer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1234,9 +1162,7 @@ void __fastcall TMainForm::AddDBMsgTimerTimer(TObject *Sender)
 * @brief      IPFilterImageClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1269,9 +1195,7 @@ void __fastcall TMainForm::IPFilterImageClick(TObject *Sender)
 * @brief      SplitterIPFilterMoved
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1305,9 +1229,7 @@ void __fastcall TMainForm::SplitterIPFilterMoved(TObject *Sender)
 * @brief      ServerIPComboBoxChange
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1375,9 +1297,7 @@ void __fastcall TMainForm::ServerIPComboBoxChange(TObject *Sender)
 * @brief      ServerUARTComboBoxChange
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1429,9 +1349,7 @@ void __fastcall TMainForm::ServerUARTComboBoxChange(TObject *Sender)
 * @brief      SplitterStatusMsgMoved
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1461,9 +1379,7 @@ void __fastcall TMainForm::SplitterStatusMsgMoved(TObject *Sender)
 * @brief      CheckBoxMsgStatusClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1489,9 +1405,7 @@ void __fastcall TMainForm::CheckBoxMsgStatusClick(TObject *Sender)
 * @brief      ButtonClearClick
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 *
 * @return     void : does not return anything.
@@ -1519,9 +1433,7 @@ void __fastcall TMainForm::ButtonClearStatusClick(TObject *Sender)
 * @brief      ValueListEditorDrawCell
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  TObject*Sender :
 * @param[in]  ACol :
 * @param[in]  ARow :
@@ -1600,9 +1512,7 @@ void __fastcall TMainForm::ValueListEditorDrawCell(TObject *Sender, int ACol, in
 * @brief      TimerStatusMSGTimer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1620,9 +1530,7 @@ void __fastcall TMainForm::TimerStatusMSGTimer(TObject *Sender)
 * @brief      AddDBGmessageManager
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1767,9 +1675,7 @@ void TMainForm::AddDBGmessageManager()
 * @brief      TMainForm
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  Owner :
 *
 * @return     __fastcall :
@@ -1797,9 +1703,7 @@ __fastcall TMainForm::TMainForm(TComponent* Owner) : TForm(Owner)
 * @brief      CheckCopyData
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  &Message :
 *
 * @return     void : does not return anything.
@@ -1855,9 +1759,7 @@ void __fastcall TMainForm::CheckCopyData(Messages::TMessage &Message)
 * @brief      UpdateInternetStatus
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1892,9 +1794,7 @@ bool TMainForm::UpdateInternetStatus()
 * @brief      ActivateButtons
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  active :
 *
 * @return     bool : true if is succesful.
@@ -1921,9 +1821,7 @@ bool TMainForm::ActivateButtons(bool active)
 * @brief      RefreshStatusTextFilter
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1948,9 +1846,7 @@ bool TMainForm::RefreshStatusTextFilter()
 * @brief      CreateRitchText
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     TRichEdit* :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -1989,9 +1885,7 @@ TRichEdit* TMainForm::CreateRitchText()
 * @brief      CreateValueListEditor
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     TValueListEditor* :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2036,9 +1930,7 @@ TValueListEditor* TMainForm::CreateValueListEditor()
 * @brief      CreateOrigin
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  father :
 * @param[in]  origincfg :
 *
@@ -2110,9 +2002,7 @@ ORIGIN* TMainForm::CreateOrigin(ORIGIN* father, XTRACEMONITOR_ORIGINCFG* originc
 * @brief      CreateOriginsFromConfig
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2215,9 +2105,7 @@ bool TMainForm::CreateOriginsFromConfig(bool addUART)
 * @brief      CreateOriginsFromIP
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  publicIP :
 * @param[in]  publicIPnopacket :
 * @param[in]  localIP :
@@ -2320,9 +2208,7 @@ ORIGIN* TMainForm::CreateOriginsFromIP(XDWORD publicIP, bool publicIPnopacket, X
 * @brief      CreateOriginsFromUART
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2361,9 +2247,7 @@ bool TMainForm::CreateOriginFromUART()
 * @brief      DeleteOriginFromUART
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2388,9 +2272,7 @@ bool TMainForm::DeleteOriginFromUART()
 * @brief      GetOriginFromIP
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  publicIP :
 * @param[in]  localIP :
 *
@@ -2427,9 +2309,7 @@ ORIGIN* TMainForm::GetOriginFromIP(XDWORD publicIP, XDWORD localIP)
 * @brief      GetOriginFromTreeNode
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  node :
 *
 * @return     ORIGIN* :
@@ -2461,9 +2341,7 @@ ORIGIN* TMainForm::GetOriginFromTreeNode(TTreeNode* node)
 * @brief      GetActualOrigin
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     ORIGIN* :
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2482,9 +2360,7 @@ ORIGIN* TMainForm::GetActualOrigin()
 * @brief      ResolvedAllURLOrigins
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2548,9 +2424,7 @@ void TMainForm::ResolvedAllURLOrigins()
 * @brief      AddLineTrace
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  origin :
 * @param[in]  DBGmessage :
 *
@@ -2762,9 +2636,7 @@ bool TMainForm::AddLineTrace(ORIGIN* origin, DBGMESSAGE* DBGmessage)
 * @brief      UpdateRunStopButton
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  run :
 *
 * @return     void : does not return anything.
@@ -2783,9 +2655,7 @@ void TMainForm::UpdateRunStopButton(bool run)
 * @brief      AddDBGMessage
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  publicIP :
 * @param[in]  localIP :
 * @param[in]  level :
@@ -2825,9 +2695,7 @@ bool TMainForm::AddDBGMessage(XDWORD publicIP, bool publicIPnopacket, XDWORD loc
 * @brief      GenerateIPString
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  IP :
 * @param[in]  IPstring :
 *
@@ -2846,9 +2714,7 @@ void TMainForm::GenerateIPString(XDWORD IP, XSTRING& IPstring)
 * @brief      UpdateLevelFilterStatus
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2869,9 +2735,7 @@ void TMainForm::UpdateLevelFilterStatus()
 * @brief      CheckLevelFilter
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  checkbox :
 * @param[in]  mask :
 *
@@ -2896,9 +2760,7 @@ void TMainForm::CheckLevelFilter(TCheckBox* checkbox, XDWORD mask)
 * @brief      IsActiveLevelFilter
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  level :
 *
 * @return     bool : true if is succesful.
@@ -2937,9 +2799,7 @@ bool TMainForm::IsActiveLevelFilter(int level)
 * @brief      UpdateIPFilterImage
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -2964,9 +2824,7 @@ void TMainForm::UpdateIPFilterImage()
 * @brief      PrintStatus
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  mask :
 * @param[in]  ... :
 *
@@ -3003,9 +2861,7 @@ bool TMainForm::PrintStatus(XCHAR* mask, ...)
 * @brief      GetNameNode
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  origin :
 * @param[in]  namenode :
 *
@@ -3057,9 +2913,7 @@ bool TMainForm::GetNameNode(ORIGIN* origin, XSTRING& namenode)
 * @brief      InitServerList
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -3096,9 +2950,7 @@ void TMainForm::InitServerList()
 * @brief      OpenUDPServer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  servercfg :
 *
 * @return     bool : true if is succesful.
@@ -3145,9 +2997,7 @@ bool TMainForm::OpenUDPServer(XSTRING* servercfg)
 * @brief      CloseUDPServer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -3178,9 +3028,7 @@ bool TMainForm::CloseUDPServer()
 * @brief      OpenUARTServer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  servercfg :
 *
 * @return     bool : true if is succesful.
@@ -3222,9 +3070,7 @@ bool TMainForm::OpenUARTServer(XSTRING* servercfg)
 * @brief      CloseUARTServer
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -3253,9 +3099,7 @@ bool TMainForm::CloseUARTServer()
 * @brief      RedrawStatusMsgList
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -3315,9 +3159,7 @@ bool TMainForm::RedrawStatusMsgList(ORIGIN* origin)
 * @brief      IsWindowOutsideExtendedDesktop
 * @ingroup
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     bool : true if is succesful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
@@ -3353,9 +3195,7 @@ bool TMainForm::IsWindowOutsideExtendedDesktop(HWND hwnd)
 * @brief      ThreadReadUDPFunction
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  param :
 *
 * @return     void : does not return anything.
@@ -3471,9 +3311,7 @@ void TMainForm::ThreadReadUDPFunction(void* param)
 * @brief      ThreadReadUARTFunction
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @param[in]  param :
 *
 * @return     void : does not return anything.
@@ -3559,9 +3397,7 @@ void TMainForm::ThreadReadUARTFunction(void* param)
 * @note       INTERNAL
 * @ingroup    XUTILS
 *
-* @author     Abraham J. Velez
-* @date       01/03/2016 12:00
-*
+
 * @return     void : does not return anything.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
