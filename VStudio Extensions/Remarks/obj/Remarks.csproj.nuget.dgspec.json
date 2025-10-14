@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {}
+  },
+  "projects": {
+    "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+        "projectName": "Remarks",
+        "projectPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+        "packagesPath": "C:\\Users\\SirGraham\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\SirGraham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "EnvDTE": {
+              "target": "Package",
+              "version": "[17.0.31902.203, )"
+            },
+            "Microsoft.VSSDK.BuildTools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[17.0.5232, )"
+            },
+            "Microsoft.VisualStudio.SDK": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[17.0.31902.203, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "translatescan",
+      "project": "CMakeLists.txt",
+      "projectTarget": "translatescan.exe",
+      "name": "translatescan [GEN]",
+      "args": [
+        "D:/Projects/GENFrameWork/GEN/"
+      ]
+    }    
+  ]
+}
