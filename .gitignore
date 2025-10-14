@@ -1,14 +1,20 @@
 syntax: glob
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
 *.obj
 *.exe
 *.o
 *.a
 *.lib
 *.so*
+<<<<<<< HEAD
 *.idb
+=======
+>>>>>>> master
 *.log
 *.sdf
 *.VC.db
@@ -19,13 +25,18 @@ syntax: glob
 *.suo
 *.orig
 *.tix
+<<<<<<< HEAD
 *.~*
+=======
+.~*
+>>>>>>> master
 *.bak
 *.raw
 *.dll
 *.pdb
 *.err
 *.ai
+<<<<<<< HEAD
 *.d
 *.tds
 
@@ -40,3 +51,5 @@ XTraceMonitor/obj/
 /**/Platforms/Linux
 /**/Platforms/Linux_iMX6
 /**/Platforms/Linux_Pi
+=======
+>>>>>>> master
