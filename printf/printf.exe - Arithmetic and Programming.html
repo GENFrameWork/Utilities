@@ -1,0 +1,2138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- This file was created using TextToHtml.bat conversion program written by Antonio Pérez Ayala (aka Aacini) -->
+<html>
+<head>
+   <title>printf.exe - Arithmetic and Programming</title>
+   <style type="text/css">
+   h1 { margin-left: -3%; }
+   h2 { margin-left: -3%; margin-top: 2em; }
+   body { 
+      margin-left: 6%; 
+      margin-right: 6%; 
+      color: black;
+      background: white;
+      font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+   }
+   code {
+      color: black;
+      background:  #CCDDFF;
+      font-weight: bold;
+      white-space: pre; 
+      font-family: "Courier New", Monaco, monospace;
+      font-size: 1.05em;
+   }
+   pre {
+      color: black;
+      background:  #CCDDFF;
+      font-weight: bold;
+      white-space: pre; 
+      font-family: "Courier New", Monaco, monospace;
+      font-size: 1.05em;
+      border: none;
+      padding: 0.3em;
+      width: 100%;
+      overflow: auto;
+      scrollbar-base-color: #99CCFF;
+   }
+   kbd {
+      font-size: 0.8em;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 1px solid #999999;
+      border-radius: 3px;
+      padding: 0.1em 0.6em;
+      margin: 0 0.1em;
+      display: inline-block;
+      white-space: nowrap;
+   }
+   #horList li {
+      display: inline;
+   }
+   </style>
+</head>
+<body>
+<h1>printf.exe - Arithmetic and Programming</h1>
+<p>The term <a href="https://en.wikipedia.org/wiki/Computer_programming">computer programming</a> is usually associated with the creation of video-games; however, this term encompasses a wide range of applications in several areas, although in all cases this implies the use of a <a href="https://en.wikipedia.org/wiki/Programming_language">programming language</a>. Learning to use a programming language requires some technical knowledge and/or skills that some people simply don't have, perhaps due to their area of experience or age.
+<p>There are several tools designed to "teach programming" to inexperienced people (some of them aimed at children); however, these tools generally do not provide the elements required in a further study of a conventional programming language. Part of the problem is that these tools focus on the "fun" aspect of learning, so they include a large number of graphics, sounds, animations, etc. whose elements are assembled visually as if it were a game, but neglect the more technical aspects of this knowledge. Don't forget that creating a program that works correctly doesn't have to be "fun", but rather represents a major technical challenge.
+<p>A simpler tool to learn and apply would be one without games, sounds or animations, but that works based on <i>commands/orders/instructions</i> in the same way as an <a href="https://en.wikipedia.org/wiki/Imperative_programming"><i>imperative</i> programming language</a>. This tool can be specifically designed with a minimum of rules and features, but still providing the same concepts and way of applying them as programming languages; this would allow a greater number of people who are not normally able to access conventional methods to learn programming to do so.
+<p><b>printf.exe</b> is a console application for Windows that, in its most basic form, allows you to display messages and generate results of arithmetic operations that appear in a certain format. The formatted results are displayed using the well-known function <b>printf</b> of the C programming language, of which there are many examples of use in various places on the web. The arithmetic operations are evaluated using a simple notation that fits perfectly with the way printf is used, making it a natural complement to that function. This notation was taken from a type of calculator (HP) that has traditionally been used as a basic programming tool aimed at people with no experience (usually high school or middle school students) of which there are many examples of use on the Internet. In this way, the core of the printf.exe tool is based on two pillars that have been widely known in the field of programming for many years: the <b>printf</b> function and <b>HP</b> calculators.
+<p>The advanced usage of printf.exe includes string handling, so it can be applied to many word processing tasks. In addition, the advanced version of printf.exe features the simplest programming scheme that exists, similar to that of HP calculators of which there are literally thousands of examples on the web, since this type of programs has been created and published by the community for more than 40 years. This point allows the user to learn basic programming principles almost as easily as learning to perform arithmetic operations in the HP calculator.
+<p>More importantly, printf.exe's advanced programming scheme allows it to emulate all the classical figures of structured programming in modern programming languages, but it is based on just <i>four elements</i> and a couple simple rules about evaluating conditions. This is a very simple scheme to understand and learn, yet it provides the same insights that are required while using a modern structured programming language.
+<p>The extensive documentation does not assume any prior knowledge of these topics so the examples are straightforward and the explanations are detailed. The user manual starts with basic explanations and progresses to more and more in-depth topics as advanced features of this tool are introduced. In this way the printf.exe application can be used as an introduction to computer programming that does not require a specialized knowledge base on the part of the user; just a little interest in math.
+<p>For a better experience, it is suggested to <a href="Register your copy of printf.exe.html">register your copy</a> of printf.exe program.
+<br><h4><a name="Table_of_Contents">Table of Contents</a></h4>
+<ol>
+<li><a href="#Introduction" style="text-decoration:none">Introduction</a> 
+<li><a href="#Show_Formatted_Output" style="text-decoration:none">Show Formatted Output</a> 
+<li><a href="#Arithmetic_and_String_Operations" style="text-decoration:none">Arithmetic and String Operations</a> 
+<ol>
+<li><a href="#Data_Types" style="text-decoration:none">Data Types</a> 
+<li><a href="#Integer_Operations" style="text-decoration:none">Integer Operations</a> 
+<li><a href="#Floating_Point_Operations" style="text-decoration:none">Floating Point Operations</a> 
+<li><a href="#Storage_Registers" style="text-decoration:none">Storage Registers</a> 
+<li><a href="#Stack_Management" style="text-decoration:none">Stack Management</a> 
+<li><a href="#Clearing_the_FPU_stack" style="text-decoration:none">Clearing the FPU stack</a> 
+<li><a href="#String_Operations" style="text-decoration:none">String Operations</a> 
+<li><a href="#Character_Pointers" style="text-decoration:none">Character Pointers</a> 
+</ol>
+<li><a href="#Block_Programming" style="text-decoration:none">Block Programming</a> 
+<ol>
+<li><a href="#Input/Output_Operations" style="text-decoration:none">Input/Output Operations</a> 
+<li><a href="#Code_Block" style="text-decoration:none">Code Block</a> 
+<li><a href="#Control_Flow_Transfer" style="text-decoration:none">Control Flow Transfer</a> 
+<li><a href="#Test/Condition" style="text-decoration:none">Test/Condition</a> 
+<li><a href="#Basic_Conditional_Tests" style="text-decoration:none">Basic Conditional Tests</a> 
+<li><a href="#Program_in_Didactic_Form_(Batch_files)" style="text-decoration:none">Program in Didactic Form (Batch files)</a> 
+<li><a href="#Flags_Tests" style="text-decoration:none">Flags Tests</a> 
+<li><a href="#Standard_Numeric_Tests" style="text-decoration:none">Standard Numeric Tests</a> 
+<li><a href="#Advanced_Input/Output_Operations" style="text-decoration:none">Advanced Input/Output Operations</a> 
+<li><a href="#Named_Code_Blocks" style="text-decoration:none">Named Code Blocks</a> 
+<li><a href="#Boolean_Operators" style="text-decoration:none">Boolean Operators</a> 
+</ol>
+<li><a href="#Appendices" style="text-decoration:none">Appendices</a> 
+<ol>
+<li><a href="#printf.exe_installation_and_support" style="text-decoration:none">printf.exe installation and support</a> 
+<li><a href="#Increasing_storage_space" style="text-decoration:none">Increasing storage space</a> 
+<li><a href="#Error_Messages" style="text-decoration:none">Error Messages</a> 
+</ol>
+</ol>
+<h2><a name="Introduction" style="text-decoration:none">Introduction</a> </h2>
+<p><b>printf.exe</b> is a console application that is used in text mode at the cmd.exe Windows command prompt, that is, it is not a Graphical User Interface program. The application is written in assembly language, so it is very small and efficient. You can use printf.exe to generate simple output on the command line or advanced math output in Batch files, or even write complete small to medium-sized applications using printf.exe's scripting capabilities in a much easier way than using any modern programming language.
+<p>This application don't requires a complicated installation: just follow the instructions at <a href="#printf.exe_installation_and_support">Appendix 1</a> to download in your computer the printf.zip package file, and extract all included files in a given folder. Then, <a href="https://www.lifewire.com/how-to-open-command-prompt-2618089">open the Command Prompt</a> (right-click the Start button and select "Command Prompt"); the black cmd.exe window should appear. Change current directory to printf.exe's one: type <b>CD</b> followed by a space, then drag and drop printf.exe folder into cmd.exe window and press Enter. You can now use printf.exe&#33;
+<p><b>NOTE:</b> Some antivirus applications flags printf.exe as "potentially dangerous". This is a false positive message. If you downloaded the printf.zip package file from <a href="https://www.apaacini.com">apaacini.com</a> site, then it is virus free for sure.
+<p>The general syntax of printf.exe program is this:
+<pre>
+printf "format string" data1 data2 data3 ...
+</pre>
+<p>In it's simplest form, the format string contains a series of characters that will be displayed in the screen. For example:
+<pre>
+printf "Hello, world"
+</pre>
+<p>You can copy anyone of the examples shown here (selecting it by pressing the mouse left button while move the mouse, and press Ctrl-C) and paste it in the cmd.exe window via a right-click; if this not works, right-click on the window title bar and select "Edit" -> "Paste". When the command appears in the screen, press Enter to execute it.
+<p>The formatted output task in printf.exe program is achieved via the Windows API function of the same name. The program just take the parameters provided by the user and pass they to the C Run-Time <b>printf</b> function with no further checking. This means that it is up to the user to fulfill the requirements of printf function; otherwise the same errors or failures described <a href="https://msdn.microsoft.com/en-us/library/wc7014hz.aspx">in printf documentation</a> will occur.
+<p>The arithmetic operations are performed <i>in the same data area (stack)</i> used for printf parameters, so the operations are evaluated using the simplest arithmetic scheme: Reverse Polish Notation, also called RPN or <i>postfix notation</i>. This method allows printf.exe program be relatively simple and the operations be performed in a very efficient way, but this point also means (again) that it is up to the user to correctly provide operations that follow the rules of RPN expressions.
+<p>The above two paragraphs means that printf.exe is a program somewhat difficult to use&#33; However, the operation rules are not complicated; you just need to be careful and pay attention to details. The ultimate reward for this effort is that you will obtain numeric results (and text-processing ones&#33;) in a much simpler way than using any programming language, with the same or better precision, and much faster&#33;
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Show_Formatted_Output" style="text-decoration:none">Show Formatted Output</a> </h2>
+<p>The format string contains ordinary characters or certain control characters preceded by a <code>\</code> backslash (<a href="https://learn.microsoft.com/en-us/cpp/c-language/escape-sequences?view=msvc-170"><i>escape sequences</i></a>), and data conversion format specifications designed to show data that start in <code>%</code> percent-sign and end in a letter.
+<p>The escaped control characters allowed in printf.exe are: <code>\n</code> <i>new line</i> LineFeed ASCII 10 (output as CR+LF in Windows), <code>\r</code> CarriageReturn ASCII 13, <code>\t</code> TABulation ASCII 9, <code>\b</code> BackSpace ASCII 8, and <code>\a</code> BELl ASCII 7. Any other character placed after the backslash is textually inserted; for example, use <code>\\</code> to insert a backslash and <code>\"</code> to insert a quote:
+<pre>
+printf "She said: \"Goodbye&#33;\" and gone\n"
+</pre>
+<p>The format string can be the name of a Batch variable, so printf.exe uses such stored string. However, you can not directly insert control characters in a Batch variable using <code>\</code>escaped letters; you must use the method described at <a href="printf%20Example%200%20-%20Operations.bat">printf Example 0 - Operations.bat</a> file.
+<p>Format specifications designed to show data start with a <code>%</code> percent-sign character and end in a letter that depends on the <i>type</i> of the data: <b>%c</b> for characters, <b>%s</b> for strings, <b>%i</b> for integer numbers and <b>%f</b> for floating point numbers. 
+<p>Data placed after the format string must be separated by space or TAB characters. The type of this data depends on the way it is written: a <b>character</b> is enclosed in apostrophes, a <b>string</b> is enclosed in quotes, an <b>integer</b> number have no decimal point, and a <b>floating point</b> number have decimal point. In this way, each <code>%letter</code> specification in the format string is matched with a data, that <i>must be</i> of the same type. For example:
+<pre>
+printf "A character: %c\tA string: %s\tAn integer: %i\tA floating point: %f\n"  'X'  "ABC"  1  1.
+</pre>
+<p>You can also use as data a Batch environment <b>variable</b> that is taken as a string. For example:
+<pre>
+printf "%s\n" PATH
+</pre>
+<p>Note that data elements are separated by one or more spaces (or TAB characters). If there are more data than format specifications, extra data is not displayed. If there are more format specifications than data, garbage is shown or a run-time error will occur. The <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l">C printf function documentation</a> indicate: <i>"The results are undefined if there are not enough arguments for all the format specifications"</i>. In this phrase "undefined" means that <i>anything</i> may happen.
+<p>A <b>very important point</b> you should pay attention is that printf.exe program can be characterized as an <a href="https://en.wikipedia.org/wiki/Strong_and_weak_typing#Variation_across_programming_languages"><i>untyped application</i></a> (like Assembly language): <q>it is up to the programmer to ensure that data given to functions is of the appropriate type</q>. If the types of specification and data don't match, garbage is shown or a run-time error will occur. The only format vs data type mismatch allowed is use <b>%i</b> on a character (that shows its ASCII code) and use <b>%c</b> on an integer (that show such a character); this is because characters are internally managed as 32-bits integers. For example:
+<pre>
+printf "The ASCII code of '%c' is %i. The char of code %i is '%c'\n"  'A' 'A'   97 97
+</pre>
+<p>Previous line display: <b>The ASCII code of 'A' is 65. The char of code 97 is 'a'</b>
+<p>Each <code>%letter</code> format specification allows a major control in the way the data is displayed. The general syntax of the data format specification is described below.
+   <table border="1" rules="all" cellpadding="5" align="left">
+      <tr>
+         <th>flags</th>
+         <th>&nbsp;</th>
+         <th>&nbsp;</th>
+         <th>type</th>
+      </tr>
+      <tr>
+         <td  align="right">-+ 0#</td>
+         <td>&nbsp;</td>
+         <td>&nbsp;</td>
+         <td>cdiouxXeEfgGaAps</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>-</b></td>
+         <td>left align</td>
+         <td><b>c</b></td>
+         <td>Character</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>+</b></td>
+         <td>Insert <b>+</b> sign if positive</td>
+         <td><b>d</b></td>
+         <td>integer (Decimal)</td>
+      </tr>
+      <tr>
+         <td  align="right">" "</td>
+         <td>Insert space for + sign</td>
+         <td><b>i</b></td>
+         <td>Integer</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>0</b></td>
+         <td>zero pad</td>
+         <td><b>o</b></td>
+         <td>integer (Octal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>#</b></td>
+         <td>insert <b>.</b> in <b>g</b> type, or<br>insert 0&#124;0x in o&#124;x types</td>
+         <td><b>u</b></td>
+         <td>integer (Unsigned)</td>
+      </tr>
+      <tr>
+         <td colspan="2" rowspan="12"  align="right">&nbsp;</td>
+         <td><b>x</b></td>
+         <td>integer (hexadecimal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>X</b></td>
+         <td>integer (Hexadecimal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>e</b></td>
+         <td>double ([-]d.dddddde&mnplus;ddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>E</b></td>
+         <td>double (like e, with E)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>f</b></td>
+         <td>double ([-]ddd.dddddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>F</b></td>
+         <td>double (like f, capitalized)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>g</b></td>
+         <td>double (shorter of f&#124;e)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>G</b></td>
+         <td>double (like g, with E)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>a</b></td>
+         <td>double ([-]0xh.hhhp&mnplus;ddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>A</b></td>
+         <td>double (like a, with X and P)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>p</b></td>
+         <td>string (address in hex)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>s</b></td>
+         <td>String</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p>Data format specification: <b>%[flags][width][.precision]type</b><br>
+<p><b>flags</b> is an optional part that <i>adds</i> certain characters to the output, usually at left side of the field.
+<p><b>width</b> is a number that specifies the <i>minimum or total width</i> of the field used to display the data. However, this width will <i>not</i> truncate the value, so the field is incremented if necessary. <code>printf "%04i" 12</code> show: <b>0012</b> &nbsp; <code>printf "%04i" 12345</code> show: <b>12345</b>
+<p><b>.precision</b> is a number that specifies the <i>maximum width</i> of its part, so the value will be truncated and rounded if necessary. <code>printf "%.4f" 3.141592654</code> show <b>3.1416</b>
+<p>When floating point numbers are shown, <b>width</b> specifies the "number of columns" of the field and <b>.precision</b> the "number of decimals", but this interpretation differ with other data types, like integers. For example, in <code>%.12s</code> <i>string</i> format, the string value is cut at <b>12</b> characters.
+<p>A string is the only type of value that will be supressed if the precision is zero: <code>%.0s</code>. As a particular case, if the precision is zero <i>and</i> the integer value is zero: <code>printf "%.0i" 0</code>, nothing is shown.
+<p>The <b>type</b> letter <i>must</i> match the type of the value accordingly to the table at left side. In this table the "double" term refers to the 64-bits floating point numbers managed in printf.exe program.
+<p>For further details, you can review the complete description of format specifications at <a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-170">this site</a>.<br clear="all">
+<p>Note: if you use printf.exe program in a Batch (<b>.bat</b> extension) file, all percent-signs must be <i>doubled</i>. For example, this command-prompt line:
+<pre>
+printf "An integer:%i\nA float: %f\n"  123  456.789
+</pre>
+<p>...  must be written in a Batch file this way:
+<pre>
+printf "An integer:%%i\nA float: %%f\n"  123  456.789
+</pre>
+<p><i>Advanced topic</i>: in a <a name="asterisk_format">format specification</a> the <b>width</b> and <b>precision</b> values can be an asterisk that indicate to take <i>the next</i> integer data and use it in place of the asterisk. For example, in <code>printf "%0*i" 5 3</code> the <b>5</b> takes the place of the asterisk, so the output is the same as in <code>printf "%05i" 3</code>: <b>00003</b>. This example <code>printf "%0*.*f" 8 4 3.141592654</code> show the same output than this one <code>printf "%08.4f" 3.141592654</code>: <b>003.1416</b>.
+<p>The advantage of this feature is that width and precision values can be <i>dynamically</i> calculated when printf.exe execute. If the precision value is zero in a string format specification, the string data is just not shown. For example:
+<p><code>printf "The result is: %.*s %.*s \n" 14 "yes, of course"   0 "no, sorry..."</code> show <b>The result is: yes, of course</b>, but
+<p><code>printf "The result is: %.*s %.*s \n"  0 "yes, of course"  12 "no, sorry..."</code> show <b>The result is: no, sorry...</b>.
+<p>One of the <b>14</b> or <b>12</b> values can be changed to zero depending on a selector value, so this feature allows to <i>conditionally select</i> one of two messages. Of course, the selection can be made from any number of different strings&#33;
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Arithmetic_and_String_Operations" style="text-decoration:none">Arithmetic and String Operations</a> </h2>
+<p>Before describe how to perform arithmetic operations in printf.exe program you must be aware of an important aspect about numbers. As said before, printf.exe program is an <i>untyped application</i> and in such applications there are not any <a href="https://en.wikipedia.org/wiki/Type_conversion#Implicit_type_conversion">implicit type conversions</a>: you must always provide the correct type of values or explicitly perform any required type conversion. In printf.exe application (and in practically all programming languages) there are <i>two different types of numbers</i>: integer and floating point. This means that, in printf.exe (unlike in other languages) there are also <i>two different operator sets</i> for evaluating operations on integer and floating point numbers (in the exact same way that there are two different data formats to display <code>%i</code> integer and <code>%f</code> floating point numbers). Integer operators are special characters (like <code>+ - * /</code> etc), and three-letter words are used as operators on floating point numbers (like <code>ADD SUB MUL DIV</code> etc). If you use the wrong operator type, or if you try to operate two numbers of different types, you will get garbage as result or even an unrecoverable run-time error (in the exact same way as if you use the wrong format specification type to show numbers). Everytime you don't get the expected result from printf.exe application, check in first place <i>the type</i> of the numbers, operators and formats used</i>. Let's see a couple simple examples: this code <code>printf "An integer show with F format: %f\n" 123</code> show <b>An integer show with F format: 0.000000</b> and this one <code>printf "A floating point show with I format: %i\n" 1.2</code> show <b>A floating point show with I format: 858993459</b>. If you understand this point, you could avoid the most frequent problem about the use of printf.exe application.
+<p>This program uses a method to evaluate arithmetic operations different than the usual algebraic notation. The method is called <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation</a> (RPN) and was choosen because it is simpler to implement (and use) than algebraic notation. In <i>standard</i> algebraic notation, multiplication and division have major <i>precedence</i> (are evaluated before) than addition and subtraction. This means that when several operations are combined together, the operations with greater precedence are executed first (from left to right) and then the operations with lower precedence are completed (from left to right). For example, the following <i>algebraic</i> expression:
+<pre>
+4 + 5 - 6 * 7 / 8 + 9 =
+</pre>
+<p>... imply to <i>first</i> add 4+5, store such 9 partial result and keep pending the subtract operation for later. <i>Then</i> multiply 6*7 and divide the result by 8. And <i>now</i> get the stored 9 to complete the pending subtract operation, and finally add 9. If you want to change this standard order, you need to insert parentheses to enclose the operations that must be performed first. Taking into account that parentheses can be nested <i>several levels deep</i> and that there are other operations with different precedences, such as exponentiation (higher precedence than <b>*</b>) or bitwise operations (lower precedence than <b>+</b>), <i>and</i> that there are a few operators that execute from right to left (like all one-operand operators) it is easy to understand that the evaluation of a large and complicated algebraic expression can have several pending operations and partial results that must be completed in a convoluted way. When a large expression is required in a computer program, it is common that the programmer split the (algebraic) expression into several simpler subexpressions in order to increase clarity. This is just absurd...
+<p>(There is a programming language, <a href="https://en.wikipedia.org/wiki/APL_(programming_language)">APL</a>, which has <i>many</i> (over 50&#33;) different operators. In order to avoid complicated precedence rules on such a large number of operators, the designers of APL opted for a simple rule: there are <i>no</i> precedences in an expression, so <i>all</i> operators execute from right to left. This leads to writing APL expressions that usually have parentheses on the left side.)
+<p>RPN is different. In RPN there are not "operators precedence" nor "pending operations". All operations in RPN follow a simple rule: the operation is performed <i>as soon as</i> an operator appears; this means that the numbers must be introduced <i>before</i>. You can take a first contact with RPN at <a href="http://www.hpmuseum.org/rpn.htm#learn">HP Museum site</a> or read a more detailed explanation in <a href="http://hansklav.home.xs4all.nl/rpn/index.html">this extensive tutorial</a>. You are invited to take a look at anyone of these RPN (HP) sites before proceeding, but be aware that the use of RPN in printf.exe program is <i>simpler</i> than in the HP calculator (because numbers are separated by a simple space).
+<p><q><i>Just remember that RPN calculators perform mathematical operations immediately when you enter the operator so the number(s) must be entered first.</i></q> Note that in printf.exe the numbers are separated via a space and that there is no equivalent of <kbd>Enter&UpArrow;</kbd> nor <kbd>CLx</kbd> HP keys (neither the special cases of their "stack lift state"). You can review the proper conversion of algebraic expressions into RPN ones in the <b>AlgebraicToRPN.bat</b> file included in the printf.zip package; just execute it and enter <i>proper</i> algebraic expressions (the conversion program does <i>not</i> catch errors in the given algebraic expressions).
+<p>Let's review a simple example of a RPN addition operation in printf.exe:
+<pre>
+printf "A number: %i, another number: %i\n"  3 4
+printf "The sum of 3 plus 4 is: %i\n"  3 4 +
+</pre>
+<p>In first example there are <i>two</i> integer numbers and <i>two</i> integer formats, so everything is correct.
+<p>In second example there are two integer numbers. After they, there is an integer RPN operator that process the two previous numbers and produce a <i>single result</i>, so finally there is a single integer result and a single integer format: correct&#33;
+<p>Using this scheme you can evaluate any RPN expression, no matter how long it could be; just be sure that integer numbers are operated with integer operators, and floating point numbers use floating point (three-letters) operators. Of course, check also that integer results are displayed with %i format, and floating point results use %f format. These rules are not too hard to fulfill, isn't it?  <code>;)</code>
+<pre>
+printf "The sum of 3 plus 4 is %i\nThe sum of 3. plus 4. is %f\n"  3 4 +  3. 4. ADD
+</pre>
+<p>Let's complete previous example of algebraic expression:
+<pre>
+printf "Algebraic expression 4 + 5 - 6 * 7 / 8 + 9 = %i\n" 4 5 + 6 7 * 8 / - 9 +
+</pre>
+<p>Note that operations and partial results are evaluated and completed in the same order than before; this is obvious if we want to get <i>the same result</i>. However, in this case <i>we are</i> explicitly stating the order of operations&#33; They are not governed by precedence rules that are not apparent in the expression itself.
+<p>Note also that the <b>13</b> result differ from the correct <b>12.75</b>. This is caused by <i>integer</i> operations (that chops any fractional part in division) and the order of operations. To get the right result, use floating point numbers:
+<pre>
+printf "%.2f\n" 4. 5. ADD 6. 7. MUL 8. DIV SUB 9. ADD
+</pre>
+<p>You can review a lot of additional operations examples in <a href="printf%20Example%200%20-%20Operations.bat">printf Example 0 - Operations.bat</a> file.
+<p>Most printf.exe arithmetic operators works the same as they do in HP RPN calculators so they will not be explained here, just the operations that have not a counterpart in HP calculators. If you have any doubt about HP calculator operations, review any HP user's manual like the <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf">HP-15C</a> one (3.75 MB).
+<p>Note: HP calculators descriptions specify that you can keep <i>up to four</i> partial results in RPN expressions. In printf.exe program you have no limit of partial results for integer numbers and up to 8 partial results for floating point numbers. This point will be further explained <a href="#Clearing_the_FPU_stack">later</a>.
+<h3><a name="Data_Types" style="text-decoration:none">Data Types</a> </h3>
+<pre>
+printf "format string" {number [operator]|'c'|"string"|variable} ...
+</pre>
+<p>The parameters for printf.exe program after the first one can be of anyone of the following types:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <th>Type</th>
+         <th>Example</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>Character</td>
+         <td>'X'</td>
+         <td>Single character enclosed in apostrophes. Characters are internally managed as 32-bits numbers.</td>
+      </tr>
+      <tr>
+         <td>String</td>
+         <td>"Hello"</td>
+         <td>Several characters enclosed in quotes. Strings are internally managed as 32-bits <i>addresses</i>.</td>
+      </tr>
+      <tr>
+         <td>Integer</td>
+         <td>3</td>
+         <td>Number with no decimal point, with an optional negative sign. Can be written as an hexadecimal number that start with <code>0x</code>, or an octal number that start with (left) zero (in such a case <code>8</code> and <code>9</code> are invalid digits). Integers are internally managed as 32-bits numbers with a range of values from -2147483648 to 2147483647 (or from 0 to unsigned 4294967295, <code>%u</code> format).</td>
+      </tr>
+      <tr>
+         <td>Floating<br>Point</td>
+         <td>5.</td>
+         <td>Number with decimal point or written in standard scientific (E) notation, with a maximum of 18 significant digits and a (normalized) exponent of ten from -320 to +308. Floating point numbers are internally managed as 64-bits <i>double</i> numbers.</td>
+      </tr>
+      <tr>
+         <td>String<br>Variable</td>
+         <td>Varname</td>
+         <td>Any name that start with letter that is not an internal function. Its value is the <i>string</i> stored in such a Batch variable.</td>
+      </tr>
+   </table>
+<p>A <i>number</i> start with digit, or optionally with a minus sign. The general format for numbers is: <code>[-]digits[.[digits]][{E|e}[+|-]digits]</code>. Square brackets <code>[ ]</code> surround optional elements. Curly braces and a vertical bar <code>{ | }</code> surround alternatives for a single element. If the number include a decimal point or an E, it is a floating point number; otherwise it is an integer. For example:
+<pre>
+printf "A character: %c\tA string: %s\tAn integer: %i\tA floating point: %f\n"  'X'  "ABC"  1  1.
+</pre>
+<p>Characters are stored as 32-bits numbers. This point allows to achieve these "tricks":
+   <ul>
+      <li> Show its ASCII code using <code>%i</code> format specification (and vice versa: show integer (code) as character using <code>%c</code> format specification).
+      <li> Get the difference (distance) from one character to another: <code>printf "%i\n" 'a' 'A' -</code>
+      <li> Convert letters to/from upcase/lowcase: <code>printf "%c\n" 'a' 'A' - 'X' +</code>
+   </ul>
+<p>Strings are managed in the printf parameters as <i>the 32-bits address</i> of the first character in the string. This point will be further discussed later, in <a href="#String_Functions">String Functions</a>.
+<h3><a name="Integer_Operations" style="text-decoration:none">Integer Operations</a> </h3>
+<p>Several integer operators use special characters, like <code>&lt; > | &</code>, that must be "^escaped" this way: <code>^&lt; ^> ^| ^&</code> when they are used in the command prompt. In order to facilitate the entry of such operators, you can insert the special "Quoted" <i>switch</i> <code>/"</code> before the special characters. If after this switch there is a string that contains these special characters, you should "close" the Quoted switch by putting it again. For example:
+<pre>
+printf "Two numbers: %i %i and a string: %s\n" 12 34  /"  &lt;>  /"  "&lt;Hello>"
+</pre>
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Integer_Operators"> Integer Operators</a></b></caption>
+      <tr>
+         <td colspan="2">Unary operators</td>
+         <td><code>&#33;</code> BoolNot &nbsp; <code>~</code> BitNot &nbsp; <code>_</code> Change Sign &nbsp; <code>$</code> Signum &nbsp; <code>++</code> Increment &nbsp; <code>--</code> Decrement</td>
+      </tr>
+      <tr>
+         <td rowspan="2">Two-operands<br>operators</td>
+         <td>Basic</td>
+         <td><code>+</code> Add &nbsp; <code>-</code> Subtract &nbsp; <code>*</code> Multiply &nbsp; <code>/</code> Quotient &nbsp; <code>%</code> Remainder &nbsp; <code>**</code> Power</td>
+      </tr>
+      <tr>
+         <td>Bitwise</td>
+         <td><code>&lt;&lt;</code> BitSHL &nbsp; <code>>></code> BitSHR &nbsp; <code>&</code> BitAnd &nbsp; <code>&#124;</code> BitOr &nbsp; <code>^</code> BitXor</td>
+      </tr>
+      <tr>
+         <td colspan="2">Special operators</td>
+         <td><code>#</code> Random &nbsp; <code>]</code> Store &nbsp; <code>[</code> Recall &nbsp; <code>.</code> Float &nbsp; <code>/*</code> Comment <code>*/</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Stack management</td>
+         <td><code>></code> Dup &nbsp; <code>&lt;></code> Exchange &nbsp; <code>&lt;</code> Drop &nbsp; <code>{</code> Roll Down &nbsp; <code>}</code> Roll Up</td>
+      </tr>
+   </table>
+<p>Note that several operators are comprised of two or more characters, so you always should separate <i>complete operations</i> via one or more spaces or TAB characters. For example: <code>&lt;></code> is Exchange, so in order to write a Drop followed by a Dup, you <i>must</i> separate they this way: <code>&lt; ></code>.
+<p>In these five operators: <code>* / % &lt;&lt; >></code> you can add a lowercase <code>u</code> letter at end to specify "unsigned operation"; for example: <code>>>u</code>.
+<p><code>**</code> (<i>Power</i>, <kbd>y<sup>x</sup></kbd> in HP calculators) is the only integer two-operands operator that is not implemented via a native CPU instruction, it uses a multiplication loop.
+<p><code>#</code> (<i>Random</i>) operator generate a 32-bits random number less than 2147483647 and greater than zero.
+<p><code>.</code> (<i>Float</i>) operator <i>converts</i> an integer number into a floating point one. After the conversion, you must operate and display the number using floating point operators and format.
+<p><code>{n</code> (<i>Roll Down</i>) and <code>}n</code> (<i>Roll Up</i>) operators requires a <i>position</i> digit; they will be described <a href="#Stack_Management">below</a>.
+<p><code>/*</code> and <code>*/</code> (<i>Comment</i>) delimiters allows to insert any descriptive text that will be ignored.
+<h3><a name="Floating_Point_Operations" style="text-decoration:none">Floating Point Operations</a> </h3>
+<p>All floating point operations are specified via a word of a maximum of 4 characters, that we call <i>functions</i>.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Floating_Point_Functions"> Floating Point Functions</a></b></caption>
+      <tr>
+         <td rowspan="3">Unary<br>operators</td>
+         <td>Basic</td>
+         <td><code>CHS ABS SIGN FRAC INV SQR SQRT</code></td>
+      </tr>
+      <tr>
+         <td>Trigonometric</td>
+         <td><code>SIN COS TAN  ASIN ACOS ATAN   DEG RAD</code></td>
+      </tr>
+      <tr>
+         <td>Logarithms</td>
+         <td><code>LN LOG EXP EXPT</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Two-operands operators</td>
+         <td><code>ADD SUB MUL DIV MOD POW</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Special operators</td>
+         <td><code>ZERO ONE PI  STO RCL  INT</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Stack management</td>
+         <td><code>DUP XCHG DROP   INIT</code></td>
+      </tr>
+   </table>
+<p>In HP calculators: <b>INV</b> is <kbd>1/x</kbd>, <b>SQR</b> is <kbd>x<sup>2</sup></kbd>, <b>SQRT</b> is <kbd>&Sqrt;x</kbd>, <b>EXP</b> is <kbd>e<sup>x</sup></kbd>, <b>EXPT</b> is <kbd>10<sup>x</sup></kbd> and <b>POW</b> is <kbd>y<sup>x</sup></kbd>.
+<p>Trigonometric functions works in radians always. <b>DEG</b> converts radians to degrees; <b>RAD</b> converts degrees to radians.
+<p><b>ZERO</b>, <b>ONE</b> and <b>PI</b> are handy functions that load the 0.0, 1.0 and &Pi; (3.141592654...) constants via native FPU operations.
+<p><b>INT</b> function <i>converts</i> a floating point number into an integer one (not just chop the fractional part). After the conversion, you must operate and display the number using integer operators and format. If you want the integer part of a floating point value, just do this: <code>DUP FRAC SUB</code>.
+<p><b>INIT</b> function initialize (clears the stack of) the X87 Floating Point Unit (FPU). See description <a href="#Clear_the_FPU_stack">below</a>.
+<h3><a name="Storage_Registers" style="text-decoration:none">Storage Registers</a> </h3>
+   <table border="1" rules="all" cellpadding="5" align="right">
+   <caption><b><a name="_Storage_Registers"> Storage Registers</a></b></caption>
+      <tr>
+         <th>N</th>
+         <th>i</th>
+         <th>Int</th>
+         <th>Float</th>
+      </tr>
+      <tr>
+         <td>I</td>
+         <td>&nbsp;</td>
+         <td>0</td>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>2</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>3</td>
+         <td>3</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>4</td>
+         <td>4</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>5</td>
+         <td>5</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>6</td>
+         <td>6</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>7</td>
+         <td>7</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>8</td>
+         <td>8</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>9</td>
+         <td>9</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.0</td>
+         <td>10</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.1</td>
+         <td>11</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.2</td>
+         <td>12</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.3</td>
+         <td>13</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.4</td>
+         <td>14</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.5</td>
+         <td>15</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.6</td>
+         <td>16</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.7</td>
+         <td>17</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.8</td>
+         <td>18</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.9</td>
+         <td>19</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+   </table>
+<p>Besides the numbers you can insert as parameters for printf.exe, there are also several <i>data storage registers</i> that allows you to store and recall both integer and floating point numbers in order to be reused in a posterior part of the RPN expression. You can also perform basic arithmetic operations over a storage register (<i>store arithmetic</i>), or using a storage register to perform arithmetic operations over last entered number (<i>recall arithmetic</i>). You can read an introduction to the use of storage registers at <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf#page=42">page 42</a> of HP-15C Owner's Handbook.
+<p>As shipped, printf.exe application can manage 20 integer storage registers and 20 floating point storage registers (apart from <code>I</code> Index Register) as shown in the "initial configuration" at right side. The 20 registers of both types can be directly adressed via a 0..9 digit inserted in place of <b>N</b> letter in the storage registers operations below, or via the point-digit combination that adress registers 10 to 19; for example: <code>]3</code> or <code>STO.5</code> (in the table <b>X</b> refers to the last entered number).
+<p>The number of available storage registers (integer and float) and the size of the area reserved to store character strings can be increased through the procedure described in <a href="#Increasing_storage_space">Appendix 2</a>. When there are more than 20 storage registers, the additional registers must be <i>indirectly adressed</i> through the <code>i</code> <i>Index Register</i> as explained in <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf#page=106">Section 10: The Index Register</a> of the HP-15C Owner's Handbook, that is translated to printf.exe this way: <q>The Index register is an integer storage register that can be used directly, with <code>I</code> like in <code>[I</code>, or indirectly, with <code>i</code> like in <code>[i</code>. The <code>I</code> function uses the <i>number itself</i> in the Index register. The <code>i</code> function uses the number in the Index register to address another data storage register, integer or float. This is called <i>indirect addressing</i>.</q>
+<p><b>IMPORTANT:</b> Note that the use of "I" and "i" letters to access the Index Register this way is <i>the only printf.exe operation</i> that is case-aware. You should pay attention to this point and insert the appropriate letter accordingly to the desired operation.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Storage_Registers_Operations"> Storage Registers Operations</a></b></caption>
+      <tr>
+         <th>&nbsp;</th>
+         <th>Int</th>
+         <th>Float</th>
+         <th>Name</th>
+         <th>Operation</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td rowspan="9">S<br>T<br>O<br>R<br>E</td>
+         <td><code>]n</code></td>
+         <td><code>STOn</code></td>
+         <td>Store</td>
+         <td><b>RegN = X</td>
+         <td>Store X in storage register N</td>
+      </tr>
+      <tr>
+         <td><code>][n</code></td>
+         <td><code>STO[n</code></td>
+         <td>Store-Xchg</td>
+         <td><b>RegN &lt;=> X</b></td>
+         <td>Exchange X and storage register N</td>
+      </tr>
+      <tr>
+         <td><code>]+n</code></td>
+         <td><code>STO+n</code></td>
+         <td>Store-Add</td>
+         <td><b>RegN = RegN+X</b></td>
+         <td>Add X to storage register N</td>
+      </tr>
+      <tr>
+         <td><code>]++n</code></td>
+         <td><code>STO++n</code></td>
+         <td>Store-Inc</td>
+         <td><b>RegN = RegN+1</b></td>
+         <td>Increment storage register N</td>
+      </tr>
+      <tr>
+         <td><code>]-n</code></td>
+         <td><code>STO-n</code></td>
+         <td>Store-Sub</td>
+         <td><b>RegN = RegN-X</b></td>
+         <td>Subtract X from storage register N</td>
+      </tr>
+      <tr>
+         <td><code>]--n</code></td>
+         <td><code>STO--n</code></td>
+         <td>Store-Dec</td>
+         <td><b>RegN = RegN-1</b></td>
+         <td>Decrement storage register N</td>
+      </tr>
+      <tr>
+         <td><code>]*n</code></td>
+         <td><code>STO*n</code></td>
+         <td>Store-Mul</td>
+         <td><b>RegN = RegN*X</b></td>
+         <td>Multiply storage register N by X</td>
+      </tr>
+      <tr>
+         <td><code>]/n</code></td>
+         <td><code>STO/n</code></td>
+         <td>Store-Div</td>
+         <td><b>RegN = RegN/X</b></td>
+         <td>Divide storage register N by X</td>
+      </tr>
+      <tr>
+         <td><code>]%n</code></td>
+         <td><code>STO%n</code></td>
+         <td>Store-Mod</td>
+         <td><b>RegN = RegN%X</b></td>
+         <td>... and get the remainder</td>
+      </tr>
+      <tr>
+         <td rowspan="8">R<br>E<br>C<br>A<br>L<br>L</td>
+         <td><code>[n</code></td>
+         <td><code>RCLn</code></td>
+         <td>Recall</td>
+         <td><b>Push RegN</b></td>
+         <td>Recall X from storage register N</td>
+      </tr>
+      <tr>
+         <td><code>[+n</code></td>
+         <td><code>RCL+n</code></td>
+         <td>Recall-Add</td>
+         <td><b>X = X+RegN</b></td>
+         <td>Add to X the storage register N</td>
+      </tr>
+      <tr>
+         <td><code>[++n</code></td>
+         <td><code>RCL++n</code></td>
+         <td>Recall-Inc</td>
+         <td><b>X = X+1</b></td>
+         <td>Increment X</td>
+      </tr>
+      <tr>
+         <td><code>[-n</code></td>
+         <td><code>RCL-n</code></td>
+         <td>Recall-Sub</td>
+         <td><b>X = X-RegN</b></td>
+         <td>Subtract from X the storage register N</td>
+      </tr>
+      <tr>
+         <td><code>[--n</code></td>
+         <td><code>RCL--n</code></td>
+         <td>Recall-Dec</td>
+         <td><b>X = X-1</b></td>
+         <td>Decrement X</td>
+      </tr>
+      <tr>
+         <td><code>[*n</code></td>
+         <td><code>RCL*n</code></td>
+         <td>Recall-Mul</td>
+         <td><b>X = X*RegN</b></td>
+         <td>Multiply X by storage register N</td>
+      </tr>
+      <tr>
+         <td><code>[/n</code></td>
+         <td><code>RCL/n</code></td>
+         <td>Recall-Div</td>
+         <td><b>X = X/RegN</b></td>
+         <td>Divide X by storage register N</td>
+      </tr>
+      <tr>
+         <td><code>[%n</code></td>
+         <td><code>RCL%n</code></td>
+         <td>Recall-Mod</td>
+         <td><b>X = X%RegN</b></td>
+         <td>... and get the remainder</td>
+      </tr>
+   </table>
+<p>Note that <b>[++n</b> and <b>[--n</b> integer "Recall" operations works the same as the simpler <b>++</b> (<i>Increment</i>) and <b>--</b> (<i>Decrement</i>) ones.
+<p>Most HP calculators, like the HP-15C, include functions that performs statistical calculations over two variables. To do that, each X-Y value pair is entered and the <kbd>S+</kbd> key is pressed, so statistics values are compiled in registers R2 through R7 as described in <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf#page=49">Page 49</a> of the HP-15C Owner's Handbook:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <th>Register</th>
+         <th>Value</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>R2</td>
+         <td>n</td>
+         <td>Number of data points accumulated.</td>
+      </tr>
+      <tr>
+         <td>R3</td>
+         <td>Sx</td>
+         <td>Summation of x-values.</td>
+      </tr>
+      <tr>
+         <td>R4</td>
+         <td>Sx^2</td>
+         <td>Summation of squares of x-values.</td>
+      </tr>
+      <tr>
+         <td>R5</td>
+         <td>Sy</td>
+         <td>Summation of y-values.</td>
+      </tr>
+      <tr>
+         <td>R6</td>
+         <td>Sy^2</td>
+         <td>Summation of squares of y-values.</td>
+      </tr>
+      <tr>
+         <td>R7</td>
+         <td>Sxy</td>
+         <td>Summation of products of x- and y-values.</td>
+      </tr>
+   </table>
+<p>The printf.exe package includes an example that performs the same statistics calculations of the HP-15C. This is a segment of such an example that compiles the statistics values in the specified registers:
+<pre>
+		/*    x y		*/ ^
+      STO++2	/*        Accum n	*/ ^
+      STO+5	/*        Accum Sy	*/ ^
+      STO9	/*        R9 = y	*/ ^
+      SQR	/*    x y^2		*/ ^
+      STO+6	/*        Accum Sy^2	*/ ^
+      DROP	/*    x			*/ ^
+      STO+3	/*        Accum Sx	*/ ^
+      DUP	/*    x x		*/ ^
+      SQR	/*    x x^2		*/ ^
+      STO+4	/*        Accum Sx^2	*/ ^
+      DROP	/*    x			*/ ^
+      RCL*9	/*    x*y		*/ ^
+      STO+7	/*        Accum Sx*y	*/ ^
+      DROP	/*        Empty stack	*/ ^
+</pre>
+<p>The complete program is in <a href="printf%20Example%201%20-%20Two%20var%20statistics.bat">printf Example 1 - Two var statistics.bat</a> file.
+<h3><a name="Stack_Management" style="text-decoration:none">Stack Management</a> </h3>
+<p>In this example: <code>printf "%i %i %i %i\n" 10 20 30 40</code> the numbers 10, 20, 30 and 40 are entered in the same order: the <i>first</i> number is 10 and the <i>last</i> number is 40. If after that you drop one number with <code>&lt;</code> the dropped number is the last one: the 40. This operational scheme (called LIFO: <b>L</b>ast <b>I</b>n <b>F</b>irst <b>O</b>ut, in contrast to a queue: First In First Out or FIFO) assemble a data structure called <i><a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">stack</a></i>. In this way, the <i>stack management operations</i> allow us to manipulate and change the order of the numbers entered as parameters for printf.exe program.
+<p>By default, stack management operations affect the last entered number. However, these operations also allows to affect another number that is <i>not</i> the last one. The affected number is indicated via a one-digit <i>position</i> number placed after the operator that enumerate the entered numbers from the last one, with position <b>1</b>, up to the first one (backwards order). For example: <code>&lt;2</code> eliminate the last-but-one number. See more examples in table below.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Stack_Management_Operations"> Stack Management Operations</a></b></caption>
+      <tr>
+         <th rowspan="2">Type</th>
+         <th rowspan="2">Oper</th>
+         <th rowspan="2">Name</th>
+         <th rowspan="2">Description</th>
+         <th colspan="3">Example</th>
+      </tr>
+      <tr>
+         <th>Before --><br>6 &nbsp; 5 &nbsp; 4 &nbsp; 3 &nbsp; 2 &nbsp; 1</th>
+         <th>oper</th>
+         <th>--> After<br>&nbsp;</th>
+      </tr>
+      <tr>
+         <td rowspan="5"  align="center">I<br>N<br>T<br>E<br>G<br>E<br>R</td>
+         <td align="center"><code>></code></td>
+         <td>Dup</td>
+         <td align="left" align="right">Duplicate a number</td>
+         <td align="right" align="center">10 20 30 40</td>
+         <td align="center"><b>></b><br><b>>3</b><br><b>>4</b></td>
+         <td>10 20 30 40 40<br>10 20 30 40 20<br>10 20 30 40 10</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>&lt;></code></td>
+         <td>Exchange</td>
+         <td>Exchange last and another number</td>
+         <td align="right">10 20 30 40</td>
+         <td align="center"><b>&lt;></b><br><b>&lt;>2</b><br><b>&lt;>4</b></td>
+         <td>10 20 40 30<br>10 20 40 30<br>40 20 30 10</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>&lt;</code></td>
+         <td>Drop</td>
+         <td>Drop (eliminate) a number</td>
+         <td align="right">10 20 30 40</td>
+         <td align="center"><b>&lt;</b><br><b>&lt;2</b><br><b>&lt;3</b><br><b>&lt;*</b></td>
+         <td>10 20 30<br>10 20 40<br>10 30 40<br>&nbsp;</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>{</code></td>
+         <td>Roll Down</td>
+         <td>Rotate X towards a previous position</td>
+         <td align="right">10 20 30 40 50 60</td>
+         <td align="center"><b>{4</b><br><b>{6</b></td>
+         <td>10 20 60 30 40 50<br>60 10 20 30 40 50</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>}</code></td>
+         <td>Roll Up</td>
+         <td>Rotate a previous position towards X</td>
+         <td align="right">10 20 30 40 50 60</td>
+         <td align="center"><b>}3</b><br><b>}5</b></td>
+         <td>10 20 30 50 60 40<br>10 30 40 50 60 20</td>
+      </tr>
+      <tr>
+         <td rowspan="3"  align="center">F<br>L<br>O<br>A<br>T</td>
+         <td><code>DUP</code></td>
+         <td>Dup</td>
+         <td align="left" align="right">Duplicate a number</td>
+         <td align="right" align="center">10. 20. 30. 40.</td>
+         <td><b>DUP</b><br><b>DUP2</b><br><b>DUP3</b></td>
+         <td>10. 20. 30. 40. 40.<br>10. 20. 30. 40. 30.<br>10. 20. 30. 40. 20.</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>XCHG</code></td>
+         <td>Exchange</td>
+         <td>Exchange last and another number</td>
+         <td align="right">10. 20. 30. 40.</td>
+         <td align="center"><b>XCHG</b><br><b>XCHG3</b><br><b>XCHG4</b></td>
+         <td>10. 20. 40. 30.<br>10. 40. 30. 20.<br>40. 20. 30. 10.</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>DROP</code></td>
+         <td>Drop</td>
+         <td>Drop (eliminate) a number</td>
+         <td align="right">10. 20. 30. 40.</td>
+         <td align="center"><b>DROP</b><br><b>DROP3</b><br><b>DROP4</b></td>
+         <td>10. 20. 30.<br>10. 30. 40.<br>20. 30. 40.</td>
+      </tr>
+   </table>
+<p>Note that <b>>1</b> is the same as <b>></b>, that <b>&lt;1</b> is the same as <b>&lt;</b>, and that <b>&lt;>2</b> is the same as <b>&lt;></b>; the <b>&lt;>1</b> operation is not valid.
+<p><b>&lt;*</b> (<i>Drop All</i>) operation eliminate <i>all data</i> inserted after the format string.
+<p>The <b>{ }</b> (RollDown/RollUp) operators can <i>not</i> be used without a position and such a position must be greater or equal <b>2</b> (like Exchange). Roll Down <b>{</b>  move last number to a previous position (similar to <i>store</i>). Roll Up <b>}</b> move number in previous position into last number (similar to <i>recall</i>).
+<p>Remember that printf.exe can only keep up to 8 floating point numbers; this means that the position in DUP must be in 1..7 range, in XCHG must be in 2..8 range, and in DROP in 1..8 range. There is not RollDown/RollUp functions for floating point numbers in current version of printf.exe program.
+<p>If a position refers to a non-existent stack register, printf.exe program will crash (as usual).
+<p><i>Advanced topic</i>: all stack management operations assumes that <i>all numbers</i> in the stack are of the same type: integer or float. If there are mixed numbers of different types, the result will depends on the position of the non-of-same-type number. Floating point numbers uses 64 bits whereas integer number uses 32 bits; this means that a float number is equivalent to two integers, and that one integer is equivalent to half float. If you are aware of this situation, you can manipulate mixed types numbers in the stack and still get correct results.
+<p>When reviewing the following examples it is suggested to draw a small schematic where integers occupy "1 place" and floats occupy "2 places". Remember that integer operations move one place and float operations move two.
+<pre>
+printf "Int: %i, Int: %i, Float: %.2f\n"  10 20 30.  /* Standard use */
+</pre>
+<p><b>Int: 10, Int: 20, Float: 30.00</b>
+<pre>
+printf "Int: %i, Float: %.2f, Int: %i\n"  10 20 30.
+       /* Wrong: the 20 and (lower) half of 30. are shown as Float 0.00
+          and the (upper) half of 30. is shown as Integer 1077805056 */
+</pre>
+<p><b>Int: 10, Float: 0.00, Int: 1077805056</b>
+<pre>
+printf "Int: %i, Float: %.2f, Int: %i\n"  10 20 30. }4
+       /* Fixed: rotate the *4th* integer (there are 2 integers and one float)
+          so the integer 10 is moved to the last position */
+</pre>
+<p><b>Int: 20, Float: 30.00, Int: 10</b>
+<pre>
+printf "Float: %.2f, Int:%i, Int: %i\n"  10 20 30. {4 {4
+       /* Rotate the two halves of the 30. to a previous position */
+</pre>
+<p><b>Float: 30.00, Int:10, Int: 20</b>
+<p>However, this type of movement does <i>not</i> work with floating point functions because in this case the FPU stack registers are always involved in the operation and such registers does <i>not</i> match the printf.exe parameters contents if there are intermixed integer numbers. The explanation of this point is given next.
+<h3><a name="Clearing_the_FPU_stack" style="text-decoration:none">Clearing the FPU stack</a> </h3>
+<p><i>Advanced topic</i>: This section contains several technicall descriptions.
+<p>The printf.exe program uses <a href="https://en.wikipedia.org/wiki/Floating-point_unit">the Floating Point Unit (FPU)</a> to perform floating point arithmetic operations; this is a part of the computer specifically designed to evaluate such operations. The FPU uses a stack of 8 registers entirely similar to the stack of HP calculators.
+<p>When printf.exe program gets a floating point number in the parameters it pushes the same number in the FPU stack, so both areas (parameters and FPU stack) usually contains the same numbers; however, there are some operations that can desynchronize these areas. For example, if you want to <i>display</i> more than 8 floating point numbers, you can use <b>INIT</b> operation that clears the FPU stack, but don't touch the parameters. Of course, this point also imply that after an INIT operation you can NOT perform arithmetic operations on the numbers that were entered before the INIT.
+<p>There are a couple operations that also execute a FPU INIT, like <b>&lt;*</b> (<i>Drop All</i>) and <b>FMT}</b> (<i>Format End</i>); they will be described later.
+<h3><a name="String_Operations" style="text-decoration:none">String Operations</a> </h3>
+<p>Strings are managed in printf.exe program in two separate parts: the <i>data</i> comprised of the actual characters, and its <i>address</i> that is the part used by the CRT printf function to show the string via <b>%s</b> format specification. When a "string" is entered, their characters are stored in an area reserved for they with a binary zero byte appended to the end (that marks the end of the string), and the value that appears in the printf.exe parameters is the <i>address of</i> (pointer to) the first character. An <a name="address_is_number">interesting detail</a> is that this address <i>is a 32-bits integer number</i>, so it can be "managed" with the standard integer operators, like Dup, Exchange, etc. Some of these integer operators give useful results when they are applied to string addresses. A few examples will help to understand this point; it is suggested to copy these examples and execute they in the cmd.exe window.
+<pre>
+printf "First: %s,  Second: %s\n" "One" "Two"
+printf /" "Second: %s,  First: %s\n" "One" "Two" &lt;>  /* Exchange strings */
+
+printf /" "A string: \"%s\", *the same* string: \"%s\"\n" "Just one string" >  /* Duplicate string */
+</pre>
+<p>In the first example two strings are entered as explained before: their characters are stored in the data area and their addresses are entered <i>as parameters</i> of printf.exe (as any other parameter, like a number). In the second example the strings are stored in the same way, and the <code>&lt;></code> operation exchange <i>the addresses</i> of the strings (not their characters). In this way, the first address points to the second string and vice versa.
+<p>In the third example the <code>></code> operation duplicate the address of the only string given (not their characters), so <i>the same characters</i> are displayed twice.
+<p>Besides integer operators, that <i>may</i> produce some useful results when they are used on strings, there are several functions specifically designed to work on strings. All these functions does <i>not</i> modify the <i>data</i> (characters) of the strings given in the parameters; they just may delete <i>the addresses</i> of the processed strings from printf.exe parameters. This means that if you store such strings addresses, you can still use they later.
+<p>For example, <b>join</b> function catenate the given strings: <code>printf "Result: \"%s\"\n" "One" "Two" "Three" 3 join</code> show: <b>Result:&nbsp;"One&nbsp;Two&nbsp;Three"</b>. If you store the address of the 3 used strings, you can also show they:
+<pre>
+printf "String \"%s\" is the join of \"%s\"+\"%s\"+\"%s\"\n" "One" ]1 "Two" ]2 "Three" ]3 3 join [1 [2 [3
+</pre>
+<p>Show: <b>String&nbsp;"One&nbsp;Two&nbsp;Three"&nbsp;is&nbsp;the&nbsp;join&nbsp;of&nbsp;"One"+"Two"+"Three"</b>
+<p>In this way, the integer storage registers can also function as <i>string</i> storage registers, although you should keep in mind that only <i>addresses</i> are stored here; the characters are stored elsewhere.
+<p>In despite of this, you must note that <b>&lt;*</b> (<i>Drop All</i>) operation <i>do</i> liberate the data area of all deleted strings, so such an area could be used by any new string entered after.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_String_Functions"> String Functions</a></b></caption>
+      <tr>
+         <th rowspan="2">Name</th>
+         <th rowspan="2">Description<br>Canonical form (<a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/run-time-routines-by-category?view=msvc-170">CRT</a>)</th>
+         <th colspan="3">Example</th>
+      </tr>
+      <tr>
+         <th>Before --></th>
+         <th>func</th>
+         <th>--> After</th>
+      </tr>
+      <tr>
+         <td><b>atoi</b></td>
+         <td>Convert a string to one/all integer number(s)<br><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/atoi-atoi-l-wtoi-wtoi-l?view=msvc-170">atoi0(string)</a><br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l?view=msvc-170">atoi1(string)</a></td>
+         <td align="right">"123"<br>"12 34 56"</td>
+         <td align="center">atoi0<br>atoi1</td>
+         <td>123<br>12 34 56 3</td>
+      </tr>
+      <tr>
+         <td><b>atof</b></td>
+         <td>Convert a string to one/all floating number(s)<br><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/atof-atof-l-wtof-wtof-l">atof0(string)</a><br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l?view=msvc-170">atof1(string)</a></td>
+         <td align="right">"47.250"<br>"12 34 56 78"</td>
+         <td align="center">atof0<br>atof1</td>
+         <td>47.25<br>12. 34. 56. 78. 4</td>
+      </tr>
+      <tr>
+         <td><b>len</b></td>
+         <td>Number of characters in a string<br>len(string)</td>
+         <td align="right">"Nineteen characters"</td>
+         <td align="center">len</td>
+         <td>"Nineteen characters" 19</td>
+      </tr>
+      <tr>
+         <td><b>getc</b></td>
+         <td>Get one/all character(s) from a string<br>getc0(string,pos)<br>getc1(string)</td>
+         <td align="right">"ABCDEFG" 3<br>"ABCDEFG"</td>
+         <td align="center">getc0<br>getc1</td>
+         <td>"ABCDEFG" 3 'D'<br>'A' 'B' 'C' 'D' 'E' 'F' 'G' 7</td>
+      </tr>
+      <tr>
+         <td><b>putc</b></td>
+         <td>Put one/all character(s) in a string<br>putc0(string,pos,'C')<br>putc1('1','2',...,'n',N)</td>
+         <td align="right">"ABCDEFG" 3 'x'<br>'A' 'B' 'C' 'D' 'E' 'F' 'G' 7</td>
+         <td align="center">putc0<br>putc1</td>
+         <td>"ABCxEFG" 3<br>"ABCDEFG"</td>
+      </tr>
+      <tr>
+         <td><b>xchc</b></td>
+         <td>Exchange a character from/in a string<br>xchc(string,pos,'C')</td>
+         <td align="right">"ABCDEFGHIJ" 3 'x'</td>
+         <td align="center">xchc</td>
+         <td>"ABCxEFGHIJ" 3 'D'</td>
+      </tr>
+      <tr>
+         <td><b>movc</b></td>
+         <td>Move one character (pointer)<br>movc0(pointer)<br>movc1(pointer,'C')<br>movc2(pointer1,pointer2)</td>
+         <td align="right">"ABCDEFG"<br>"ABCDEFG" 'x'<br>"ABCDEFG" "01234567"</td>
+         <td align="center">movc0<br>movc1<br>movc2</td>
+         <td>"ABCDEFG" 'A'<br>"xBCDEFG"<br>"0BCDEFG" "0123456"</td>
+      </tr>
+      <tr>
+         <td><b>dupc</b></td>
+         <td>Duplicate a character several times<br>and create a string<br>dupc(char,N)</td>
+         <td align="right">'#' 8</td>
+         <td align="center">dupc</td>
+         <td>"########"</td>
+      </tr>
+      <tr>
+         <td><b>dups</b></td>
+         <td>Duplicate a string several times<br>dups0(string,N)<br>dups1(string,N,separator)</td>
+         <td align="right">"Hello." 3<br>"Hello." 3 " + "</td>
+         <td align="center">dups0<br>dups1</td>
+         <td>"Hello." "Hello.Hello.Hello."<br>"Hello." "Hello. + Hello. + Hello."</td>
+      </tr>
+      <tr>
+         <td><b>revc</b></td>
+         <td>Reverse the characters in a string<br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strrev-wcsrev-mbsrev-mbsrev-l?view=msvc-170">revc(string)</a></td>
+         <td align="right">"This is a test"</td>
+         <td align="center">revc</td>
+         <td>"tset a si sihT"</td>
+      </tr>
+      <tr>
+         <td><b>revs</b></td>
+         <td>Reverse the position of several strings<br>revs(str1,str2,...,strN,N)</td>
+         <td align="right">"This" "is" "a" "test" 4</td>
+         <td align="center">revs</td>
+         <td>"test" "a" "is" "This" 4</td>
+      </tr>
+      <tr>
+         <td><b>gets</b></td>
+         <td>Get part of a string (substring)<br>gets0(string,start,len)<br>gets1(string,start,end)</td>
+         <td align="right">"ABCDEFGHIJ" 3 4</td>
+         <td align="center">gets0<br>gets1</td>
+         <td>"ABCDEFGHIJ" "DEFG"<br>"ABCDEFGHIJ" "DE"</td>
+      </tr>
+      <tr>
+         <td><b>index</b></td>
+         <td>Get indices of substring into a string<br>index(string,subs)</td>
+         <td align="right">"This is a test" "a"<br>"This is a test" "is"<br>"This is a test" "x"</td>
+         <td align="center">index</td>
+         <td>"This is a test" 8 1<br>"This is a test" 2 5 2<br>"This is a test" 0</td>
+      </tr>
+      <tr>
+         <td><b>split</b></td>
+         <td>Split a string in several substrings<br>split0(string)<br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strtok-strtok-l-wcstok-wcstok-l-mbstok-mbstok-l?view=msvc-170">split1(string,delims)</a></td>
+         <td align="right">"This is a test"<br>"This_is_a_test"<br>"This_is_a_test" "_"</td>
+         <td align="center">split0<br>split0<br>split1</td>
+         <td>"This" "is" "a" "test" 4<br>"This_is_a_test" 1<br>"This" "is" "a" "test" 4</td>
+      </tr>
+      <tr>
+         <td><b>join</b></td>
+         <td>Join several strings in a longer string<br>join0(str1,str2,...,strN,N)<br>join1(str1,str2,...,strN,N,separator)</td>
+         <td align="right">"This" "is" "a" "test" 4<br>"This" "is" "a" "test" 4 ">&lt;"</td>
+         <td align="center">join0<br>join1</td>
+         <td>"This is a test"<br>"This>&lt;is>&lt;a>&lt;test"</td>
+      </tr>
+      <tr>
+         <td><b>shift</b></td>
+         <td>Shift the position of several strings<br>shift(str1,str2,...,strN,N)</td>
+         <td align="right">"This" "is" "a" "test" 4</td>
+         <td align="center">shift</td>
+         <td>"is" "a" "test" 3 "This"</td>
+      </tr>
+      <tr>
+         <td><b>repl</b></td>
+         <td>Replace parts of a string<br>repl(string,oldStr,newStr)</td>
+         <td align="right">"This is a test" "is" "at"<br>"This is a test" "is" ""<br>"Letters" "" "_"</td>
+         <td align="center">repl</td>
+         <td>"That at a test"<br>"Th  a test"<br>"L_e_t_t_e_r_s"</td>
+      </tr>
+      <tr>
+         <td><b>cmps</b></td>
+         <td>Compare two strings: -1 0 1<br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strcmp-wcscmp-mbscmp?view=msvc-170">cmps(str1,str2)</a><br><a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l?view=msvc-170">cmpsi(str1,str2)</a></td>
+         <td align="right">"ONE" "One"</td>
+         <td align="center">cmps<br>cmpsi</td>
+         <td>"ONE" "One" 1<br>"ONE" "One" 0</td>
+      </tr>
+   </table>
+<p>Both <b>atoi1</b> and <b>atof1</b> function variants extracts <i>all numbers</i> that appears in the string that could be mixed with any other characters; the only requisite for a number to be converted is that it be <i>preceded</i> by a space, TAB or comma. The last generated value is an integer that indicate how many numbers were converted. Remember that in printf.exe you can enter a maximum of 8 floating point numbers.
+<p>In <b>gets</b> function if <i>start</i> is negative it specifies a backwards position from string end, and if <i>len</i> is negative it specifies a backwards <i>position</i> (not a lenght) from string end; if len is zero, no characters are get. In <b>gets1</b> variant the <i>end</i> parameter is the position of the last character, not including it; if end is zero, up to the last character is get.
+<p>In <b>repl</b> function if the <i>newStr</i> is empty the matching oldStr is deleted, and if the <i>oldStr</i> starts or ends in asterisk the replacement part is modified. When <i>oldStr</i> starts in asterisk like this: <code>string "*subs" "new" repl</code>, the function replace from beginning of the string up to the first appearance of "subs". If <i>oldStr</i> ends in asterisk like this: <code>string "subs*" "new" repl</code> replace from the last appearance of "subs" up to the end of the string. If both asterisks are included like this: <code>string "*subs*" "new" repl</code> the function replace both parts at begin and end of the string and preserve the middle part. If <i>oldStr</i> is empty the newStr is inserted between <i>every character</i> of the original string.
+<p>In the <b>split0</b> variant, the string is split at each space or TAB, but the parts of the string that are enclosed in quotes stay the same. In the <b>split1</b> variant you can define the delimiter characters. In any case, several successive delimiters are treated as one.
+<p><b>cmps</b> function gets the "ordinal relation" of the strings and returns -1, 0 or 1 if the first string is less than, equal or greater than the second one, respectively.
+<p>The standard operation of <b>index</b>, <b>repl</b> and <b>cmps</b> functions is <i>case-sensitive</i>: the case of the substring must match the case of the base string. You can ignore the case of letters in cmps function adding an "I" letter at end: <b>cmpsI</b> (only in this function in this version of printf.exe).
+<p>The <b>movc</b> function with "pointer" type parameters is described below.
+<h3><a name="Character_Pointers" style="text-decoration:none">Character Pointers</a> </h3>
+<p>As said before, the characters and the address of a "string" are stored in separate parts, and the part that is managed in the printf.exe parameters is the address. This "address" could also be called "pointer" because both terms refers (points) to a given character. The difference is subtle: in this context the "address of a string" refers to <i>the beginning</i> of the string, whereas a "pointer" refers to <i>any character</i> in the string. How an "address" could point to a character that is not the first one? Simple: just add to it a number (<a href="https://en.wikipedia.org/wiki/Offset_(computer_science)"><i>displacement or offset</i></a>). <a href="#address_is_number">Remember</a> that a string address <i>IS</i> a 32-bits integer number&#33;
+<pre>
+printf /" "The string is \"%s\" and is stored at address %i\n"  "Any string" >  /* Duplicate string address */
+
+printf "Move pointer to a posterior character: %s\n" "ABCDEFGHIJ" 3 +   /* Show: DEFGHIJ */
+</pre>
+<p><b>movc</b> is a multi-purpose <i>pointer</i> function that achieve the task of getc and putc standard functions.
+<p>The standard <b>getc0</b> function requires the string (<i>starting</i>) address and a "character position" (<i>offset</i>) in order to get a given character; the position starts at zero and it is incremented up to the string length to process the rest of characters. The <b>movc0</b> function directly uses a "character pointer". This pointer starts at the same address of the string, so it is never equal to zero, and it is incremented up to the address of the last character to process the rest of characters. The pointer version does not require the initial string address, so its use is simpler and faster. The same point apply when comparing standard <b>putc0</b> vs pointer <b>movc1</b> that puts (inserts) a character into a string.
+<p><b>movc2</b> is an advanced function that achieve the task of both getc0 and putc0 at once. It directly moves the character pointed by second pointer to the place of first pointer without enter/drop the character in the stack.
+<p>Moreover, the three variants of movc function can optionally increment their pointers after the move operation. To do that, just insert a "+" sign between the function and its last digit, like in <code>movc+0</code> or <code>movc+1</code>. In the last variant you can insert a "plus" sign before and after the "2" to increment each one of the pointers, or even to increment <i>both</i> pointers like in <code>movc+2+</code>. This behavior aids to write compact and efficient loops that processes several characters. Some comparative examples of these features will be described <a href="#movc_function">later</a>.
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Block_Programming" style="text-decoration:none">Block Programming</a> </h2>
+<p>Version 2 of printf.exe application also offers the possibility of achieve basic programming. This feature not only provides the means to solve a wide range of numeric and text-processing problems, it also allows to take a first contact with computer programming in a <i>very</i> simple way. The programming scheme used in printf.exe is not the traditional one of common high-level programming languages, it is a much simpler one that still offers the same advantages of modern structured languages. This programming method was adapted from <a href="https://arxiv.org/abs/1107.2437">Regular Expression Compiler</a> (REC), a structured programming language <a href="http://www.mcjones.org/dustydecks/archives/2012/07/06/239/">derived from Lisp</a> and developed about 1966 by <a href="https://physicstoday.scitation.org/do/10.1063/PT.5.6193/full/">Harold V. McIntosh</a> that is based on just four control elements and a couple simple rules about Test evaluation. I nicknamed <i>Block Programming</i> this technology.
+<p>In it's simplest form, a <i>program</i> is a series of operations that are executed in order. That is it. From this point of view, all examples of printf.exe application we have seen so far are programs. For example, in order to get the result of algebraic expression <b>(4+5)/(6+7)</b> we use:
+<pre>
+printf "Result: %f\n"  4. 5. ADD  6. 7. ADD  DIV
+</pre>
+<p>Previous RPN expression is really a <i>program</i> that means:
+   <ol style="list-style-type: decimal">
+      <li> Enter number 4.
+      <li> Enter number 5.
+      <li> ADD (4 + 5)
+      <li> Enter number 6.
+      <li> Enter number 7.
+      <li> ADD (6 + 7)
+      <li> DIV (4+5)/(6+7)
+      <li> Out (printf) the result
+   </ol>
+<p>In other words: to get the result of algebraic expression <b>(4+5)/(6+7)</b> we need to execute previous 8 steps in order. Lets's call <i>instructions</i> the steps or operations that comprise a program, so each program is formed of a series of instructions. Note that if you <i>alter the order</i> of anyone of 8 previous instructions, you will <i>not</i> solve the stated problem (this would be a <i>programming error</i>). On the other hand, previous program is not <i>the only way</i> to solve this problem. We could think of a <i>different program</i> that solve the <i>same problem</i>. For example:
+<pre>
+printf "Result: %f\n"  6. 7. ADD  4. 5. ADD  XCHG  DIV
+</pre>
+   <ol style="list-style-type: decimal">
+      <li> Enter number 6.
+      <li> Enter number 7.
+      <li> ADD (6 + 7)
+      <li> Enter number 4.
+      <li> Enter number 5.
+      <li> ADD (4 + 5)
+      <li> eXCHanGe positions of (6+7) and (4+5)
+      <li> DIV (4+5)/(6+7)
+      <li> Out (printf) the result
+   </ol>
+<p>If there are several ways to write a program, which one should we use? This depends on a series of factors and the resulting programs may have different features. One program could be faster than another, but perhaps it is convoluted and difficult to understand. Another program could be clearer and good example for educative purposes, but it is slower. We will see examples of this point later. Could you think of a program different than previous two that solve the same problem?
+<p>Let's review a different example. The <i>algebraic</i> formula to calculate the area of a triangle is: <code>area = (base * height) / 2</code>. If we would need to calculate the area of a triangle with base=8 and height=12, we could use this "program":
+<pre>
+printf "Area = %f\n" 8. 12. MUL 2. DIV
+</pre>
+<p>After that, if we need to calculate the area of <i>another</i> triangle, this time with base=33.5 and height=18, we do this:
+<pre>
+printf "Area = %f\n" 33.5 18. MUL 2. DIV
+</pre>
+<p>That is, the <i>operations</i> to solve our new problem are the same as before; we just need to change <i>the initial data</i>. This means that these operations: <b>MUL 2. DIV</b> represents a <i>general-use program</i> that can solve the area of <i>any triangle</i>&#33; Isn't it? <code>;)</code>
+<p>However, how we can convert these instructions into a <i>real</i> program that can run in an independent way? That is, that don't requires to hard-write the values of the changing data? In other words, that be capable of <i>get, or read, or input</i> (whichever term you prefer) the values of the data by itself. Well, in order to do that we need a new class of instruction: an operation that allows to <i>enter data</i> that was not originally in the RPN expression, but that will be inserted in a certain place <i>when the program run</i>.
+<p>In the same way, when a program executes it frequently needs to show different messages at different points. However, the standard printf.exe operation is to show <i>one output</i> specified by <i>one format</i> when the program ends. We need a method to show several outputs with different formats at any point we wish.
+<p>This is the purpose of the <i>Input/Output operations</i>.
+<h3><a name="Input/Output_Operations" style="text-decoration:none">Input/Output Operations</a> </h3>
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="Input/Output_Operations">Input/Output Operations</a></b></caption>
+      <tr>
+         <th>Oper</th>
+         <th>Name</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td><code>GETK</code></td>
+         <td>Get Key</td>
+         <td>Get one key (character) from keyboard</td>
+      </tr>
+      <tr>
+         <td><code>IN</code></td>
+         <td>Input Line</td>
+         <td>Read a line (string) from keyboard</td>
+      </tr>
+      <tr>
+         <td><code>OUT</code></td>
+         <td>Output</td>
+         <td>Show current data with current format</td>
+      </tr>
+      <tr>
+         <td><code>FMT{</code></td>
+         <td>Format start</td>
+         <td>Allows to enter a new format and new data</td>
+      </tr>
+      <tr>
+         <td><code>FMT}</code></td>
+         <td>Format end</td>
+         <td>Removes new format and data from previous FMT{ mark on</td>
+      </tr>
+   </table>
+<p><code>OUT</code> (<i>Output</i>) operation show the current data with the current format. For example:
+<pre>
+printf /" "The number is: %i\n" 10 OUT  &lt; 20 OUT
+</pre>
+<p>Show:
+<p><b>The number is: 10<br>The number is: 20</b>
+<p>Note that if you use <b>OUT</b> operation, the "automatic output" of the final printf.exe result at end is canceled (this also happen if you use a <i>program</i>, more about this point later).
+<p><code>FMT{</code> (<i>Format start</i>) delimiter allows to enter a new format (and new data after it) that will be used in the next OUT operation. For example:
+<pre>
+printf "A message\n" OUT  FMT{ "Two numbers: %i %i\n" 10 20 OUT  FMT{ "A string: %s\n" "Hello" OUT
+</pre>
+<p>Show:
+<p><b>A message<br>Two numbers: 10 20<br>A string: Hello</b>
+<p><code>FMT}</code> (<i>Format end</i>) operation removes all data entered after the <i>previous</i> FMT{ delimiter, including the delimiter itself. For example:
+<pre>
+printf /" "A message\n" OUT  FMT{ "Two numbers: %i %i\n" 10 20 OUT  FMT{ "A string: %s\n" "Hello" OUT  FMT} &lt;> OUT  FMT} OUT
+</pre>
+<p>Show:
+<p><b>A message<br>Two numbers: 10 20<br>A string: Hello<br>Two numbers: 20 10<br>A message</b>
+<p>Remember that <b>&lt;*</b> (<i>Drop All</i>) operation removes all data entered after <i>the current</i> FMT{ format string (or after the initial format string).
+<p><b>IMPORTANT:</b> after FMT} operation you can NOT perform arithmetic operations on the floating point numbers entered <i>before</i>, that is, in a <i>previous</i> FMT{ FMT} level. This happens because FMT} execute an <a href="#Clear_the_FPU_stack">INIT operation</a>. If you want to preserve a floating point number to use it after a FMT}, then you must keep it in a storage register.
+<p><hr>
+<p>Input operations allows to <i>enter data</i> into a RPN expression. When an input operation is executed, the program waits to read data from the keyboard so at that point the user must provide such a data. When the data is completed, it is entered in the RPN expression at the place of the input operation and the program continue with the next instruction.
+<p>The simplest input operation is <code>GETK</code> (<i>Get Key</i>). It gets one key from keyboard and returns its value as a character (<i>integer</i>). For example:
+<pre>
+printf /" "Press a key: " OUT  FMT{ "\nThe key pressed is %i ('%c')\n" GETK > OUT
+</pre>
+<p>GetKey can read <i>any</i> key. Character keys returns its ASCII code, special keys returns a negative value. You can consult the values of special keyboard keys in <a href="printf - GetKey codes.txt">printf&nbsp;-&nbsp;GetKey&nbsp;codes.txt</a> file. These values are based on <i>the position</i> of the keys in the original IBM-PC extended keyboard. You can review ShowKeyCodes.bat file to understand how these values were generated.
+<p><code>IN</code> (<i>Input Line</i>) operation read a line from keyboard and enter it as a string followed by its length. Before <b>IN</b> operation you must enter the maximum number of characters that can be read; this number is eliminated by the input operation. For example:
+<pre>
+printf "Enter a string: " OUT  FMT{ "\"%s\" have %i characters\n" 80 IN  OUT
+</pre>
+<p><b>IN</b> operation returns an empty string and 0 lenght if the line read is empty. However, if the EndOfFile of a (redirected) input file is reached, IN returns just a -1 with no string before.
+<p>These operations allow us to write an independent program that can request the needed data by itself. For example, if we go back to our "Area of triangle" problem, we could solve it in this way:
+<pre>
+printf /" "Base: " OUT 20 IN &lt; atof STO1  FMT{ "Height: " OUT 20 IN &lt; atof STO2  FMT{ "Area = %f\n" RCL1 RCL2 MUL 2. DIV OUT
+</pre>
+<p>Note that numbers entered via keyboard in this way are left behind FMT{ marks, so those numbers must be moved to a place <i>after</i> the last FMT{ mark in order to be included in the final calculation. The way to solve this point in this example is via storage registers. However, there are other methods to solve this problem that will be discussed later.
+<p>So far so good... Now we have a method to write a program that can get its data and solve a problem, so now what? This is not that impressive. What would really be important would be solving hundreds or thousands of problems of the same type using the same method, or solving problems that may have different answers given by different formulas.
+<p>In order to do that we need to <i>repeat</i> sections of a program, or to <i>conditionally execute</i> parts of a program, etc. This is what is really called <a href="https://en.wikipedia.org/wiki/Computer_programming"><i>programming</i></a>.
+<p>As stated before, the method used in printf.exe application to write programs is based on just four control elements (<i>Begin, Repeat, Quit </i> and <i>End</i>) and a few concepts that were taken from the REC programming language, like <i>Code block</i>, <i>Control flow transfer</i> and <i>Conditional tests</i>. The scheme below show <i>ALL</i> operative rules of block programming. In the next sections below <a name="rules_scheme">these rules</a> will be explained in detail.
+<p><img src="Block Programming scheme.png" name="img1">
+<h3><a name="Code_Block" style="text-decoration:none">Code Block</a> </h3>
+<p>A <b>code block</b> is a series of operations enclosed between <code>(</code> (left parentheses) that we could name <b>BEGIN</b>, and <code>)</code> (right parentheses) we could name <b>END</b>. We call <i>delimiters</i> these two characters. For example:
+<pre>
+printf "First integer: %i,  second integer: %i\n"  10 ( 20 )
+</pre>
+<p>In this example there is one code block that contains the number 20. When the RPN expression is evaluated, the operations inside the code block are executed from left to right, in the usual way; however, in this example the output is <i>not</i> displayed. When a RPN expression contains a code block, the C printf function is <i>not</i> automatically invoked at end of the expression, so we need to explicitly show the output via <code>OUT</code> instruction. For example:
+<pre>
+printf "First integer: %i, second integer: %i\n"  10 ( 20 ) OUT
+</pre>
+<p>This example show <b>First integer: 10, second integer: 20</b> as usual.
+<p>Code blocks can be <i>nested</i> one in each other. For example:
+<pre>
+printf "An Integer: %i.  A String: %s.  A Float: %f\n"  ( 25  ( "Hello, world" ) 44.33 ) OUT
+</pre>
+<p>In this example there are <i>two</i> code blocks. The first one contains three <i>elements</i>: the integer 25, a <i>nested</i> code block, and the floating point 44.33. The second code block just contain a string. When block programming is used, all operations <i>belongs to</i> or <i>are placed in</i> a certain code block, and just <i>in one</i> code block. In this example the string belongs to <i>the nested</i> code block, precisely. The first code block does <i>not</i> contain any string; it contains two numbers and a nested code block.
+<p>In this way, this phrase: <q>this operation works on its code block</q> indicate that such an operation does <i>not</i> process any other block that can be nested inside the original block (where such an operation is placed). For example, if we would have two new operations called <b>A</b> and <b>B</b> and we would utilize they this way:
+<pre>
+printf "An Integer: %i.  A String: %s.  A Float: %f\n"  ( 25 A  ( "Hello, world" B ) 44.33 ) OUT
+</pre>
+<p>... then operation A would work over first block only and operation B on nested block only, that is, operation A can <i>not</i> modify (nor reach to) the string contained in the nested block.
+<h3><a name="Control_Flow_Transfer" style="text-decoration:none">Control Flow Transfer</a> </h3>
+<p>The execution of the RPN elements typically happens from left to rigth, starting at the first element and ending after the last element. This <i>execution path</i> is called <a href="https://en.wikipedia.org/wiki/Control_flow"><i>control flow</i></a>. The particular operation that is executing at any given time is said to "have the control".
+<p>We could alter the standard execution path of a program via a <b>control flow transfer instruction</b> that cause that the execution path jumps to another point in the RPN expression. In fact, this is the purpose of BEGIN and END delimiters: mark the points where the control flow can be transfered.
+<p>There are two control flow transfer instructions: <code>:</code> (colon) called <b>REPEAT</b> and <code>;</code> (semicolon) called <b>QUIT</b>. REPEAT instruction transfer the control flow back <i>to the beginning</i> of its code block. For example:
+<pre>
+printf "Hello, world\n" ( OUT : )
+</pre>
+<p>This example show "Hello, world" multiple times in an endless loop until the program is cancelled via Ctrl-C key.
+<p>QUIT instruction transfer the control flow forward <i>after the end</i> of its code block:
+<pre>
+printf "%s %s\n"  ( "This appears on the screen" ; "This don't appears" ) "The end" OUT
+</pre>
+<p>You can visually observe these control flow transfers in <a href="#rules_scheme">the scheme</a> seen above.
+<h3><a name="Test/Condition" style="text-decoration:none">Test/Condition</a> </h3>
+<p>A <b>test</b> is an operation that, when it is evaluated, answers if a <i>condition</i> is True or False. If the condition is True, the control flow continue to the next operation (this is the old "Do-If-True" rule used in HP calculators). If the condition is False, the control flow is transfered forward until pass <i>the next</i> control flow transfer instruction (REPEAT or QUIT) placed <i>in the same block</i>. This simple scheme allows to assemble the basic building blocks that all computer programs are comprised of.
+<p>All tests in printf.exe block programming are written with a question-mark character at end. The simplest conditional tests are a few integer RPN operators with a question mark character added. The condition stated in these operator/test combination is: <i>Is the result not zero?</i> For example, the <code>--</code> (<i>Decrement</i>) operator subtract 1 from the last integer number. When the question mark is added this way: <code>--?</code>, the decrement operator becomes a Test? that is True as long as the decrement result is not zero. A simple example:
+<pre>
+printf "Turn number %i\n" 10 ( OUT --? : )
+</pre>
+<p>At beginning of this example a number 10 is entered, the OUT instruction is executed and the message <b>Turn number 10</b> appears in the screen. Then the <b>--?</b> operator is executed, so the 10 becomes 9. Because the result is not zero, the control flow continue. The REPEAT <code>:</code> instruction is executed, and the control flow is trasfered back to the beginning of the code block.
+<p>The OUT instruction is executed again and now show <b>Turn number 9</b>. The process is repeated and in the next cycle <b>Turn number 8</b> appears in the screen. The loop continue in the same way until <b>Turn number 1</b> is displayed. After that, the result of the decrement operation is zero, so the <code>--?</code> test is False. Then the control flow is transfered forward until pass the REPEAT instruction, so the code block's end is reached and the whole program ends (this behavior is similar to "<b>D</b>ecrement and <b>S</b>kip on <b>Z</b>ero" (DSZ) instruction of HP's RPN calculators). This way to execute things in a repetitive loop is called <a href="https://en.wikipedia.org/wiki/Do_while_loop"><i>Do-While</i></a>: <i>Do</i> show the number and decrement it <i>While</i> the result is not zero. There is another construct called <a href="https://en.wikipedia.org/wiki/While_loop"><i>While-Do</i></a> in which the Test? is evaluated <i>first</i>, so it is possible that the "Do" actions would not be executed even once.
+<p>Another example: the <code>&</code> (<i>Bitwise AND</i>) operator allows to test for individual bits of an integer number. In the internal (<i>binary</i>) representation of integers the <i>least significant bit</i> (that corresponds to the number <b>1</b>) is set if the number is odd and clear if the number is even. In this way, if we operate any number and <b>1</b> with the <code>&?</code> op/test combo, the result is the answer to the question: "Is the number odd?". For example:
+<pre>
+printf "Number %i is %s\n" 10  /"  > 1 ( &? &lt; "Odd" ; &lt; "Even" ) OUT
+</pre>
+<p>This example start with a number. We first duplicate <code>></code> the number and enter a <code>1</code>. Then, the <code>&?</code> do a Bitwise AND and get just the last bit of the number. If this bit is set (the result is not zero): the result is <code>&lt;</code> dropped, the "Odd" string is entered and the QUIT <code>;</code> control flow instruction is executed, so the control is transfered forward after the end of the block. Otherwise the control flow is transfered forward until pass the QUIT <code>;</code> instruction, so the result is <code>&lt;</code> dropped and the "Even" string is entered. After that a line is displayed, like <b>Number 10 is Even</b> or <b>Number 11 is Odd</b>. This way to conditionally execute one of two possible paths is called <a href="https://en.wikipedia.org/wiki/Conditional_(computer_programming)"><i>If-Then-Else</i></a>.
+<p>Note that if a test is False and there is not any REPEAT/QUIT instruction ahead, the control flow <i>exit from the block</i> without reach the <code>)</code> block's END delimiter.
+<p>On the other hand, if a test is True and there is not any REPEAT/QUIT instruction ahead, the control flow eventually reaches the <code>)</code> block's END delimiter.
+<p>These two different ways to exit from a block will be important later, when we describe <a href="#Boolean_Operators">the last operational rule</a> on printf.exe block programming.
+<h3><a name="Basic_Conditional_Tests" style="text-decoration:none">Basic Conditional Tests</a> </h3>
+<p>A <b>Conditional test</b> is the key to assemble loop cycles (<i>While-Do, Do-While, For-Next</i>) and conditional execution (<i>If-Then-Else, Case/Switch</i>) constructs via the "block programming" scheme that allows to write useful programs. In this way, a rich set of conditional tests aids programmers to write simple and efficient programs.
+<p>All conditional tests used in printf.exe block programming ends in question mark character. The simplest tests are a few integer operations with a question mark added at the end that works as an "operator and test combo": once the operation completes, the test part checks if the result is not zero.
+   <table border="1" rules="all" cellpadding="5" align="left">
+   <caption><b><a name="Basic_Conditional_Tests">Basic Conditional Tests</a></b></caption>
+      <tr>
+         <th>Operation</th>
+         <th>Perform</th>
+      </tr>
+      <tr>
+         <td><code>?</code></td>
+         <td>Test integer</td>
+      </tr>
+      <tr>
+         <td><code>]n?</code></td>
+         <td>Test storage register N</td>
+      </tr>
+      <tr>
+         <td><code>--?</code></td>
+         <td>Decrement</td>
+      </tr>
+      <tr>
+         <td><code>]--n?</code></td>
+         <td>Decrement storage register N</td>
+      </tr>
+      <tr>
+         <td><code>&#33;?</code></td>
+         <td>Boolean NOT</td>
+      </tr>
+      <tr>
+         <td><code>&?</code></td>
+         <td>Bitwise AND</td>
+      </tr>
+      <tr>
+         <td><code>%?</code></td>
+         <td>Division remainder</td>
+      </tr>
+      <tr>
+         <td><code>getc?</code></td>
+         <td>Get char from string</td>
+      </tr>
+      <tr>
+         <td><code>movc?</code></td>
+         <td>Move a character</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p><br>
+<p>These tests are True if the result is not zero. The new <code>?</code> (<i>Test integer</i>) and <code>]n?</code> (<i>Test storage register</i>) operators test if the value of the last integer number or the specified storage register is not zero, respectively, so they allows to check the result of any other operation.
+<p>With <code>--?</code> or <code>]--n?</code> operators is easy to repeat a loop a certain number of times. <code>&?</code> allows to test for individual bits in a number. <code>%?</code> test if a number is multiple of another one.
+<p>Both <code>getc?</code> and <code>movc?</code> allows to easily process all characters in a string.<br clear="all">
+<p>To process the characters of a string insert the zero-based <i>index</i> of the desired character and execute <b>getc?</b>: the character will be loaded after the index. If this character is the zero delimiter inserted at end of the string, the Test? is False. For example, the next code counts the number of characters in the string, so it is equivalent to <b>len</b> predefined function:
+<pre>
+printf /" "\"%s\" have %i characters\n"  "Any String"  0 ( getc? &lt; ++ : &lt; ) OUT
+</pre>
+<p>This example show the base method to process characters in a string. This method can be modified in order to achieve other similar tasks; for example, convert characters to uppercase or lowercase letters, etc. You can review some of these methods in <a href="printf%20Example%202%20-%20ProcString.bat">printf Example 2 - ProcString.bat</a> file; be aware that the conversion methods uses the comparison tests that will be described in a section below.
+<h3><a name="Program_in_Didactic_Form_(Batch_files)" style="text-decoration:none">Program in Didactic Form (Batch files)</a> </h3>
+<p>Perhaps the most difficult aspect when you write a large program using the block programming scheme is to keep track of the printf.exe parameters (stack contents) after each operation. In order to facilitate this task, you can write programs in a different and clearer way we call <i>Didactic Form</i>. HP calculators used a "Programming Form" printed in a paper sheet for the same purpose in which the user could write the stack contents after each program's operation. The method that we will use is to divide the instructions of the printf.exe program into <i>several lines</i> so that each one includes a descriptive comment. However, this cannot be properly done on the cmd.exe command line; we need a place to store a long printf program so that it is easy to create and edit.
+<p>The usual way to do this is to create a Batch script file (text file with .bat extension). These types of files contain a series of <i>commands</i> that can be executed automatically, such as our printf.exe command that includes a long advanced RPN program. To do this, follow these steps:
+   <ol style="list-style-type: decimal">
+      <li> Create a text file (right-click the mouse into a folder area and select: New -> Text document) and change the extension from .txt to .bat when you give the file name; confirm you want to change the extension.
+      <li> Right-click the mouse over the new file and select: Edit; the file should open in the Windows Notepad editor.
+      <li> Insert the line <code>@echo off</code> at beginning of the file.
+      <li> After that, insert the printf command with the whole program.
+      <li> Change all percent <code>%</code> characters by double-percent: <code>%%</code>
+      <li> Change any individually <code>^&lt; ^> ^| ^&</code> escaped character by the use of <i>Quoted</i> switch, like <code>/" &lt; /"</code>, or <code>/" > /"</code>, etc.
+      <li> Split the RPN expression in individual lines as you wish.
+      <li> After each line include a descriptive comment enclosed between <code>/*</code> and <code>*/</code> (<i>Comment</i>) delimiters.
+      <li> At end of each line insert a <code>^</code> (<i>caret</i>) character, except after the last one. Be careful to <i>not</i> insert any space after the caret.
+      <li> If you use the <code>/"</code> <i>Quoted</i> switch, close it in each individual line and open it again if a posterior line requires it.
+   </ol>
+<p>You must also enclose in quotes any special character placed in /*comments*/. Note that you can combine an open <code>/"</code> <i>Quoted</i> switch with a single closing quote placed at end of the comment. See examples in the included *.bat files.
+<p>When the program is ready, close the file and save it. In order to execute the printf.exe program, enter the name of the Batch file in the cmd.exe window (like you previously did with the printf command itself). If the Batch file name include spaces, enclose the name between quotes to execute it.
+<p>For example, the last string length example shown above:
+<pre>
+printf /" "\"%s\" have %i characters\n"  "Any String"  0 ( getc? &lt; ++ : &lt; ) OUT
+</pre>
+<p>... could be rewritten in this didactic form:
+<pre>
+@echo off
+
+printf "\"%%s\" have %%i characters\n" /* format */ ^
+   "Any String"		/* "string"		*/  ^
+   0			/* "string" 0		*/  ^
+   (			/* WHILE getc?		*/  ^
+      getc?		/*    "string" 0 C	*/  ^
+      /" &lt; /"		/*    "string" 0	*/  ^
+      ++		/*    "string" 1 ,2,...	*/  ^
+   :			/* REPEAT		*/  ^
+			/*    "string" len 0	*/  ^
+      /" &lt; /"		/*    "string" len	*/  ^
+   )			/* ENDWHILE		*/  ^
+   OUT			/* show the result	*/
+</pre>
+<p>In this didactic form you can review the stack contents before each operation, so you can be sure that all operation parameters are correct. As an additional benefit, the <i>control constructs</i> (like While-Do, If-Then-Else, etc) are clearly marked and delimited. This form greatly increases the readability of block programming and brings it closer to high-level languages. You should use this form to write your own programs. This method allows programs up to 8190 characters long. The lines in this example are around 40 characters each; this means that you can write a similar program about 200 lines long.
+<p><hr>
+<p>The functions <b>getc</b> and <b>putc</b> operate based on a <i>start address</i> of a string plus an offset <i>index</i>. If these functions must operate on different strings, it can be a bit cumbersome to move the parameters of the stack to arrange them in the correct way to use each function. For example, the following program <i>duplicates</i> one string into another, thus doing the equivalent of the <code>1 dups</code> function:
+<pre>
+printf "Original:   \"%%s\"\nDuplicated: \"%%s\"\n"  ^
+	"Any string"	/* "original"		*/  ^
+	len		/* "original" len	*/  ^
+	'X' /" &lt;> /"	/* "orig" 'X' len	*/  ^
+	dupc		/* "orig" "XX dup"	*/  ^
+	0		/* "orig" "dup" 0	    index = 0	*/  ^
+	(		/* WHILE getc?		*/  ^
+	   }3		/*    "dup" 0 "orig"	*/  ^
+        /" &lt;> /"	/*    "dup" "orig" 0	*/  ^
+	   getc?	/*    "dup" "orig" 0 'o'*/  ^
+	   }4		/*    "orig" 0 'o' "dup"*/  ^
+	   {3		/*    "orig" "dup" 0 'o'*/  ^
+	   putc		/*    "orig" "oup" 0	*/  ^
+	   ++		/*    "orig" "oup" 1,...    index++	*/  ^
+	:		/* REPEAT		*/  ^
+	)		/* ENDWHILE		*/  ^
+			/* "orig" "dup" len	*/  ^
+	OUT		/* show result		*/
+</pre>
+<p>On the other hand, the <b>movc</b> <a name="movc_function">function</a> uses a <i>pointer</i> that directly points to a certain character within a string, so its use is easier than getc/putc which require <i>two</i> quantities (the start address and the offset) to take the same character. For example:
+<pre>
+printf "Original:   \"%%s\"\nDuplicated: \"%%s\"\n"  ^
+	"Any string"	/* "original"		*/  ^
+	]0		/* R0 = "original"	*/  ^
+	len		/* "original" len	*/  ^
+	'X' /" &lt;> /"	/* "orig" 'X' len	*/  ^
+	dupc		/* "orig" "XX dup"	*/  ^
+	]1		/* R1 = "duplicated"	*/  ^
+	(		/* WHILE movc0?		*/  ^
+        /" &lt;> /"	/*    "dup" "orig"	exchange *pointers*	*/  ^
+	   movc0?	/*    "dup" "orig" 'o'		like getc?	*/  ^
+	/" &lt;> /"	/*    "dup" 'o' "orig"	*/  ^
+	   ++		/*    "dup" 'o' "orig"++*/  ^
+	   {3		/*    "orig"++ "dup" 'o'*/  ^
+	   movc1	/*    "orig"++ "oup"		like putc	*/  ^
+	   ++		/*    "orig"++ "oup"++	*/  ^
+	:		/* REPEAT		*/  ^
+	)		/* ENDWHILE		*/  ^
+     /" &lt;* /"		/* empty stack		*/  ^
+	[0 [1		/* "orig" "dup"		*/  ^
+	OUT		/* show result		*/
+</pre>
+<p>Furthermore, the <b>movc2</b> variant can take a character from a string and store it <i>directly</i> in another string without using the <i>stack</i>, so its use it is even simpler and more efficient. Finally, the three variants of the <b>movc</b> function allow <i>auto-incrementing</i> the pointers used after the corresponding character has been moved, which allows writing shorter and faster programs. The reader is invited to review examples of this point in the <a href="printf%20Example%203%20-%20Index%20vs%20Pointer.bat">printf Example 3 - Index vs Pointer.bat</a> file.
+<p><hr>
+<p>The standard for running programs on the command line is to place after the command a series of <i>parameters</i>, which are values that the command takes to work with. In the printf.exe command the parameters consist of the operations of the RPN program. However, it is convenient to use a way to <i>trasfer</i> the parameters from the Batch file (which contains the printf.exe program) into the RPN data. This would allow the Batch/printf.exe file combination to be used in a standard way. Here it is:
+<pre>
+@echo off
+set "parameters=%*"
+
+printf	""			/* No format			*/ ^
+	parameters		/* "par1 par2 ... parN"		*/ ^
+	split			/* "par1" "par2" ... "parN" N	*/ ^
+	(			/* WHILE			*/ ^
+	   ?			/*    another param?		*/ ^
+	   shift		/*    "par2" "parN" N-1 "par1"	*/ ^
+	   ]1 /" &lt; /"		/*    R1 = "par1" and drop it	*/ ^
+	   FMT{ "Param %%i: %%s\n" /* Param format		*/ ^
+	      ]++0		/*       inc R0 = param counter	*/ ^
+	      [0 [1 OUT		/*       count par1  output	*/ ^
+	   FMT}			/*    Close format		*/ ^
+				/*    "par2" "parN" N-1		*/ ^
+	:			/* REPEAT			*/ ^
+	)			/* ENDWHILE			*/
+</pre>
+<p>The <code>set "parameters=%*"</code> command takes the parameters from the Batch file and stores them in the variable <b>parameters</b>. Putting the name of this variable in the RPN program will <i>input</i> its value as a character string; that is, the parameters of the Batch file are entered. The <b>split</b> function splits this string into individual parameters and the <b>shift</b> function allows to process them one by one. The didactic form of this program is in <a href="printf%20Example%204%20-%20Parameters.bat">printf Example 4 - Parameters.bat</a> file.
+<p>Note that a program in didactic form run slower than in standard form. You could develop and test the program in didactic form and convert it to standard form when it is ready. <b>GetStandardForm.bat</b> is an auxiliary Batch file that aids to do this conversion; you just need to check that the generated code is correct in a couple points: if there are several adjacent spaces in a string they are reduced to just one, and perhaps insert a closing <code>/"</code> <i>Quoted</i> switch before a "&lt;string>" that contain special characters (and open it again after, if needed). Note that <i><b>all</b> program lines</i> must contain a /*comment*/ at end in order to be properly converted by GetStandardForm.bat
+<h3><a name="Flags_Tests" style="text-decoration:none">Flags Tests</a> </h3>
+<p>The <i>Flags</i> is a facility taken from HP calculators. They are variables that directly represent the True/False values. <code>SFn</code> operation Set Flag to True. <code>CFn</code> operation set flag to False (Clear Flag). <code>Fn?</code> test ask for the Flag value. The number <b>n</b> must be a digit in 0..9 range, so there are 10 Flags in this version of printf.exe. The Flags represent a simpler alternative to, for example, store a zero in an integer register in order to indicate False and change it to 1 to indicate True. Some examples of their use will be shown later.
+<h3><a name="Standard_Numeric_Tests" style="text-decoration:none">Standard Numeric Tests</a> </h3>
+<p>The Standard Numeric Tests below compare the last number (that we call "X") versus zero (with integer and floating point versions), or compare the last "X" number versus the previous one (called "Y"), also with integer and floating point versions. 
+   <table border="1" rules="all" cellpadding="5" align="left">
+   <caption><b><a name="Standard_Numeric_Tests">Standard Numeric Tests</a></b></caption>
+      <tr>
+         <th colspan="3">One-operand tests</th>
+         <th colspan="3">Two-operands tests</th>
+      </tr>
+      <tr>
+         <th>Int</th>
+         <th>Float</th>
+         <th>Condition</th>
+         <th>Int</th>
+         <th>Float</th>
+         <th>Condition</th>
+      </tr>
+      <tr>
+         <td><code>>0?</code></td>
+         <td><code>GTR0?</code></td>
+         <td>X greater than 0</td>
+         <td><code>>?</code></td>
+         <td><code>GTR?</code></td>
+         <td>X greater than Y</td>
+      </tr>
+      <tr>
+         <td><code>>=0?</code></td>
+         <td><code>GEQ0?</code></td>
+         <td>X greater or equal 0</td>
+         <td><code>>=?</code></td>
+         <td><code>GEQ?</code></td>
+         <td>X greater or equal Y</td>
+      </tr>
+      <tr>
+         <td><code>&lt;0?</code></td>
+         <td><code>LSS0?</code></td>
+         <td>X less than 0</td>
+         <td><code>&lt;?</code></td>
+         <td><code>LSS?</code></td>
+         <td>X less than Y</td>
+      </tr>
+      <tr>
+         <td><code>&lt;=0?</code></td>
+         <td><code>LEQ0?</code></td>
+         <td>X less or equal 0</td>
+         <td><code>&lt;=?</code></td>
+         <td><code>LEQ?</code></td>
+         <td>X less or equal Y</td>
+      </tr>
+      <tr>
+         <td><code>==0?</code></td>
+         <td><code>EQU0?</code></td>
+         <td>X equal 0</td>
+         <td><code>==?</code></td>
+         <td><code>EQU?</code></td>
+         <td>X equal Y</td>
+      </tr>
+      <tr>
+         <td><code>&#33;=0?</code></td>
+         <td><code>NEQ0?</code></td>
+         <td>X not equal 0</td>
+         <td><code>&#33;=?</code></td>
+         <td><code>NEQ?</code></td>
+         <td>X not equal Y</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p><br>
+<p>For example, to get the MAX of two integer numbers, use <code>( >? &lt;> ) &lt;</code>, that is, if the last number X is the maximum, exchange numbers so the lesser be the last. After that, drop the last number (that always will be the lesser) and keep the MAX.
+<p>In a similar way, to get the MIN of two integers: <code>( &lt;? &lt;> ) &lt;</code>.
+<p>To get the MAX of two floating point numbers, use <code>( GTR? XCHG ) DROP</code>, and to get the MIN: <code>( LSS? XCHG ) DROP</code>.
+<p>You can also use <code>=0?</code> and <code>=?</code> for "X equal 0" and "X equal Y", or <code>&lt;>0?</code> and <code>&lt;>?</code> for "X not equal 0" and "X not equal Y" integer tests.<br clear="all">
+<p>We can write multiple examples of printf.exe operations in a simpler way if we make good use of other Batch cmd.exe commands. For example, to test <i>all</i> integer tests in a single line we can use <b>FOR</b> command:
+<pre>
+for %t in (" >" ">=" " &lt;" "&lt;=" "==" "&lt;>") do @printf "%i %~t %i:  %s\n"  /"  10 20 ( %~t? &lt;> "TRUE" ; &lt;> "false" ) OUT
+</pre>
+<p><b>20  > 10:  TRUE<br>20 >= 10:  TRUE<br>20  &lt; 10:  false<br>20 &lt;= 10:  false<br>20 == 10:  false<br>20 &lt;> 10:  TRUE</b>
+<p>The same tests for floating point numbers:
+<pre>
+for %t in (gtr geq lss leq equ neq) do @printf "%.2f %~t %.2f:  %s\n"  10. 20. ( %~t? XCHG "TRUE" ; XCHG "false" ) OUT
+</pre>
+<p><b>20.00 gtr 10.00:  TRUE<br>20.00 geq 10.00:  TRUE<br>20.00 lss 10.00:  false<br>20.00 leq 10.00:  false<br>20.00 equ 10.00:  false<br>20.00 neq 10.00:  TRUE</b>
+<p>You can change the order of values or test a single value vs. zero in order to complete these tests with the rest of conditions.
+<p>We can now complete the conversion to uppercase letters that use <b>&lt;=?</b> and <b>>=?</b> integer tests:
+<pre>
+printf "%s\n"  "Hello, World&#33;"  /"  0 ( getc? ( 'a' &lt;=? &lt; 'z' >=? &lt; 32 - putc 'c' 'x' ) &lt; &lt; ++ : ) &lt; &lt;  OUT
+</pre>
+   <table border="1" rules="ver" cellpadding="5" align="right">
+      <tr>
+         <td>&aacute; - 160<br>&eacute; - 130<br>&iacute; - 161<br>&oacute; - 162<br>&uacute; - 163<br>&uuml; - 129<br>&ntilde; - 164<br>&iquest; - 168</td>
+         <td>&Aacute; - 181<br>&Eacute; - 144<br>&Iacute; - 214<br>&Oacute; - 224<br>&Uacute; - 233<br>&Uuml; - 154<br>&Ntilde; - 165<br>&iexcl; - 173</td>
+      </tr>
+   </table>
+<p>Remember that characters are managed as integers, so the integer tests are also <i>character tests</i>. The Didactic form of this conversion is in <a href="printf%20Example%202%20-%20ProcString.bat">printf Example 2 - ProcString.bat</a> file.
+<p>Conversions between upcase and lowcase letters are based on the fact that these two set of letters are separated by 32 positions in the standard <a href="https://en.wikipedia.org/wiki/ASCII">ASCII character table</a>. However, this is not true in the case of foreign characters. As reference, a table with some characters used in Spanish is shown at right side. The shown numbers are the positions of such a characters <i>in the code page 850</i>. Of course, if cmd.exe uses a different code page, these characters could appear in different positions or even not appear at all.<br clear="all">
+<p>Another example of standard numeric tests is a multiplication table. This example include two nested code blocks:
+<pre>
+printf /" " %3i"  0 ( ++ 11 ==? ; &lt;  0 ( ++ 11 ==? &lt; ; &lt; >2 >2 * {3 OUT &lt;3 : )  FMT{ "\n" OUT FMT}  &lt; : )
+</pre>
+<p>The didactic form of this example is in <a href="printf%20Example%205%20-%20Multiplication%20table.bat">printf Example 5 - Multiplication table.bat</a> file and we reproduce it here so you can review it:
+<pre>
+printf " %%3i"	/* format		*/ ^
+   0		/* i=0			*/ ^
+   (		/* WHILE ++i &#33;= 11  	*/ ^
+      ++	/*    1	 ,2,... 	*/ ^
+      11 ==?	/*    i 11   equ?	*/ ^
+   ;		/*           break 	*/ ^
+   /" &lt; /"	/*    i			*/ ^
+      0		/*    i j=0		*/ ^
+      (		/*    WHILE ++j &#33;= 11	*/ ^
+         ++	/*       i 1  ,2,...	*/ ^
+         11 ==? /*       i j 11   equ?	*/ ^
+      /" &lt; /"	/*       i j		*/ ^
+      ;		/*                break	*/ ^
+      /" &lt; /"	/*       i j		*/ ^
+      /" >2 /"	/*       i j i		*/ ^
+      /" >2 /"	/*       i j i j	*/ ^
+         *	/*       i j i*j	*/ ^
+         {3	/*	 i*j i j	*/ ^
+         OUT	/*             show i*j	*/ ^
+      /" &lt;3 /"	/*       i j		*/ ^
+      :		/*    REPEAT		*/ ^
+      )		/*    ENDWHILE		*/ ^
+		/*    i 11		*/ ^
+   FMT{ "\n"	/*    EndOfLine		*/ ^
+   OUT		/*    show it		*/ ^
+   FMT}		/*    clear EOL FMT	*/ ^
+/" &lt; /"	/*    i			*/ ^
+   :		/* REPEAT		*/ ^
+   )		/* ENDWHILE		*/
+</pre>
+<p>This is the last time we reproduce a complete didactic form here. There are several example programs in didactic form included in the printf.exe package that we will describe later. You can review these examples in your Windows Notepad text editor by opening the corresponding .bat file; to do this, click over the file with the <i>right</i> mouse button and select "Edit".
+<p><hr>
+<p>Another example derived from <code>GETK</code> operator consists in <i>read a line</i> from the keyboard, that is, simulate the <b>IN</b> function operation. The program will take keys one by one and check they: if the key is a standard ASCII character (greather or equal 32), it will be inserted in the result string and showed on the screen. If the key is BackSpace (ASCII 8 character: <b>BS</b>) the last entered character will be deleted from both the string and the screen. If the key is Enter (ASCII 13 = <b>CR</b>) the program terminate and returns the line read and its length (the same as IN). Here it is:
+<pre>
+printf /" "%%s\n" 80 ]2 '$' &lt;> dupc ]1 0 ( GETK 13 ==? ; &lt; 8 ==? ( &lt; &lt; ==0? ; -- FMT{ "\b \b" OUT FMT} ) : &lt; 32 >? &lt; &lt; : &lt; ]0 &lt; [2 ==? &lt; : &lt; FMT{ "%%c" [0 OUT FMT} [0 putc ++ : ) FMT{ "\n" OUT FMT} &lt; &lt; 0 putc FMT{ "Line read: \"%%s\"\n" [1 OUT
+</pre>
+<p>Before start, the maximum number of characters that can be read must be given (the same as IN) that in this example is <code>80</code>, which is stored in register 2 (via <code>]2</code>). First, a string with such a number of characters is created (via <code>'$' &lt;> dupc</code>), its address is stored <code>]1</code> in register 1 and the index/counter of characters in the string is initialized to <code>0</code>.
+<p>The process consists in a While repetitive loop <code>(</code> that contains these parts: a key is read <code>GETK</code> and if it is the "Enter" key <code>13 ==?</code>, the loop is canceled <code>;</code>. Otherwise, the "Enter" is drop <code>&lt;</code> and test the key vs "BackSpace" <code>8 ==?</code>. IF is a BS <code>(</code>: delete both numbers 8 <code>&lt; &lt;</code> and left as "last number" the character index. Then, check if any character was entered <code>==0?</code> and cancel the IF <code>;</code> if not; else decrement <code>--</code> the character index/counter and delete the last character from the screen (showing a BS+space+BS <code>FMT{ "\b \b" OUT FMT}</code>). The "IF is a BS" block ends here <code>)</code> and go back <code>:</code> to the While loop. Block programming is very entertaining&#33; Isn't it? <b>;)</b>.
+<p>In the last part the previous 8 is deleted <code>&lt;</code> and if the key is less than 32 <code>32 >?</code> (a control character) both the 32 and the key are deleted <code>&lt; &lt;</code> and go back to the While loop <code>:</code>. Otherwise is a standard ASCII character, so the 32 is drop <code>&lt;</code>, the character is stored in register 0 and eliminated <code>]0 &lt;</code>. Then, the maximum number of characters in the string is recalled <code>[2</code> and, if the index reaches this limit <code>==?</code>, the limit is drop <code>&lt;</code> and go back to the While loop <code>:</code>; otherwise the limit is drop <code>&lt;</code>, the character is output in the screen <code>FMT{ "%%c" [0 OUT FMT}</code>, the character is inserted in the string <code>[0 putc</code>, the index is incremented <code>++</code> and go back to the While loop <code>:</code> that ends at this point <code>)</code>
+<p>When the While loop breaks because an "Enter" key, a new line is shown <code>FMT{ "\n" OUT FMT}</code>, both numbers 13 are deleted <code>&lt; &lt;</code>, a <code>0</code> is entered as the string delimiter and it is stored in place <code>putc</code>. Finally, the result is displayed <code>FMT{ "Line read: \"%%s\"\n" [1 OUT</code>.
+<p>This basic read line method can be modified in order to get other similar tasks, with additional features. For example, in order to read a password just change the output character in <code>FMT{ "%%c" [0 OUT FMT}</code> by an asterisk: <code>FMT{ "%%c" '*' OUT FMT}</code>. You can also convert the character read to uppercase letters using the method seen before, or restrict the input to just digits by changing the restriction of "not less than 32" to "between 48 and 57" (ASCII codes of "0" and "9", respectively), et cetera. The didactic form of these programs is in <a href="printf%20Example%206%20-%20ReadLine.bat">printf Example 6 - ReadLine.bat</a> file.
+<h3><a name="Advanced_Input/Output_Operations" style="text-decoration:none">Advanced Input/Output Operations</a> </h3>
+<p>The operations described in this section are the Test? forms of standard GETK (<i>Get Key</i>) and IN (<i>Input line</i>). There are also some advanced forms of IN and OUT operations that allows to read and write text files, and the new CMD operation that execute a cmd.exe command. For completeness, the standard input/output operations described above are also included in the table below.
+<p>In order to process a text file you must first <i>open it</i>, that imply to get the file by its name and connect it to a number, called <i>handle</i>, that will be used in posterior operations over the file. If new data was written to the file, the handle must be <i>closed</i> (disconnected from the file) before the program ends. In the following functions <b>N</b> value identify the handle and must be a single digit in 0..9 range.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="Advanced_Input/Output_Operations">Advanced Input/Output Operations</a></b></caption>
+      <tr>
+         <th>Operation</th>
+         <th>Function</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td>Standard output</td>
+         <td><code>OUT</code></td>
+         <td>Send formatted output to the screen via "format" data1 data2 ...</td>
+      </tr>
+      <tr>
+         <td>Format start</td>
+         <td><code>FMT{</code></td>
+         <td>Start a new format and data for OUT, up to end it with <code>FMT}</code></td>
+      </tr>
+      <tr>
+         <td>Get a key</td>
+         <td><code>GETK</code><br><code>GETK?</code><br><code>GETK?:r</code></td>
+         <td>Wait for a key press<br>No wait: if there is not a key press ready, is False<br>Wait for the next milliseconds time-slice given in R register</td>
+      </tr>
+      <tr>
+         <td>Standard input</td>
+         <td><code>maxlen IN</code></td>
+         <td>Read a line from keyboard</td>
+      </tr>
+      <tr>
+         <td>Execute a command<br>and open a pipe</td>
+         <td><code>"command" CMD</code></td>
+         <td>Execute cmd.exe's "command" and open a Stdin pipe to read its output</td>
+      </tr>
+      <tr>
+         <td>Input and Test?</td>
+         <td><code>maxlen IN?</code></td>
+         <td>Read a line; at EndOfFile close the last Stdin pipe open by CMD</td>
+      </tr>
+      <tr>
+         <td>Open input file</td>
+         <td><code>"filename" IN{?:n</code><br><code>"filename" IN{+?:n</code></td>
+         <td>Open the file for input in handle N<br>Open the file for update in both input and output handles N</td>
+      </tr>
+      <tr>
+         <td>Input from handle</td>
+         <td><code>maxlen IN?:n</code></td>
+         <td>Read a line from handle N; at EndOfFile close the handle</td>
+      </tr>
+      <tr>
+         <td>Open output file</td>
+         <td><code>"filename" OUT{:n</code><br><code>"filename" OUT{+:n</code></td>
+         <td>Create and open the file for output in handle N<br>Open the file for append (output at EndOfFile) in handle N</td>
+      </tr>
+      <tr>
+         <td>Output to handle</td>
+         <td><code>OUT:n</code></td>
+         <td>Send formatted output to handle N</td>
+      </tr>
+      <tr>
+         <td>Close handle</td>
+         <td><code>OUT}:n</code><br><code>OUT}+:n</code></td>
+         <td>Close output handle N<br>Set file size to current FP position and close handle N</td>
+      </tr>
+      <tr>
+         <td>Move file pointer</td>
+         <td><code>SEEK#:n:p</code></td>
+         <td>Move FP position of handle N to position P from origin #</td>
+      </tr>
+      <tr>
+         <td>Change directory</td>
+         <td><code>"pathname" CD</code></td>
+         <td>Change current directory; returns 0 for OK or -1 for Error.</td>
+      </tr>
+   </table>
+<p><b>GETK</b> and <b>IN</b> input functions seen before can also work as tests if a question mark is added at end, as usual. <code>IN?</code> operation read a line from keyboard (or from a redirected input file) and leaves in the stack the string read and its length. When the End Of File is reached, a -1 is left in the stack and the Test? is False. In any case, the <b>maxlen</b> value is eliminated. For example:
+<pre>
+&lt; textFile.txt printf /" "%s\n"  ( 1000 IN? OUT &lt;* : )
+</pre>
+<p>This basic method of process input lines can be enriched with additional features. For example, to enumerate the lines:
+<pre>
+&lt; textFile.txt printf /" "%i:%s\n"  ( ]++0 [0 1000 IN? OUT &lt;* : )
+</pre>
+<p>Note that the use of <b>&lt;*</b> (<i>Drop All</i>) operation in these examples allows to re-use <i>the same data area</i> to read all lines in a file; otherwise, the printf.exe string data area (with 10 KB of space) could be exceeded by file contents. The didactic form of these examples is in <a href="printf%20Example%207%20-%20ReadFile.bat">printf Example 7 - ReadFile.bat</a> file.
+<p><b>GETK</b> (<i>Get Key</i>) standard function waits until a key is pressed and then return its value. If you convert it to a test this way <code>GETK?</code>, then the operation returns immediately: if a key was pressed at that moment, GETK? returns it and the Test? is True; otherwise nothing is returned and the Test? is False. This behavior can be used to <i>interrupt a cyclic process</i> when a key is pressed. The last example above can be modified to pause the display when a key is pressed:
+<pre>
+&lt; textFile.txt printf /" "%i:%s\n"  ( ]++0 [0 1000 IN? OUT ( GETK? GETK ) &lt;* : )
+</pre>
+<p>After a line is shown, the <b>( GETK? GETK )</b> part test if a key was pressed; if so, another key is read before continue with the output loop. Test this program with a very large file. This is a very simple method to insert a pause in any cyclic process.
+<p>Another interesting use of this feature is to control an <i>animation</i>. A program can show a figure in the screen that moves at regular intervals. When the program detects a key press via <b>GETK?</b> test, it could alter the figure movement. This is the basis to write animated games programs&#33;
+<p>In order to facilitate this type of programs, GETK? function also allows to set a <i>delay time interval</i>. Every time that <code>GETK?:n</code> is executed it waits for the next clock time-slice of the number of milliseconds stored in the given integer storage register. This feature makes very easy to write a program that moves an animation at a given rate and to change such animation speed.
+<p>The next <a name="animation_program">program</a> is a very simple example of an animation whose speed can be controlled via Left-Arrow and Right-Arrow keys; the program ends when the Enter key is pressed:
+<pre>
+printf /" "\b %c"  SF1  100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? CF1 ) &lt;  &lt;  )  F1? : ) 
+</pre>
+<p>The <b>"\b %c"</b> format return the cursor one character, erase the last character shown and show a new character, that is the ASCII 219 block character in 437 and 850 code pages; this method creates the illusion that the block moves from left to right.
+<p>The <b>GETK?:1</b> test delay the execution the number of milliseconds stored in integer storage register #1, that was initialized to 100 milliseconds.
+<p>The Left-arrow (-75) key increments the delay by 10 milliseconds, so it makes the process slower. The Right-arrow (-77) key do the opposite thing. The Enter (13) key terminates the process.
+<p>When a key is detected, a -75 is entered to check if the key is a Left-arrow; if so, a 10 is entered to increment storage register 1 and then the 10 is dropped; anyway, after that the -75 is dropped. The same is done with -77 for the Right-arrow key. The Enter key does not insert any additional value, so just one drop is used after it. The last drop is to eliminate the key pressed itself.
+<p>Note that Enter key just clear the flag number 1 and that the whole process is repeated while the flag 1 is set. The use of a flag this way is a very simple method to break a cycle that don't enters any value in the stack.
+<p>The didactic form of this program is in <a href="printf%20Example%208%20-%20Animation.bat">printf Example 8 - Animation.bat</a> file.
+<p><hr>
+<p><code>CMD</code> is a powerful function designed to execute a cmd.exe command and process its output lines. To do that, <b>CMD</b> function asynchronously execute a spawned copy of the cmd.exe command processor and redirects its Stdout standard output stream into printf.exe Stdin input stream (<i>pipe</i>), so it can be read via <b>IN?</b> operation. For example:
+<pre>
+printf /" "%s\n" "DIR /B *.TXT" CMD &lt; ( 1000 IN? OUT &lt;* : )
+</pre>
+<p>An interesting feature of CMD function is that its operation can be <i>nested</i> several levels deep. When an active CMD is executing and IN? operation is reading its lines, you can start <i>another</i> CMD function and read its lines via nested IN? operations. When the EndOfFile of the second CMD is reached, the second pipe is closed and IN? operation reverts to continue reading lines from the first CMD function. We can make good use of such a feature in several different ways.
+<p>For example, we can write a program that process <i>the names</i> of all text files via <code>"DIR /B *.TXT" CMD</code> operation and then, for each file found, process <i>the lines</i> of such a file via a nested <code>"TYPE filename" CMD</code> operation. Here it is:
+<pre>
+printf /" "\n\nFile: %s\n" "DIR /B *.TXT" CMD &lt; ( 100 IN? OUT &lt; ]1 GETK FMT{ "%s\n" "TYPE \"" [1 "\"" 3 "" join1 CMD &lt; ( 1000 IN? OUT &lt;* : ) FMT} &lt;* : )
+</pre>
+<p>Note that the <b>"TYPE \"" [1 "\"" 3 "" join1</b> segment in the middle is the one that assemble the <b>TYPE "filename"</b> command using the filename read from previous "DIR /B *.TXT" command. The didactic form of this program is in <a href="printf%20Example%209%20-%20Type%20files.bat">printf Example 9 - Type files.bat</a> file.
+<p>When IN? read a (redirected) file, it returns a -1 in EndOfFile condition; however, when IN? is reading the piped output of a CMD function, then in EndOfFile it returns the ERRORLEVEL value of the terminating cmd.exe command.
+<p>If the command parameter of CMD is <b>"CMD"</b>, that is <code>"CMD" CMD</code>, a new cmd.exe interactive session will be started; close it with <b>EXIT</b> command.
+<p><hr>
+<p>The <code>"filename" IN{?:n</code> form of IN function open the given file for input, so posterior <code>IN?:n</code> operations (with <i>the same <b>N</b> number</i>) input lines from such a file. When the EndOfFile of the input file is reached, the file handle is closed and the IN? Test? is False. If the file does not exists, the open IN{?:n Test? is False. This is a simple example that show the contents of a file (similar to TYPE command):
+<pre>
+printf /" "%s\n" ( "filename.txt" IN{?:1 &lt; ( 1000 IN?:1 OUT &lt;* : ) ; &lt; "File not found" OUT )
+</pre>
+<p>The <code>"filename" IN{+?:n</code> form of IN function open the file for both input and output (<i>update</i>) access. In this case the same handle number must be used in both input and output operations: <b>IN?:n</b> and <b>OUT:n</b>. If you want to continue processing the file after an input operation reached the EndOfFile, read the lines with <b>IN:n</b> operation instead that do not close the file; in this case the EOF condition can be detected via the <b>-1</b> value returned. The updated file must be closed with <b>OUT}:n</b> operation.
+<p>The <code>"filename" OUT{:n</code> form of OUT function create the given file (destroy contents if the file exists) and open it for output, so posterior <code>OUT:n</code> operations (with <i>the same <b>N</b> number</i>) send output to such a file. The <code>OUT{+:n</code> form preserve file contents if it exists, so the new output is <i>appended</i> to the end of the file. Both forms of open an output file must be closed with <code>OUT}:n</code> operation, and also the update file opened with <b>IN{+?:n</b>. If an output file can not be opened or created for any reason, the program is aborted.
+<p>This is a simple example that copy the contents of one text file into another one (similar to COPY command):
+<pre>
+printf /" "%s\n" ( "oldfile.txt" IN{?:3 &lt; "newfile.txt" OUT{:4 &lt; ( 1000 IN?:3 OUT:4 &lt;* : ) OUT}:4 ; &lt; "File not found" OUT )
+</pre>
+<p><hr>
+   <table border="1" rules="all" cellpadding="5" align="right">
+   <caption><b><a name="Forms_of_SEEK#_function">Forms of SEEK# function</a></b></caption>
+      <tr>
+         <th>Origin</th>
+         <th>Input</th>
+         <th>Output</th>
+      </tr>
+      <tr>
+         <td>From start</td>
+         <td>SEEK0</td>
+         <td>SEEK4</td>
+      </tr>
+      <tr>
+         <td>From current</td>
+         <td>SEEK1</td>
+         <td>SEEK5</td>
+      </tr>
+      <tr>
+         <td>From end</td>
+         <td>SEEK2</td>
+         <td>SEEK6</td>
+      </tr>
+   </table>
+<p><code>SEEK#:n:p</code> function moves the file pointer of the input (#=0,1,2) or output (#=4,5,6) handle <b>N</b> from the <i>origin</i> indicated by the <b>#</b> digit (0/4 = from start of file, 1/5 = from current position, 2/6 = from end of file) plus the position (<i>offset</i>) given in the integer storage register <b>P</b>. The table at right side show the six forms of SEEK# function.
+<p> <b>FINDSTR /O "^" filename.txt</b> cmd.exe command returns the positions of the beginning of all lines in a file. A printf.exe program can get these numbers and use <b>SEEK0:n:p</b> to read the lines of a text file in random order. If a file have fixed-length <i>records</i> (lines), then the random access can be directly performed with no previous calculation of line positions, just with the calculation of: <b>position = recordNum * recordLength</b>. If a file is open with <b>IN{+?:n</b> update access, then it could be updated <i>in just a few records</i> and immediately close the file. If the file is big, this method could save a lot of process time (because it avoids to copy all unmodified file contents, as usually done in Batch files).
+<p>If <b>P</b> is not given, then the file pointer is moved to the point indicated just by <b>#</b>; in this case the final pointer position is returned in the stack as an integer number. For example, to get the size of a file:
+<pre>
+printf "The size of file \"%s\" is: %u bytes\n" "filename.txt" IN{?:1 SEEK2:1
+</pre>
+<p>You can use this method to get the start of all lines in a file (instead of <b>FINDSTR /O ...</b> command), reading each line and storing the current position via <b>SEEK1:n</b>. You can read a more technicall description of SEEK capabilities at <a href="https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/fseek-fseeki64?view=msvc-170">this page</a>.
+<p><hr>
+<p>The <code>OUT}+:n</code> (<i>Set size</i> and close) form of OUT function change the size of the file to the current position of the file pointer. If you open/create an output file, move the file pointer beyond the EndOfFile and close it with <i>Set size</i> option, the file is increased to such a size. This behavior permits to create a large file in a very simple way. For example, to create a file with one hundred thousand bytes:
+<pre>
+printf "File \"%s\" created with %u bytes\n" "filename.txt" OUT{:3 100000 ]5 SEEK4:3:5 OUT}+:3
+</pre>
+<p>The new space in the file is filled with binary zeros. However, if you open the file with Windows Notepad, the zeros will be converted into spaces.
+<p>If you move the file pointer of an output file <i>before</i> the EndOfFile and close the file with <i>Set size</i>, the file contents is truncated at such a position. For example, to truncate a large file at 10 Kb:
+<pre>
+printf "File \"%s\" truncated to %u bytes\n" "filename.txt" OUT{+:8 10 1024 * ]2 SEEK4:8:2 OUT}+:8
+</pre>
+<p>You can also open the file with <code>IN{+?:n</code> (<i>update access</i>) in order to truncate it (preserving previous file contents). You can read more details about <i>Set size</i> option at <a href="https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setendoffile">this page</a>.
+<p>Note that all these file handles are independent from each other. A program can open 10 input files and 10 output files managed via 0..9 handle numbers, plus 20 nested CMD input pipes.
+<h3><a name="Named_Code_Blocks" style="text-decoration:none">Named Code Blocks</a> </h3>
+<p>You can give <i>a name</i> to an external (not nested) code block. Doing that allows to enter (<i>define</i>) the code block just once and <i>use it</i> several times later. In standard programming languages this feature is called <i>subroutine</i> or <i>procedure</i>; we will also use such terms here.
+<p>The <i>subroutine name</i> is comprised of up to 4 characters (letters or digits <b>only</b>, starting with letter, ignoring case) that is placed before the BEGIN <code>(</code> delimiter of the code block with <i>no spaces</i> between them. You can insert more characters for legibility, but only the first four comprises the name.
+<p>Definition of named code blocks must appear <i>before</i> the "format string". When you <i>define</i> a subroutine its operations are <i>not</i> executed, they are stored. To later <i>execute</i> or <i>invoke</i> or <i>call</i> the stored code block, just write its name in the same way as any predefined function. For example:
+<pre>
+printf  First( "First" )  Second( "Second" )  /" "Two strings: %s - %s\n"  First Second OUT &lt; &lt;  First First OUT &lt; &lt;  Second Second OUT
+</pre>
+<p>The example show:
+<p><b>Two strings: First - Second<br>Two strings: First - First<br>Two strings: Second - Second</b>
+<p>The subroutine name can not be the same of a predefined operation. If you do so, the subroutine is ignored and the name will always call the predefined function. Two subroutines can not have the same name either; remember that the subroutine name is just the first <i>four characters</i>.
+<p>A first use of this feature is to give a name to frequently used <i>constants</i>. When numbers are directly used there may be doubts about their meaning. If the constant has a descriptive name, its use is much clearer. For example:
+<pre>
+printf  CR( 13 )  LF( 10 )  TAB( 9 )  BS( 8 )  SPACE( 32 ) ...
+</pre>
+<p>In this way, a 10 that is used as a "number ten" can be differentiated from a 10 that represents an ASCII LineFeed character. In <a href="printf - GetKey codes.txt">printf&nbsp;-&nbsp;GetKey&nbsp;codes.txt</a> file there are definitions as named code blocks of all special keys returned by GETK operation.
+<p>In the same way, you can give a name to a specification constant that is used multiple times in your program. When you want to change this specification, you must change its value <i>in only one place</i> (the subroutine definition) and the change will be reflected everywhere that constant is used.
+<p>Another use of subroutines is to define <i>commonly used</i> code segments that will provide useful non-predefined features, or to divide a large program into logical units to increase the program's legibility. A simple example:
+<pre>
+printf  Hypot( SQR XCHG SQR ADD SQRT )  "The hypotenuse of 3. and 4. is: %.2f\n" 3. 4. Hypot OUT
+</pre>
+<p>All the example programs shown in this document can be defined as subroutines and you could group they in a file that comprises a <i>function library</i>. This makes possible to just copy the desired ready-to-use subroutines to your program. Besides, named code blocks allows <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)"><i>recursive invocations</i></a>. A couple examples of recursive subroutines are shown next.
+<p>The classic example of recursion in programming is compute the <a href="https://en.wikipedia.org/wiki/Factorial">factorial</a> of an integer N, written <b>N&#33;</b>, that is the product of all integers from N down to 1. For example: <b>5&#33; = 5 x 4 x 3 x 2 x 1</b> that is equal to 120, or <b>4&#33; = 4 x 3 x 2 x 1</b> that is 24. From these formulas is easy to see that <b>5&#33; = 5 x 4&#33;</b> and, in general: <b>N&#33; = N x (N - 1)&#33;</b>; this is a <i>recursive definition</i> of a formula in terms of itself. Note that <b>1&#33; = 1</b> that is the "end of the numbers", although, <i><a href="https://en.wiktionary.org/wiki/by_definition">by definition</a></i>, <b>0&#33; = 1</b>.
+<p>This definition is incomplete because it does not specify <i>when the recursion ends</i>. A more complete definition would be this one: <b>N&#33; = IF N==0 THEN 1 ELSE Nx(N-1)&#33;</b> (in C language notation: <b>fact(int n) { return( (n==0) ? 1 : n*fact(n-1) ) }</b>).
+<p>The way to <i>implement</i> this recursive formula in a printf.exe program is to check if N is 0, in which a case the result is 1 (change the 0 by 1 via increment and terminate); otherwise, multiply N by a <i>recursive invocation</i> of the same subroutine over N-1, that is: duplicate N, decrement it (N-1), get the factorial (N-1)&#33; and multiply N x (N-1)&#33;
+<pre>
+printf /"  Fact( ==0? ++ ; > -- Fact * )  "Factorial of %i is %i\n" 5 > Fact OUT
+</pre>
+<p>Note that this example uses <i>integer</i> numbers, so it can calculate factorials up to the number 12. Also, note that this method can <i>not</i> be translated to floating point numbers because the FPU stack can only keep 8 numbers.
+<p><hr>
+<p>Let's review a different recursive example. As said before, the <b>CMD</b> function can be <i>nested</i> in several parallel and concurrent executions. We could make good use of this function to develop a recursive subroutine that traverses a directory tree. To do that, the subroutine only needs to display the subdirectories of the current directory. To display the complete tree, it is enough to call itself with each one of the found subdirectories. Here it is:
+<pre>
+printf /" TREE( "DIR /A:D /B" CMD FMT{ "%.*s%s\n" ( 80 IN? &lt; [0 [2 }3 OUT CD 3 ]+0 &lt;*  TREE  ".." CD 3 ]-0 &lt;* : ) FMT} )  "" ' ' 30 dupc ]2 &lt;  TREE
+</pre>
+<p>The subroutine <code>TREE(</code> starts by processing the subdirectories of the current folder using the function <code>"DIR /B /A:D" CMD</code> and then prepares the format <code>FMT{ "%.*s%s\n"</code> to be used. So, for each subdirectory read with <code>( 80 IN? &lt;</code>, output it to the screen with <code>[0 [2 }3 OUT</code> (more on that later), change the current folder with <code>CD</code> to get into that subdirectory (add 3 to register 0 with <code>3 ]+0 &lt;*</code>) and processes that subdirectory in the same way via a recursive <code>TREE</code> call. When a CMD's subdirectories are finished (that is, when a recursive call returns), return the current directory to the previous level of subdirectories with <code>".." CD</code> (subtracts 3 from register 0 with <code>3 ]-0 &lt;*</code>) and the process continues with the following folder <code>:</code> from the previous CMD. When the first CMD finishes <code>)</code>, the format and the block of the subroutine <code>FMT} )</code> are closed.
+<p>The "main program" does not use any <code>""</code> format; just creates a string with 30 whitespaces <code>' ' 30 dupc</code> that stores <code>]2 &lt;</code> in register 2 and calls <code>TREE</code> for the first time. This spaces string is used to display a justification margin using the format <b>FMT{ "%.*s%s\n"</b> (as described <a href="#asterisk_format">here</a>) which increments in 3 spaces for each level of subdirectories found. The <b>0</b> register contains the margin value and the 3 elements (margin, spaces and subdirectory) are correctly shown with <code>[0 [2 }3 OUT</code>.
+<p>This example can be enriched by also showing the files in each directory, or by showing a justification margin made up of lines that more clearly marks the nesting of subdirectories (as in the TREE cmd.exe's command). The didactic form of this program, and the modification that also show the files, are in <a href="printf%20Example%20A%20-%20MyTree.bat">printf Example A - MyTree.bat</a> file.
+<p>As usual in block programming, a named code block can <i>also</i> work as a Test? if a question mark is added at its end when the named code block <i>is invoked</i>; remember that you can not include any special character <i>in the definition</i> of a named code block. The method used to return a True or False result from the named code block is described in the next section.
+<p><hr>
+<p><i>Author's Note</i>: Before moving on to the last section of this document, I would like to mention an important point. If you did not <i>knew</i> programming and have successfully completed the study of this manual up to this point, know that you now have the foundations that will allow you to adequately study any modern programming language. The apparent simplicity with which these topics have been presented does not imply that the concepts themselves are simple; what is simple is <i>the way</i> to present them using the printf.exe scheme as an excellent educative tool.
+<p>If you already had programming experience I want to point out how <i>simple</i> it is to write small code in block programming. With very few elements important results can be achieved, which is a result of the design of printf.exe and its predefined operations. Once the teething problems of printf.exe's unusual and a little cryptic notation are overcome, it can be used to write programs that solve many of the everyday problems faced by personal computer users. I want to encourage you to continue using printf.exe in this regard.
+<p>Already registered as a printf.exe user? I suggest you take a look at the <a href="Register your copy of printf.exe.html">registration page</a> right now.
+<h3><a name="Boolean_Operators" style="text-decoration:none">Boolean Operators</a> </h3>
+<p><i>Advanced topic</i>: In this section the last operational rule of printf.exe block programming is described.
+<p>Usually when a nested code block ends, the control flow continue normally to the next operation after the block. However, a nested code block can <i>also</i> work as a Test, in the same way as an Operator/Test combo. The way to enable this behavior is the same as before: just add a question-mark character to the <code>)</code> block's END delimiter. For example:
+<pre>
+printf "%s  %s\n"  ( "Normal block"  ( "This block works as Test" ; )?  /" &lt; "Another" ) OUT
+</pre>
+<p>Simple&#33; Isn't it? But in this case, how the nested code block condition will be True or False? The rule is really simple:
+<p><i>If the <code>)?</code> block's END delimiter is reached, the nested block is False; otherwise, the nested block is True.</i>
+<p>This means that a nested block is True when the <code>;</code> QUIT instruction is executed in it, or when a Test? inside the block was False and there is not any QUIT instruction ahead. In both cases the <code>)?</code> END delimiter is not reached, is skipped. You can visually review this rule in the <a href="#rules_scheme">rules scheme image</a> at the beginning of this chapter.
+<p>In above example, the <code>( "This block works as Test" ; )?</code> block terminate because the QUIT instruction, so the nested block is True. In this case the control continue, the <code>&lt;</code> (<i>Drop</i>) operator eliminate the last string, the <code>"Another"</code> one is entered and finally <code>OUT</code> instruction shows: <b>Normal&nbsp;block&nbsp;&nbsp;Another</b>.
+<p>If we delete the QUIT instruction from the nested block this way: <code>( "This block works as Test"  )?</code> then the block's END delimiter is reached, so the nested block is False. The control is transfered forward until exit from the base block, the <code>OUT</code> is executed and shows: <b>Normal&nbsp;block&nbsp;&nbsp;This&nbsp;block&nbsp;works&nbsp;as&nbsp;Test</b>.
+<p>A larger example could be the <a href="#animation_program">animation program</a> seen above modified in order to use conditional code blocks instead of a Flag:
+<pre>
+rem Original animation program based on F1 Flag:
+printf /" "\b %c"  SF1  100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? CF1 ) &lt;  &lt;  )  F1? : ) 
+
+rem Modified program that use conditional code blocks instead:
+printf /" "\b %c"       100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? ; &lt;  &lt;  )?   )?    : )
+</pre>
+<p>In original program the whole process is repeated while F1 flag is True, and the action of Enter (13) key is just turn F1 off. Let's review the final part of modified program: <code>( 13 ==? ; &lt;  &lt;  )?   )?    : )</code> If the key is <i>not</i> Enter, execute two Drops and reach the end of the first conditional nested code block, so it ends with False result. This result cause to skip after the end of the second conditional block, so the <code>:</code> REPEAT is executed and the whole process is repeated again. When the key is Enter, the <code>;</code> QUIT is executed and the control jumps after the block END, so the END of the <i>second</i> conditional nested code block is reached and its result is False. This result cause to skip after the final <code>:</code> REPEAT instruction and the process ends.
+<p>This same behavior apply to a named code block (subroutine). If a subroutine is called as a Test? (with a question-mark character added at end of its name), then its True-False result is given by the way the named code block ends: if the <code>)</code> block's END delimiter is reached, the NAME? subroutine is False; otherwise, the NAME? subroutine is True.
+<p>If we analyse it, we will realize that this behavior gets <i>the opposite result</i> of a Test? placed inside a (block)? when there is not any <b>QUIT</b> instruction placed after the Test?: if the Test? is True the (block)? is False, if the Test? is False the (block)? is True. This mechanism allow us to assemble the standard Boolean operators (AND, OR and NOT) in a very simple way.
+<p><br>
+<p><b>NOT</b> Boolean operator: <code>( Test? )?</code>
+<p>If Test? is True the control flow continue and reaches END delimiter, so the result of the "NOT" block is False.
+<p>If Test? is False the control flow is transfered forward until pass the END delimiter, so the "NOT" block is True.
+<p><br>
+<p><b>AND</b> Boolean operator: <code>( Test1? Test2? ; )?</code>
+<p>If Test1? is True the control flow continue:<br>- If Test2? is True the control flow continue, so QUIT is executed and the (block)? result is True.<br>- If Test2? is False the control is transfered forward until pass QUIT, so END is reached and the block result is False.
+<p>If Test1? is False the control is transfered forward until pass QUIT, so END is reached and the block result is False.
+<p>In other words: only when <i>all conditions</i> are True, the "AND" block result is True; this behavior can be easily extended to more than two tests/conditions. The "AND" block works evaluating the Tests? in series and stop at the first one that is False.
+<p><br>
+<p><b>OR</b> Boolean operator: <code>( Test1? ; Test2? ; )?</code>
+<p>If Test1? is True the control continue, QUIT is executed and the block result is True. If Test1? is False the control is transfered forward until pass next QUIT, so Test2? is evaluated.
+<p>If Test2? is True the control continue, QUIT is executed and the block result is True. If Test2? is False the control is transfered forward until pass next QUIT, so END is reached and the block result is False.
+<p>In other words: if <i>any</i> condition is True, the "OR" block result is True; only when <i>all</i> conditions are False, the "OR" result is False. This behavior can be easily extended to more than two tests/conditions. The "OR" block works evaluating the Tests? in series and stop at the first one that is True.
+<p><br>
+<p>You should note that AND and OR Boolean operators assembled in this way have an implicit <a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation"><i>Short-circuit evaluation</i></a>: as soon as the result of the block is known (False for AND, True for OR), the rest of tests in the block are <i>not</i> evaluated.
+<p><hr>
+<p>In the case of <b>XOR</b> Boolean operator, there is not a way to assemble it as simple as before. The result (<i><a href="https://en.wikipedia.org/wiki/Truth_table">truth table</a></i>) of XOR operator over Test1 and Test2 conditions is this:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <td><b>Test1</b></td>
+         <td><b>Test2</b></td>
+         <td>Test1 <b>XOR</b> Test2</td>
+      </tr>
+      <tr>
+         <td>True</td>
+         <td>True</td>
+         <td>False</td>
+      </tr>
+      <tr>
+         <td>True</td>
+         <td>False</td>
+         <td>True</td>
+      </tr>
+      <tr>
+         <td>False</td>
+         <td>True</td>
+         <td>True</td>
+      </tr>
+      <tr>
+         <td>False</td>
+         <td>False</td>
+         <td>False</td>
+      </tr>
+   </table>
+<p>XOR result can be obtained via the following expression that only includes AND, OR and NOT Boolean operators: <code>(Test1 OR Test2) AND NOT (Test1 AND Test2)</code>. The translation of such an expression into block programming is this:
+<pre>
+(  (  Test1? ; Test2? ; )?  ( (  Test1? Test2? ;  )? )?  ;  )?
+ \  \__Test1_OR_Test2__/     \ \_Test1_AND_Test2_/  /   /  /
+  \                           \_NOT_the_above_AND__/   /  /
+   \                                                  /  /
+    \__The last QUIT completes the AND of these blocks__/
+</pre>
+<p>In the case of XOR Boolean operator, it is not easy to apply it to more than two tests. If we <a href="https://stackoverflow.com/q/6228252/778560">extend the XOR concept</a> to more than two operands, then the result is True when <i>precisely one</i> of the conditions is True, and False in any other case. Note that this is <i>not</i> the same of apply XOR several times over two operands or partial results each time. For example, a XOR with 3 tests/conditions:
+   <table border="1" rules="all" cellpadding="5" align="left">
+      <tr>
+         <td><b>T1</b></td>
+         <td><b>T2</b></td>
+         <td><b>T3</b></td>
+         <td><b>XOR</b>(T1,T2,T3)</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0</td>
+         <td>0</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>1</td>
+         <td>0</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>1</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p><br>
+<p>An interesting exercise is to define the Boolean expression that obtain this result using just AND, OR and NOT operators. If you give up, here it is a possible solution:
+<p><code>( T1 AND NOT (T2 OR T3) )  OR  ( (NOT T1) AND (T2 OR T3) AND NOT (T2 AND T3) )</code>
+<p>We could simplify this expression a little if we also use the XOR operator over two operands seen before:
+<p><code>( T1 AND NOT (T2 OR T3) )  OR  ( (NOT T1) AND (T2 XOR T3) )</code>
+<p>The reader is invited to convert these Boolean expressions into block programming code.<br clear="all">
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Appendices" style="text-decoration:none">Appendices</a> </h2>
+<h3><a name="printf.exe_installation_and_support" style="text-decoration:none">printf.exe installation and support</a> </h3>
+<p>The installation of printf.exe package is very simple and just consists in download the printf.zip file and extract its contents in a given folder, so no status nor registry in the computer is modified.
+<p>This is a summary of the files included in the package:
+<pre>
+AlgebraicToRPN.bat		Converts algebraic expressions into RPN
+GETARGS.obj			- Used in Appendix 2
+GetStandardForm.bat		Converts printf.exe Didactic Form to shorter standard form
+printf - GetKey codes.txt	Codes returned by GetKey function
+printf Example *.bat		Several printf.exe example programs in .BATch files
+printf.exe			The printf.exe application
+printf.exe - Arithmetic and Programming.html	English user's manual
+printf.exe - Aritmética y Programación.html	Spanish user's manual
+printf.obj			- Used in Appendix 2
+printfHelp.bat			printf.exe on-screen help
+printfMake.bat			- Used in Appendix 2
+printfStorage.asm		- Used in Appendix 2
+Register your copy of printf.exe.html		English register page
+Registra tu copia de printf.exe.html		Spanish register page
+ShowKeyCodes.bat		Generate GetKey operator codes
+</pre>
+<p>It is suggested to start using this package from the same folder where it was installed. Later, you could include the printf.exe full path into <b>PATH</b> system variable in order to use this application from any other folder.
+<p><b>NOTE</b>: Some antivirus programs flags printf.exe as "potentially dangerous". This is a false positive message caused, in first place, because the source code of printf.exe is written in assembly language. If you downloaded the printf.zip package from <a href="https://www.apaacini.com">apaacini.com</a> site, then it is virus free for sure.
+<p>If you have any question or doubt about printf.exe usage, you can review <a href="https://www.dostips.com/forum/viewtopic.php?f=3&t=7312">DosTips.com printf.exe</a> page. Read the thread from the beginning; it is likely that your question had been posted and answered before. Otherwise, just write your question in a clear way and post it as New Reply; include an example of the printf.exe operation you have problems with. It is convenient that you register as user in DosTips.com site before post your question.
+<p>It is also suggested that you <a href="Register your copy of printf.exe.html">register</a> as printf.exe program user.
+<h3><a name="Increasing_storage_space" style="text-decoration:none">Increasing storage space</a> </h3>
+<p>The number of storage registers, both integer and floating point, and the number of characters reserved for strings can be increased to any value you wish following the procedure described in this section; however, if these values are excesive and the computer have not enough memory, a run-time error will be issued.
+<p>You can also increase the number of nested CMD functions, the number of nested FMT{ marks, and the number of named code blocks (subroutines) that can be defined.
+<p>You must start by installing the MASM32 assembler. Open the <a href="https://www.masm32.com">MASM32 SDK</a> link and complete the download and installation process; this should take just a couple minutes. When process is completed, the assembler should be installed in its default folder: <b>C:\masm32\</b>
+<p>The values that sets the printf.exe storage amounts are defined in <b>printfStorage.asm</b> file. You must edit such a file with a pure-text editor, like Windows Notepad. If you use another text editor, be sure that the file be saved as text with no format and ANSI encoding. These are the original values you can modify:
+<pre>
+	IREGS		EQU	20		;Number of Integer storage registers
+	FREGS		EQU	20		;Number of Floating Point storage registers
+	CHARS		EQU	10 * 1024	;Size of memory block for string data = 10 KB
+	MAX_FORMAT	EQU	40		;Maximum nested FMT{ marks x 2
+	MAX_CMDSTDIN	EQU	20		;Maximum number of nested CMD functions (redirected Stdin's)
+	NAMEDBLOCK_LEN	EQU	32		;Allowed number of "namedBlocks" (subroutines)
+</pre>
+<p>Do NOT modify any other part of this file. After the modified file is saved, open a cmd.exe window and execute <code>printfMake.bat</code> program just once. That is it&#33;
+<p>printf.exe application also allows to <i>retrieve</i> the first three values. For example:
+<pre>
+printf "Integer Registers: %i\tFloat Registers: %i\tCharacters: %i\n" IREGS FREGS CHARS
+</pre>
+<p>This feature makes possible that a program check if there are enough memory for its operation and, if not, show a descriptive message and cancel process instead of cause a run-time error. For example:
+<pre>
+printf "%s\n"    ^
+   ( 1500 IREGS &lt;?   ^
+      "Error: The number of integer registers must be incremented to 1500" OUT   ^
+   ;   ^
+      "Enough registers, proceed..." OUT   ^
+      1 2 3 ETC...   ^
+   )
+</pre>
+<h3><a name="Error_Messages" style="text-decoration:none">Error Messages</a> </h3>
+<p>In this appendix the error messages of printf.exe application are described. When one of these errors happens, printf.exe ends with an ERRORLEVEL value equal to the error number with negative sign.
+   <ol style="list-style-type: decimal">
+      <li> NOT ENOUGH MEMORY&#33;<br>
+<p>    - The computer have <i>very little</i> available memory (very unlikely).<br>
+<p>    - You have requested a <i>very high</i> number of storage registers/characters.
+      <li> Unclosed 'Char, "string or /*comment<br>
+<p>    The closing character of a Char', String" or Comment*/ is missing. Note that an unclosed string or comment can only be detected until the program ends.
+      <li> Wrong or too large number<br>
+<p>    A number is bad written. Refer to <a href="#Data_Types">Data Types</a> for the proper syntax.
+      <li> Invalid operator<br>
+<p>    This error is usually a typo. Remember to separate all operators with one or more spaces. This error may also happen when a "long" operator is bad written, like <code>]--.3?</code>.
+      <li> Undefined function or variable<br>
+<p>    This error is usually a typo. Check the spelling. This error may also happen when a "long" function is bad written, like <code>IN{+?:6</code>. Remember that if you use a Batch variable value as a string, such a variable <i>must be defined</i>.
+      <li> Maximum number of operations exceeded<br>
+<p>    More than 20 levels of active <b>FMT{</b> marks or nested <b>CMD</b> functions, or more than 32 Blocks with Name (subroutines) defined. See the Appendix 1 for instructions about incrementing these limits.
+      <li> ":" Repeat, ";" Quit, ")" End or false Test? outside any (Block<br>
+<p>    These operations: <code>: ; )</code> and a Test? that is False can only be used inside a code block.
+      <li> Unclosed Block at nesting level #<br>
+<p>    The right parenthesis of an open code block is missing. Note that this error can only be detected until the program ends. The reported block's nesting level can help to identify the unclosed block.
+      <li> This NAME( Block can not be defined here<br>
+<p>    The named code blocks (subroutines) must be defined <i>before</i> the "format" string and must be external (not nested) code blocks. Two named code blocks can not have the same name (first 4 characters).
+      <li> Too many (recursive) subroutine calls<br>
+<p>    This error is usually a loop of recursive invocations with no exit. Check <i>the condition</i> that breaks the recursive invocations cycle. The maximum number of pending subroutine returns is about 128,000.
+      <li> Can not create/open output file<br>
+<p>    An <i>output</i> file tried to be opened was not found or can not be created. This is usually a typo that inserts an illegal character in the file name, or a non-existent subdirectory. Remember that you can create a directory via <b>CMD</b> function. The same "not found" error on an <i>input</i> file is detected in the <b>IN{?:n</b> open operation/test? itself.
+      <li> Input/Output operation over a not open handle<br>
+<p>    An input <b>IN?:n</b> or output <b>OUT:n</b> file operation uses a handle that was not previously open. Check that the N handle number used in open and I/O operations be the same.
+   </ol>
+<p>After printf.exe show an error message, you can show its corresponding description executing this line: <code>printfHelp %errorlevel%</code> You can insert this line in an <b>ERR.BAT</b> file and then just execute: <code>ERR</code>
+<p><hr>
+   <ul id="horList" style="text-align:center;">
+      <li style="padding-right:3em;"><a href="#Introduction" style="text-decoration:none"><font color="#333333">Introduction</font></a>
+      <li style="padding-right:3em;"><a href="#Formatted_Output" style="text-decoration:none"><font color="#333333">Formatted</font></a>
+      <li style="padding-right:3em;"><a href="#Arithmetic_Operations" style="text-decoration:none"><font color="#333333">Arithmetic</font></a>
+      <li style="padding-right:3em;"><a href="#Block_Programming" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;&nbsp;Block&nbsp;&nbsp;&nbsp;</font></a>
+      <li style="padding-right:3em;"><a href="Register your copy of printf.exe.html" style="text-decoration:none"><font color="#333333">Register your</font></a>
+   </ul>
+   <ul id="horList" style="text-align:center;">
+      <li style="padding-right:3em;"><a href="#Introduction" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a>
+      <li style="padding-right:3em;"><a href="#Formatted_Output" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output</font></a>
+      <li style="padding-right:3em;"><a href="#Arithmetic_Operations" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Operations</font></a>
+      <li style="padding-right:3em;"><a href="#Block_Programming" style="text-decoration:none"><font color="#333333">Programming</font></a>
+      <li style="padding-right:3em;"><a href="Register your copy of printf.exe.html" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;printf.exe</font></a>
+   </ul>
+<br clear="all">
+</body>
+</html>

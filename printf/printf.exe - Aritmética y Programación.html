@@ -1,0 +1,2149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- This file was created using TextToHtml.bat conversion program written by Antonio Pérez Ayala (aka Aacini) -->
+<html>
+<head>
+   <title>printf.exe - Aritm&eacute;tica y Programaci&oacute;n</title>
+   <style type="text/css">
+   h1 { margin-left: -3%; }
+   h2 { margin-left: -3%; margin-top: 2em; }
+   body { 
+      margin-left: 6%; 
+      margin-right: 6%; 
+      color: black;
+      background: white;
+      font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+   }
+   code {
+      color: black;
+      background:  #CCDDFF;
+      font-weight: bold;
+      white-space: pre; 
+      font-family: "Courier New", Monaco, monospace;
+      font-size: 1.05em;
+   }
+   pre {
+      color: black;
+      background:  #CCDDFF;
+      font-weight: bold;
+      white-space: pre; 
+      font-family: "Courier New", Monaco, monospace;
+      font-size: 1.05em;
+      border: none;
+      padding: 0.3em;
+      width: 100%;
+      overflow: auto;
+      scrollbar-base-color: #99CCFF;
+   }
+   kbd {
+      font-size: 0.8em;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 1px solid #999999;
+      border-radius: 3px;
+      padding: 0.1em 0.6em;
+      margin: 0 0.1em;
+      display: inline-block;
+      white-space: nowrap;
+   }
+   #horList li {
+      display: inline;
+   }
+   </style>
+</head>
+<body>
+<h1>printf.exe - Aritm&eacute;tica y Programaci&oacute;n</h1>
+<p>Actualmente se asocia el t&eacute;rmino <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n">programaci&oacute;n de computadoras</a> con la creaci&oacute;n de juegos de video, pero &eacute;ste es un t&eacute;rmino que engloba una muy extensa gama de aplicaciones en muy diversas &aacute;reas, aunque en todos los casos ello implica el uso de un <a href="https://es.wikipedia.org/wiki/Lenguaje_de_programaci%C3%B3n">lenguaje de programaci&oacute;n</a>. Aprender a utilizar un lenguaje de programaci&oacute;n requiere ciertos conocimientos t&eacute;cnicos y/o habilidades que algunas personas simplemente no tienen, ya sea por su &aacute;rea de experiencia o por su edad.
+<p>Existen varias herramientas dise&ntilde;adas para "ense&ntilde;ar programaci&oacute;n" a gente sin experiencia (muchas de ellas orientadas a ni&ntilde;os); sin embargo, estas herramientas usualmente no proporcionan los elementos necesarios para posteriormente aplicarlos en el estudio de un lenguaje de programaci&oacute;n convencional. Parte del problema estriba en que dichas herramientas se enfocan en el aspecto de "diversi&oacute;n" del aprendizaje, por lo que incluyen un gran n&uacute;mero de gr&aacute;ficas, sonido, animaciones, etc. cuyos elementos se ensamblan visualmente como si fuera un juego, pero descuidan los aspectos mas t&eacute;cnicos de este conocimiento. No hay que olvidar que la creaci&oacute;n de un programa que funcione correctamente no tiene porqu&eacute; ser "divertida", sino que representa un reto t&eacute;cnico importante.
+<p>Una herramienta mas simple de aprender y aplicar ser&iacute;a una sin juegos, sonidos ni animaciones, pero que funcione en base a <i>comandos/&oacute;rdenes/instrucciones</i> de la misma manera que un <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n_imperativa">lenguaje <i>imperativo</i> de programaci&oacute;n</a>. Esta herramienta puede ser dise&ntilde;ada espec&iacute;ficamente con un m&iacute;nimo de reglas y facilidades, pero que a&uacute;n as&iacute; proporcione los mismos conceptos y forma de aplicarlos de los lenguajes de programaci&oacute;n; esto permitir&iacute;a que un mayor n&uacute;mero de personas que normalmente no son capaces de acceder a los m&eacute;todos convencionales para aprender programaci&oacute;n lo hagan.
+<p><b>printf.exe</b> es una aplicaci&oacute;n de consola para Windows que, en su forma m&aacute;s b&aacute;sica, permite mostrar mensajes y generar resultados de operaciones aritm&eacute;ticas que aparecen con un cierto formato. Los resultados con formato se muestran usando la muy conocida funci&oacute;n <b>printf</b> del lenguaje de programaci&oacute;n C, de la cual hay multitud de ejemplos de uso en varios sitios de la red. Las operaciones aritm&eacute;ticas se eval&uacute;an mediante una notaci&oacute;n sencilla que se ajusta perfectamente a la forma de uso de printf, haci&eacute;ndolas un complemento natural para esa funci&oacute;n. Esta notaci&oacute;n se tom&oacute; de un tipo de calculadora (HP) que tradicionalmente se ha venido utilizando como una herramienta b&aacute;sica de programaci&oacute;n orientada a personas sin experiencia (usualmente alumnos de preparatoria o secundaria) de la cual existen multitud de ejemplos de uso en internet. De esta manera, las bases de la aplicaci&oacute;n printf.exe se apoyan en dos pilares ampliamente conocidos en el &aacute;mbito de la programaci&oacute;n desde hace muchos a&ntilde;os: la funci&oacute;n <b>printf</b> y las calculadoras <b>HP</b>.
+<p>El uso avanzado de printf.exe incluye manejo de cadenas de caracteres, por lo que puede ser aplicado en muchas tareas de procesamiento de texto. Adem&aacute;s, la versi&oacute;n avanzada de printf.exe cuenta con el esquema de programaci&oacute;n mas simple que existe, similar al de las calculadoras HP del cual existen literalmente miles de ejemplos en la red, ya que este tipo de programas han sido creados y publicados por la comunidad desde hace m&aacute;s de 40 a&ntilde;os. Esto permite que el usuario aprenda los principios b&aacute;sicos de programaci&oacute;n en una forma casi tan sencilla como aprendi&oacute; a efectuar operaciones aritm&eacute;ticas en la calculadora HP.
+<p>M&aacute;s importante a&uacute;n, el esquema avanzado de programaci&oacute;n de printf.exe permite emular todas las figuras cl&aacute;sicas de la programaci&oacute;n estructurada de los lenguajes de programaci&oacute;n modernos, pero est&aacute; basado en tan s&oacute;lo <i>cuatro elementos</i> y un par de reglas simples sobre la evaluaci&oacute;n de condiciones. &Eacute;ste es un esquema muy sencillo de entender y aprender que, sin embargo, proporciona los mismos conocimientos que se requieren durante el uso de un lenguaje estructurado de programaci&oacute;n moderno.
+<p>La extensa documentaci&oacute;n no asume ning&uacute;n conocimiento previo sobre estos temas por lo que los ejemplos son sencillos y las explicaciones detalladas. El manual de usuario comienza con explicaciones b&aacute;sicas y va avanzando hacia temas cada vez mas profundos a medida que se presentan las facilidades avanzadas de esta herramienta. De esta manera la aplicaci&oacute;n printf.exe puede ser utilizada como una introducci&oacute;n a la programaci&oacute;n de computadoras que no requiere de una base de conocimientos especializada por parte del usuario; tan s&oacute;lo un peque&ntilde;o inter&eacute;s en matem&aacute;ticas.
+<p>Para una mejor experiencia, se sugiere que <a href="Registra tu copia de printf.exe.html">registre su copia</a> del programa printf.exe.
+<br><h4><a name="Contenido">Contenido</a></h4>
+<ol>
+<li><a href="#Introducción" style="text-decoration:none">Introducción</a> 
+<li><a href="#Mostrar_Texto_con_Formato" style="text-decoration:none">Mostrar Texto con Formato</a> 
+<li><a href="#Operaciones_Aritméticas_y_de_Cadenas" style="text-decoration:none">Operaciones Aritméticas y de Cadenas</a> 
+<ol>
+<li><a href="#Tipos_de_Datos" style="text-decoration:none">Tipos de Datos</a> 
+<li><a href="#Operaciones_Enteras" style="text-decoration:none">Operaciones Enteras</a> 
+<li><a href="#Operaciones_de_Punto_Flotante" style="text-decoration:none">Operaciones de Punto Flotante</a> 
+<li><a href="#Registros_de_Almacenamiento" style="text-decoration:none">Registros de Almacenamiento</a> 
+<li><a href="#Manejo_del_Stack" style="text-decoration:none">Manejo del Stack</a> 
+<li><a href="#Borrar_el_stack_de_la_FPU" style="text-decoration:none">Borrar el stack de la FPU</a> 
+<li><a href="#Operaciones_con_Cadenas" style="text-decoration:none">Operaciones con Cadenas</a> 
+<li><a href="#Punteros_de_Caracteres" style="text-decoration:none">Punteros de Caracteres</a> 
+</ol>
+<li><a href="#Programación_por_Bloques" style="text-decoration:none">Programación por Bloques</a> 
+<ol>
+<li><a href="#Operaciones_de_Entrada/Salida" style="text-decoration:none">Operaciones de Entrada/Salida</a> 
+<li><a href="#Bloque_de_Código" style="text-decoration:none">Bloque de Código</a> 
+<li><a href="#Transferencia_de_Control" style="text-decoration:none">Transferencia de Control</a> 
+<li><a href="#Test/Condición" style="text-decoration:none">Test/Condición</a> 
+<li><a href="#Tests_Condicionales_Básicos" style="text-decoration:none">Tests Condicionales Básicos</a> 
+<li><a href="#Programa_en_Forma_Didáctica_(archivos_Batch)" style="text-decoration:none">Programa en Forma Didáctica (archivos Batch)</a> 
+<li><a href="#Tests_Indicadores" style="text-decoration:none">Tests Indicadores</a> 
+<li><a href="#Tests_Numéricos_Estándar" style="text-decoration:none">Tests Numéricos Estándar</a> 
+<li><a href="#Operaciones_Avanzadas_de_Entrada/Salida" style="text-decoration:none">Operaciones Avanzadas de Entrada/Salida</a> 
+<li><a href="#Bloques_de_Código_con_Nombre" style="text-decoration:none">Bloques de Código con Nombre</a> 
+<li><a href="#Operadores_Booleanos" style="text-decoration:none">Operadores Booleanos</a> 
+</ol>
+<li><a href="#Apéndices" style="text-decoration:none">Apéndices</a> 
+<ol>
+<li><a href="#Instalación_y_soporte_de_printf.exe" style="text-decoration:none">Instalación y soporte de printf.exe</a> 
+<li><a href="#Aumentando_el_espacio_de_almacenamiento" style="text-decoration:none">Aumentando el espacio de almacenamiento</a> 
+<li><a href="#Mensajes_de_error" style="text-decoration:none">Mensajes de error</a> 
+</ol>
+</ol>
+<h2><a name="Introducción" style="text-decoration:none">Introducción</a> </h2>
+<p><b>printf.exe</b> es una aplicaci&oacute;n de consola que se usa en la l&iacute;nea de comandos del programa cmd.exe de Windows, es decir, no es una aplicaci&oacute;n gr&aacute;fica, sino de texto. La aplicaci&oacute;n est&aacute; escrita en lenguaje ensamblador, por lo que es muy peque&ntilde;a y eficiente. Usted puede utilizar printf.exe para generar resultados simples en la l&iacute;nea de comandos o resultados matem&aacute;ticos avanzados en archivos por lotes Batch, o incluso escribir aplicaciones completas de tama&ntilde;o peque&ntilde;o o mediano utilizando las capacidades de programaci&oacute;n de printf.exe en una forma mucho mas sencilla que utilizando cualquier lenguaje de programaci&oacute;n moderno.
+<p>Esta aplicaci&oacute;n tampoco requiere de una instalaci&oacute;n complicada: tan s&oacute;lo siga las indicaciones del <a href="#Instalaci&oacute;n_y_soporte_de_printf.exe">Ap&eacute;ndice 1</a> para descargar en su computadora el archivo printf.zip del paquete y extraiga en alg&uacute;n folder todos los archivos inclu&iacute;dos. Entonces, <a href="https://computerhoy.com/listas/software/como-abrir-ventana-cmd-cualquier-version-windows-53368">abra la ventana de comandos</a> de Windows (d&eacute; click con el bot&oacute;n derecho del mouse sobre el &iacute;cono "Inicio" en la esquina inferior izquierda del escritorio y pulse en "S&iacute;mbolo del sistema"); la ventana negra de cmd.exe debe aparecer. Cambie el directorio actual al folder de printf.exe: teclee <b>CD</b> seguido por un espacio, despu&eacute;s arrastre y suelte la carpeta de printf.exe en la ventana cmd.exe y presione Entrar. &iexcl;Ya puede utilizar printf.exe&#33; <b><code>;)</code></b>
+<p><b>NOTA:</b> Algunas aplicaciones antivirus podr&iacute;an marcar al programa printf.exe como "potencialmente peligroso". Este es un mensaje falso positivo. Si usted descarg&oacute; el archivo printf.zip del paquete desde el sitio <a href="https://www.apaacini.com">apaacini.com</a>, entonces est&aacute; libre de virus con toda seguridad.
+<p>La forma general de uso del programa printf.exe es &eacute;sta:
+<pre>
+printf "formato" dato1 dato2 dato3 ...
+</pre>
+<p>En su forma mas simple la cadena formato contiene una serie de caracteres que ser&aacute;n mostrados en la pantalla. Por ejemplo:
+<pre>
+printf "Hola, mundo"
+</pre>
+<p>Usted puede copiar cualquier ejemplo que aparezca aqu&iacute; (seleccione el texto manteniendo oprimido el bot&oacute;n izquierdo del mouse mientras lo mueve, y presione Ctrl-C) y pegarlo en la ventana de comandos dando click con el bot&oacute;n derecho del mouse; si esto no funciona, d&eacute; click con el bot&oacute;n derecho sobre la barra de t&iacute;tulo de la ventana S&iacute;mbolo del sistema, seleccione Editar y Pegar. Cuando el comando se haya copiado, presione Entrar para ejecutarlo.
+<p>El texto con formato se muestra mediante la funci&oacute;n Windows API del mismo nombre. El programa printf.exe tan s&oacute;lo toma los datos proporcionados por el usuario y los pasa tal cual a la funci&oacute;n <b>printf C Run-Time (CRT)</b> sin ninguna revisi&oacute;n adicional. Esto significa que dichos datos deben cumplir con los requerimientos de la funci&oacute;n printf CRT, de lo contrario ocurrir&aacute;n los mismos errores y fallas descritos en <a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=msvc-170">la documentaci&oacute;n de dicha funci&oacute;n</a>.
+<p>Las operaciones aritm&eacute;ticas son efectuadas utilizando <i>la misma &aacute;rea de datos (stack)</i> en donde se almacenan los par&aacute;metros de la funci&oacute;n printf mediante la mas sencilla notaci&oacute;n aritm&eacute;tica: Notaci&oacute;n Polaca Inversa, tambi&eacute;n llamada RPN (por las siglas de Reverse Polish Notation en ingl&eacute;s) o notaci&oacute;n postfija. Este m&eacute;todo permite que el programa printf.exe sea relativamente sencillo y que las operaciones sean efectuadas en forma muy eficiente, pero esto tambi&eacute;n significa (nuevamente) que es responsabilidad del usuario proporcionar expresiones RPN que sean correctas.
+<p>Los dos puntos anteriores implican que printf.exe es un programa &iexcl;un poco dif&iacute;cil de usar&#33; Sin embargo, las reglas de operaci&oacute;n no son complicadas; usted s&oacute;lo necesita ser cuidadoso y prestar atenci&oacute;n a los detalles. La recompensa por este esfuerzo es que obtendr&aacute; resultados num&eacute;ricos (y de proceso de texto) de una forma mucho mas sencilla que utilizando cualquier otro lenguaje de programaci&oacute;n, con la misma o mejor precisi&oacute;n, y mucho mas r&aacute;pido.
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Mostrar_Texto_con_Formato" style="text-decoration:none">Mostrar Texto con Formato</a> </h2>
+<p>La cadena de formato contiene caracteres ordinarios o ciertos caracteres de control precedidos por una diagonal inversa <code>\</code> (llamados secuencias de escape), y especificaciones de conversi&oacute;n de datos que comienzan con un signo porciento <code>%</code> y terminan en una letra. 
+<p>Los caracteres de control disponibles en printf.exe son: <code>\n</code> <i>nueva l&iacute;nea</i> LineFeed ASCII 10 (mostrado como el par CR+LF en Windows), <code>\r</code> CarriageReturn ASCII 13, <code>\t</code> TABulation ASCII 9, <code>\b</code> BackSpace ASCII 8, y <code>\a</code> BELl ASCII 7. Cualquier otro caracter colocado despu&eacute;s de la diagonal inversa se inserta textualmente; por ejemplo, use <code>\\</code> para insertar una diagonal inversa o <code>\"</code> para insertar comillas:
+<pre>
+printf "Ella dijo: \"Hola\"\n"
+</pre>
+<p>La cadena de formato puede ser el nombre de una variable Batch y printf.exe usar&aacute; la cadena almacenada en dicha variable. Sin embargo, no se pueden insertar caracteres de control directamente en la variable usando secuencias de escape; se debe usar el m&eacute;todo descrito en el archivo <a href="printf%20Example%200%20-%20Operations.bat">printf Example 0 - Operations.bat</a>
+<p>Las especificaciones de formato dise&ntilde;adas para mostrar datos comienzan con un signo de porcentaje <code>%</code> y terminan en una letra que depende del <a href="https://es.wikipedia.org/wiki/Tipo_de_dato"><i>tipo de datos</i></a>: <b>%c</b> para caracteres, <b>%s</b> para cadenas de caracteres, <b>%i</b> para n&uacute;meros enteros y <b>%f</b> para n&uacute;meros de punto flotante.
+<p>El tipo de los datos colocados despu&eacute;s de la cadena de formato depende de la forma en que est&aacute;n escritos: un <b>caracter</b> se encierra entre ap&oacute;strofes, una <b>cadena de caracteres</b> se encierra entre comillas, un <b>n&uacute;mero entero</b> no lleva punto decimal, y un <b>n&uacute;mero de punto flotante</b> lleva punto decimal. De esta manera, a cada especificaci&oacute;n <code>%letra</code> en la cadena de formato le corresponde un dato colocado despu&eacute;s del formato, el cual <i>debe ser</i> del mismo tipo. Por ejemplo:
+<pre>
+printf "Un caracter: %c\tUna cadena: %s\tUn entero: %i\tUn punto flotante: %f\n"  'X'  "ABC"  1  1.
+</pre>
+<p>Usted tambi&eacute;n puede usar como dato una <b>variable</b> de entorno Batch (<i>environment variable</i>) la cual se tomar&aacute; como una cadena de caracteres. Por ejemplo:
+<pre>
+printf "%s\n" PATH
+</pre>
+<p>Note que los elementos de datos se separan por uno o m&aacute;s espacios (o caracteres TAB). Si hay m&aacute;s datos que especificaciones de formato, los datos adicionales no se muestran. Si hay menos datos que especificaciones de formato, se muestra basura o se presenta un error de ejecuci&oacute;n. La documentaci&oacute;n de la funci&oacute;n printf indica: <i>"Los resultados son indefinidos si no hay suficientes elementos de datos para todas las especificaciones de formato"</i>. En esta frase, "resultados indefinidos" significa que <i>cualquier cosa</i> puede pasar.
+<p>Un punto <b>muy importante</b> al que usted debe prestar atenci&oacute;n es que el programa printf.exe puede ser caracterizado como una aplicaci&oacute;n sin <a href="https://es.wikipedia.org/wiki/Sistema_de_tipos">sistema de tipos</a> (similar al lenguaje ensamblador): <i><q>es responsabilidad del programador asegurar que los datos proporcionados son del tipo apropiado para cada operaci&oacute;n</q></i>. Si las especificaciones de formato y los datos no son del mismo tipo, se mostrar&aacute; basura o se presentar&aacute; un error de ejecuci&oacute;n. Los &uacute;nicos casos en los que el formato y el dato pueden ser de diferente tipo es usar <b>%i</b> en un caracter (lo que mostrar&aacute; su c&oacute;digo ASCII) o usar <b>%c</b> en un n&uacute;mero entero (lo que mostrar&aacute; ese caracter); esto sucede porque los caracteres se manejan internamente como n&uacute;meros enteros de 32 bits. Por ejemplo:
+<pre>
+printf "El código ASCII de '%c' es %i. El caracter del código %i es '%c'\n"  'A' 'A'  97 97
+</pre>
+<p>La l&iacute;nea anterior muestra: <b>El c&oacute;digo ASCII de 'A' es 65. El caracter del c&oacute;digo 97 es 'a'</b>
+<p>Cada especificaci&oacute;n <code>%letra</code> permite un alto grado de control en la forma en que el dato es mostrado. La forma general de la especificaci&oacute;n de conversi&oacute;n de datos se describe en seguida.
+   <table border="1" rules="all" cellpadding="5" align="left">
+      <tr>
+         <th>marca</th>
+         <th>&nbsp;</th>
+         <th>&nbsp;</th>
+         <th>tipo</th>
+      </tr>
+      <tr>
+         <td  align="right">-+ 0#</td>
+         <td>&nbsp;</td>
+         <td>&nbsp;</td>
+         <td>cdiouxXeEfgGaAps</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>-</b></td>
+         <td>alineaci&oacute;n izquierda</td>
+         <td><b>c</b></td>
+         <td>Caracter</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>+</b></td>
+         <td>inserta signo <b>+</b><br>si es positivo</td>
+         <td><b>d</b></td>
+         <td>entero (Decimal)</td>
+      </tr>
+      <tr>
+         <td  align="right">" "</td>
+         <td>inserta espacio<br>en lugar del <b>+</b></td>
+         <td><b>i</b></td>
+         <td>entero (Integer)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>0</b></td>
+         <td>rellena con zeros</td>
+         <td><b>o</b></td>
+         <td>entero (Octal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>#</b></td>
+         <td>inserta <b>.</b> en tipo <b>g</b><br>o inserta 0&#124;0x<br>en tipos <b>o</b>&#124;<b>x</b></td>
+         <td><b>u</b></td>
+         <td>entero sin signo (Unsigned)</td>
+      </tr>
+      <tr>
+         <td colspan="2" rowspan="12"  align="right">&nbsp;</td>
+         <td><b>x</b></td>
+         <td>entero (hexadecimal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>X</b></td>
+         <td>entero (Hexadecimal)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>e</b></td>
+         <td>double ([-]d.dddddde&mnplus;ddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>E</b></td>
+         <td>double (como e, con E)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>f</b></td>
+         <td>double ([-]ddd.dddddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>F</b></td>
+         <td>double (como f, en may&uacute;sculas)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>g</b></td>
+         <td>double (el mas corto de f&#124;e)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>G</b></td>
+         <td>double (como g, con E)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>a</b></td>
+         <td>double ([-]0xh.hhhp&mnplus;ddd)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>A</b></td>
+         <td>double (como a, con X y P)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>p</b></td>
+         <td>cadena (direcci&oacute;n en hex)</td>
+      </tr>
+      <tr>
+         <td  align="right"><b>s</b></td>
+         <td>cadena de caracteres (String)</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p>Formato de conversi&oacute;n de datos: <b>%[marca][ancho][.precision]tipo</b><br>
+<p><b>marca</b> es una parte opcional que <i>a&ntilde;ade</i> ciertos caracteres al texto, generalmente del lado izquierdo del campo.
+<p><b>ancho</b> es un n&uacute;mero que especifica el <i>ancho m&iacute;nimo o total</i> del campo usado para mostrar el dato. Sin embargo, este ancho <i>no</i> truncar&aacute; el valor, por lo que el campo aumentar&aacute; si fuera necesario. <code>printf "%04i" 12</code> muestra: <b>0012</b> &nbsp; <code>printf "%04i" 12345</code> muestra: <b>12345</b>
+<p><b>.precision</b> es un n&uacute;mero que especifica el <i>ancho m&aacute;ximo</i> de esta parte, por lo que el valor se truncar&aacute; y redondear&aacute; si fuera necesario. <code>printf "%.4f" 3.141592654</code> muestra <b>3.1416</b>
+<p>Cuando se muestran n&uacute;meros de punto flotante, <b>ancho</b> especifica el "n&uacute;mero de columnas" del campo y <b>.precision</b> el "n&uacute;mero de decimales", pero esta interpretaci&oacute;n difiere con otros tipos de datos, como ser&iacute;an los enteros o las cadenas. Por ejemplo, en el formato <code>%.12s</code> para <i>cadenas de caracteres</i>, el valor de la cadena se truncar&aacute; en <b>12</b> caracteres.
+<p>Una cadena de caracteres es el &uacute;nico tipo de dato que se suprimir&aacute; si la precisi&oacute;n es zero: <code>%.0s</code>. Como un caso especial, si la precisi&oacute;n es cero <i>y</i> el n&uacute;mero entero es cero: <code>printf "%.0i" 0</code>, no se mostrar&aacute; nada.
+<p>La letra del <b>tipo</b> <i>debe ser</i> del mismo tipo del dato de acuerdo con la tabla del lado izquierdo. En esta tabla el t&eacute;rmino "double" se refiere a los n&uacute;meros de punto flotante de 64 bits que maneja el programa printf.exe.
+<p>Para detalles adicionales puede revisar la descripci&oacute;n completa de las especificaciones de formato en <a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-170">este sitio</a>.<br clear="all">
+<p>Nota: si usa el programa printf.exe en un archivo de comandos Batch (con extensi&oacute;n <b>.bat</b>), entonces todos los caracteres de porcentaje deben <i>duplicarse</i>. Por ejemplo, este comando insertado en la l&iacute;nea de comandos:
+<pre>
+printf "Un entero:%i\nUn flotante: %f\n"  123  456.789
+</pre>
+<p>...  debe escribirse as&iacute; en un archivo Batch:
+<pre>
+printf "Un entero:%%i\nUn flotante: %%f\n"  123  456.789
+</pre>
+<p><i>T&oacute;pico avanzado</i>: en una <a name="formato_asterisco">especificaci&oacute;n de formato</a>, los valores <b>ancho</b> y <b>precision</b> pueden ser un asterisco que indica tomar <i>el siguiente</i> n&uacute;mero entero y utilizarlo en lugar del asterisco. Por ejemplo, en <code>printf "%0*i" 5 3</code> el <b>5</b> toma el lugar del asterisco por lo que formato ser&iacute;a el mismo que en <code>printf "%05i" 3</code>: <b>00003</b>. Este ejemplo: <code>printf "%0*.*f" 8 4 3.141592654</code> muestra la misma salida que este otro: <code>printf "%08.4f" 3.141592654</code>: <b>003.1416</b>.
+<p>La ventaja de esta caracter&iacute;stica es que los valores ancho y precision pueden ser calculados din&aacute;micamente cuando printf.exe sea ejecutado. Si el valor de la precisi&oacute;n es cero en una especificaci&oacute;n de formato para una cadena de caracteres, la cadena no se muestra. Por ejemplo:
+<p><code>printf "El resultado es: %.*s %.*s \n" 9 "sí, claro"   0 "no, lo siento..."</code> muestra <b>El resultado es: s&iacute;, claro</b>, pero  <code>printf "El resultado es: %.*s %.*s \n" 0 "sí, claro"   16 "no, lo siento..."</code> muestra <b>El resultado es: no, lo siento...</b>.
+<p>Uno de los valores <b>9</b> o <b>16</b> puede cambiarse a cero dependiendo de otro valor selector, por lo que esta caracter&iacute;stica permite la <i>selecci&oacute;n condicional</i> de una cadena de caracteres entre dos posibles. Por supuesto, esta selecci&oacute;n puede extenderse a cualquier n&uacute;mero de posibles cadenas diferentes.
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Operaciones_Aritméticas_y_de_Cadenas" style="text-decoration:none">Operaciones Aritméticas y de Cadenas</a> </h2>
+<p>Antes de describir el m&eacute;todo para efectuar operaciones aritm&eacute;ticas usted debe tener en cuenta un punto importante sobre los n&uacute;meros. Como se dijo antes, el programa printf.exe es una aplicaci&oacute;n sin sistema de tipos y en estas aplicaciones no hay ninguna <a href="https://es.wikipedia.org/wiki/Conversi%C3%B3n_de_tipos">conversi&oacute;n de tipos</a> impl&iacute;cita, por lo que usted debe proporcionar siempre los valores del tipo correcto o realizar expl&iacute;citamente cualquier conversi&oacute;n requerida. En la aplicaci&oacute;n printf.exe (y en pr&aacute;cticamente todos los lenguajes de programaci&oacute;n) hay <i>dos tipos diferentes</i> de n&uacute;meros: enteros y de punto flotante. Esto significa que, en printf.exe (a diferencia de otros lenguajes) tambi&eacute;n hay <i>dos conjuntos diferentes de operadores</i> para evaluar operaciones sobre n&uacute;meros enteros y de punto flotante (exactamente de la misma manera que hay dos especificaciones de formato diferentes para mostrar n&uacute;meros enteros <code>%i</code> y de punto flotante <code>%f</code>).
+<p>Los operadores enteros son caracteres especiales (como <code>+ - * /</code> etc), pero se emplean palabras de 3 o 4 letras como operadores de punto flotante (como <code>ADD SUB MUL DIV</code> etc). Si usted usa un operador del tipo incorrecto o si trata de operar dos n&uacute;meros de tipo diferente, obtendr&aacute; basura como resultado o incluso un error de ejecuci&oacute;n (exactamente de la misma forma que si usted usa una especificaci&oacute;n de formato del tipo incorrecto para mostrar un n&uacute;mero). Cada vez que usted no obtenga el resultado esperado de printf.exe revise en primer lugar <i>el tipo</i> de los n&uacute;meros, operadores y formatos utilizados. Veamos un par de ejemplos simples: <code>printf "Un entero mostrado con formato F: %f\n" 123</code> muestra <b>Un entero mostrado con formato F: 0.000000</b> y &eacute;ste <code>printf "Un flotante mostrado con formato I: %i\n" 1.2</code> muestra <b>Un flotante mostrado con formato I: 858993459</b>. Si usted comprende esto, podr&aacute; evitar el problema mas frecuente sobre el uso de la aplicaci&oacute;n printf.exe.
+<p>Este programa utiliza un m&eacute;todo para evaluar operaciones aritm&eacute;ticas diferente a la notaci&oacute;n algebraica usual. El m&eacute;todo se llama <a href="https://es.wikipedia.org/wiki/Notaci%C3%B3n_polaca_inversa">Notaci&oacute;n Polaca Inversa</a> (o RPN, en ingl&eacute;s) y fue elegido porque es mas simple de implementar (y usar) que la notaci&oacute;n algebraica. En la notaci&oacute;n algebraica <i>est&aacute;ndar</i>, la multiplicaci&oacute;n y la divisi&oacute;n tienen mayor <i>precedencia</i> (son evaluadas antes) que la suma y la resta. Esto significa que cuando varias operaciones son combinadas, las operaciones con mayor precedencia se ejecutan primero (de izquierda a derecha) y despu&eacute;s se completan las operaciones con menor precedencia (de izquierda a derecha). Por ejemplo, la siguiente expresi&oacute;n algebraica:
+<pre>
+4 + 5 - 6 * 7 / 8 + 9 =
+</pre>
+<p>... implica sumar <i>primero</i> 4+5, almacenar el resultado parcial 9 y mantener pendiente la resta para despu&eacute;s. <i>Entonces</i> se multiplica 6*7 y se divide entre 8. Y <i>ahora</i> se toma el 9 almacenado anteriormente para completar la operaci&oacute;n de resta pendiente, y finalmente se suma 9. Si usted quiere cambiar este orden est&aacute;ndar, necesita a&ntilde;adir par&eacute;ntesis para encerrar las operaciones que deben efectuarse primero. Si se tiene en cuenta que los par&eacute;ntesis pueden anidarse <i>a varios niveles</i> y que existen otras operaciones con diferentes precedencias, como exponenciaci&oacute;n (con precedencia mayor que <b>* /</b>) u operaciones sobre bits (con precedencia menor que <b>+ -</b>), y que hay algunos operadores que se agrupan de derecha a izquierda (como todos los operadores sobre un operando), entonces es f&aacute;cil comprender que la evaluaci&oacute;n de una expresi&oacute;n algebraica grande y complicada puede tener varios resultados parciales y operaciones pendientes que deben completarse de manera enrevesada. Cuando una expresi&oacute;n grande es requerida en un programa, es com&uacute;n que el programador divida la expresi&oacute;n en varias subexpresiones mas peque&ntilde;as con el objeto de aumentar la claridad. Esto es simplemente absurdo...
+<p>(Existe un lenguaje de programaci&oacute;n, <a href="https://es.wikipedia.org/wiki/APL">APL</a>, que tiene <i>muchos</i> (&iexcl;m&aacute;s de 50&#33;) operadores. Con el objeto de evitar complicadas reglas de precedencia sobre un n&uacute;mero tan grande de operadores, los dise&ntilde;adores de APL optaron por una simple regla: no hay precedencias en una expresi&oacute;n; <i>todos</i> los operadores se ejecutan de derecha a izquierda. Esto lleva a escribir expresiones APL que usualmente tienen par&eacute;ntesis del lado izquierdo.)
+<p>RPN es diferente. En RPN no hay "precedencia de operadores" ni "operaciones pendientes". Todas las operaciones en RPN siguen una simple regla: la operaci&oacute;n se ejecuta <i>inmediatamente</i> en cuanto aparece un operador; esto implica que los n&uacute;meros deben introducirse <i>antes</i>. Usted puede tomar un primer contacto con la notaci&oacute;n RPN en el <a href="http://www.hpmuseum.org/rpn.htm#learn">Museo de HP</a> (en ingl&eacute;s). Para una opci&oacute;n en espa&ntilde;ol, puede consultar el manual de la calculadora HP-12C para leer <a href="http://www.hp.com/ctg/Manual/bpia5312#page=18" target="_blank">una introducci&oacute;n a RPN</a> y terminar leyendo el ap&eacute;ndice "A" en la p&aacute;gina 168. Se invita al lector a echar un vistazo a ese sitio antes de continuar, pero tome en cuenta que el uso de RPN en el programa printf.exe es <i>mas sencillo</i> que en la calculadora HP porque los n&uacute;meros se separan por un simple espacio, por lo que la tecla <kbd>Enter&UpArrow;</kbd> no es necesaria.
+<p><q><i>Para hacer un c&aacute;lculo de este tipo, indique primero los dos n&uacute;meros y, a continuaci&oacute;n, indique la operaci&oacute;n que se debe realizar.</i></q> Note que en printf.exe los n&uacute;meros se separan con un espacio y no hay un equivalente a las teclas <kbd>Enter&UpArrow;</kbd> o <kbd>CLx</kbd> de la calculadora HP (ni sus casos especiales de "ascenso de la pila"). Usted puede revisar la correcta conversi&oacute;n de expresiones algebraicas a RPN en el programa <b>AlgebraToRPN.bat</b> inclu&iacute;do en el paquete printf.zip; tan s&oacute;lo ejec&uacute;telo e ingrese expresiones algebraicas <i>correctas</i> (el programa de conversi&oacute;n <i>no detecta errores</i> en las expresiones algebraicas dadas).
+<p>Revisemos un ejemplo simple de una operaci&oacute;n de suma RPN en printf.exe:
+<pre>
+printf "Un valor: %i, otro valor: %i\n"  3 4
+printf "La suma de 3 mas 4 es: %i\n"  3 4 +
+</pre>
+<p>En el primer ejemplo hay <i>dos</i> n&uacute;meros enteros y <i>dos</i> formatos enteros, as&iacute; que todo est&aacute; correcto.
+<p>En el segundo ejemplo hay dos n&uacute;meros enteros. Despu&eacute;s de ellos hay un operador RPN entero que toma los dos n&uacute;meros previos y produce <i>un s&oacute;lo resultado</i>, as&iacute; que al final hay un s&oacute;lo n&uacute;mero entero y un formato entero: &iexcl;correcto&#33; <code>:)</code>
+<p>Usando este esquema usted puede evaluar cualquier expresi&oacute;n RPN sin importar cu&aacute;n larga pudiera ser; s&oacute;lo aseg&uacute;rese que los n&uacute;meros enteros son operados con operadores enteros y los n&uacute;meros de punto flotante usan operadores (de tres letras) de punto flotante. Finalmente, tambi&eacute;n revise que los resultados enteros se muestran con el formato %i, y los resultados de punto flotante usan el formato %f. Estas reglas no son tan dif&iacute;ciles de seguir, &iquest;verdad?  <code>;)</code>
+<pre>
+printf "La suma de 3 mas 4 es %i\nLa suma de 3. mas 4. es %f\n"  3 4 +  3. 4. ADD
+</pre>
+<p>Completemos el ejemplo previo de la expresi&oacute;n algebraica:
+<pre>
+printf "Expresion algebraica 4 + 5 - 6 * 7 / 8 + 9 = %i\n" 4 5 + 6 7 * 8 / - 9 +
+</pre>
+<p>Note que las operaciones y resultados parciales son evaluados y completados en el mismo orden que antes; esto es obvio si queremos obtener <i>el mismo resultado</i>. Sin embargo, en este caso <i>nosotros</i> fijamos expl&iacute;citamente el orden de las operaciones y &eacute;stas no est&aacute;n gobernadas por reglas de precedencia que no son aparentes en la misma expresi&oacute;n.
+<p>Note tambi&eacute;n que el resultado <b>13</b> difiere del correcto <b>12.75</b>. Esto es causado por las operaciones <i>enteras</i> (que truncan cualquier parte fraccional del resultado) y el orden de las operaciones. Para obtener el resultado correcto, use n&uacute;meros de punto flotante:
+<pre>
+printf "%.2f\n" 4. 5. ADD 6. 7. MUL 8. DIV SUB 9. ADD
+</pre>
+<p>Usted puede revisar muchos ejemplos de operaciones, tanto enteras como de punto flotante, en el archivo <a href="printf%20Example%200%20-%20Operations.bat">printf Example 0 - Operations.bat</a>
+<p>La mayor&iacute;a de los operadores aritm&eacute;ticos de printf.exe funcionan igual que en las calculadoras HP, por lo que no se explicar&aacute;n aqu&iacute;; solamente las operaciones que no tengan una contraparte en las calculadoras HP. Si usted tiene alguna duda sobre estas operaciones consulte cualquier manual de HP; por ejemplo, el de la calculadora <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf">HP-15C</a> (3.75 MB).
+<p>Nota: la descripci&oacute;n de las calculadoras HP especifica que se pueden mantener <i>hasta cuatro</i> resultados parciales en expresiones RPN. En el programa printf.exe se pueden mantener hasta ocho resultados parciales de punto flotante y no hay l&iacute;mite en el n&uacute;mero de resultados parciales enteros. Este punto se explica con mayor detalle <a href="#Borrar_el_stack_de_la_FPU">despu&eacute;s</a>.
+<h3><a name="Tipos_de_Datos" style="text-decoration:none">Tipos de Datos</a> </h3>
+<pre>
+printf "formato" {número [operador]|'c'|"cadena"|variable} ...
+</pre>
+<p>Los par&aacute;metros para el programa printf.exe despu&eacute;s del primero pueden ser de cualquiera de estos tipos:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <th>Tipo</th>
+         <th>Ejemplo</th>
+         <th>Descripci&oacute;n</th>
+      </tr>
+      <tr>
+         <td>Caracter</td>
+         <td>'X'</td>
+         <td>Un s&oacute;lo caracter encerrado entre ap&oacute;strofes. Los caracteres se manejan internamente como n&uacute;meros enteros de 32 bits.</td>
+      </tr>
+      <tr>
+         <td>Cadena</td>
+         <td>"Hola"</td>
+         <td>Varios caracteres encerrados entre comillas. Las cadenas de caracteres se manejan internamente como <i>direcciones</i> de 32 bits.</td>
+      </tr>
+      <tr>
+         <td>Entero</td>
+         <td>3</td>
+         <td>N&uacute;mero sin punto decimal, con un signo negativo opcional. Puede escribirse como un n&uacute;mero hexadecimal que empieza con <code>0x</code>, o como un n&uacute;mero octal que empieza con un cero (en cuyo caso los d&iacute;gitos <code>8</code> y <code>9</code> ser&aacute;n inv&aacute;lidos). Los n&uacute;meros enteros se manejan internamente como enteros de 32 bits con un rango de valores entre -2147483648 y 2147483647 (o entre 0 y 4294967295 sin signo, formato <b>%u</b>).</td>
+      </tr>
+      <tr>
+         <td>Punto<br>flotante</td>
+         <td>5.</td>
+         <td>N&uacute;mero con punto decimal o escrito en la notaci&oacute;n cient&iacute;fica est&aacute;ndar (con una letra E) con un m&aacute;ximo de 18 d&iacute;gitos significativos y un exponente de 10 entre -320 y +308 (normalizado). Los n&uacute;meros de punto flotante se manejan internamente como valores <i>double</i> de 64 bits.</td>
+      </tr>
+      <tr>
+         <td>Variable<br>Cadena</td>
+         <td>NombreVar</td>
+         <td>Cualquier nombre que empiece con letra que no sea una funci&oacute;n predefinida. Su valor es la <i>cadena de caracteres</i> almacenada en dicha variable Batch.</td>
+      </tr>
+   </table>
+<p>Un <i>n&uacute;mero</i> empieza con un d&iacute;gito, u opcionalmente con un signo negativo. El formato general de los n&uacute;meros es: <code>[-]dígitos[.[dígitos]][{E|e}[+|-]dígitos]</code>. Los corchetes <code>[ ]</code> rodean los elementos opcionales. Llaves y una barra vertical <code>{ | }</code> rodean alternativas para un solo elemento. Si el n&uacute;mero incluye punto decimal o la letra E, es un n&uacute;mero de punto flotante; de lo contrario ser&aacute; un n&uacute;mero entero.
+<p>Por ejemplo:
+<pre>
+printf "Un caracter: %c\tUna cadena: %s\tUn entero: %i\tUn punto flotante: %f\n"  'X'  "ABC"  1  1.
+</pre>
+<p>Los caracteres se almacenan como n&uacute;meros enteros de 32 bits; esto permite realizar estos "trucos":
+   <ul>
+      <li> Mostrar el c&oacute;digo ASCII usando la especificaci&oacute;n de formato <code>%i</code> (y viceversa: mostrar un (c&oacute;digo) entero como un caracter usando la especificaci&oacute;n <code>%c</code>).
+      <li> Obtener la diferencia (distancia) que hay de un caracter a otro: <code>printf "%i\n" 'a' 'A' -</code>
+      <li> Convertir letras entre may&uacute;sculas y min&uacute;sculas: <code>printf "%c\n" 'a' 'A' - 'X' +</code>
+   </ul>
+<p>Las cadenas de caracteres se manejan en los par&aacute;metros de printf.exe como <i>la direcci&oacute;n de 32 bits</i> del primer caracter de la cadena (similar a un <i>puntero</i> del lenguaje C). Este punto se discute con detalle adelante, en <a href="#Operaciones_con_Cadenas">Operaciones con Cadenas</a>.
+<h3><a name="Operaciones_Enteras" style="text-decoration:none">Operaciones Enteras</a> </h3>
+<p>Varios operadores enteros usan caracteres especiales, como <code>&lt; > | &</code>, que deben "^escaparse" de esta forma: <code>^&lt; ^> ^| ^&</code> cuando son utilizados en la l&iacute;nea de comandos. Para facilitar el ingreso de tales operadores, usted puede insertar el <i>switch</i> especial "Quoted" <code>/"</code> antes de dichos caracteres especiales. Por ejemplo:
+<pre>
+printf "El mismo valor 3 veces: %i %i %i\n"  28 /" > >
+</pre>
+<p>Si despu&eacute;s de este switch hay una cadena que contiene estos caracteres especiales, usted debe "cerrar" el switch Quoted poni&eacute;ndolo otra vez. Por ejemplo:
+<pre>
+printf "Dos números: %i %i y una cadena: %s\n" 12 34  /"  &lt;>  /"  "&lt;Hola>"
+</pre>
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Operadores_Enteros"> Operadores Enteros</a></b></caption>
+      <tr>
+         <td colspan="2">Operadores unarios</td>
+         <td><code>&#33;</code> BoolNot &nbsp; <code>~</code> BitNot &nbsp; <code>_</code> Negativo &nbsp; <code>$</code> Signo &nbsp; <code>++</code> Incrementa &nbsp; <code>--</code> Decrementa</td>
+      </tr>
+      <tr>
+         <td rowspan="2">Operadores con<br>dos operandos</td>
+         <td>B&aacute;sicos</td>
+         <td><code>+</code> Suma &nbsp; <code>-</code> Resta &nbsp; <code>*</code> Multiplica &nbsp; <code>/</code> Cociente &nbsp; <code>%</code> Residuo &nbsp; <code>**</code> Potencia</td>
+      </tr>
+      <tr>
+         <td>Bitwise</td>
+         <td><code>&lt;&lt;</code> BitSHL &nbsp; <code>>></code> BitSHR &nbsp; <code>&</code> BitAnd &nbsp; <code>&#124;</code> BitOr &nbsp; <code>^</code> BitXor</td>
+      </tr>
+      <tr>
+         <td colspan="2">Operadores especiales</td>
+         <td><code>#</code> Random &nbsp; <code>]</code> Store &nbsp; <code>[</code> Recall &nbsp; <code>.</code> Flotante &nbsp; <code>/*</code> Comentario <code>*/</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Manejo del stack</td>
+         <td><code>></code> Dup &nbsp; <code>&lt;></code> Exchange &nbsp; <code>&lt;</code> Drop &nbsp; <code>{</code> Roll Down &nbsp; <code>}</code> Roll Up</td>
+      </tr>
+   </table>
+<p>Note que varios operadores se componen de dos o m&aacute;s caracteres, por lo que usted siempre debe separar <i>operaciones completas</i> con uno o m&aacute;s espacios o caracteres TAB. Por ejemplo, el operador <code>&lt;></code> es Exchange, as&iacute; que si usted quiere escribir un Drop seguido por un Dup, usted <i>debe</i> separarlos de esta forma: <code>&lt; ></code>.
+<p>En estos cinco operadores: <code>* / % &lt;&lt; >></code> usted puede a&ntilde;adir una letra <code>u</code> min&uacute;scula al final para especificar una <i><a href="https://es.wikipedia.org/wiki/Entero_(tipo_de_dato)">operaci&oacute;n sin signo</a></i>; por ejemplo: <code>>>u</code>.
+<p><code>**</code> (<i>Potencia</i>, <kbd>y<sup>x</sup></kbd> en calculadoras HP) es la &uacute;nica operaci&oacute;n entera sobre dos operandos que no est&aacute; implementada mediante una instrucci&oacute;n nativa del CPU, sino mediante un bucle de multiplicaciones.
+<p>Operador <code>#</code> (<i>Random</i>) genera un n&uacute;mero aleatorio de 32 bits menor que 2147483647 y mayor que cero.
+<p>Operador <code>.</code> (<i>Float</i>) <i>convierte</i> un n&uacute;mero entero en uno de punto flotante. Despu&eacute;s de la conversi&oacute;n usted debe hacer operaciones o mostrar el n&uacute;mero utilizando operadores y formato de punto flotante.
+<p>Los operadores <code>{n</code> (<i>Roll Down</i>) y <code>}n</code> (<i>Roll Up</i>) requieren una <i>posici&oacute;n</i> de un d&iacute;gito; estos operadores se describen con detalle <a href="#Manejo_del_Stack">adelante</a>.
+<p>Los delimitadores <code>/*</code> y <code>*/</code> (<i>Comentario</i>) permiten insertar cualquier texto descriptivo, que ser&aacute; ignorado.
+<h3><a name="Operaciones_de_Punto_Flotante" style="text-decoration:none">Operaciones de Punto Flotante</a> </h3>
+<p>Todas las operaciones de punto flotante se especifican mediante una palabra de un m&aacute;ximo de 4 caracteres, que llamaremos <i>funciones</i>.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Funciones_de_Punto_Flotante"> Funciones de Punto Flotante</a></b></caption>
+      <tr>
+         <td rowspan="3">Operadores<br>unarios</td>
+         <td>B&aacute;sicos</td>
+         <td><code>CHS ABS SIGN FRAC INV SQR SQRT</code></td>
+      </tr>
+      <tr>
+         <td>Trigonom&eacute;tricos</td>
+         <td><code>SIN COS TAN  ASIN ACOS ATAN   DEG RAD</code></td>
+      </tr>
+      <tr>
+         <td>Logaritmos</td>
+         <td><code>LN LOG EXP EXPT</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Operadores con dos operandos</td>
+         <td><code>ADD SUB MUL DIV MOD POW</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Operadores especiales</td>
+         <td><code>ZERO ONE PI  STO RCL  INT</code></td>
+      </tr>
+      <tr>
+         <td colspan="2">Manejo del stack</td>
+         <td><code>DUP XCHG DROP   INIT</code></td>
+      </tr>
+   </table>
+<p>En las calculadoras HP: <b>INV</b> es <kbd>1/x</kbd>, <b>SQR</b> es <kbd>x<sup>2</sup></kbd>, <b>SQRT</b> es <kbd>&Sqrt;x</kbd>, <b>EXP</b> es <kbd>e<sup>x</sup></kbd>, <b>EXPT</b> es <kbd>10<sup>x</sup></kbd> y <b>POW</b> es <kbd>y<sup>x</sup></kbd>.
+<p>Las funciones trigonom&eacute;tricas siempre trabajan en radianes. <b>DEG</b> convierte radianes a grados; <b>RAD</b> convierte grados a radianes.
+<p><b>ZERO</b>, <b>ONE</b> y <b>PI</b> son funciones de convenencia que cargan las constantes 0.0, 1.0 y &Pi; (3.141592654...) mediante operaciones nativas del FPU.
+<p>La funci&oacute;n <b>INT</b> <i>convierte</i> un n&uacute;mero de punto flotante en uno entero (no s&oacute;lo elimina la parte fraccionaria); despu&eacute;s de la conversi&oacute;n usted debe operar y mostrar el n&uacute;mero usando operadores y formatos enteros. Si desea obtener la parte entera de un n&uacute;mero de punto flotante, tan s&oacute;lo haga esto: <code>DUP FRAC SUB</code>.
+<p>La funci&oacute;n <b>INIT</b> inicializa (borra el stack de) la Unidad de Punto Flotante X87 (FPU). Vea la descripci&oacute;n <a href="#Borrar_el_stack_de_la_FPU">adelante</a>.
+<h3><a name="Registros_de_Almacenamiento" style="text-decoration:none">Registros de Almacenamiento</a> </h3>
+   <table border="1" rules="all" cellpadding="5" align="right">
+   <caption><b><a name="_Registros_de_Almacenamiento"> Registros de Almacenamiento</a></b></caption>
+      <tr>
+         <th>N</th>
+         <th>i</th>
+         <th>Ent</th>
+         <th>Float</th>
+      </tr>
+      <tr>
+         <td>I</td>
+         <td>&nbsp;</td>
+         <td>0</td>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>2</td>
+         <td>2</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>3</td>
+         <td>3</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>4</td>
+         <td>4</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>5</td>
+         <td>5</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>6</td>
+         <td>6</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>7</td>
+         <td>7</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>8</td>
+         <td>8</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>9</td>
+         <td>9</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.0</td>
+         <td>10</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.1</td>
+         <td>11</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.2</td>
+         <td>12</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.3</td>
+         <td>13</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.4</td>
+         <td>14</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.5</td>
+         <td>15</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.6</td>
+         <td>16</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.7</td>
+         <td>17</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.8</td>
+         <td>18</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+      <tr>
+         <td>.9</td>
+         <td>19</td>
+         <td>0</td>
+         <td>0.0</td>
+      </tr>
+   </table>
+<p>Adem&aacute;s de los n&uacute;meros que usted puede insertar como par&aacute;metros de printf.exe, tambi&eacute;n se proporcionan varios <i>registros de almacenamiento de datos</i> que permiten almacenar y recuperar tanto n&uacute;meros enteros como de punto flotante para ser utilizados posteriormente en otra parte de la expresi&oacute;n RPN. Tambi&eacute;n se pueden efectuar operaciones aritm&eacute;ticas b&aacute;sicas sobre un registro de almacenamiento (<i>aritm&eacute;tica de almacenamiento</i>) o utilizar un registro de almacenamiento para hacer operaciones b&aacute;sicas sobre el &uacute;ltimo n&uacute;mero ingresado (<i>aritm&eacute;tica de recuperaci&oacute;n</i>). Usted puede leer una introducci&oacute;n al uso de registros de almacenamiento en <a href="http://www.hp.com/ctg/Manual/bpia5312#page=22">la p&aacute;gina 22</a> del manual de la calculadora HP-12C.
+<p>Inicialmente, la aplicaci&oacute;n printf.exe puede manejar 20 registros de almacenamiento enteros y 20 de punto flotante (aparte del registro <code>I</code> &Iacute;ndice) seg&uacute;n se muestra en el esquema del lado derecho. Los 20 registros, tanto enteros como de punto flotante, pueden ser direccionados directamente mediante un d&iacute;gito 0..9 ingresado en lugar de la letra <b>N</b> en las operaciones de la tabla de abajo, o bien por la combinaci&oacute;n punto-d&iacute;gito que direcciona los registros del 10 al 19; por ejemplo: <code>]3</code> o <code>STO.5</code> (en esa tabla <b>X</b> se refiere al &uacute;ltimo n&uacute;mero ingresado). 
+<p>El n&uacute;mero de registros de almacenamiento disponibles (enteros y flotantes) y el tama&ntilde;o del &aacute;rea reservada para almacenar cadenas de caracteres pueden ser aumentados mediante el procedimiento descrito en el <a href="#Aumentando_el_espacio_de_almacenamiento">Ap&eacute;ndice 2</a>. Cuando existan m&aacute;s de 20 registros de almacenamiento, los registros adicionales deben ser <i>direccionados indirectamente</i> mediante el <i>Registro &Iacute;ndice</i> <code>i</code> seg&uacute;n se explica en la <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf#page=106">Secci&oacute;n 10: El Registro &Iacute;ndice</a> del manual del propietario de la calculadora HP-15C (en ingl&eacute;s), que se traduce de esta manera para printf.exe: <q>El registro &Iacute;ndice es un registro de almacenamiento entero que puede ser usado directamente, con <code>I</code> como en <code>[I</code>, o indirectamente, con <code>i</code> como en <code>[i</code>. La funci&oacute;n <code>I</code> usa <i>el propio contenido</i> del registro &Iacute;ndice. La funci&oacute;n <code>i</code> usa el n&uacute;mero almacenado en el registro &Iacute;ndice para direccionar otro registro de almacenamiento, entero o flotante. Esto se llama <i>direccionamiento indirecto</i>.</q>
+<p><b>IMPORTANTE:</b> Tome nota que el uso de las letras "I" e "i" para acceder al registro &Iacute;ndice de esta manera es <i>la &uacute;nica operaci&oacute;n</i> de printf.exe que distingue may&uacute;sculas de min&uacute;sculas. Usted debe tener en cuenta este punto e insertar la letra adecuada de acuerdo con la operaci&oacute;n deseada.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Operaciones_sobre_Registros_de_Almacenamiento"> Operaciones sobre Registros de Almacenamiento</a></b></caption>
+      <tr>
+         <th>&nbsp;</th>
+         <th>Ent</th>
+         <th>Float</th>
+         <th>Nombre</th>
+         <th>Operaci&oacute;n</th>
+         <th>Descripci&oacute;n</th>
+      </tr>
+      <tr>
+         <td rowspan="9">S<br>T<br>O<br>R<br>E</td>
+         <td><code>]n</code></td>
+         <td><code>STOn</code></td>
+         <td>Store</td>
+         <td><b>RegN = X</td>
+         <td>Almacena X en el registro N</td>
+      </tr>
+      <tr>
+         <td><code>][n</code></td>
+         <td><code>STO[n</code></td>
+         <td>Store-Xchg</td>
+         <td><b>RegN &lt;=> X</b></td>
+         <td>Intercambia X y el registro N</td>
+      </tr>
+      <tr>
+         <td><code>]+n</code></td>
+         <td><code>STO+n</code></td>
+         <td>Store-Add</td>
+         <td><b>RegN = RegN+X</b></td>
+         <td>Suma X al registro N</td>
+      </tr>
+      <tr>
+         <td><code>]++n</code></td>
+         <td><code>STO++n</code></td>
+         <td>Store-Inc</td>
+         <td><b>RegN = RegN+1</b></td>
+         <td>Incrementa el registro N</td>
+      </tr>
+      <tr>
+         <td><code>]-n</code></td>
+         <td><code>STO-n</code></td>
+         <td>Store-Sub</td>
+         <td><b>RegN = RegN-X</b></td>
+         <td>Resta X del registro N</td>
+      </tr>
+      <tr>
+         <td><code>]--n</code></td>
+         <td><code>STO--n</code></td>
+         <td>Store-Dec</td>
+         <td><b>RegN = RegN-1</b></td>
+         <td>Decrementa el registro N</td>
+      </tr>
+      <tr>
+         <td><code>]*n</code></td>
+         <td><code>STO*n</code></td>
+         <td>Store-Mul</td>
+         <td><b>RegN = RegN*X</b></td>
+         <td>Multiplica el registro N por X</td>
+      </tr>
+      <tr>
+         <td><code>]/n</code></td>
+         <td><code>STO/n</code></td>
+         <td>Store-Div</td>
+         <td><b>RegN = RegN/X</b></td>
+         <td>Divide el registro N entre X</td>
+      </tr>
+      <tr>
+         <td><code>]%n</code></td>
+         <td><code>STO%n</code></td>
+         <td>Store-Mod</td>
+         <td><b>RegN = RegN%X</b></td>
+         <td>... y toma el residuo</td>
+      </tr>
+      <tr>
+         <td rowspan="8">R<br>E<br>C<br>A<br>L<br>L</td>
+         <td><code>[n</code></td>
+         <td><code>RCLn</code></td>
+         <td>Recall</td>
+         <td><b>Push RegN</b></td>
+         <td>Recupera X del registro N</td>
+      </tr>
+      <tr>
+         <td><code>[+n</code></td>
+         <td><code>RCL+n</code></td>
+         <td>Recall-Add</td>
+         <td><b>X = X+RegN</b></td>
+         <td>Le suma a X el registro N</td>
+      </tr>
+      <tr>
+         <td><code>[++n</code></td>
+         <td><code>RCL++n</code></td>
+         <td>Recall-Inc</td>
+         <td><b>X = X+1</b></td>
+         <td>Incrementa X</td>
+      </tr>
+      <tr>
+         <td><code>[-n</code></td>
+         <td><code>RCL-n</code></td>
+         <td>Recall-Sub</td>
+         <td><b>X = X-RegN</b></td>
+         <td>Le resta a X el registro N</td>
+      </tr>
+      <tr>
+         <td><code>[--n</code></td>
+         <td><code>RCL--n</code></td>
+         <td>Recall-Dec</td>
+         <td><b>X = X-1</b></td>
+         <td>Decrementa X</td>
+      </tr>
+      <tr>
+         <td><code>[*n</code></td>
+         <td><code>RCL*n</code></td>
+         <td>Recall-Mul</td>
+         <td><b>X = X*RegN</b></td>
+         <td>Multiplica X por el registro N</td>
+      </tr>
+      <tr>
+         <td><code>[/n</code></td>
+         <td><code>RCL/n</code></td>
+         <td>Recall-Div</td>
+         <td><b>X = X/RegN</b></td>
+         <td>Divide X entre el registro N</td>
+      </tr>
+      <tr>
+         <td><code>[%n</code></td>
+         <td><code>RCL%n</code></td>
+         <td>Recall-Mod</td>
+         <td><b>X = X%RegN</b></td>
+         <td>... y toma el residuo</td>
+      </tr>
+   </table>
+<p>Note que las operaciones enteras "de recuperaci&oacute;n" <b>[++n</b> y <b>[--n</b> hacen lo mismo que las operaciones mas simples <b>++</b> (<i>Increment</i>) y <b>--</b> (<i>Decrement</i>).
+<p>La mayor&iacute;a de las calculadoras HP, como la HP-15C, incluyen funciones que realizan c&aacute;lculos estad&iacute;sticos sobre dos variables. Para hacerlo, se introduce cada par de valores X-Y y se oprime la tecla <kbd>S+</kbd>, con lo cual los valores estad&iacute;sticos se compilan en los registros de almacenamiento R2 a R7 seg&uacute;n se describe en la p&aacute;gina 49 del <a href="http://h10032.www1.hp.com/ctg/Manual/c03030589.pdf#page=49">HP-15C Owner's Handbook</a>:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <th>Registro</th>
+         <th>Valor</th>
+         <th>Descripci&oacute;n</th>
+      </tr>
+      <tr>
+         <td>R2</td>
+         <td>n</td>
+         <td>N&uacute;mero de datos acumulados.</td>
+      </tr>
+      <tr>
+         <td>R3</td>
+         <td>Sx</td>
+         <td>Sumatoria de valores x.</td>
+      </tr>
+      <tr>
+         <td>R4</td>
+         <td>Sx^2</td>
+         <td>Sumatoria de valores x al cuadrado.</td>
+      </tr>
+      <tr>
+         <td>R5</td>
+         <td>Sy</td>
+         <td>Sumatoria de valores y.</td>
+      </tr>
+      <tr>
+         <td>R6</td>
+         <td>Sy^2</td>
+         <td>Sumatoria de valores y al cuadrado.</td>
+      </tr>
+      <tr>
+         <td>R7</td>
+         <td>Sxy</td>
+         <td>Sumatoria de productos de valores x por valores y.</td>
+      </tr>
+   </table>
+<p>El paquete printf.exe incluye un programa de ejemplo que realiza los mismos c&aacute;lculos estad&iacute;sticos de la calculadora HP-15C. Este es el segmento de dicho ejemplo que compila los valores estad&iacute;sticos en los registros especificados:
+<pre>
+		/*    x y		*/ ^
+      STO++2	/*        Accum n	*/ ^
+      STO+5	/*        Accum Sy	*/ ^
+      STO9	/*        R9 = y	*/ ^
+      SQR	/*    x y^2		*/ ^
+      STO+6	/*        Accum Sy^2	*/ ^
+      DROP	/*    x			*/ ^
+      STO+3	/*        Accum Sx	*/ ^
+      DUP	/*    x x		*/ ^
+      SQR	/*    x x^2		*/ ^
+      STO+4	/*        Accum Sx^2	*/ ^
+      DROP	/*    x			*/ ^
+      RCL*9	/*    x*y		*/ ^
+      STO+7	/*        Accum Sx*y	*/ ^
+      DROP	/*        Empty stack	*/ ^
+</pre>
+<p>El programa de ejemplo completo se encuentra en el archivo <a href="printf%20Example%201%20-%20Two%20var%20statistics.bat">printf Example 1 - Two var statistics.bat</a>
+<h3><a name="Manejo_del_Stack" style="text-decoration:none">Manejo del Stack</a> </h3>
+<p>En este ejemplo: <code>printf "%i %i %i %i\n" 10 20 30 40</code> los n&uacute;meros 10, 20, 30 y 40 se ingresan en el mismo orden: el <i>primero</i> es el 10 y el <i>&uacute;ltimo</i> el 40. Si despu&eacute;s de eso usted retira un n&uacute;mero con <code>&lt;</code> (<i>Drop</i>), el n&uacute;mero retirado ser&aacute; el 40. Este esquema de operaci&oacute;n en donde <a href="https://es.wikipedia.org/wiki/Last_in,_first_out">el &uacute;ltimo que entra es el primero que sale</a> (en contraste con una <i>cola</i> en donde el primero que entra es el primero que sale) define una estructura de datos llamada <a href="https://es.wikipedia.org/wiki/Pila_(inform%C3%A1tica)">pila</a> (<i>stack</i> en ingl&eacute;s). De acuerdo con esto, las <i>operaciones de manejo del stack</i> nos permiten manipular y cambiar el orden de los n&uacute;meros ingresados como par&aacute;metros del programa printf.exe.
+<p>Normalmente, las operaciones de manejo del stack operan sobre el &uacute;ltimo n&uacute;mero ingresado. Sin embargo, estas operaciones tambi&eacute;n pueden operar sobre otro n&uacute;mero que <i>no sea</i> el &uacute;ltimo. El n&uacute;mero por operar se indica mediante un d&iacute;gito que marca la <i>posici&oacute;n</i> del n&uacute;mero deseado a partir del &uacute;ltimo, con posici&oacute;n <b>1</b>, hasta el primero (orden inverso). Por ejemplo, <code>&lt;2</code> elimina el pen&uacute;ltimo n&uacute;mero. En la siguiente tabla se muestran otros ejemplos.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Operaciones_de_Manejo_del_Stack"> Operaciones de Manejo del Stack</a></b></caption>
+      <tr>
+         <th rowspan="2">Tipo</th>
+         <th rowspan="2">Oper</th>
+         <th rowspan="2">Nombre</th>
+         <th rowspan="2">Descripci&oacute;n</th>
+         <th colspan="3">Ejemplo</th>
+      </tr>
+      <tr>
+         <th>Antes --><br>6 &nbsp; 5 &nbsp; 4 &nbsp; 3 &nbsp; 2 &nbsp; 1</th>
+         <th>oper</th>
+         <th>--> Despu&eacute;s<br>&nbsp;</th>
+      </tr>
+      <tr>
+         <td rowspan="5"  align="center">E<br>N<br>T<br>E<br>R<br>O</td>
+         <td align="center"><code>></code></td>
+         <td>Dup</td>
+         <td align="left" align="right">Duplica un n&uacute;mero</td>
+         <td align="right" align="center">10 20 30 40</td>
+         <td align="center"><b>></b><br><b>>3</b><br><b>>4</b></td>
+         <td>10 20 30 40 40<br>10 20 30 40 20<br>10 20 30 40 10</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>&lt;></code></td>
+         <td>Exchange</td>
+         <td>Intercambia el &uacute;ltimo n&uacute;mero con otro</td>
+         <td align="right">10 20 30 40</td>
+         <td align="center"><b>&lt;></b><br><b>&lt;>2</b><br><b>&lt;>4</b></td>
+         <td>10 20 40 30<br>10 20 40 30<br>40 20 30 10</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>&lt;</code></td>
+         <td>Drop</td>
+         <td>Elimina un n&uacute;mero</td>
+         <td align="right">10 20 30 40</td>
+         <td align="center"><b>&lt;</b><br><b>&lt;2</b><br><b>&lt;3</b><br><b>&lt;*</b></td>
+         <td>10 20 30<br>10 20 40<br>10 30 40<br>&nbsp;</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>{</code></td>
+         <td>Roll Down</td>
+         <td>Rota X hacia una posici&oacute;n previa</td>
+         <td align="right">10 20 30 40 50 60</td>
+         <td align="center"><b>{4</b><br><b>{6</b></td>
+         <td>10 20 60 30 40 50<br>60 10 20 30 40 50</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>}</code></td>
+         <td>Roll Up</td>
+         <td>Rota una posici&oacute;n previa hacia X</td>
+         <td align="right">10 20 30 40 50 60</td>
+         <td align="center"><b>}3</b><br><b>}5</b></td>
+         <td>10 20 30 50 60 40<br>10 30 40 50 60 20</td>
+      </tr>
+      <tr>
+         <td rowspan="3"  align="center">F<br>L<br>O<br>T<br>A<br>N<br>T<br>E</td>
+         <td><code>DUP</code></td>
+         <td>Dup</td>
+         <td align="left" align="right">Duplica un n&uacute;mero</td>
+         <td align="right" align="center">10. 20. 30. 40.</td>
+         <td><b>DUP</b><br><b>DUP2</b><br><b>DUP3</b></td>
+         <td>10. 20. 30. 40. 40.<br>10. 20. 30. 40. 30.<br>10. 20. 30. 40. 20.</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>XCHG</code></td>
+         <td>Exchange</td>
+         <td>Intercambia el &uacute;ltimo n&uacute;mero con otro</td>
+         <td align="right">10. 20. 30. 40.</td>
+         <td align="center"><b>XCHG</b><br><b>XCHG3</b><br><b>XCHG4</b></td>
+         <td>10. 20. 40. 30.<br>10. 40. 30. 20.<br>40. 20. 30. 10.</td>
+      </tr>
+      <tr>
+         <td  align="center"><code>DROP</code></td>
+         <td>Drop</td>
+         <td>Elimina un n&uacute;mero</td>
+         <td align="right">10. 20. 30. 40.</td>
+         <td align="center"><b>DROP</b><br><b>DROP3</b><br><b>DROP4</b></td>
+         <td>10. 20. 30.<br>10. 30. 40.<br>20. 30. 40.</td>
+      </tr>
+   </table>
+<p>Note que <b>>1</b> es lo mismo que <b>></b>, que <b>&lt;1</b> es lo mismo que <b>&lt;</b>, y que <b>&lt;>2</b> es lo mismo que <b>&lt;></b>; la operaci&oacute;n <b>&lt;>1</b> no es v&aacute;lida.
+<p>La operaci&oacute;n <b>&lt;*</b> (<i>Drop All</i>) elimina <i>todos los datos</i> insertados despu&eacute;s de la cadena formato.
+<p>Las operaciones <b>{ }</b> (RollDown/RollUp) <i>no pueden</i> usarse sin una posici&oacute;n, y dicha posici&oacute;n debe ser mayor o igual a <b>2</b> (como en Exchange). Roll Down <b>{</b>  mueve el &uacute;ltimo n&uacute;mero hacia una posici&oacute;n previa (similar a <i>Store</i>). Roll Up <b>}</b> mueve el n&uacute;mero de una posici&oacute;n previa hacia el &uacute;ltimo (similar a <i>Recall</i>).
+<p>Recuerde que printf.exe s&oacute;lo puede mantener hasta 8 n&uacute;meros de punto flotante en el stack; esto significa que la posici&oacute;n de DUP debe estar entre 1 y 7, en XCHG debe estar entre 2 y 8, y en DROP entre 1 y 8. No hay operaciones RollDown/RollUp sobre n&uacute;meros de punto flotante en esta versi&oacute;n de printf.exe. Si una posici&oacute;n se refiere a un n&uacute;mero no ingresado, el programa printf.exe fallar&aacute; (como es usual).
+<p><i>T&oacute;pico avanzado</i>: todas las operaciones de manejo del stack asumen que <i>todos los n&uacute;meros</i> en el stack son del mismo tipo: enteros o punto flotante. Si hay n&uacute;meros de diferentes tipos en estas operaciones, el resultado depende de la posici&oacute;n del n&uacute;mero de tipo diferente. Los n&uacute;meros de punto flotante ocupan 64 bits mientras que los enteros ocupan 32 bits; esto significa que un flotante es equivalente a dos enteros, y que un entero es equivalente a medio flotante. Si usted est&aacute; consciente de esta situaci&oacute;n, podr&aacute; manipular n&uacute;meros de diferentes tipos en el stack y a&uacute;n as&iacute; obtener el resultado deseado.
+<p>Cuando revise los siguientes ejemplos se sugiere dibujar un peque&ntilde;o esquema en donde los enteros ocupen "1 lugar" y los flotantes ocupen "2 lugares". Recuerde que las operaciones enteras mueven un lugar y las flotantes dos.
+<pre>
+printf "Entero: %i, Entero: %i, Flotante: %.2f\n"  10 20 30.  /* Uso normal */
+</pre>
+<p><b>Entero: 10, Entero: 20, Flotante: 30.00</b>
+<pre>
+printf "Entero: %i, Flotante: %.2f, Entero: %i\n"  10 20 30.
+       /* Incorrecto: el 20 y la mitad (inferior) de 30. se muestran como Flotante 0.00
+          y la mitad (superior) de 30. se muestra como entero 1077805056 */
+</pre>
+<p><b>Entero: 10, Flotante: 0.00, Entero: 1077805056</b>
+<pre>
+printf "Entero: %i, Flotante: %.2f, Entero: %i\n"  10 20 30. }4
+       /* Corregido: rota el *CUARTO* entero (hay 2 enteros y un float: 4 "lugares")
+          por lo que el entero 10 se trae a la última posición */
+</pre>
+<p><b>Entero: 20, Flotante: 30.00, Entero: 10</b>
+<pre>
+printf "Flotante: %.2f, Entero:%i, Entero: %i\n"  10 20 30. {4 {4
+       /* Lleva las *dos mitades* del 30. a la primer posición */
+</pre>
+<p><b>Flotante: 30.00, Entero:10, Entero: 20</b>
+<p>N&oacute;tese que este tipo de movimiento <i>no funciona</i> con operaciones de punto flotante de manejo del stack porque en este caso los registros del stack del FPU siempre participan en la operaci&oacute;n y tales registros <i>no se corresponden</i> con los par&aacute;metros de printf.exe si hay n&uacute;meros enteros intermedios. A continuaci&oacute;n se explica este punto con mas detalle.
+<h3><a name="Borrar_el_stack_de_la_FPU" style="text-decoration:none">Borrar el stack de la FPU</a> </h3>
+<p><i>T&oacute;pico avanzado</i>: Esta secci&oacute;n contiene varias descripciones t&eacute;cnicas.
+<p>El programa printf.exe utiliza la <a href="https://es.wikipedia.org/wiki/Unidad_de_coma_flotante">Unidad de Punto Flotante (FPU)</a> para efectuar operaciones de punto flotante; &eacute;ste es un componente de la computadora dise&ntilde;ado espec&iacute;ficamente para evaluar este tipo de operaciones. La FPU usa un stack de 8 registros completamente similar al stack de las calculadoras HP.
+<p>Cuando se ingresa un n&uacute;mero de punto flotante en los par&aacute;metros de printf.exe, &eacute;ste introduce el mismo n&uacute;mero en el stack de la FPU de manera que ambas &aacute;reas (par&aacute;metros y FPU stack) normalmente contienen los mismos n&uacute;meros; sin embargo, hay algunas operaciones que pueden desincronizar estas &aacute;reas. Por ejemplo si usted desea <i>mostrar</i> m&aacute;s de 8 n&uacute;meros de punto flotante, usted puede utilizar la operaci&oacute;n <b>INIT</b> que borra el stack de la FPU, pero no modifica los par&aacute;metros. Por supuesto, esto implica que despu&eacute;s de una operaci&oacute;n INIT usted NO PODR&Aacute; efectuar operaciones aritm&eacute;ticas con los n&uacute;meros que fueron introducidos antes del INIT. Hay un par de operaciones que tambi&eacute;n ejecutan un INIT, como <b>&lt;*</b> (<i>Drop All</i>) y <b>FMT}</b> (<i>Format End</i>), las cuales se describir&aacute;n mas adelante.
+<h3><a name="Operaciones_con_Cadenas" style="text-decoration:none">Operaciones con Cadenas</a> </h3>
+<p>En el programa printf.exe las cadenas de caracteres se almacenan en dos partes: los <i>datos</i> que son los caracteres de la cadena, y su <i>direcci&oacute;n</i> que es la parte que usa la funci&oacute;n printf CRT para mostrar la cadena mediante la especificaci&oacute;n de formato <b>%s</b>. Cuando se ingresa una "cadena de caracteres", los caracteres se almacenan en una zona reservada para ellos con un byte cero binario a&ntilde;adido al final (que marca el final de la cadena), y el valor que aparece en los par&aacute;metros del programa printf.exe es <i>la direcci&oacute;n</i> (puntero) del primer caracter de la cadena. Un <a name="direccion_es_numero">detalle interesante</a> es que esta direcci&oacute;n <i>es un n&uacute;mero entero de 32 bits</i>, por lo que puede ser "manipulado" con las operaciones enteras est&aacute;ndar como Dup, Exchange, etc. Algunas de estas operaciones dan un resultado &uacute;til cuando son aplicadas a las direcciones de cadenas de caracteres. Unos cuantos ejemplos pueden ayudar a entender este punto; se sugiere copiar estos ejemplos y ejecutarlos en la ventana de comandos para comprobar el resultado.
+<pre>
+printf "Primera: %s,  Segunda: %s\n" "Uno" "Dos"
+printf /" "Segunda: %s,  Primera: %s\n" "Uno" "Dos" &lt;>  /* Exchange cadenas */
+
+printf /" "Una cadena: \"%s\", *la misma* cadena: \"%s\"\n" "Sólo una cadena" >  /* Duplica cadena */
+</pre>
+<p>En el primer ejemplo se ingresan dos cadenas como se explic&oacute; antes: sus caracteres se almacenan en el &aacute;rea de datos y sus direcciones se ingresan <i>como par&aacute;metros</i> de printf.exe (como si fuera cualquier otro par&aacute;metro, como un n&uacute;mero). En el segundo ejemplo las cadenas se almacenan de la misma manera y el operador <code>&lt;></code> intercambia <i>las direcciones</i> de las cadenas (no sus caracteres). De esta manera, la primer direcci&oacute;n apunta a la segunda cadena y viceversa.
+<p>En el tercer ejemplo el operador <code>></code> duplica la direcci&oacute;n de la &uacute;nica cadena dada (no sus caracteres), por lo que <i>los mismos caracteres</i> se muestran dos veces.
+<p>Adem&aacute;s de los operadores enteros, que <i>pueden</i> producir resultados &uacute;tiles cuando se usan sobre direcciones de cadenas, printf.exe incluye varias funciones dise&ntilde;adas espec&iacute;ficamente para trabajar sobre cadenas. Todas estas funciones <i>no modifican</i> los datos (caracteres) de las cadenas dadas; tan s&oacute;lo eliminan de los par&aacute;metros de printf.exe <i>las direcciones</i> de las cadenas procesadas. Esto significa que si usted almacena dichas direcciones, a&uacute;n podr&iacute;a accesar esas cadenas posteriormente.
+<p>Por ejemplo, la funci&oacute;n <b>join</b> concatena las cadenas dadas: <code>printf "Resultado: \"%s\"\n" "Uno" "Dos" "Tres" 3 join</code> muestra: <b>Resultado:&nbsp;"Uno&nbsp;Dos&nbsp;Tres"</b>. Si se guardan las direcciones de las 3 cadenas procesadas, &eacute;stas se pueden mostrar despu&eacute;s de la funci&oacute;n:
+<pre>
+printf "La cadena \"%s\" es la unión de \"%s\"+\"%s\"+\"%s\"\n" "Uno" ]1 "Dos" ]2 "Tres" ]3 3 join [1 [2 [3
+</pre>
+<p>Muestra: <b>La&nbsp;cadena&nbsp;"Uno&nbsp;Dos&nbsp;Tres"&nbsp;es&nbsp;la&nbsp;uni&oacute;n&nbsp;de&nbsp;"Uno"+"Dos"+"Tres"</b>
+<p>De esta forma, los registros enteros de almacenamiento tambi&eacute;n pueden funcionar como registros de almacenamiento <i>de cadenas</i>, aunque usted no debe perder de vista que lo que se almacena aqu&iacute; son solamente <i>direcciones</i>; los caracteres se almacenan en otro lugar.
+<p>A pesar de lo anterior, usted debe notar que la operaci&oacute;n <b>&lt;*</b> (<i>Drop All</i>) libera el &aacute;rea de almacenamiento <i>de datos</i> de todas las cadenas borradas, por lo que esa &aacute;rea podr&iacute;a ser ocupada por nuevas cadenas que se ingresen posteriormente.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="_Funciones_sobre_Cadenas_de_Caracteres"> Funciones sobre Cadenas de Caracteres</a></b></caption>
+      <tr>
+         <th rowspan="2">Nombre</th>
+         <th rowspan="2">Descripci&oacute;n<br>Forma can&oacute;nica (<a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/run-time-routines-by-category?view=msvc-170">CRT</a>)</th>
+         <th colspan="3">Ejemplo</th>
+      </tr>
+      <tr>
+         <th>Antes --></th>
+         <th>func</th>
+         <th>--> Despu&eacute;s</th>
+      </tr>
+      <tr>
+         <td><b>atoi</b></td>
+         <td>Convierte uno/todos n&uacute;mero(s) entero(s)<br>de una cadena<br><a href="https://docs.microsoft.com/es-es/cpp/c-runtime-library/reference/atoi-atoi-l-wtoi-wtoi-l?view=msvc-170">atoi0(cadena)</a><br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l?view=msvc-170">atoi1(cadena)</a></td>
+         <td align="right">"123"<br>"12 34 56"</td>
+         <td align="center">atoi0<br>atoi1</td>
+         <td>123<br>12 34 56 3</td>
+      </tr>
+      <tr>
+         <td><b>atof</b></td>
+         <td>Convierte uno/todos n&uacute;mero(s) flotante(s)<br>de una cadena<br><a href="https://docs.microsoft.com/es-es/cpp/c-runtime-library/reference/atof-atof-l-wtof-wtof-l">atof0(cadena)</a><br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/strtod-strtod-l-wcstod-wcstod-l?view=msvc-170">atof1(cadena)</a></td>
+         <td align="right">"47.250"<br>"12 34 56 78"</td>
+         <td align="center">atof0<br>atof1</td>
+         <td>47.25<br>12. 34. 56. 78. 4</td>
+      </tr>
+      <tr>
+         <td><b>len</b></td>
+         <td>N&uacute;mero de caracteres en una cadena<br>len(cadena)</td>
+         <td align="right">"LasQuinceLetras"</td>
+         <td align="center">len</td>
+         <td>"LasQuinceLetras" 15</td>
+      </tr>
+      <tr>
+         <td><b>getc</b></td>
+         <td>Toma uno/todos caracter(es) de una cadena<br>getc0(cadena,pos)<br>getc1(cadena)</td>
+         <td align="right">"ABCDEFG" 3<br>"ABCDEFG"</td>
+         <td align="center">getc0<br>getc1</td>
+         <td>"ABCDEFG" 3 'D'<br>'A' 'B' 'C' 'D' 'E' 'F' 'G' 7</td>
+      </tr>
+      <tr>
+         <td><b>putc</b></td>
+         <td>Pone uno/todos caracter(es) en una cadena<br>putc0(cadena,pos,'C')<br>putc1('1','2',...,'n',N)</td>
+         <td align="right">"ABCDEFG" 3 'x'<br>'A' 'B' 'C' 'D' 'E' 'F' 'G' 7</td>
+         <td align="center">putc0<br>putc1</td>
+         <td>"ABCxEFG" 3<br>"ABCDEFG"</td>
+      </tr>
+      <tr>
+         <td><b>xchc</b></td>
+         <td>Cambia un caracter de/a una cadena<br>xchc(cadena,pos,'C')</td>
+         <td align="right">"ABCDEFGHIJ" 3 'x'</td>
+         <td align="center">xchc</td>
+         <td>"ABCxEFGHIJ" 3 'D'</td>
+      </tr>
+      <tr>
+         <td><b>movc</b></td>
+         <td>Mueve un caracter (puntero)<br>movc0(puntero)<br>movc1(puntero,'C')<br>movc2(puntero1,puntero2)</td>
+         <td align="right">"ABCDEFG"<br>"ABCDEFG" 'x'<br>"ABCDEFG" "01234567"</td>
+         <td align="center">movc0<br>movc1<br>movc2</td>
+         <td>"ABCDEFG" 'A'<br>"xBCDEFG"<br>"0BCDEFG" "0123456"</td>
+      </tr>
+      <tr>
+         <td><b>dupc</b></td>
+         <td>Duplica un caracter varias veces<br>y crea una cadena<br>dupc(char,N)</td>
+         <td align="right">'#' 8</td>
+         <td align="center">dupc</td>
+         <td>"########"</td>
+      </tr>
+      <tr>
+         <td><b>dups</b></td>
+         <td>Duplica una cadena varias veces<br>dups0(cadena,N)<br>dups1(cadena,N,separador)</td>
+         <td align="right">"Hola." 3<br>"Hola." 3 " + "</td>
+         <td align="center">dups0<br>dups1</td>
+         <td>"Hola." "Hola.Hola.Hola."<br>"Hola." "Hola. + Hola. + Hola."</td>
+      </tr>
+      <tr>
+         <td><b>revc</b></td>
+         <td>Invierte los caracteres de una cadena<br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/strrev-wcsrev-mbsrev-mbsrev-l?view=msvc-170">revc(cadena)</a></td>
+         <td align="right">"Esta es una prueba"</td>
+         <td align="center">revc</td>
+         <td>"abeurp anu se atsE"</td>
+      </tr>
+      <tr>
+         <td><b>revs</b></td>
+         <td>Invierte la posici&oacute;n de varias cadenas<br>revs(cad1,cad2,...,cadN,N)</td>
+         <td align="right">"Esta" "es" "una" "prueba" 4</td>
+         <td align="center">revs</td>
+         <td>"prueba" "una" "es" "Esta" 4</td>
+      </tr>
+      <tr>
+         <td><b>gets</b></td>
+         <td>Toma parte de una cadena (subcadena)<br>gets0(cadena,inicio,long)<br>gets1(cadena,inicio,fin)</td>
+         <td align="right">"ABCDEFGHIJ" 3 4</td>
+         <td align="center">gets0<br>gets1</td>
+         <td>"ABCDEFGHIJ" "DEFG"<br>"ABCDEFGHIJ" "DE"</td>
+      </tr>
+      <tr>
+         <td><b>index</b></td>
+         <td>Posiciones de subcadena en una cadena<br>index(cadena,subc)</td>
+         <td align="right">"Esta es una prueba" "a"<br>"Esta es una prueba" "es"<br>"Esta es una prueba" "x"</td>
+         <td align="center">index</td>
+         <td>"Esta es una prueba" 3 10 17 3<br>"Esta es una prueba" 5 1<br>"Esta es una prueba" 0</td>
+      </tr>
+      <tr>
+         <td><b>split</b></td>
+         <td>Divide una cadena en varias subcadenas<br>split0(cadena)<br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/strtok-strtok-l-wcstok-wcstok-l-mbstok-mbstok-l?view=msvc-170">split1(cadena,delims)</a></td>
+         <td align="right">"Esta es una prueba"<br>"Esta_es_una_prueba"<br>"Esta_es_una_prueba" "_"</td>
+         <td align="center">split0<br>split0<br>split1</td>
+         <td>"Esta" "es" "una" "prueba" 4<br>"Esta_es_una_prueba" 1<br>"Esta" "es" "una" "prueba" 4</td>
+      </tr>
+      <tr>
+         <td><b>join</b></td>
+         <td>Une varias cadenas en una mas larga<br>join0(cad1,cad2,...,cadN,N)<br>join1(cad1,cad2,...,cadN,N,separador)</td>
+         <td align="right">"Esta" "es" "una" "prueba" 4<br>"Esta" "es" "una" "prueba" 4 ">&lt;"</td>
+         <td align="center">join0<br>join1</td>
+         <td>"Esta es una prueba"<br>"Esta>&lt;es>&lt;una>&lt;prueba"</td>
+      </tr>
+      <tr>
+         <td><b>shift</b></td>
+         <td>Desplaza la posici&oacute;n de varias cadenas<br>shift(cad1,cad2,...,cadN,N)</td>
+         <td align="right">"Esta" "es" "una" "prueba" 4</td>
+         <td align="center">shift</td>
+         <td>"es" "una" "prueba" 3 "Esta"</td>
+      </tr>
+      <tr>
+         <td><b>repl</b></td>
+         <td>Reemplaza partes de una cadena<br>repl(cadena,viejaC,nuevaC)</td>
+         <td align="right">"Esta es una prueba" "una" "otra"<br>"Esta es una prueba" "una " ""<br>"Letras" "" "_"</td>
+         <td align="center">repl</td>
+         <td>"Esta es otra prueba"<br>"Esta es prueba"<br>"L_e_t_r_a_s"</td>
+      </tr>
+      <tr>
+         <td><b>cmps</b></td>
+         <td>Compara dos cadenas: -1 0 1<br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/strcmp-wcscmp-mbscmp?view=msvc-170">cmps(str1,str2)</a><br><a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l?view=msvc-170">cmpsi(str1,str2)</a></td>
+         <td align="right">"UNO" "Uno"</td>
+         <td align="center">cmps<br>cmpsi</td>
+         <td>"UNO" "Uno" 1<br>"UNO" "Uno" 0</td>
+      </tr>
+   </table>
+<p>Las funciones <b>atoi1</b> y <b>atof1</b> extraen <i>todos los n&uacute;meros</i> que aparezcan en la cadena los cuales pueden estar mezclados con otros caracteres; el &uacute;nico requisito para que un n&uacute;mero sea convertido es que est&eacute; <i>precedido</i> por un espacio, TAB o coma. El &uacute;ltimo valor generado es un entero que indica cu&aacute;ntos n&uacute;meros fueron convertidos. Recuerde que en printf.exe se pueden ingresar un m&aacute;ximo de 8 n&uacute;meros de punto flotante.
+<p>En la funci&oacute;n <b>gets</b> si <i>inicio</i> es negativo especifica una posici&oacute;n hacia atr&aacute;s desde el final de la cadena, y si <i>long</i> es negativo especifica una <i>posici&oacute;n</i> (no una longitud) desde el final de la cadena. En la variante <b>gets1</b> el par&aacute;metro <i>fin</i> es la posici&oacute;n del &uacute;ltimo caracter, sin inclu&iacute;rlo; si fin es cero, se toma hasta el &uacute;ltimo caracter.
+<p>En la funci&oacute;n <b>repl</b> si la <i>nuevaC</i> est&aacute; vac&iacute;a la viejaC correspondiente se borra, y si la <i>viejaC</i> comienza o termina en asterisco la parte que se reemplaza se modifica. Cuando <i>viejaC</i> comienza con asterisco as&iacute;: <code>string "*subs" "new" repl</code>, la funci&oacute;n reemplaza desde el principio de la cadena hasta la primera aparici&oacute;n de "subs". Si <i>viejaC</i> termina en asterisco as&iacute;: <code>string "subs*" "new" repl</code> se reemplaza desde la &uacute;ltima aparici&oacute;n de "subs" hasta el final de la cadena. Si ambos asteriscos se incluyen as&iacute;: <code>string "*subs*" "new" repl</code> la funci&oacute;n reemplaza ambas partes al principio y al final de la cadena y preserva la parte de enmedio. Si <i>viejaC</i> est&aacute; vac&iacute;a, la nuevaC se inserta <i>entre cada caracter</i> de la cadena original.
+<p>En la variante <b>split0</b> la cadena se divide en cada espacio o TAB, pero las partes de la cadena que est&eacute;n encerradas entre comillas se conservan igual. En la variante <b>split1</b> usted puede definir los caracteres delimitadores. En cualquier caso varios delimitadores sucesivos se tratan como uno solo.
+<p>La funci&oacute;n <b>cmps</b> obtiene la "relaci&oacute;n ordinal" de las cadenas y devuelve -1, 0 o 1 si la primer cadena es menor que, igual o mayor que la segunda, respectivamente.
+<p>La operaci&oacute;n est&aacute;ndar de las funciones <b>index</b>, <b>repl</b> y <b>cmps</b> es <i>sensible a may&uacute;sculas y min&uacute;sculas</i>: el tama&ntilde;o de letra de la subcadena debe coincidir con el de la cadena base. Se puede ignorar el uso de may&uacute;sculas y min&uacute;sculas en la funci&oacute;n cmps agregando una letra "I" al final: <b>cmpsI</b> (s&oacute;lo en esta funci&oacute;n en esta versi&oacute;n de printf.exe).
+<p>La funci&oacute;n <b>movc</b> con par&aacute;metros tipo "puntero" se describe en seguida.
+<h3><a name="Punteros_de_Caracteres" style="text-decoration:none">Punteros de Caracteres</a> </h3>
+<p>Como se dijo antes, los caracteres y la direcci&oacute;n de una "cadena" se almacenan en partes separadas, y la parte que se maneja en los par&aacute;metros de printf.exe es la direcci&oacute;n. Esta "direcci&oacute;n" tambi&eacute;n podr&iacute;a llamarse "puntero" porque ambos t&eacute;rminos se refieren (apuntan) a un caracter dado. La diferencia es sutil: en este contexto, la "direcci&oacute;n de una cadena" se refiere al <i>principio</i> de la cadena, mientras que un "puntero" se refiere a <i>cualquier caracter</i> de la cadena. &iquest;C&oacute;mo podr&iacute;a una "direcci&oacute;n" apuntar a un caracter que no sea el primero? Simple: tan s&oacute;lo s&uacute;mele un n&uacute;mero (<a href="https://es.wikipedia.org/wiki/Offset_(inform%C3%A1tica)"><i>desplazamiento u offset</i></a>). <a href="#direccion_es_numero">Recuerde</a> que una direcci&oacute;n de cadena &iexcl;<i>ES</i> un n&uacute;mero entero de 32 bits&#33;
+<pre>
+printf /" "La cadena \"%s\" se encuentra en la dirección %i\n"  "Una cadena" >  /* Duplica dirección de cadena */
+
+printf "Mueve el puntero a un caracter posterior: %s\n" "ABCDEFGHIJ" 3 +    /* Muestra: DEFGHIJ */
+</pre>
+<p><b>movc</b> es una funci&oacute;n multi-prop&oacute;sito <i>de puntero</i> que realiza las operaciones de las funciones getc y putc est&aacute;ndar.
+<p>La funci&oacute;n est&aacute;ndar <b>getc0</b> requiere una direcci&oacute;n de cadena (<i>inicio</i>) y una "posici&oacute;n de caracter" (<i>desplazamiento</i>) para obtener un caracter dado; la posici&oacute;n comienza en cero y se incrementa hasta la longitud de la cadena para procesar todos los caracteres. La funci&oacute;n <b>movc0</b> usa directamente un "puntero de caracter". Este puntero comienza en la misma direcci&oacute;n de la cadena, por lo que nunca es igual a cero, y se incrementa hasta la direcci&oacute;n del &uacute;ltimo caracter de la cadena para procesar todos los caracteres. La versi&oacute;n de puntero no requiere la direcci&oacute;n inicial de la cadena, por lo que su uso es m&aacute;s simple y r&aacute;pido. Este mismo punto se aplica cuando se comparan las funciones <b>putc0</b> y <b>movc1</b> que ponen (insertan) un caracter dentro de una cadena.
+<p><b>movc2</b> es una funci&oacute;n avanzada que realiza la tarea de ambas getc0 y putc0 de una sola vez, ya que mueve el caracter apuntado por el segundo puntero directamente al lugar apuntado por el primer puntero sin ingresar/retirar el caracter del stack.
+<p>Mas a&uacute;n, las tres variantes de la funci&oacute;n movc pueden opcionalmente incrementar sus punteros despu&eacute;s de mover el caracter. Para ello, s&oacute;lo inserte un signo "+" entre la funci&oacute;n y su &uacute;ltimo d&iacute;gito, como en <code>movc+0</code> o <code>movc+1</code>. En la &uacute;ltima variante se puede insertar un signo "m&aacute;s" antes y otro despu&eacute;s del "2" para incrementar cada uno de los punteros, o incluso para incrementar <i>ambos</i> como en <code>movc+2+</code>. Esta facilidad ayuda a escribir bucles compactos y eficientes que procesen varios caracteres. Algunos ejemplos comparativos de estas caracter&iacute;sticas se muestran <a href="#movc_function">mas adelante</a>.
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Programación_por_Bloques" style="text-decoration:none">Programación por Bloques</a> </h2>
+<p>La versi&oacute;n 2 de la aplicaci&oacute;n printf.exe tambi&eacute;n ofrece la posibilidad de hacer programaci&oacute;n b&aacute;sica. Esta caracter&iacute;stica no s&oacute;lo proporciona los medios para resolver una amplia gama de problemas num&eacute;ricos y de proceso de texto, sino que tambi&eacute;n permite tener un primer contacto con la programaci&oacute;n de computadoras de una forma <i>muy sencilla</i>. El esquema de programaci&oacute;n utilizado en printf.exe no es el esquema tradicional de los lenguajes de programaci&oacute;n usuales de alto nivel; es un esquema mucho mas simple que a&uacute;n ofrece las mismas ventajas de los modernos lenguajes estructurados. Este m&eacute;todo de programaci&oacute;n fue adaptado de <a href="https://arxiv.org/abs/1107.2437">Regular Expression Compiler</a> (REC), un lenguaje de programaci&oacute;n estructurado <a href="https://es.wikipedia.org/wiki/Lisp">derivado de Lisp</a> desarrollado en M&eacute;xico alrededor de 1966 (mayor informaci&oacute;n sobre esto <a href="https://mcjones.org/dustydecks/archives/2012/07/06/239/">aqu&iacute;</a>) por <a href="https://physicstoday.scitation.org/do/10.1063/PT.5.6193/full/">Harold V. McIntosh</a> que est&aacute; basado en tan s&oacute;lo cuatro elementos de control y un par de reglas simples sobre la evaluaci&oacute;n de condiciones. He bautizado a esta tecnolog&iacute;a <i>Programaci&oacute;n por Bloques</i>.
+<p>En su forma m&aacute;s simple, un <i>programa</i> es una serie de operaciones que se ejecutan en orden. Eso es todo. Desde este punto de vista, todos los ejemplos de uso de printf.exe vistos hasta ahora son programas. Por ejemplo, para obtener el resultado de la expresi&oacute;n algebraica <b>(4+5)/(6+7)</b> podemos usar:
+<pre>
+printf "Resultado: %f\n"  4. 5. ADD  6. 7. ADD  DIV
+</pre>
+<p>Esta expresi&oacute;n RPN es realmente un <i>programa</i> que significa:
+   <ol style="list-style-type: decimal">
+      <li> Ingresa el n&uacute;mero 4.
+      <li> Ingresa el n&uacute;mero 5.
+      <li> ADD (Suma 4 + 5)
+      <li> Ingresa el n&uacute;mero 6.
+      <li> Ingresa el n&uacute;mero 7.
+      <li> ADD (Suma 6 + 7)
+      <li> DIV [Divide (4+5)/(6+7)]
+      <li> Out (Muestra el resultado)
+   </ol>
+<p>Dicho de otra forma: para obtener el resultado de la expresi&oacute;n algebraica <b>(4+5)/(6+7)</b> necesitamos ejecutar los 8 pasos previos en orden. Podemos llamar <i>instrucciones</i> a cada uno de los pasos u operaciones que forman un programa. Note que si usted <i>cambia el orden</i> de cualquiera de las 8 instrucciones previas usted no resolver&aacute; el problema planteado (esto ser&iacute;a un <i>error de programaci&oacute;n</i>, com&uacute;nmente <a href="https://es.wikipedia.org/wiki/Error_de_software">llamado <i>bug</i></a>). Por otro lado, el ejemplo anterior no es <i>la &uacute;nica forma</i> de resolver este problema. Podr&iacute;amos pensar en un <i>programa diferente</i> que resolviera <i>el mismo problema</i>. Por ejemplo:
+<pre>
+printf "Resultado: %f\n"  6. 7. ADD  4. 5. ADD  XCHG  DIV
+</pre>
+   <ol style="list-style-type: decimal">
+      <li> Ingresa el n&uacute;mero 6.
+      <li> Ingresa el n&uacute;mero 7.
+      <li> ADD (Suma 6 + 7)
+      <li> Ingresa el n&uacute;mero 4.
+      <li> Ingresa el n&uacute;mero 5.
+      <li> ADD (Suma 4 + 5)
+      <li> XCHG [Cambia posiciones de (6+7) y (4+5)]
+      <li> DIV [Divide (4+5)/(6+7)]
+      <li> Out (Muestra el resultado)
+   </ol>
+<p>Si hay varias formas diferentes de escribir un programa, &iquest;cu&aacute;l debemos elegir? Esto depender&aacute; de varios factores y los programas resultantes pueden tener diferentes caracter&iacute;sticas. Un programa puede ser mas r&aacute;pido que otro, pero quiz&aacute;s es enredado y dif&iacute;cil de entender. Otro programa puede ser mas claro y un buen ejemplo para prop&oacute;sitos educativos, pero ser mas lento. Veremos ejemplos de estos puntos mas adelante. &iquest;Usted podr&iacute;a pensar en otro programa diferente a los dos anteriores que resolviera el mismo problema?
+<p>Veamos un ejemplo diferente. La f&oacute;rmula <i>algebraica</i> para calcular el &aacute;rea de un tri&aacute;ngulo es: <b>area = ( base * altura ) / 2</b>. Si quisi&eacute;ramos calcular el &aacute;rea de un tri&aacute;ngulo de base=8 y altura=12, podr&iacute;amos utilizar este "programa":
+<pre>
+printf "Area = %f\n" 8. 12. MUL 2. DIV
+</pre>
+<p>Despu&eacute;s de esto, para calcular el &aacute;rea de <i>otro</i> tri&aacute;ngulo, esta vez de base=33.5 y altura=18, har&iacute;amos esto:
+<pre>
+printf "Area = %f\n" 33.5 18. MUL 2. DIV
+</pre>
+<p>Es decir, las <i>operaciones</i> para calcular el nuevo problema son las mismas que antes; s&oacute;lo necesitamos cambiar <i>los datos iniciales</i>. Esto significa que las operaciones <b>MUL 2. DIV</b> representan un <i>programa de uso general</i> que puede obtener el &aacute;rea <i>de cualquier tri&aacute;ngulo</i>. &iquest;Cierto? <code>;)</code>
+<p>Sin embargo, &iquest;c&oacute;mo podemos convertir estas instrucciones en un programa <i>real</i> que pueda ejecutarse de forma independiente? Es decir, en el que no se necesite re-escribir los valores de los datos que cambian. Dicho de otra forma, un programa que sea capaz de <i>tomar</i>, o <i>leer</i> o <i>ingresar</i> (use el t&eacute;rmino que usted prefiera) los valores de los datos por s&iacute; mismo. Bueno, para poder hacer eso necesitamos un nuevo tipo de instrucci&oacute;n: una operaci&oacute;n que permita <i>ingresar un dato</i> que no estaba originalmente en la expresi&oacute;n RPN, pero que sea insertado en un cierto lugar <i>cuando el programa corra</i>.
+<p>De la misma manera, cuando un programa se ejecuta, frecuentemente necesita mostrar mensajes diferentes en diferentes momentos. Sin embargo, la operaci&oacute;n est&aacute;ndar de printf.exe es mostrar <i>un resultado</i> especificado por <i>un formato</i> cuando el programa termina. Necesitamos un m&eacute;todo para mostrar varios resultados con diferentes formatos en cualquier momento que queramos.
+<p>Este es el prop&oacute;sito de las <i>operaciones de entrada/salida</i>.
+<h3><a name="Operaciones_de_Entrada/Salida" style="text-decoration:none">Operaciones de Entrada/Salida</a> </h3>
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="Operaciones_de_Entrada/Salida">Operaciones de Entrada/Salida</a></b></caption>
+      <tr>
+         <th>Oper</th>
+         <th>Nombre</th>
+         <th>Descripci&oacute;n</th>
+      </tr>
+      <tr>
+         <td><code>GETK</code></td>
+         <td>Get Key</td>
+         <td>Toma una tecla (caracter) del teclado</td>
+      </tr>
+      <tr>
+         <td><code>IN</code></td>
+         <td>Input Line</td>
+         <td>Lee una l&iacute;nea (cadena de caracteres) desde el teclado</td>
+      </tr>
+      <tr>
+         <td><code>OUT</code></td>
+         <td>Output</td>
+         <td>Muestra los datos actuales con el formato actual</td>
+      </tr>
+      <tr>
+         <td><code>FMT{</code></td>
+         <td>Format start</td>
+         <td>Permite ingresar un nuevo formato y nuevos datos</td>
+      </tr>
+      <tr>
+         <td><code>FMT}</code></td>
+         <td>Format end</td>
+         <td>Elimina el formato y datos desde la marca FMT{ anterior</td>
+      </tr>
+   </table>
+<p>La operaci&oacute;n <code>OUT</code> (<i>Output</i>) muestra los datos actuales con el formato actual. Por ejemplo:
+<pre>
+printf /" "El valor es: %i\n" 10 OUT  &lt; 20 OUT
+</pre>
+<p>Muestra:
+<p><b>El valor es: 10<br>El valor es: 20</b>
+<p>Note que si usted usa la operaci&oacute;n <b>OUT</b>, la "salida autom&aacute;tica" que normalmente muestra printf.exe al final se cancela. Esto tambi&eacute;n ocurre si usted usa un <i>programa</i> (m&aacute;s detalles sobre este punto despu&eacute;s).
+<p>El delimitador <code>FMT{</code> (<i>Format start</i>) permite ingresar un nuevo formato (y nuevos datos despu&eacute;s de &eacute;l) que ser&aacute;n utilizados en la siguiente operaci&oacute;n OUT. Por ejemplo:
+<pre>
+printf "Un mensaje\n" OUT  FMT{ "Dos números: %i %i\n" 10 20 OUT  FMT{ "Una cadena: %s\n" "Hola" OUT
+</pre>
+<p>Muestra:
+<p><b>Un mensaje<br>Dos n&uacute;meros: 10 20<br>Una cadena: Hola</b>
+<p>La operaci&oacute;n <code>FMT}</code> (<i>Format end</i>) elimina todos los datos ingresados desde el delimitador FMT{ <i>previo</i>, inclu&iacute;do el delimitador. Por ejemplo:
+<pre>
+printf /" "Un mensaje\n" OUT  FMT{ "Dos números: %i %i\n" 10 20 OUT  FMT{ "Una cadena: %s\n" "Hola" OUT  FMT} &lt;> OUT  FMT} OUT
+</pre>
+<p>Muestra:
+<p><b>Un mensaje<br>Dos n&uacute;meros: 10 20<br>Una cadena: Hola<br>Dos n&uacute;meros: 20 10<br>Un mensaje</b>
+<p>Recuerde que la operaci&oacute;n <b>&lt;*</b> (<i>Drop All</i>) elimina todos los datos ingresados despu&eacute;s de la cadena de formato del delimitador FMT{ <i>actual</i> (o desde la cadena de formato inicial).
+<p><b>IMPORTANTE:</b> despu&eacute;s de una operaci&oacute;n FMT} NO se podr&aacute;n efectuar operaciones aritm&eacute;ticas con los n&uacute;meros de punto flotante ingresados <i>antes</i>, es decir, en un nivel FMT{ FMT} <i>anterior</i>. Esto es debido a que FMT} ejecuta una <a href="#Borrar_el_stack_de_la_FPU">operaci&oacute;n INIT</a>. Si usted necesita conservar un n&uacute;mero de punto flotante para usarlo despu&eacute;s de un FMT}, entonces debe guardarlo en un registro de almacenamiento.
+<p><hr>
+<p>Las operaciones de entrada permiten <i>ingresar datos</i> dentro de la expresi&oacute;n RPN. Cuando una operaci&oacute;n de entrada se ejecuta, el programa espera a que el usuario proporcione un dato a trav&eacute;s del teclado. Cuando el dato se completa, se ingresa en la expresi&oacute;n RPN en el mismo lugar en que estaba la operaci&oacute;n de entrada y el programa contin&uacute;a con la siguiente instrucci&oacute;n.
+<p>La operaci&oacute;n de entrada mas sencilla es <code>GETK</code> (<i>Get Key</i>) la cual toma la presi&oacute;n de una tecla y regresa su valor como un caracter (o entero). Por ejemplo:
+<pre>
+printf /" "Presione una tecla: " OUT  FMT{ "\nLa tecla oprimida es %i ('%c')\n" GETK > OUT
+</pre>
+<p>La operaci&oacute;n GetKey puede tomar <i>cualquier tecla</i>. En las teclas de caracteres est&aacute;ndar se devuelve su c&oacute;digo ASCII y en las teclas especiales se devuelve un valor negativo. Usted puede consultar el valor devuelto por todas las teclas especiales en el archivo <a href="printf - GetKey codes.txt">printf - GetKey codes.txt</a>. Estos valores se basan en <i>la posici&oacute;n</i> de las teclas en el teclado extendido de la IBM-PC. Puede revisar la manera en que estos c&oacute;digos se generan en el archivo ShowKeyCodes.bat.
+<p>La operaci&oacute;n <code>IN</code> (<i>Input Line</i>) lee una l&iacute;nea desde el teclado y la ingresa como una cadena de caracteres seguida por la longitud (n&uacute;mero de caracteres) de la cadena. Antes de la operaci&oacute;n <b>IN</b> se debe ingresar el n&uacute;mero m&aacute;ximo de caracteres que pueden leerse; este n&uacute;mero se elimina por la operaci&oacute;n de entrada. Por ejemplo:
+<pre>
+printf "Ingrese una cadena: " OUT  FMT{ "\"%s\" tiene %i caracteres\n" 80 IN  OUT
+</pre>
+<p>Si la l&iacute;nea le&iacute;da est&aacute; vac&iacute;a, la operaci&oacute;n <b>IN</b> devuelve una cadena vac&iacute;a (<code>""</code>) seguida por un cero. Sin embargo, si se est&aacute; leyendo un archivo de texto redireccionado y se alcanza el FinDelArchivo (<i>EndOfFile</i>), s&oacute;lo se regresar&aacute; un valor <b>-1</b> sin ninguna cadena antes.
+<p>Las operaciones de entrada nos permiten escribir el programa independiente que puede tomar los datos necesarios por s&iacute; mismo, como se hab&iacute;a explicado antes. Por ejemplo, retomando el problema del "Area del tri&aacute;ngulo", ahora lo podemos resolver de esta manera:
+<pre>
+printf /" "Base: " OUT 20 IN &lt; atof STO1  FMT{ "Altura: " OUT 20 IN &lt; atof STO2  FMT{ "Área = %.2f\n" RCL1 RCL2 MUL 2. DIV OUT
+</pre>
+<p>Note que los n&uacute;meros ingresados desde el teclado de esta manera se "quedan" <i>detr&aacute;s</i> de los delimitadores <b>FMT{</b> por lo que es necesario moverlos a un lugar <i>despu&eacute;s</i> del &uacute;ltimo delimitador <b>FMT{</b> para poder inclu&iacute;rlos en el resultado final. En este caso esto se resuelve guardando los n&uacute;meros en registros de almacenamiento y recuper&aacute;ndolos despu&eacute;s.
+<p>&iexcl;Muy bien&#33; Ahora tenemos un m&eacute;todo para escribir un programa que pueda tomar sus datos y resolver un problema. Y ahora, &iquest;qu&eacute; sigue? Esto no es tan impresionante... Lo que ser&iacute;a realmente importante ser&iacute;a resolver cientos o miles de problemas del mismo tipo utilizando el mismo m&eacute;todo, o resolver problemas que puedan tener varias soluciones diferentes dadas por f&oacute;rmulas diferentes basadas en condiciones diferentes.
+<p>Para poder hacer eso necesitar&iacute;amos <i>repetir</i> secciones de un programa, o <i>ejecutar condicionalmente</i> partes de un programa, etc. Esto es lo que realmente se llama <a href="https://es.wikipedia.org/wiki/Programaci%C3%B3n"><i>programar</i></a>.
+<p><hr>
+<p>Como se dijo antes, el m&eacute;todo que se usa en la aplicaci&oacute;n printf.exe para escribir programas se basa en s&oacute;lo cuatro elementos de control (<i>Begin, Repeat, Quit</i> y <i>End</i>) y unos cuantos conceptos que fueron tomados del lenguaje de programaci&oacute;n REC, como son <i>Bloque de c&oacute;digo</i>, <i>Transferencia del flujo de control</i> y <i>Tests condicionales</i>. En el esquema de abajo se muestran <i>TODAS</i> las reglas de operaci&oacute;n de la programaci&oacute;n por bloques. En las siguientes secciones se explicar&aacute; con detalle cada una <a name="esquema_de_reglas">de estas reglas</a>.
+<p><img src="Block Programming scheme SP.png" name="img1">
+<h3><a name="Bloque_de_Código" style="text-decoration:none">Bloque de Código</a> </h3>
+<p>Un <b>bloque de c&oacute;digo</b> es una serie de operaciones encerradas entre <code>(</code> (par&eacute;ntesis izquierdo), al que podr&iacute;amos llamar <b>BEGIN</b> ("inicio"), y <code>)</code> (par&eacute;ntesis derecho), al que podr&iacute;amos llamar <b>END</b> ("fin"). Llamaremos <i>delimitadores</i> a estos dos caracteres. Por ejemplo:
+<pre>
+printf "Primer entero: %i,  segundo entero: %i\n"  10 ( 20 )
+</pre>
+<p>En este ejemplo hay un bloque de c&oacute;digo que contiene al n&uacute;mero 20. Cuando la expresi&oacute;n RPN es evaluada, las operaciones colocadas dentro de un bloque de c&oacute;digo se ejecutan en la forma usual, de izquierda a derecha; sin embargo, en este ejemplo el resultado <i>no</i> se muestra en la pantalla. Cuando la expresi&oacute;n RPN contiene un bloque de c&oacute;digo, la salida que normalmente se muestra al final es cancelada, por lo que es necesario mostrarla expl&iacute;citamente mediante la instrucci&oacute;n <code>OUT</code>. Por ejemplo:
+<pre>
+printf "Primer entero: %i,  segundo entero: %i\n"  10 ( 20 ) OUT
+</pre>
+<p>Este ejemplo muestra <b>Primer entero: 10,  segundo entero: 20</b> en la forma usual.
+<p>Los bloques de c&oacute;digo pueden ser <i>combinados o anidados</i> unos dentro de otros. Por ejemplo:
+<pre>
+printf "Un entero: %i.  Una cadena: %s.  Un flotante: %f\n"  ( 25  ( "Hola, mundo" ) 44.33 ) OUT
+</pre>
+<p>En este ejemplo hay <i>dos</i> bloques de c&oacute;digo. El primero contiene tres <i>elementos</i>: el entero 25, un bloque de c&oacute;digo <i>anidado</i>, y el flotante 44.33. El segundo bloque de c&oacute;digo s&oacute;lo contiene una cadena. Cuando la programaci&oacute;n por bloques es utilizada, todas las operaciones <i>pertenecen a</i> o <i>est&aacute;n contenidas en</i> un bloque de c&oacute;digo y solamente en <i>un cierto</i> bloque de c&oacute;digo. En este ejemplo la cadena pertenece al bloque <i>anidado</i>, precisamente. El primer bloque de c&oacute;digo <i>no contiene</i> ninguna cadena; contiene dos n&uacute;meros y un bloque anidado, precisamente.
+<p>Cuando se indique que una operaci&oacute;n <q>trabaja en su bloque de c&oacute;digo</q> quiere decir que esa operaci&oacute;n no afecta <i>ning&uacute;n otro bloque</i> que pudiera estar anidado dentro de &eacute;l. Por ejemplo, si tuvi&eacute;ramos dos nuevas operaciones llamadas <b>A</b> y <b>B</b>, y las utiliz&aacute;ramos de esta forma:
+<pre>
+printf "Un entero: %i.  Una cadena: %s.  Un flotante: %f\n"  ( 25 A  ( "Hola, mundo" B ) 44.33 ) OUT
+</pre>
+<p>... entonces la operaci&oacute;n A trabajar&iacute;a solamente sobre el primer bloque y la operaci&oacute;n B solamente en el bloque anidado, es decir, la operaci&oacute;n A <i>no puede</i> afectar (ni llegar a) la cadena contenida en el bloque anidado. 
+<h3><a name="Transferencia_de_Control" style="text-decoration:none">Transferencia de Control</a> </h3>
+<p>La ejecuci&oacute;n de los elementos de una expresi&oacute;n RPN normalmente ocurre de izquierda a derecha, comenzando por el primer elemento y terminando despu&eacute;s del &uacute;ltimo. Esta <i>ruta de ejecuci&oacute;n</i> se llama <a href="https://es.wikipedia.org/wiki/Proceso_(inform%C3%A1tica)"><i>flujo de control</i></a>: la instrucci&oacute;n particular que se est&aacute; ejecutando en un momento dado se dice que "tiene el control" y &eacute;ste va "fluyendo" de una instrucci&oacute;n a la siguiente a medida que se van ejecutando.
+<p>Nosotros podemos alterar la ruta est&aacute;ndar de ejecuci&oacute;n de un programa mediante una <b>instrucci&oacute;n de transferencia de control</b> la cual causa que la ejecuci&oacute;n brinque a otro punto dentro de la expresi&oacute;n RPN. De hecho, &eacute;ste es el prop&oacute;sito de los delimitadores BEGIN y END: marcar los puntos a donde el flujo de control puede ser transferido.
+<p>Existen dos instrucciones de transferencia de control: <code>:</code> (dos puntos) llamado <b>REPEAT</b> ("repetir"), y <code>;</code> (punto y coma) llamado <b>QUIT</b> ("salir"). La instrucci&oacute;n REPEAT transfiere el flujo de control hacia atr&aacute;s, <i>al inicio</i> de su bloque de c&oacute;digo. Por ejemplo:
+<pre>
+printf "Hola, mundo\n" ( OUT : )
+</pre>
+<p>Este ejemplo muestra el mensaje muchas veces en un bucle sin fin hasta que el programa sea cancelado mediante la tecla Ctrl-C.
+<p>La instrucci&oacute;n QUIT transfiere el control hacia adelante, <i>despu&eacute;s del fin</i> de su bloque de c&oacute;digo:
+<pre>
+printf "%s %s\n"  ( "Esto aparece en la salida" ; "Esto NO aparece" ) "Al final" OUT
+</pre>
+<p>Usted puede apreciar visualmente estas transferencias de control en <a href="#esquema_de_reglas">el esquema</a> visto anteriomente.
+<h3><a name="Test/Condición" style="text-decoration:none">Test/Condición</a> </h3>
+<p>Un <b>test</b> o "prueba" es una operaci&oacute;n que, cuando es evaluada, contesta si una <i>condici&oacute;n</i> es Verdadera (<i>True</i>) o Falsa (<i>False</i>). Si la condici&oacute;n es True, el flujo de control contin&uacute;a con la siguiente operaci&oacute;n (&eacute;sta es la antigua regla <i>Do-If-True</i> "haz si es verdadero" de las calculadoras HP). Si la condici&oacute;n es False, el flujo de control se transfiere hacia adelante hasta pasar <i>la siguiente</i> instrucci&oacute;n de transferencia de control (REPEAT <code>:</code> o QUIT <code>;</code>) colocada <i>en el mismo bloque</i>. Este sencillo esquema permite ensamblar los componentes b&aacute;sicos de los que se componen todos los programas de computadora.
+<p>Todos los tests usados en la programaci&oacute;n por bloques de printf.exe se escriben con un signo de interrogaci&oacute;n al final. Los tests condicionales m&aacute;s simples son unos cuantos operadores RPN enteros con un signo de interrogaci&oacute;n a&ntilde;adido. La condici&oacute;n establecida en esta combinaci&oacute;n operador/test es: <i>&iquest;el resultado es diferente de cero?</i> Por ejemplo, el operador <code>--</code> (<i>Decrement</i>) le resta <b>1</b> al &uacute;ltimo n&uacute;mero entero. Cuando el signo de interrogaci&oacute;n es a&ntilde;adido de esta forma: <code>--?</code> este operador se convierte en un Test? que es verdadero mientras el resultado del decremento no sea cero. Veamos un ejemplo sencillo:
+<pre>
+printf "Vuelta número %i\n" 10 ( OUT --? : )
+</pre>
+<p>Al principio de este ejemplo se ingresa el n&uacute;mero 10, se ejecuta la instrucci&oacute;n OUT y el mensaje <b>Vuelta n&uacute;mero 10</b> aparece en la pantalla. Entonces el operador/test <code>--?</code> se ejecuta, por lo que el 10 se vuelve 9. Como el resultado no es cero, el flujo de control contin&uacute;a normalmente. La instrucci&oacute;n REPEAT <code>:</code> se ejecuta y el flujo de control se transfiere de regreso al principio del bloque de c&oacute;digo.
+<p>La instrucci&oacute;n OUT se ejecuta otra vez y muestra <b>Vuelta n&uacute;mero 9</b>. Este proceso se repite y en el siguiente ciclo <b>Vuelta n&uacute;mero 8</b> aparece en la pantalla. El bucle contin&uacute;a de la misma forma hasta que el mensaje <b>Vuelta n&uacute;mero 1</b> se muestra. Despu&eacute;s de esto, el resultado de la operaci&oacute;n decrement es cero, por lo que el test <code>--?</code> es False. Entonces el flujo de control se transfiere hacia adelante hasta pasar la instrucci&oacute;n REPEAT, se llega al final del bloque de c&oacute;digo y el programa termina. Este comportamiento es similar a la instrucci&oacute;n <b>D</b>ecrement and <b>S</b>kip on <b>Z</b>ero (<i>Decrementa y Brinca en Cero</i>) de las calculadoras HP. 
+<p>Esta forma de ejecutar instrucciones en un bucle repetitivo se conoce como <a href="https://es.wikipedia.org/wiki/Bucle_do"><i>Do-While</i></a>: <b>Do</b> (<i>haz</i>) muestra el mensaje y decrementa el n&uacute;mero <b>While</b> (<i>mientras</i>) el resultado no sea cero. Existe otra construcci&oacute;n llamada <a href="https://es.wikipedia.org/wiki/Bucle_while"><i>While-Do</i></a> en la cual el Test? se eval&uacute;a <i>primero</i>, por lo que existe la posibilidad de que las operaciones del "Do" no se ejecuten ni siquiera una vez.
+<p>Otro ejemplo: el operador <code>&</code> (<i>Bitwise AND</i>) permite probar bits individuales de un n&uacute;mero entero. En la <a href="https://es.wikipedia.org/wiki/Sistema_binario">representaci&oacute;n interna</a> de los n&uacute;meros enteros, el <i>bit menos significativo</i> (que corresponde al n&uacute;mero <b>1</b>) est&aacute; encendido si el n&uacute;mero es impar, y est&aacute; apagado si el n&uacute;mero es par. De esta forma, si operamos cualquier n&uacute;mero entero y un <b>1</b> con la combinaci&oacute;n operador/test <code>&?</code>, el resultado del Test? es la respuesta a la pregunta: "&iquest;El n&uacute;mero es impar?". Veamos:
+<pre>
+printf "El número %i es %s\n" 10  /"  > 1 ( &? &lt; "Impar" ; &lt; "Par" ) OUT
+</pre>
+<p>Este ejemplo comienza con un n&uacute;mero. Primero duplicamos <code>></code> el n&uacute;mero e ingresamos un <code>1</code>. Entonces, el <code>&?</code> eval&uacute;a un AND sobre bits y se queda s&oacute;lo con el &uacute;ltimo bit del n&uacute;mero. Si este bit est&aacute; prendido (si el resultado no es cero) el control contin&uacute;a, por lo que el resultado es <code>&lt;</code> eliminado, se ingresa la cadena "Impar" y se ejecuta la instrucci&oacute;n de transferencia de control <code>;</code> QUIT, as&iacute; que el control se transfiere hacia adelante hasta pasar el fin del bloque. Si el &uacute;ltimo bit del n&uacute;mero est&aacute; apagado el resultado es cero (y el Test? es False), por lo que el control se transfiere hacia adelante hasta pasar la instrucci&oacute;n <code>;</code> QUIT, el resultado es <code>&lt;</code> eliminado, se ingresa la cadena "Par" y el bloque termina. Finalmente un mensaje es mostrado: algo como <b>El n&uacute;mero 10 es Par</b> o bien <b>El n&uacute;mero 11 es Impar</b>. Esta forma de ejecutar condicionalmente una de dos posibles rutas de ejecuci&oacute;n se conoce como <a href="https://es.wikipedia.org/wiki/Sentencia_condicional"><i>If-Then-Else</i></a>.
+<p>N&oacute;tese que si un Test? es False y no hay ninguna instrucci&oacute;n REPEAT/QUIT adelante, el flujo de control <i>saldr&aacute; del bloque de c&oacute;digo</i> sin alcanzar el <code>)</code> delimitador END del bloque.
+<p>Por otro lado, si un Test? es True y no hay ninguna instrucci&oacute;n REPEAT/QUIT adelante, el flujo de control llegar&aacute; al <code>)</code> delimitador END del bloque.
+<p>Estas dos diferentes formas de salir de un bloque ser&aacute;n importantes despu&eacute;s, cuando se describa <a href="#Operadores_Booleanos">la &uacute;ltima regla operativa</a> de la programaci&oacute;n por bloques.
+<h3><a name="Tests_Condicionales_Básicos" style="text-decoration:none">Tests Condicionales Básicos</a> </h3>
+<p>Los tests condicionales son la llave que permite escribir programas &uacute;tiles, ya que por medio de ellos es posible ensamblar bucles repetitivos (<i>While-Do, Do-While, For-Next</i>) y construcciones de ejecuci&oacute;n condicional (<i>If-Then-Else, Case/Switch</i>), por lo que contar con un amplio repertorio de tests condicionales ser&aacute; un soporte que le permita al programador escribir programas simples y eficientes.
+<p>Los tests mas simples son algunos operadores enteros a los que se a&ntilde;ade un signo de interrogaci&oacute;n al final, los cuales trabajan como una combinaci&oacute;n de operaci&oacute;n y prueba: despu&eacute;s de que la operaci&oacute;n se completa se revisa el resultado; si es diferente de cero, el Test? es True.
+   <table border="1" rules="all" cellpadding="5" align="left">
+   <caption><b><a name="Tests_Condicionales_Básicos">Tests Condicionales Básicos</a></b></caption>
+      <tr>
+         <th>Operaci&oacute;n</th>
+         <th>Ejecuta</th>
+      </tr>
+      <tr>
+         <td><code>?</code></td>
+         <td>Prueba entero</td>
+      </tr>
+      <tr>
+         <td><code>]n?</code></td>
+         <td>Prueba registro de almacenamiento N</td>
+      </tr>
+      <tr>
+         <td><code>--?</code></td>
+         <td>Decrementa</td>
+      </tr>
+      <tr>
+         <td><code>]--n?</code></td>
+         <td>Decrementa registro de almacenamiento N</td>
+      </tr>
+      <tr>
+         <td><code>&#33;?</code></td>
+         <td>Boolean NOT</td>
+      </tr>
+      <tr>
+         <td><code>&?</code></td>
+         <td>Bitwise AND</td>
+      </tr>
+      <tr>
+         <td><code>%?</code></td>
+         <td>Residuo de divisi&oacute;n entera</td>
+      </tr>
+      <tr>
+         <td><code>getc?</code></td>
+         <td>Toma un caracter de una cadena</td>
+      </tr>
+      <tr>
+         <td><code>movc?</code></td>
+         <td>Mueve un caracter</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p><br>
+<p>Las nuevas operaciones <code>?</code> (<i>Test integer</i>) y <code>]n?</code> (<i>Test storage register</i>) prueban si el &uacute;ltimo n&uacute;mero entero o el registro de almacenamiento indicado son diferentes de cero, respectivamente, por lo que permiten revisar el resultado de cualquier otra operaci&oacute;n.
+<p>Con las operaciones <code>--?</code> o <code>]--n?</code> es sencillo repetir un bucle un cierto n&uacute;mero de veces. <code>&?</code> permite revisar bits individuales de un n&uacute;mero entero. <code>%?</code> prueba si un n&uacute;mero es m&uacute;ltiplo de otro.
+<p>Tanto <code>getc?</code> como <code>movc?</code> permiten procesar facilmente todos los caracteres de una cadena.<br clear="all">
+<p>Para procesar los caracteres de una cadena, inserte el <i>&iacute;ndice</i> del caracter deseado (en base cero) y ejecute <b>getc?</b>: el caracter correspondiente ser&aacute; ingresado despu&eacute;s del &iacute;ndice. Si este caracter es el delimitador cero insertado al final de la cadena, el Test? ser&aacute; False. Por ejemplo, el siguiente c&oacute;digo cuenta el n&uacute;mero de caracteres en una cadena, por lo que es equivalente a la funci&oacute;n predefinida <b>len</b>:
+<pre>
+printf /" "\"%s\" tiene %i caracteres\n"  "Una Cadena"  0 ( getc? &lt; ++ : &lt; ) OUT
+</pre>
+<p>Este ejemplo muestra el m&eacute;todo base para procesar los caracteres de cualquier cadena. Este m&eacute;todo puede modificarse para efectuar otras tareas similares; por ejemplo, convertir caracteres a may&uacute;sculas o min&uacute;sculas, etc. Usted puede revisar algunos de estos m&eacute;todos en el archivo <a href="printf%20Example%202%20-%20ProcString.bat">printf Example 2 - ProcString.bat</a>. Note que los m&eacute;todos de conversi&oacute;n usan un test de comparaci&oacute;n que ser&aacute; explicado en otra secci&oacute;n mas adelante.
+<h3><a name="Programa_en_Forma_Didáctica_(archivos_Batch)" style="text-decoration:none">Programa en Forma Didáctica (archivos Batch)</a> </h3>
+<p>Quiz&aacute;s lo que ocasiona mas problemas al escribir un programa grande utilizando el esquema de programaci&oacute;n por bloques es realizar un seguimiento de los par&aacute;metros de printf.exe (contenido del stack) despu&eacute;s de cada operaci&oacute;n. Para facilitar esta tarea usted puede escribir un programa en una forma diferente y mas clara que llamaremos <i>Forma Did&aacute;ctica</i>. Las calculadoras HP utilizaban una "Programming Form" impresa en papel para este prop&oacute;sito en la cual el usuario escrib&iacute;a, a mano, el contenido del stack despu&eacute;s de cada operaci&oacute;n de un programa. El m&eacute;todo que nosotros usaremos consiste en dividir las instrucciones del programa printf.exe en <i>varias l&iacute;neas</i> de manera que cada una incluya un comentario descriptivo. Sin embargo, esto no lo podremos hacer adecuadamente en la l&iacute;nea de comandos de cmd.exe; necesitamos un lugar para almacenar un programa printf largo de manera que su creaci&oacute;n y edici&oacute;n se facilite.
+<p>La forma usual de hacer esto es crear un archivo de comandos Batch (archivo de texto con extensi&oacute;n .bat). Este tipo de archivos contiene una serie de <i>comandos</i> que pueden ejecutarse en forma autom&aacute;tica, como por ejemplo, nuestro comando printf.exe que incluya un programa RPN largo y avanzado. Para hacer esto, siga estos pasos:
+   <ol style="list-style-type: decimal">
+      <li> Cree un archivo de texto (haga click en el folder con el bot&oacute;n derecho del mouse y seleccione: Nuevo -> Documento de texto) y al darle nombre, cambie la extensi&oacute;n .txt por .bat; confirme que desea cambiar la extensi&oacute;n.
+      <li> Haga click en el nuevo archivo con el bot&oacute;n derecho del mouse y seleccione: Editar; esto abrir&aacute; el archivo Batch en el editor Notepad de Windows.
+      <li> Inserte la l&iacute;nea <code>@echo off</code> al principio del archivo.
+      <li> Despu&eacute;s inserte el comando printf con la expresi&oacute;n completa del programa.
+      <li> Cambie todos los caracteres de porcentaje <code>%</code> por doble caracter <code>%%</code>.
+      <li> Cambie cada caracter especial con un "^escape" individual (como <code>^&lt; ^> ^| ^&</code>) por el uso del switch <i>Quoted</i>, como en <code>/" &lt; /"</code>, o <code>/" > /"</code>, etc&eacute;tera.
+      <li> Divida la expresi&oacute;n RPN de los par&aacute;metros de printf.exe en l&iacute;neas individuales; haga esta divisi&oacute;n como usted quiera.
+      <li> En cada l&iacute;nea a&ntilde;ada un comentario descriptivo encerrado entre los delimitadores <code>/*</code> y <code>*/</code> (<i>Comment</i>).
+      <li> Al final de cada l&iacute;nea inserte un caracter <code>^</code> (<i>caret</i>), excepto en la &uacute;ltima l&iacute;nea. Tenga cuidado de no insertar ning&uacute;n espacio despu&eacute;s del caret.
+      <li> Si el switch <code>/"</code> <i>Quoted</i> se requiere, ci&eacute;rrelo en cada l&iacute;nea y vu&eacute;lvalo a abrir si una l&iacute;nea posterior tambi&eacute;n lo usa.
+   </ol>
+<p>Tambi&eacute;n debe encerrar entre comillas cualquier caracter especial colocado en los /*comentarios*/. Usted puede combinar un switch <code>/"</code> <i>Quoted</i> abierto con una sola comilla de cierre colocada al final de un comentario. Vea ejemplos en los archivos *.bat inclu&iacute;dos.
+<p>Cuando el programa est&eacute; completo, cierre el archivo y gu&aacute;rdelo. Para ejecutar el programa printf.exe, teclee el nombre del archivo Batch en la ventana de comandos de Windows (como anteriormente tecleaba el comando printf.exe). Si el nombre del archivo Batch contiene espacios, encierre el nombre entre comillas para ejecutarlo.
+<p>Por ejemplo, el programa antes mostrado que obtiene la longitud de una cadena:
+<pre>
+printf /" "\"%s\" tiene %i caracteres\n"  "Una Cadena"  0 ( getc? &lt; ++ : &lt; ) OUT
+</pre>
+<p>... puede ser reescrito en forma did&aacute;ctica as&iacute;:
+<pre>
+@echo off
+
+printf "\"%%s\" tiene %%i caracteres\n" /* formato */ ^
+   "Una Cadena"		/* "cadena"		*/  ^
+   0			/* "cadena" 0		*/  ^
+   (			/* WHILE getc?		*/  ^
+      getc?		/*    "cadena" 0 C	*/  ^
+      /" &lt; /"		/*    "cadena" 0	*/  ^
+      ++		/*    "cadena" 1 ,2,...	*/  ^
+   :			/* REPEAT		*/  ^
+			/*    "cadena" len 0	*/  ^
+      /" &lt; /"		/*    "cadena" len	*/  ^
+   )			/* ENDWHILE		*/  ^
+   OUT			/* muestra el resultado */
+</pre>
+<p>En esta forma did&aacute;ctica usted puede revisar el contenido del stack antes de cada operaci&oacute;n para estar seguro que es correcto. Como beneficio adicional, las <i>estructuras de control</i> (como While-Do, If-Then-Else, etc) est&aacute;n claramente marcadas y delimitadas. Esta forma aumenta en un alto grado la legibilidad de la programaci&oacute;n por bloques y la acerca a los lenguajes de alto nivel. Usted deber&iacute;a usar esta forma para escribir sus propios programas. Este m&eacute;todo permite programas de hasta 8190 caracteres de longitud. Las l&iacute;neas en este ejemplo tienen alrededor de 40 caracteres cada una; esto significa que usted puede escribir un programa similar de aproximadamente 200 l&iacute;neas de longitud.
+<p><hr>
+<p>Las funciones <b>getc</b> y <b>putc</b> operan en base a una direcci&oacute;n <i>de inicio</i> de una cadena m&aacute;s un <i>sub&iacute;ndice</i> de desplazamiento. Si estas funciones deben operar sobre cadenas diferentes, puede ser un poco engorroso mover los par&aacute;metros del <i>stack</i> para acomodarlos en la forma correcta para utilizar cada funci&oacute;n. Por ejemplo, el siguiente programa <i>duplica</i> una cadena de caracteres en otra, por lo que hace una labor equivalente a la funci&oacute;n <code>1 dups</code>:
+<pre>
+printf "Original:   \"%%s\"\nDuplicated: \"%%s\"\n"  ^
+	"Any string"	/* "original"		*/  ^
+	len		/* "original" len	*/  ^
+	'X' /" &lt;> /"	/* "orig" 'X' len	*/  ^
+	dupc		/* "orig" "XX dup"	*/  ^
+	0		/* "orig" "dup" 0	    index = 0	*/  ^
+	(		/* WHILE getc?		*/  ^
+	   }3		/*    "dup" 0 "orig"	*/  ^
+        /" &lt;> /"	/*    "dup" "orig" 0	*/  ^
+	   getc?	/*    "dup" "orig" 0 'o'*/  ^
+	   }4		/*    "orig" 0 'o' "dup"*/  ^
+	   {3		/*    "orig" "dup" 0 'o'*/  ^
+	   putc		/*    "orig" "oup" 0	*/  ^
+	   ++		/*    "orig" "oup" 1,...    index++	*/  ^
+	:		/* REPEAT		*/  ^
+	)		/* ENDWHILE		*/  ^
+			/* "orig" "dup" len	*/  ^
+	OUT		/* show result		*/
+</pre>
+<p>Por otro lado, la funci&oacute;n <b>movc</b> <a name="movc_function">utiliza</a> un <i>puntero</i> que apunta directamente a un cierto caracter dentro de una cadena, por lo que su uso es m&aacute;s sencillo que getc/putc las cuales requieren <i>dos</i> cantidades (la direcci&oacute;n de inicio y el desplazamiento) para tomar el mismo caracter. Por ejemplo:
+<pre>
+printf "Original:   \"%%s\"\nDuplicated: \"%%s\"\n"  ^
+	"Any string"	/* "original"		*/  ^
+	]0		/* R0 = "original"	*/  ^
+	len		/* "original" len	*/  ^
+	'X' /" &lt;> /"	/* "orig" 'X' len	*/  ^
+	dupc		/* "orig" "XX dup"	*/  ^
+	]1		/* R1 = "duplicated"	*/  ^
+	(		/* WHILE movc0?		*/  ^
+        /" &lt;> /"	/*    "dup" "orig"	exchange *pointers*	*/  ^
+	   movc0?	/*    "dup" "orig" 'o'		like getc?	*/  ^
+	/" &lt;> /"	/*    "dup" 'o' "orig"	*/  ^
+	   ++		/*    "dup" 'o' "orig"++*/  ^
+	   {3		/*    "orig"++ "dup" 'o'*/  ^
+	   movc1	/*    "orig"++ "oup"		like putc	*/  ^
+	   ++		/*    "orig"++ "oup"++	*/  ^
+	:		/* REPEAT		*/  ^
+	)		/* ENDWHILE		*/  ^
+     /" &lt;* /"		/* empty stack		*/  ^
+	[0 [1		/* "orig" "dup"		*/  ^
+	OUT		/* show result		*/
+</pre>
+<p>Mas &aacute;un, la variante <b>movc2</b> puede tomar un caracter de una cadena y guardarlo <i>directamente</i> en otra cadena sin utilizar el <i>stack</i>, por lo que su uso es todav&iacute;a mas sencillo y eficiente. Finalmente, las tres variantes de la funci&oacute;n <b>movc</b> permiten <i>auto-incrementar</i> los punteros utilizados despu&eacute;s de que el caracter correspondiente ha sido movido, lo que permite escribir programas mas cortos y r&aacute;pidos. Se invita al lector a revisar los ejemplos de este punto dados en el archivo <a href="printf%20Example%203%20-%20Index%20vs%20Pointer.bat">printf Example 3 - Index vs Pointer.bat</a>
+<p><hr>
+<p>El est&aacute;ndar para ejecutar programas en la l&iacute;nea de comandos consiste en colocar despu&eacute;s del comando una serie de <i>par&aacute;metros</i>, que son valores que toma el comando para trabajar con ellos. En el comando printf.exe los par&aacute;metros consisten en las operaciones del programa RPN. Sin embargo, es conveniente utilizar una forma de <i>transferir</i> los par&aacute;metros del archivo Batch (que contiene al programa printf.exe) hacia los datos RPN. Esto permitir&iacute;a utilizar la combinaci&oacute;n de archivo Batch/printf.exe en una forma est&aacute;ndar. Aqu&iacute; est&aacute;:
+<pre>
+@echo off
+set "parameters=%*"
+
+printf	""			/* No format			*/ ^
+	parameters		/* "par1 par2 ... parN"		*/ ^
+	split			/* "par1" "par2" ... "parN" N	*/ ^
+	(			/* WHILE			*/ ^
+	   ?			/*    another param?		*/ ^
+	   shift		/*    "par2" "parN" N-1 "par1"	*/ ^
+	   ]1 /" &lt; /"		/*    R1 = "par1" and drop it	*/ ^
+	   FMT{ "Param %%i: %%s\n" /* Param format		*/ ^
+	      ]++0		/*       inc R0 = param counter	*/ ^
+	      [0 [1 OUT		/*       count par1  output	*/ ^
+	   FMT}			/*    Close format		*/ ^
+				/*    "par2" "parN" N-1		*/ ^
+	:			/* REPEAT			*/ ^
+	)			/* ENDWHILE			*/
+</pre>
+<p>El comando <code>set "parameters=%*"</code> toma los par&aacute;metros del archivo Batch y los almacena en la variable <b>parameters</b>. Al poner el nombre de esta variable en el programa RPN se <i>ingresa</i> su valor como una cadena de caracteres; es decir, se ingresan los par&aacute;metros del archivo Batch. La funci&oacute;n <b>split</b> divide esta cadena en par&aacute;metros individuales y la funci&oacute;n <b>shift</b> permite procesarlos uno por uno. La forma did&aacute;ctica de este programa se encuentra en el archivo <a href="printf%20Example%204%20-%20Parameters.bat">printf Example 4 - Parameters.bat</a>
+<p>Note que un programa en forma did&aacute;ctica corre mas lento que en forma est&aacute;ndar. Usted puede desarrollar y probar un programa en forma did&aacute;ctica y despu&eacute;s, cuando ya est&eacute; listo, convertirlo a forma est&aacute;ndar. <b>GetStandardForm.bat</b> es un archivo Batch auxiliar que ayuda en dicha conversi&oacute;n; usted s&oacute;lo tiene que revisar que el c&oacute;digo generado sea correcto en este par de puntos: si hay varios espacios juntos en una cadena ser&aacute;n reducidos a un s&oacute;lo espacio, y quiz&aacute;s insertar un switch <code>/"</code> <i>Quoted</i> de cierre antes de alguna "&lt;cadena>" que pudiera tener caracteres especiales (y abrirlo nuevamente despu&eacute;s, si fuera necesario). Note que <i><b>todas</b> las l&iacute;neas</i> del programa deben tener un /*comentario*/ al final para que sean correctamente convertidas por GetStandardForm.bat
+<h3><a name="Tests_Indicadores" style="text-decoration:none">Tests Indicadores</a> </h3>
+<p>Los "indicadores" (<i>Flags</i> en ingl&eacute;s) es una facilidad tomada de las calculadoras HP. Son variables que representan los valores True o False directamente. La operaci&oacute;n <code>SFn</code> (<i>Set Flag</i>) fija un indicador en True. La operaci&oacute;n <code>CFn</code> (<i>Clear Flag</i>) fija un indicador en False. El test <code>Fn?</code> (<i>Flag?</i>) pregunta por el valor de un indicador. El n&uacute;mero <b>n</b> debe ser un d&iacute;gito en el rango 0..9, por lo que hay 10 indicadores en esta versi&oacute;n de printf.exe. Los indicadores representan una opci&oacute;n mas simple que, por ejemplo, guardar un cero en un registro entero para indicar False y cambiarlo por un 1 para indicar True. Mas adelante se muestran algunos ejemplos de su uso.
+<h3><a name="Tests_Numéricos_Estándar" style="text-decoration:none">Tests Numéricos Estándar</a> </h3>
+<p>Los Tests Num&eacute;ricos Est&aacute;ndar comparan el &uacute;ltimo n&uacute;mero (que llamaremos "X", como en la calculadora HP) versus cero, o comparan el &uacute;ltimo n&uacute;mero "X" versus el anterior "Y"; ambos tests con versiones para enteros y punto flotante.
+   <table border="1" rules="all" cellpadding="5" align="left">
+   <caption><b><a name="Tests_Numéricos_Estándar">Tests Numéricos Estándar</a></b></caption>
+      <tr>
+         <th colspan="3">Tests de un operando</th>
+         <th colspan="3">Tests de dos operandos</th>
+      </tr>
+      <tr>
+         <th>Entero</th>
+         <th>Flotante</th>
+         <th>Condici&oacute;n</th>
+         <th>Entero</th>
+         <th>Flotante</th>
+         <th>Condici&oacute;n</th>
+      </tr>
+      <tr>
+         <td><code>>0?</code></td>
+         <td><code>GTR0?</code></td>
+         <td>X mayor que 0</td>
+         <td><code>>?</code></td>
+         <td><code>GTR?</code></td>
+         <td>X mayor que Y</td>
+      </tr>
+      <tr>
+         <td><code>>=0?</code></td>
+         <td><code>GEQ0?</code></td>
+         <td>X mayor o igual a 0</td>
+         <td><code>>=?</code></td>
+         <td><code>GEQ?</code></td>
+         <td>X mayor o igual a Y</td>
+      </tr>
+      <tr>
+         <td><code>&lt;0?</code></td>
+         <td><code>LSS0?</code></td>
+         <td>X menor que 0</td>
+         <td><code>&lt;?</code></td>
+         <td><code>LSS?</code></td>
+         <td>X menor que Y</td>
+      </tr>
+      <tr>
+         <td><code>&lt;=0?</code></td>
+         <td><code>LEQ0?</code></td>
+         <td>X menor o igual a 0</td>
+         <td><code>&lt;=?</code></td>
+         <td><code>LEQ?</code></td>
+         <td>X menor o igual a Y</td>
+      </tr>
+      <tr>
+         <td><code>==0?</code></td>
+         <td><code>EQU0?</code></td>
+         <td>X igual a 0</td>
+         <td><code>==?</code></td>
+         <td><code>EQU?</code></td>
+         <td>X igual a Y</td>
+      </tr>
+      <tr>
+         <td><code>&#33;=0?</code></td>
+         <td><code>NEQ0?</code></td>
+         <td>X no igual a 0</td>
+         <td><code>&#33;=?</code></td>
+         <td><code>NEQ?</code></td>
+         <td>X no igual a Y</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p>Por ejemplo, para tomar el MAXimo de dos n&uacute;meros enteros, use <code>( >? &lt;> ) &lt;</code>, es decir, si el &uacute;ltimo n&uacute;mero X es mayor, intercambie los n&uacute;meros para dejar el menor en X. Despu&eacute;s de eso, elimine el &uacute;ltimo n&uacute;mero (que siempre ser&aacute; el menor) y conserve el mayor (m&aacute;ximo).
+<p>En forma similar, para tomar el MINimo de dos enteros: <code>( &lt;? &lt;> ) &lt;</code>.
+<p>Para tomar el MAXimo de dos n&uacute;meros de punto flotante: <code>( GTR? XCHG ) DROP</code>, y para tomar el MINimo: <code>( LSS? XCHG ) DROP</code>.
+<p>Usted tambi&eacute;n puede usar <code>=0?</code> y <code>=?</code> para "X igual a 0" y "X igual a Y", o <code>&lt;>0?</code> y <code>&lt;>?</code> para "X no igual a 0" y "X no igual a Y" para n&uacute;meros enteros.<br clear="all">
+<p>Podemos aprovechar los comandos Batch para escribir varios ejemplos de operaciones printf.exe en forma sencilla, en lugar de escribirlos uno por uno. Por ejemplo, para probar en una sola l&iacute;nea <i>todos</i> los tests enteros sobre dos valores, podemos usar el comando Batch <b>FOR</b>:
+<pre>
+for %t in (" >" ">=" " &lt;" "&lt;=" "==" "&lt;>") do @printf "%i %~t %i:  %s\n"  /"  10 20 ( %~t? &lt;> "TRUE" ; &lt;> "false" ) OUT
+</pre>
+<p><b>20  > 10:  TRUE<br>20 >= 10:  TRUE<br>20  &lt; 10:  false<br>20 &lt;= 10:  false<br>20 == 10:  false<br>20 &lt;> 10:  TRUE</b>
+<p>Los mismos tests sobre n&uacute;meros de punto flotante:
+<pre>
+for %t in (gtr geq lss leq equ neq) do @printf "%.2f %~t %.2f:  %s\n"  10. 20. ( %~t? XCHG "TRUE" ; XCHG "false" ) OUT
+</pre>
+<p><b>20.00 gtr 10.00:  TRUE<br>20.00 geq 10.00:  TRUE<br>20.00 lss 10.00:  false<br>20.00 leq 10.00:  false<br>20.00 equ 10.00:  false<br>20.00 neq 10.00:  TRUE</b>
+<p>Usted puede cambiar el orden de los valores o probar un s&oacute;lo valor vs. cero para completar los tests con el resto de condiciones.
+<p>Ahora podemos completar la conversi&oacute;n a letras may&uacute;sculas, la cual usa los tests enteros <b>&lt;=?</b> y <b>>=?</b>:
+<pre>
+printf "%s\n"  "Hola, Mundo&#33;"  /"  0 ( getc? ( 'a' &lt;=? &lt; 'z' >=? &lt; 32 - putc 'c' 'x' ) &lt; &lt; ++ : ) &lt; &lt;  OUT
+</pre>
+   <table border="1" rules="ver" cellpadding="5" align="right">
+      <tr>
+         <td>&aacute; - 160<br>&eacute; - 130<br>&iacute; - 161<br>&oacute; - 162<br>&uacute; - 163<br>&uuml; - 129<br>&ntilde; - 164<br>&iquest; - 168</td>
+         <td>&Aacute; - 181<br>&Eacute; - 144<br>&Iacute; - 214<br>&Oacute; - 224<br>&Uacute; - 233<br>&Uuml; - 154<br>&Ntilde; - 165<br>&iexcl; - 173</td>
+      </tr>
+   </table>
+<p>Recuerde que los caracteres se manejan como n&uacute;meros enteros, por lo que los tests sobre enteros tambi&eacute;n son tests <i>sobre caracteres</i>. La Forma Did&aacute;ctica de esta conversi&oacute;n se encuentra en el archivo <a href="printf%20Example%202%20-%20ProcString.bat">printf Example 2 - ProcString.bat</a>
+<p>La conversi&oacute;n entre letras may&uacute;sculas y min&uacute;sculas se basa en el hecho de que estos dos conjuntos de letras se encuentran separados por 32 posiciones en la tabla est&aacute;ndar de <a href="https://es.wikipedia.org/wiki/ASCII">caracteres ASCII</a>. Sin embargo, en el caso de letras en espa&ntilde;ol con acento, esto no es as&iacute;. Como referencia, a la derecha se muestra una tabla con las letras con acento y otros caracteres en espa&ntilde;ol, y las posiciones que ocupan <i>en la p&aacute;gina de c&oacute;digos 850</i>. Por supuesto, si cmd.exe maneja una p&aacute;gina de c&oacute;digos diferente, estos caracteres podr&iacute;an aparecer en otras posiciones o incluso ni siquiera aparecer.<br clear="all">
+<p>Otro ejemplo de tests num&eacute;ricos est&aacute;ndar es una tabla de multiplicar. Este ejemplo incluye dos bloques de c&oacute;digo anidados:
+<pre>
+printf /" " %3i"  0 ( ++ 11 ==? ; &lt;  0 ( ++ 11 ==? &lt; ; &lt; >2 >2 * {3 OUT &lt;3 : )  FMT{ "\n" OUT FMT}  &lt; : )
+</pre>
+<p>La forma did&aacute;ctica de este ejemplo se encuentra en el archivo <a href="printf%20Example%205%20-%20Multiplication%20table.bat">printf Example 5 - Multiplication table.bat</a> y se reproduce aqu&iacute; para que usted pueda revisarla:
+<pre>
+printf " %%3i"	/* formato		*/ ^
+   0		/* i=0			*/ ^
+   (		/* WHILE ++i &#33;= 11  	*/ ^
+      ++	/*    1	 ,2,... 	*/ ^
+      11 ==?	/*    i 11   equ?	*/ ^
+   ;		/*           break 	*/ ^
+   /" &lt; /"	/*    i			*/ ^
+      0		/*    i j=0		*/ ^
+      (		/*    WHILE ++j &#33;= 11	*/ ^
+         ++	/*       i 1  ,2,...	*/ ^
+         11 ==? /*       i j 11   equ?	*/ ^
+      /" &lt; /"	/*       i j		*/ ^
+      ;		/*                break	*/ ^
+      /" &lt; /"	/*       i j		*/ ^
+      /" >2 /"	/*       i j i		*/ ^
+      /" >2 /"	/*       i j i j	*/ ^
+         *	/*       i j i*j	*/ ^
+         {3	/*	 i*j i j	*/ ^
+         OUT	/*             show i*j	*/ ^
+      /" &lt;3 /"	/*       i j		*/ ^
+      :		/*    REPEAT		*/ ^
+      )		/*    ENDWHILE		*/ ^
+		/*    i 11		*/ ^
+   FMT{ "\n"	/*    EndOfLine		*/ ^
+   OUT		/*    nueva línea	*/ ^
+   FMT}		/*    borra FMT		*/ ^
+/" &lt; /"	/*    i			*/ ^
+   :		/* REPEAT		*/ ^
+   )		/* ENDWHILE		*/
+</pre>
+<p>&Eacute;sta es la &uacute;ltima vez que se reproduce una forma did&aacute;ctica completa aqu&iacute;. El paquete printf.exe incluye varios ejemplos en forma did&aacute;ctica que se describen despu&eacute;s. Usted puede revisar esos ejemplos con el editor de texto Notepad de Windows abriendo el archivo .bat correspondiente; para ello haga click sobre el archivo con el bot&oacute;n <i>derecho</i> del <i>mouse</i> y seleccione "Editar".
+<p><hr>
+<p>Otro ejemplo derivado del operador <code>GETK</code> consiste en <i>leer una l&iacute;nea</i> desde el teclado, es decir, simular la operaci&oacute;n de la funci&oacute;n <b>IN</b>. El programa tomar&aacute; tecla por tecla y la revisar&aacute;: si es un caracter ASCII normal (mayor o igual a 32), lo insertar&aacute; en la cadena de caracteres que est&aacute; creando y lo mostrar&aacute; en la pantalla; si es la tecla "Suprimir" o "Borrar" (caracter ASCII 8 = <b>BS</b>) borrar&aacute; el &uacute;ltimo caracter insertado en la cadena y tambi&eacute;n lo borrar&aacute; de la pantalla; y si es la tecla "Entrar" (caracter ASCII 13 = <b>CR</b>) terminar&aacute; entregando la l&iacute;nea le&iacute;da y su longitud en caracteres (igual que IN). Aqu&iacute; est&aacute;:
+<pre>
+printf /" "%%s\n" 80 ]2 '$' &lt;> dupc ]1 0 ( GETK 13 ==? ; &lt; 8 ==? ( &lt; &lt; ==0? ; -- FMT{ "\b \b" OUT FMT} ) : &lt; 32 >? &lt; &lt; : &lt; ]0 &lt; [2 ==? &lt; : &lt; FMT{ "%%c" [0 OUT FMT} [0 putc ++ : ) FMT{ "\n" OUT FMT} &lt; &lt; 0 putc FMT{ "Line read: \"%%s\"\n" [1 OUT
+</pre>
+<p>Antes de empezar hay que dar el n&uacute;mero m&aacute;ximo de caracteres que se pueden leer (igual que en IN) que en este ejemplo es <code>80</code>, el cual se guarda en el registro 2 (con <code>]2</code>). Primero se crea una cadena de esa longitud (con <code>'$' &lt;> dupc</code>), se guarda su direcci&oacute;n <code>]1</code> en el registro 1 y se inicializa el &iacute;ndice/contador de caracteres de la cadena con <code>0</code>.
+<p>El proceso consiste en un bucle repetitivo While <code>(</code> que contiene las siguientes partes: se lee una tecla <code>GETK</code>, se pregunta si es "Entrar" <code>13 ==?</code> y se sale del bucle <code>;</code> en caso afirmativo. En caso contrario, se borra el "Entrar" <code>&lt;</code> y se pregunta si es "Suprimir" <code>8 ==?</code>. SI lo es, entonces <code>(</code>: se borran los dos ochos <code>&lt; &lt;</code> dejando como &uacute;ltimo n&uacute;mero al &iacute;ndice de caracteres y entonces se pregunta si se ingres&oacute; alg&uacute;n caracter <code>==0?</code>, cancelando <code>;</code> el SI en caso negativo; de lo contrario se decrementa <code>--</code> el &iacute;ndice/contador de caracteres y se borra el &uacute;ltimo caracter en la pantalla (mostrando un BS, un espacio y otro BS <code>FMT{ "\b \b" OUT FMT}</code>. Aqu&iacute; termina <code>)</code> el "SI es Suprimir" y se regresa <code>:</code> al bucle While. &iquest;Verdad que la programaci&oacute;n por bloques es muy entretenida? <b>;)</b>.
+<p>En la &uacute;ltima parte se borra <code>&lt;</code> el 8 anterior, se pregunta si el caracter <code>32 >?</code> es menor a 32 (caracter de control) y en caso afirmativo se borra el 32 y el caracter <code>&lt; &lt;</code> y se regresa <code>:</code> al bucle While. De lo contrario es un caracter normal, as&iacute; que se elimina <code>&lt;</code> el 32, el caracter se guarda en el registro 0 y se elimina <code>]0 &lt;</code>. Entonces se recupera el n&uacute;mero m&aacute;ximo de caracteres <code>[2</code> y si el &iacute;ndice ya lleg&oacute; a este l&iacute;mite <code>==?</code>, se borra el l&iacute;mite <code>&lt;</code> y regresa <code>:</code> al While; en caso contrario se borra el l&iacute;mite <code>&lt;</code>, se muestra el caracter <code>FMT{ "%%c" [0 OUT FMT}</code>, se almacena el caracter en la cadena <code>[0 putc</code>, se incrementa el &iacute;ndice <code>++</code> y regresa <code>:</code> al bucle While, el cual termina <code>)</code>
+<p>Al salir del While debido a la tecla "Entrar" se avanza a una nueva l&iacute;nea <code>FMT{ "\n" OUT FMT}</code>, se borran ambos n&uacute;meros 13 <code>&lt; &lt;</code>, se inserta un <code>0</code> como delimitador de la cadena y se guarda <code>putc</code> en su lugar. Finalmente, se muestra el resultado: <code>FMT{ "Line read: \"%%s\"\n" [1 OUT</code>.
+<p>Este m&eacute;todo b&aacute;sico de lectura de una l&iacute;nea se puede modificar para obtener otras lecturas similares, pero con alguna caracter&iacute;stica adicional. Por ejemplo, para leer una contrase&ntilde;a basta con cambiar el caracter que se muestra en <code>FMT{ "%%c" [0 OUT FMT}</code> por un asterisco: <code>FMT{ "%%c" '*' OUT FMT}</code>. Tambi&eacute;n se puede convertir autom&aacute;ticamente el caracter le&iacute;do a may&uacute;sculas (usando el m&eacute;todo visto antes), o bien restringir las teclas admitidas a s&oacute;lo digitos cambiando la restricci&oacute;n de no ser "menores a 32" por "estar entre 48 y 57" (c&oacute;digos ASCII del "0" y el "9", respectivamente), etc&eacute;tera. La forma did&aacute;ctica de estos programas se encuentra en el archivo <a href="printf%20Example%206%20-%20ReadLine.bat">printf Example 6 - ReadLine.bat</a>
+<h3><a name="Operaciones_Avanzadas_de_Entrada/Salida" style="text-decoration:none">Operaciones Avanzadas de Entrada/Salida</a> </h3>
+<p>Las operaciones que se describen en esta secci&oacute;n son las formas Test? de las est&aacute;ndar GETK (<i>Get Key</i>) e IN (<i>Input line</i>). Tambi&eacute;n hay algunas formas avanzadas de las operaciones IN y OUT que permiten leer y escribir archivos de texto, as&iacute; como la nueva operaci&oacute;n CMD que ejecuta un comando de cmd.exe. Para completar, las operaciones est&aacute;ndar de entrada/salida descritas anteriormente tambi&eacute;n se incluyen en la siguiente tabla.
+<p>Para procesar un archivo de texto primero se debe <i>abrir</i> el archivo, lo que implica tomar el archivo por su nombre y conectarlo a un n&uacute;mero, llamado <i>handle</i> ("manejador"), el cual se usar&aacute; en las operaciones posteriores sobre ese archivo. Si se escribieron nuevos datos en el archivo, el <i>handle</i> se debe <i>cerrar</i> (desconectar del archivo) antes de terminar el programa. En las siguientes funciones el valor <b>N</b> identifica al <i>handle</i>, que debe ser un d&iacute;gito entre 0 y 9.
+   <table border="1" rules="all" cellpadding="5">
+   <caption><b><a name="Operaciones_Avanzadas_de_Entrada/Salida">Operaciones Avanzadas de Entrada/Salida</a></b></caption>
+      <tr>
+         <th>Operaci&oacute;n</th>
+         <th>Funci&oacute;n</th>
+         <th>Descripci&oacute;n</th>
+      </tr>
+      <tr>
+         <td>Salida est&aacute;ndar</td>
+         <td><code>OUT</code></td>
+         <td>Manda salida con formato a la pantalla: "formato" dato1 dato2 ...</td>
+      </tr>
+      <tr>
+         <td>Inicia formato</td>
+         <td><code>FMT{</code></td>
+         <td>Inicia un nuevo formato y datos para OUT, hasta terminarlo con <code>FMT}</code></td>
+      </tr>
+      <tr>
+         <td>Toma una tecla</td>
+         <td><code>GETK</code><br><code>GETK?</code><br><code>GETK?:r</code></td>
+         <td>Espera por una tecla<br>No espera: si no hay una tecla lista, es False<br>Espera el siguiente intervalo (<i>time-slice</i>) de milisegundos dado en registro R</td>
+      </tr>
+      <tr>
+         <td>Entrada est&aacute;ndar</td>
+         <td><code>maxlen IN</code></td>
+         <td>Lee una l&iacute;nea del teclado</td>
+      </tr>
+      <tr>
+         <td>Ejecuta un comando<br>y abre un <i>pipe</i></td>
+         <td><code>"comando" CMD</code></td>
+         <td>Ejecuta el "comando" de cmd.exe y abre un pipe de Stdin para leer su salida</td>
+      </tr>
+      <tr>
+         <td>Entrada y Test?</td>
+         <td><code>maxlen IN?</code></td>
+         <td>Lee una l&iacute;nea; en EndOfFile cierra el &uacute;ltimo <i>pipe</i> de Stdin abierto por CMD</td>
+      </tr>
+      <tr>
+         <td>Abre archivo de entrada</td>
+         <td><code>"filename" IN{?:n</code><br><code>"filename" IN{+?:n</code></td>
+         <td>Abre el archivo para <i>input</i> en el <i>handle</i> N<br>Abre el archivo para <i>update</i> en ambos input/output <i>handles</i> N</td>
+      </tr>
+      <tr>
+         <td>Entrada del handle</td>
+         <td><code>maxlen IN?:n</code></td>
+         <td>Lee una l&iacute;nea desde el <i>handle</i> N; en EndOfFile cierra el <i>handle</i></td>
+      </tr>
+      <tr>
+         <td>Abre archivo de salida</td>
+         <td><code>"filename" OUT{:n</code><br><code>"filename" OUT{+:n</code></td>
+         <td>Crea y abre el archivo para <i>output</i> en el <i>handle</i> N<br>Abre el archivo para <i>append</i> (output en EndOfFile) en el <i>handle</i> N</td>
+      </tr>
+      <tr>
+         <td>Salida al handle</td>
+         <td><code>OUT:n</code></td>
+         <td>Manda salida con formato al <i>handle</i> N</td>
+      </tr>
+      <tr>
+         <td>Cierra handle de salida</td>
+         <td><code>OUT}:n</code><br><code>OUT}+:n</code></td>
+         <td>Cierra el <i>handle</i> de salida N<br>Fija el tama&ntilde;o del archivo al FP actual y cierra el <i>handle</i> N</td>
+      </tr>
+      <tr>
+         <td>Mueve puntero<br>del archivo</td>
+         <td><code>SEEK#:n:p</code></td>
+         <td>Mueve el puntero FP del <i>handle</i> N a la posici&oacute;n P desde el origen #</td>
+      </tr>
+      <tr>
+         <td>Cambia el directorio</td>
+         <td><code>"pathname" CD</code></td>
+         <td>Cambia el directorio actual; regresa 0 si OK o -1 si Error.</td>
+      </tr>
+   </table>
+<p>Las operaciones de entrada <b>GETK</b> e <b>IN</b> antes vistas tambi&eacute;n pueden trabajar como tests si un signo de interrogaci&oacute;n es a&ntilde;adido al final, como es usual. La operaci&oacute;n <code>IN?</code> lee una l&iacute;nea desde el teclado (o desde un archivo de entrada redirigido) e ingresa en el stack la cadena le&iacute;da y su longitud. Cuando se alcanza el "FinalDelArchivo" (<i>EndOfFile</i>) del archivo redirigido, s&oacute;lo un <b>-1</b> es ingresado y el Test? es False. En cualquier caso, el valor <b>maxlen</b> es eliminado. Por ejemplo:
+<pre>
+&lt; textFile.txt printf /" "%s\n"  ( 1000 IN? OUT &lt;* : )
+</pre>
+<p>Este m&eacute;todo b&aacute;sico para procesar las l&iacute;neas de un archivo puede enriquecerse de varias formas diferentes. Por ejemplo, para numerar las l&iacute;neas:
+<pre>
+&lt; textFile.txt printf /" "%i:%s\n"  ( ]++0 [0 1000 IN? OUT &lt;* : )
+</pre>
+<p>Tome en cuenta que el uso de la operaci&oacute;n <b>&lt;*</b> (<i>Drop All</i>) en estos ejemplos permite reutilizar <i>la misma &aacute;rea de datos</i> para leer todas las l&iacute;neas del archivo; si esto no se hiciera, el &aacute;rea de printf.exe reservada para cadenas (con 10 Kb de espacio) podr&iacute;a excederse por un archivo grande. La forma did&aacute;ctica de estos ejemplos se encuentra en el archivo <a href="printf%20Example%207%20-%20ReadFile.bat">printf Example 7 - ReadFile.bat</a>
+<p>La operaci&oacute;n <b>GETK</b> (<i>Get Key</i>) est&aacute;ndar espera que una tecla sea presionada para regresar su valor. Si se convierte en un test de esta forma: <code>GETK?</code>, entonces la operaci&oacute;n no espera sino que regresa de inmediato: si una tecla fue presionada antes, GETK? ingresa su valor y el Test? es True; de lo contrario no se ingresa nada y el Test? es False. Este comportamiento puede ser usado para <i>interrumpir un proceso c&iacute;clico</i> al presionar una tecla. El &uacute;ltimo ejemplo anterior puede ser modificado para detenerse cuando se oprima una tecla:
+<pre>
+&lt; textFile.txt printf /" "%i:%s\n"  ( ]++0 [0 1000 IN? OUT ( GETK? GETK ) &lt;* : )
+</pre>
+<p>Despu&eacute;s de que una l&iacute;nea se muestra, la parte <b>( GETK? GETK )</b> revisa si se oprimi&oacute; una tecla; en caso afirmativo, se espera por otra tecla antes de continuar con el ciclo de mostrado. Pruebe este programa en un archivo muy grande. Este es un m&eacute;todo muy simple para insertar una pausa en cualquier proceso c&iacute;clico.
+<p>Otro uso interesante de esta caracter&iacute;stica es controlar <i>una animaci&oacute;n</i>. Un programa puede mostrar una figura en la pantalla que se mueva a intervalos regulares. Cuando el programa detecte una tecla mediante <b>GETK?</b>, puede alterar el movimiento de la figura. &iexcl;Esta es la base para escribir programas de juegos animados&#33; 
+<p>Con el objeto de facilitar la escritura de este tipo de programas, la operaci&oacute;n GETK? tambi&eacute;n permite fijar un <i>intervalo de tiempo de retraso</i>. Cada vez que la operaci&oacute;n <code>GETK?:r</code> se ejecute, &eacute;sta esperar&aacute; hasta el siguiente intervalo de tiempo del reloj (<i>time slice</i>) del n&uacute;mero de milisegundos almacenado en el registro entero de almacenamiento dado por <b>R</b>. Esta funci&oacute;n hace que sea muy f&aacute;cil escribir un programa que mueva una animaci&oacute;n a una velocidad determinada y cambiar dicha velocidad de animaci&oacute;n.
+<p>El siguiente <a name="programa_animado">programa</a> es un ejemplo muy simple de una animaci&oacute;n cuya velocidad se controla mediante la teclas Flecha-Izquierda y Flecha-Derecha; la animaci&oacute;n termina al presionar la tecla Enter:
+<pre>
+printf /" "\b %c"  SF1  100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? CF1 ) &lt;  &lt;  )  F1? : ) 
+</pre>
+<p>El formato <b>"\b %c"</b> regresa el cursor una posici&oacute;n, borra el &uacute;ltimo caracter mostrado y muestra un nuevo caracter, el cual es el caracter ASCII 219 que aparece como un bloque en las p&aacute;ginas de c&oacute;digo 437 y 850. Esto crea la ilusi&oacute;n de que el bloque se mueve de izquierda a derecha. 
+<p>La operaci&oacute;n <b>GETK?:1</b> retrasa la ejecuci&oacute;n el n&uacute;mero de milisegundos almacenado en el registro de almacenamiento #1, el cual fue inicializado al principio con 100 milisegundos.
+<p>La Flecha-Izquierda (-75) incrementa el retraso en 10 milisegundos, lo que hace al proceso mas lento. La Flecha-Derecha (-77) hace lo opuesto. La tecla Enter (13) termina el proceso.
+<p>Cuando una tecla es detectada, se ingresa un -75 para probar si es la Flecha-Izquierda; si es as&iacute;, se ingresa un 10 para incrementar el registro entero 1 y despu&eacute;s el 10 es eliminado; en cualquier caso el -75 es eliminado. Lo mismo se hace con un -77 para probar la tecla Flecha-Derecha. La tecla Enter no inserta ning&uacute;n valor adicional, por lo que s&oacute;lo el 13 es eliminado. El &uacute;ltimo <i>Drop</i> es para eliminar la tecla misma.
+<p>Note que lo &uacute;nico que hace la tecla Enter es apagar (<i>Clear Flag</i>) el indicador 1 y que todo el proceso se repite mientras el indicador 1 est&eacute; prendido. El uso de un indicador de esta manera es un m&eacute;todo muy simple para controlar un ciclo repetitivo que no introduce ning&uacute;n valor en el stack.
+<p>La forma did&aacute;ctica de este programa se encuentra en el archivo <a href="printf%20Example%208%20-%20Animation.bat">printf Example 8 - Animation.bat</a>
+<p><hr>
+<p>La operaci&oacute;n <code>CMD</code> es una potente funci&oacute;n dise&ntilde;ada para ejecutar un comando de cmd.exe y procesar sus l&iacute;neas de salida. Para hacerlo, esta funci&oacute;n ejecuta en forma as&iacute;ncrona una copia del procesador de comandos cmd.exe y redirige su salida est&aacute;ndar Stdout a la entrada est&aacute;ndar Stdin de printf.exe (tuber&iacute;a o <i>pipe</i>), por lo que dicha salida se puede leer a trav&eacute;s de la operaci&oacute;n <b>IN?</b>. Por ejemplo:
+<pre>
+printf /" "%s\n" "DIR /B *.TXT" CMD &lt; ( 1000 IN? OUT &lt;* : )
+</pre>
+<p>Una caracter&iacute;stica interesante de la funci&oacute;n CMD es que su operaci&oacute;n puede ser <i>anidada</i> varios niveles. Cuando una funci&oacute;n CMD est&aacute; activa y sus l&iacute;neas se est&aacute;n leyendo con la operaci&oacute;n IN?, usted puede activar <i>otra funci&oacute;n CMD</i> y leer sus l&iacute;neas mediante operaciones IN? anidadas. Cuando se llega al EndOfFile de la segunda funci&oacute;n CMD, la segunda tuber&iacute;a se cierra y la operaci&oacute;n IN? regresa a seguir leyendo las l&iacute;neas de la primer funci&oacute;n CMD. Podemos aprovechar esta caracter&iacute;stica en varias formas diferentes.
+<p>Por ejemplo, podemos escribir un programa que procese <i>los nombres</i> de todos los archivos de texto mediante la operaci&oacute;n <code>"DIR /B *.TXT" CMD</code> y entonces, por cada archivo encontrado, procese <i>las l&iacute;neas</i> de dicho archivo mediante una operaci&oacute;n <code>"TYPE filename" CMD</code> anidada. Aqu&iacute; est&aacute;:
+<pre>
+printf /" "\n\nFile: %s\n" "DIR /B *.TXT" CMD &lt; ( 100 IN? OUT &lt; ]1 GETK FMT{ "%s\n" "TYPE \"" [1 "\"" 3 "" join1 CMD &lt; ( 1000 IN? OUT &lt;* : ) FMT} &lt;* : )
+</pre>
+<p>Note que el segmento <b>"TYPE \"" [1 "\"" 3 "" join1</b> en la mitad del programa es el encargado de armar el comando <b>TYPE "filename"</b> tomando el nombre de archivo le&iacute;do del comando "DIR /B *.TXT" anterior. La forma did&aacute;ctica de este programa est&aacute; en el archivo <a href="printf%20Example%209%20-%20Type%20files.bat">printf Example 9 - Type files.bat</a>
+<p>Cuando IN? lee un archivo (redirigido) y encuentra el EndOfFile, regresa un -1; sin embargo, cuando IN? lee la salida de la funci&oacute;n CMD mediante la tuber&iacute;a y encuentra el EndOfFile, regresar&aacute; el valor ERRORLEVEL de terminaci&oacute;n del cmd.exe.
+<p>Si el par&aacute;metro de la funci&oacute;n CMD es <b>"CMD"</b> (<code>"CMD" CMD</code>), entonces se iniciar&aacute; una nueva sesi&oacute;n interactiva de comandos de cmd.exe; para cerrarla, teclee <b>EXIT</b>.
+<p><hr>
+<p>La forma <code>"filename" IN{?:n</code> de la funci&oacute;n IN abre el archivo dado para lectura (<i>input</i>), por lo que las operaciones <code>IN?:n</code> posteriores (con <i>el mismo</i> n&uacute;mero <b>N</b> de <i>handle</i>) leer&aacute;n l&iacute;neas de dicho archivo. Cuando el EndOfFile de ese archivo se alcanza, su <i>handle</i> se cierra y el Test? IN? es False. Si el archivo no existe, la operaci&oacute;n/test IN{?:n de apertura ser&aacute; False.
+<p>El siguiente es un ejemplo simple que muestra el contenido de un archivo en forma similar al comando TYPE:
+<pre>
+printf /" "%s\n" ( "filename.txt" IN{?:1 &lt; ( 1000 IN?:1 OUT &lt;* : ) ; &lt; "File not found" OUT )
+</pre>
+<p>La forma <code>"filename" IN{+?:n</code> de la funci&oacute;n IN abre el archivo tanto para lectura como para escritura (<i>update access</i>). En este caso el mismo n&uacute;mero de <i>handle</i> debe ser usado en ambas operaciones, entrada y salida: <b>IN?:n</b> y <b>OUT:n</b>. Si usted desea seguir procesando el archivo despu&eacute;s de que una operaci&oacute;n de lectura alcanz&oacute; el EndOfFile, entonces debe leerlo mediante <b>IN:n</b> que no cierra el archivo; en este caso el EndOfFile puede detectarse por el valor <b>-1</b> regresado. El archivo abierto para <i>update</i> debe cerrarse con la operaci&oacute;n <b>OUT}:n</b>.
+<p>La forma <code>"filename" OUT{:n</code> de la funci&oacute;n OUT crea el archivo dado (destruyendo su contenido anterior, si el archivo existe) y lo abre para escritura (<i>output</i>), por lo que las operaciones <code>OUT:n</code> posteriores (con <i>el mismo</i> n&uacute;mero <b>N</b> de <i>handle</i>) mandar&aacute;n salida con formato a dicho archivo. La forma <code>OUT{+:n</code> preserva el contenido del archivo si existe, pero en este caso la salida se a&ntilde;adir&aacute; <i>al final</i> del archivo (<i>append access</i>). Ambas formas de apertura de salida deben cerrarse con la operaci&oacute;n <code>OUT}:n</code>, y tambi&eacute;n un archivo abierto para <i>update</i> con la operaci&oacute;n <b>IN{+?:n</b>. Si un archivo de salida no puede ser abierto o creado por cualquier raz&oacute;n, el programa ser&aacute; abortado.
+<p>El siguiente es un ejemplo simple que copia el contenido de un archivo de texto en otro (en forma similar al comando COPY):
+<pre>
+printf /" "%s\n" ( "oldfile.txt" IN{?:3 &lt; "newfile.txt" OUT{:4 &lt; ( 1000 IN?:3 OUT:4 &lt;* : ) OUT}:4 &lt; "File copied" ; &lt; "File not found" ) OUT 
+</pre>
+<p><hr>
+   <table border="1" rules="all" cellpadding="5" align="right">
+   <caption><b><a name="Formas_de_la_función_SEEK#">Formas de la función SEEK#</a></b></caption>
+      <tr>
+         <th>Origen</th>
+         <th>Entrada</th>
+         <th>Salida</th>
+      </tr>
+      <tr>
+         <td>Del principio</td>
+         <td>SEEK0</td>
+         <td>SEEK4</td>
+      </tr>
+      <tr>
+         <td>Desde actual</td>
+         <td>SEEK1</td>
+         <td>SEEK5</td>
+      </tr>
+      <tr>
+         <td>Del final</td>
+         <td>SEEK2</td>
+         <td>SEEK6</td>
+      </tr>
+   </table>
+<p>La funci&oacute;n <code>SEEK#:n:p</code> mueve el puntero del archivo (<i>File Pointer</i> o FP) del <i>handle</i> <b>N</b> de entrada (#=0,1,2) o salida (#=4,5,6) a partir del <i>origen</i> indicado por el d&iacute;gito <b>#</b> (0/4 = del inicio del archivo, 1/5 = de la posici&oacute;n actual, 2/6 = del final del archivo) m&aacute;s la posici&oacute;n (<i>offset</i>) dada por el registro entero de almacenamiento n&uacute;mero <b>P</b>. La tabla del lado derecho muestra las seis formas de la funci&oacute;n SEEK#.
+<p>El comando <b>FINDSTR /O "^" filename.txt</b> de cmd.exe muestra la posici&oacute;n de inicio de todas las l&iacute;neas del archivo dado. Un programa printf.exe puede tomar estos n&uacute;meros y usar <b>SEEK0:n:p</b> para leer las l&iacute;neas de un archivo de texto en cualquier orden deseado. Si un archivo tuviera <i>registros</i> (l&iacute;neas) de longitud fija (la misma longitud en todas sus l&iacute;neas), entonces &eacute;stas se podr&iacute;an leer en cualquier orden sin necesidad de tomar previamente sus posiciones de inicio, sino tan s&oacute;lo calculando su: <b>posici&oacute;n = N&uacute;meroDeL&iacute;nea * LongitudDeL&iacute;nea</b>. Si el archivo es abierto con <b>IN{+?:n</b> <i>update access</i>, entonces se podr&iacute;an actualizar tan s&oacute;lo <i>unas cuantas l&iacute;neas</i> e inmediatamente cerrar el archivo. Si el archivo es grande, este m&eacute;todo puede ahorrar mucho tiempo de proceso (porque evita copiar todo el contenido del archivo que no fue modificado, como es usual hacerlo en archivos Batch).
+<p>Si la posici&oacute;n <b>P</b> no se proporciona, entonces el FP se mueve al punto indicado solamente por <b>#</b> (principio, actual o final); en este caso la posici&oacute;n final del FP se ingresa en el stack como un n&uacute;mero entero. Por ejemplo, para tomar el tama&ntilde;o de un archivo en bytes:
+<pre>
+printf "El tamaño del archivo \"%s\" es: %u bytes\n" "filename.txt" IN{?:1 SEEK2:1
+</pre>
+<p>Usted puede usar este m&eacute;todo para tomar la posici&oacute;n de inicio de todas las l&iacute;neas del archivo (en lugar del comando <b>FINDSTR /O ...</b>) leyendo cada l&iacute;nea y almacenando la posici&oacute;n actual del FP mediante <b>SEEK1:n</b>. Puede consultar una descripci&oacute;n mas t&eacute;cnica de las capacidades de SEEK en <a href="https://learn.microsoft.com/es-es/cpp/c-runtime-library/reference/fseek-fseeki64?view=msvc-170">esta p&aacute;gina</a>.
+<p><hr>
+<p>La forma <code>OUT}+:n</code> (<i>Set size</i>) de la funci&oacute;n OUT cambia el tama&ntilde;o del archivo a la posici&oacute;n actual del FP y cierra el archivo. Si usted crea/abre un archivo de salida, mueve el FP <i>despu&eacute;s</i> del EndOfFile y cierra el archivo con la opci&oacute;n <i>Set size</i>, el tama&ntilde;o del archivo aumentar&aacute; a tal posici&oacute;n. Esto permite crear un archivo grande en forma muy sencilla. Por ejemplo, para crear un archivo con cien mil bytes:
+<pre>
+printf "Archivo \"%s\" creado con %u bytes\n" "filename.txt" OUT{:3 100000 ]5 SEEK4:3:5 OUT}+:3
+</pre>
+<p>El nuevo espacio en el archivo se llena con bytes con cero binario. Sin embargo, si usted abre el archivo con el editor Windows Notepad, los ceros se convierten en espacios en blanco.
+<p>Si usted mueve el FP de un archivo de salida <i>antes</i> del EndOfFile y cierra el archivo con la opci&oacute;n <i>Set size</i>, el contenido del archivo se truncar&aacute; en tal posici&oacute;n (eliminando cualquier dato que hubiera en el &aacute;rea truncada). Por ejemplo, para truncar un archivo grande a s&oacute;lo 10 Kb:
+<pre>
+printf "Archivo \"%s\" truncado en %u bytes\n" "filename.txt" OUT{+:8 10 1024 * ]2 SEEK4:8:2 OUT}+:8
+</pre>
+<p>Tambi&eacute;n puede abrir el archivo con <code>IN{+?:n</code> (<i>update access</i>) para truncarlo (conservando el contenido anterior). Puede leer mas detalles t&eacute;cnicos sobre la opci&oacute;n <i>Set size</i> en <a href="https://learn.microsoft.com/es-es/windows/win32/api/fileapi/nf-fileapi-setendoffile">esta p&aacute;gina</a>.
+<p>Tome en cuenta que todos estos <i>handles</i> de archivos son independientes unos de otros. Un programa printf.exe puede abrir un total de 10 archivos de entrada m&aacute;s 10 archivos de salida mediante los <i>handles</i> 0..9, m&aacute;s 20 <i>pipes</i> de entrada anidados del comando CMD.
+<h3><a name="Bloques_de_Código_con_Nombre" style="text-decoration:none">Bloques de Código con Nombre</a> </h3>
+<p>Usted puede darle <i>un nombre</i> a un bloque de c&oacute;digo externo (no anidado). Hacer esto permite ingresar (<i>definir</i>) el bloque s&oacute;lo una vez y <i>utilizarlo</i> despu&eacute;s varias veces. Esta facilidad se llama <i>subrutina</i> o <i>procedimiento</i> en los lenguajes de programaci&oacute;n convencionales; nosotros tambi&eacute;n usaremos estos t&eacute;rminos aqu&iacute;.
+<p>El <i>nombre de la subrutina</i> se compone de hasta 4 caracteres (letras o d&iacute;gitos <b>solamente</b>, comenzando con letra, sin distinguir may&uacute;sculas de min&uacute;sculas) que se coloca antes del delimitador <code>(</code> BEGIN del bloque sin <i>ning&uacute;n espacio</i> entre ellos. Puede insertar m&aacute;s caracteres para facilitar la legibilidad, pero s&oacute;lo los primeros cuatro componen el nombre.
+<p>La definici&oacute;n de bloques con nombre debe hacerse <i>antes</i> de la cadena formato. Cuando una subrutina se <i>define</i>, sus operaciones <i>no</i> se ejecutan sino que se almacenan. Para despu&eacute;s <i>ejecutar</i> o <i>invocar</i> o <i>llamar</i> a la subrutina, simplemente escriba su nombre en la misma forma que cualquier operaci&oacute;n predefinida. Por ejemplo:
+<pre>
+printf  Uno( "Primera" )  Dos( "Segunda" )  /" "Dos cadenas: %s - %s\n"  Uno Dos OUT &lt; &lt;  Uno Uno OUT &lt; &lt;  Dos Dos OUT
+</pre>
+<p>Este ejemplo muestra:
+<p><b>Dos cadenas: Primera - Segunda<br>Dos cadenas: Primera - Primera<br>Dos cadenas: Segunda - Segunda</b>
+<p>Una subrutina no puede tener el mismo nombre que una operaci&oacute;n predefinida. Si usted no sigue esta regla, la subrutina ser&aacute; ignorada y ese nombre siempre ejecutar&aacute; la funci&oacute;n predefinida. Tampoco se pueden definir dos subrutinas con el mismo nombre. Recuerde que el nombre de la subrutina son s&oacute;lo <i>los cuatro</i> primeros caracteres.
+<p>Un primer uso de esta caracter&iacute;stica es dar un nombre a las <i>constantes</i> utilizadas con frecuencia. Cuando se usan n&uacute;meros directamente puede haber dudas sobre su significado. Si la constante tiene un nombre descriptivo, su uso es mucho m&aacute;s claro. Por ejemplo:
+<pre>
+printf  CR( 13 )  LF( 10 )  TAB( 9 )  BS( 8 )  SPACE( 32 ) ...
+</pre>
+<p>De esta forma se puede diferenciar un 10 utilizado como "n&uacute;mero diez" de un 10 que representa un caracter ASCII LineFeed. En el archivo <a href="printf - GetKey codes.txt">printf&nbsp;-&nbsp;GetKey&nbsp;codes.txt</a> se incluye la definici&oacute;n, como bloques de c&oacute;digo con nombre, de todas las teclas especiales que entrega la operaci&oacute;n GETK.
+<p>De la misma manera, puede dar un nombre a una constante de especificaci&oacute;n que se usa varias veces en su programa. Cuando desee cambiar esta especificaci&oacute;n, basta con cambiar su valor <i>en un solo lugar</i> (la definici&oacute;n de la subrutina) y el cambio se reflejar&aacute; en todos los lugares donde se use dicha constante.
+<p>Otro uso de las subrutinas es definir segmentos de c&oacute;digo <i>de uso com&uacute;n</i> que proporcionen caracter&iacute;sticas &uacute;tiles no predefinidas, o dividir un programa grande en unidades l&oacute;gicas para aumentar la legibilidad del programa. Un ejemplo simple:
+<pre>
+printf  Hipot( SQR XCHG SQR ADD SQRT )  "La hipotenusa de 3. y 4. es: %.2f\n" 3. 4. Hipot OUT
+</pre>
+<p>Todos los ejemplos de programas que se muestran en este documento pueden definirse como subrutinas y agruparlos en un archivo que formar&iacute;a una <i>biblioteca de funciones</i>, de manera que usted s&oacute;lo necesitar&iacute;a inclu&iacute;r en sus programas las subrutinas deseadas listas para usarse. Adem&aacute;s, los bloques de c&oacute;digo con nombre permiten <a href="https://es.wikipedia.org/wiki/Recursi%C3%B3n_(ciencias_de_computaci%C3%B3n)">llamadas recursivas</a>. En seguida se muestra un par de ejemplos de subrutinas recursivas.
+<p>Uno de los ejemplos cl&aacute;sicos de recursividad en computaci&oacute;n es el c&aacute;lculo del <a href="https://es.wikipedia.org/wiki/Factorial">factorial</a> de un n&uacute;mero entero <b>N</b> (indicado por <b>N&#33;</b>) que es el producto de todos los enteros desde N y bajando hasta 1. Por ejemplo: <b>5&#33; = 5 x 4 x 3 x 2 x 1</b> que es igual a 120, o <b>4&#33; = 4 x 3 x 2 x 1</b> que es 24. Revisando estas f&oacute;rmulas es f&aacute;cil ver que <b>5&#33; = 5 x 4&#33;</b> y, en general: <b>N&#33; = N x (N - 1)&#33;</b>; &eacute;sta es una <i>definici&oacute;n recursiva</i> de una f&oacute;rmula en t&eacute;rminos de ella misma. Note que <b>1&#33; = 1</b> lo que marca el "fin de los n&uacute;meros", aunque, <i>por definici&oacute;n</i>, se toma <b>0&#33; = 1</b>.
+<p>La f&oacute;rmula recursiva anterior est&aacute; incompleta porque no especifica <i>el final</i> de la recursi&oacute;n. Una definici&oacute;n mas completa ser&iacute;a &eacute;sta: <b>N&#33; = IF N==0 THEN 1 ELSE Nx(N-1)&#33;</b> (en el lenguaje de programaci&oacute;n C: <b>fact(int n) { return( (n==0) ? 1 : n*fact(n-1) ) }</b>).
+<p>La manera de <i>implementar</i> esta f&oacute;rmula recursiva en la programaci&oacute;n por bloques de printf.exe consiste en revisar si N es 0, en cuyo caso el resultado es 1 (cambiar el 0 por 1 mediante un incremento y terminar); de lo contrario, multiplicar N por una <i>invocaci&oacute;n recursiva</i> de la misma subrutina sobre N-1, es decir: duplicar N, decrementar el duplicado (N-1), obtener el factorial (N-1)&#33; y multiplicar N x (N-1)&#33;
+<pre>
+printf /"  Fact( ==0? ++ ; > -- Fact * )  "Factorial de %i es %i\n" 5 > Fact OUT
+</pre>
+<p>Tenga en cuenta que este ejemplo usa n&uacute;meros <i>enteros</i>, por lo que puede calcular factoriales hasta el n&uacute;mero 12. Adem&aacute;s, tenga en cuenta que este m&eacute;todo <i>no se puede</i> traducir a n&uacute;meros de punto flotante porque el <i>stack</i> de la FPU s&oacute;lo puede contener 8 n&uacute;meros.
+<p><hr>
+<p>Veamos ahora un ejemplo recursivo diferente. Como se dijo antes, la funci&oacute;n <b>CMD</b> puede ser <i>anidada</i> en varias ejecuciones paralelas simult&aacute;neas. Podemos aprovechar esta caracter&iacute;stica para escribir una subrutina recursiva que procese el &aacute;rbol completo de un directorio. Para ello, la subrutina s&oacute;lo necesita mostrar los subdirectorios del directorio actual. Para mostrar el &aacute;rbol completo, s&oacute;lo debe invocarse a s&iacute; misma con cada uno de los subdirectorios encontrados. Aqu&iacute; est&aacute;:
+<pre>
+printf /" TREE( "DIR /A:D /B" CMD FMT{ "%.*s%s\n" ( 80 IN? &lt; [0 [2 }3 OUT CD 3 ]+0 &lt;*  TREE  ".." CD 3 ]-0 &lt;* : ) FMT} )  "" ' ' 30 dupc ]2 &lt;  TREE
+</pre>
+<p>La subrutina <code>TREE(</code> comienza procesando los subdirectorios del folder actual mediante la funci&oacute;n <code>"DIR /B /A:D" CMD</code> y enseguida prepara el formato <code>FMT{ "%.*s%s\n"</code> que se usar&aacute;. Entonces, por cada subdirectorio le&iacute;do con <code>( 80 IN? &lt; </code>, lo muestra en la pantalla con <code>[0 [2 }3 OUT</code> (m&aacute;s sobre esto adelante), cambia el folder actual con <code>CD</code> para entrar a ese subdirectorio (le suma 3 al registro 0 con <code>3 ]+0 &lt;*</code>) y procesa ese subdirectorio de la misma forma mediante una invocaci&oacute;n recursiva <code>TREE</code>. Cuando los subdirectorios de un CMD terminen (es decir, cuando una invocaci&oacute;n recursiva regrese), regresa el directorio actual al nivel previo de subdirectorios con <code>".." CD</code> (le resta 3 al registro 0 con <code>3 ]-0 &lt;* </code>) y el proceso contin&uacute;a con el siguiente folder <code>:</code> del CMD anterior. Cuando el primer CMD termine <code>)</code>, se cierran el formato y el bloque de la subrutina <code>FMT} )</code>.
+<p>El "programa principal" no usa ning&uacute;n formato <code>""</code>; s&oacute;lo crea una cadena con 30 espacios en blanco <code>' ' 30 dupc</code> que almacena <code>]2 &lt;</code> en el registro 2 e invoca por primera vez a <code>TREE</code>. Esta cadena de espacios se utiliza para mostrar un margen de justificaci&oacute;n mediante el formato <b>FMT{ "%.*s%s\n"</b> (seg&uacute;n se describe <a href="#formato_asterisco">aqu&iacute;</a>) que aumenta en 3 espacios por cada nivel de subdirectorios encontrado. El registro <b>0</b> contiene el valor del margen y los 3 elementos (margen, espacios y subdirectorio) se muestran correctamente con <code>[0 [2 }3 OUT</code>.
+<p>Este ejemplo puede enriquecerse mostrando tambi&eacute;n los archivos de cada directorio, o mostrando un margen de justificaci&oacute;n formado por l&iacute;neas que marquen con mayor claridad el anidamiento de los subdirectorios (como en el comando TREE de cmd.exe). La forma did&aacute;ctica de este programa, y la modificaci&oacute;n que tambi&eacute;n muestra los archivos, se encuentran en el archivo <a href="printf%20Example%20A%20-%20MyTree.bat">printf Example A - MyTree.bat</a>
+<p>Como es usual en la programaci&oacute;n por bloques, un bloque de c&oacute;digo con nombre <i>tambi&eacute;n</i> puede operar como un Test? si se a&ntilde;ade un signo de interrogaci&oacute;n a su nombre cuando el bloque es <i>invocado</i>; recuerde que usted no puede inclu&iacute;r ning&uacute;n caracter especial <i>en la definici&oacute;n</i> de un bloque de c&oacute;digo con nombre. El m&eacute;todo que se usa para que esta subrutina devuelva un valor True o False se describe en la siguiente secci&oacute;n.
+<p><hr>
+<p><i>Nota del Autor</i>: Antes de pasar a la &uacute;ltima secci&oacute;n de este documento quisiera mencionar un punto importante. Si usted no <i>sab&iacute;a</i> programaci&oacute;n y ha completado con &eacute;xito el estudio de este manual hasta este punto, sepa que usted cuenta ahora con las bases que le permitir&aacute;n estudiar adecuadamente cualquier lenguaje de programaci&oacute;n moderno. La aparente sencillez con la que se han presentado estos temas no implica que los conceptos en s&iacute; sean sencillos; lo que es sencillo es <i>la forma de presentarlos</i> utilizando el esquema de printf.exe como una excelente herramienta educativa.
+<p>Si usted ya tiene experiencia en programaci&oacute;n quiero hacerle notar lo <i>sencillo</i> que es escribir un c&oacute;digo peque&ntilde;o en la programaci&oacute;n por bloques. Con muy pocos elementos se pueden obtener resultados importantes, lo que es resultado del dise&ntilde;o de printf.exe y de sus operaciones predefinidas. Una vez superados los problemas iniciales de la notaci&oacute;n poco usual y algo cr&iacute;ptica de printf.exe, &eacute;ste puede ser utilizado para escribir programas que resuelvan muchos de los problemas cotidianos a los que se enfrentan los usuarios de computadoras personales. Quiero invitarlo a que siga utilizando printf.exe en este sentido.
+<p>&iquest;Ya se registr&oacute; como usuario de printf.exe? Le sugiero que le eche un vistazo a la <a href="Registra tu copia de printf.exe.html">p&aacute;gina de registro</a> ahora mismo.
+<h3><a name="Operadores_Booleanos" style="text-decoration:none">Operadores Booleanos</a> </h3>
+<p><i>T&oacute;pico avanzado</i>: En esta secci&oacute;n se describe la &uacute;ltima regla operativa de la programaci&oacute;n por bloques.
+<p>Usualmente cuando un bloque anidado termina, el flujo de control contin&uacute;a normalmente con la siguiente operaci&oacute;n despu&eacute;s del bloque. Sin embargo, un bloque anidado <i>tambi&eacute;n</i> puede operar como un Test? de la misma manera que una combinaci&oacute;n Operador/Test. La forma de habilitar esta caracter&iacute;stica es la misma antes vista: simplemente a&ntilde;ada un signo de interrogaci&oacute;n al delimitador <code>)</code> END del bloque. Por ejemplo:
+<pre>
+printf "%s  %s\n" /"  ( "Bloque normal"  ( "Este bloque opera como un Test" ; )?  &lt; "Otro" ) OUT
+</pre>
+<p>&iexcl;Simple&#33; &iquest;Verdad? Pero en este caso, &iquest;qu&eacute; resultado, True o False, tendr&aacute; el bloque anidado? La regla es realmente sencilla:
+<p><i>Si el flujo de control llega al delimitador <code>)?</code> END, el bloque anidado ser&aacute; False; de lo contrario, el bloque ser&aacute; True.</i>
+<p>Esto significa que el bloque anidado ser&aacute; True cuando una instrucci&oacute;n <code>;</code> QUIT se ejecute en &eacute;l, o cuando un Test? dentro del bloque sea False y no haya ninguna instrucci&oacute;n REPEAT/QUIT adelante. En ambos casos el control no llega al delimitador <code>)?</code> END, sino que lo brinca. Usted puede revisar visualmente esta regla en la imagen del <a href="#esquema_de_reglas">esquema de reglas</a> visto al principio de este cap&iacute;tulo.
+<p>En el ejemplo anterior, el bloque <code>( "Este bloque opera como un Test" ; )?</code> termina por una instrucci&oacute;n <code>;</code> QUIT, por lo que el bloque anidado ser&aacute; True. En este caso la ejecuci&oacute;n contin&uacute;a, el operador <code>&lt;</code> (<i>Drop</i>) elimina la &uacute;ltima cadena, se ingresa la nueva cadena <code>"Otro"</code> y finalmente la instrucci&oacute;n <code>OUT</code> muestra: <b>Bloque normal  Otro</b>.
+<p>Si borramos la instrucci&oacute;n QUIT del bloque anidado: <code>( "Este bloque opera como un Test"  )?</code>, entonces el delimitador END del bloque ser&aacute; alcanzado, por lo que el bloque anidado ser&aacute; False. Ahora el flujo de control se transfiere hacia adelante hasta salir del <i>primer</i> bloque, la instrucci&oacute;n <code>OUT</code> se ejecuta y muestra: <b>Bloque&nbsp;normal&nbsp;&nbsp;Este&nbsp;bloque&nbsp;opera&nbsp;como&nbsp;un&nbsp;Test</b>.
+<p>Un ejemplo un poco mas grande podr&iacute;a ser el <a href="#programa_animado">programa de animaci&oacute;n</a> visto antes, pero modificado para que use bloques de c&oacute;digo condicionales en lugar de una <i>Flag</i>:
+<pre>
+rem Programa original de animación basado en la Flag F1:
+printf /" "\b %c"  SF1  100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? CF1 ) &lt;  &lt;  )  F1? : ) 
+
+rem Programa modificado que usa bloques de código condicionales en lugar de la Flag:
+printf /" "\b %c"       100 ]1 &lt;  219 ( OUT  ( GETK?:1  ( -75 ==? 10 ]+1 &lt; ) &lt;  ( -77 ==? 10 ]-1 &lt; ) &lt;  ( 13 ==? ; &lt;  &lt;  )?   )?    : )
+</pre>
+<p>En el programa original todo el proceso se repite mientras la Flag 1 sea True, y la acci&oacute;n de la tecla Enter (13) es simplemente apagar dicha Flag. Revisemos la parte final del programa modificado: <code>( 13 ==? ; &lt;  &lt;  )?   )?    : )</code> Si la tecla <i>no es</i> Enter, se ejecutan dos <i>Drops</i> y se llega al END del primer bloque condicional anidado, por lo que &eacute;ste termina con un resultado False. Este resultado causa que el control brinque despu&eacute;s del final del segundo bloque, por lo que el <code>:</code> REPEAT se ejecuta y todo el proceso se repite otra vez. Cuando la tecla es Enter, el <code>;</code> QUIT se ejecuta y el control brinca despu&eacute;s del END del bloque, por lo que se llega al END del <i>segundo</i> bloque condicional anidado y su resultado es False. Este resultado causa que el control brinque despu&eacute;s de la &uacute;ltima instrucci&oacute;n <code>:</code> REPEAT y el proceso termina.
+<p>Este mismo mecanismo se aplica a un bloque de c&oacute;digo con nombre (subrutina). Si la subrutina se invoca como un Test? (con un signo de interrogaci&oacute;n a&ntilde;adido a su nombre), entonces su resultado True-False depender&aacute; de la manera en que el bloque con nombre termine: si la ejecuci&oacute;n llega al delimitador <code>)</code> END del bloque con nombre, la subrutina NOMBRE? ser&aacute; False; en caso contrario, ser&aacute; True.
+<p>Si analizamos esto nos daremos cuenta que este mecanismo entrega <i>el resultado opuesto</i> de un Test? colocado dentro de un (bloque)? cuando no hay ninguna instrucci&oacute;n <b>QUIT</b> colocada despu&eacute;s del Test?: si el Test? es True el (bloque)? es False, si el Test? es False el (bloque)? es True. Este esquema nos permite ensamblar los operadores Booleanos est&aacute;ndar AND, OR y NOT de una forma muy sencilla.
+<p><br>
+<p>Operador <b>NOT</b>: <code>( Test? )?</code>
+<p>Si Test? es True la ejecuci&oacute;n contin&uacute;a y llega al delimitador END, por lo que el resultado es False.
+<p>Si Test? es False el control brinca hacia adelante hasta pasar el delimitador END, por lo que el resultado es True.
+<p><br>
+<p>Operador <b>AND</b>: <code>( Test1? Test2? ; )?</code>
+<p>Si Test1? es True la ejecuci&oacute;n contin&uacute;a:<br>- Si Test2? es True la ejecuci&oacute;n contin&uacute;a, por lo que se ejecuta el QUIT y el resultado del bloque es True.<br>- Si Test2? es False el control brinca hacia adelante hasta pasar el QUIT, por lo que llega al delimitador END y el resultado del bloque es False.
+<p>Si Test1 es False el control brinca hacia adelante hasta pasar el QUIT, por lo que llega al delimitador END y el resultado del bloque es False.
+<p>En otras palabras: s&oacute;lo cuando <i>todas las condiciones</i> son True, el resultado del bloque "AND" ser&aacute; True. Este mecanismo puede extenderse f&aacute;cilmente a m&aacute;s de dos tests/condiciones. El bloque "AND" eval&uacute;a los Tests? en serie y se detiene en el primero que sea falso.
+<p><br>
+<p>Operador <b>OR</b>: <code>( Test1? ; Test2? ; )?</code>
+<p>Si Test1? es True la ejecuci&oacute;n contin&uacute;a, el primer QUIT se ejecuta y el resultado del bloque es True. Si Test1? es False el control brinca hacia adelante hasta pasar el primer QUIT.
+<p>Si Test2? es True la ejecuci&oacute;n contin&uacute;a, el segundo QUIT se ejecuta y el resultado del bloque es True. Si Test2? es False el control brinca hacia adelante hasta pasar el segundo QUIT, por lo que llega al delimitador END y el resultado del bloque es False.
+<p>En otras palabras: si <i>cualquier</i> condici&oacute;n es True, el resultado del bloque "OR" ser&aacute; True; s&oacute;lo cuando <i>todas</i> las condiciones sean False, el resultado del "OR" ser&aacute; False. Este mecanismo puede extenderse f&aacute;cilmente a m&aacute;s de dos tests/condiciones. El bloque "OR" eval&uacute;a los Tests? en serie y se detiene en el primero que sea verdadero.
+<p><br>
+<p>Note que los operadores Booleanos AND y OR ensamblados de esta manera tienen una <a href="https://es.wikipedia.org/wiki/Evaluaci%C3%B3n_de_cortocircuito">evaluaci&oacute;n m&iacute;nima</a> impl&iacute;cita: tan pronto como el resultado del bloque se conoce (False para AND, True para OR), el resto de condiciones en el bloque <i>no son evaluadas</i>.
+<p><hr>
+<p>En el caso del operador Booleano <b>XOR</b> no hay una forma simple de ensamblarlo como para AND y OR. El resultado (<a href="https://es.wikipedia.org/wiki/Disyunci%C3%B3n_exclusiva"><i>tabla de verdad</i></a>) del operador XOR sobre dos condiciones es:
+   <table border="1" rules="all" cellpadding="5">
+      <tr>
+         <td><b>Test1</b></td>
+         <td><b>Test2</b></td>
+         <td>Test1 <b>XOR</b> Test2</td>
+      </tr>
+      <tr>
+         <td>True</td>
+         <td>True</td>
+         <td>False</td>
+      </tr>
+      <tr>
+         <td>True</td>
+         <td>False</td>
+         <td>True</td>
+      </tr>
+      <tr>
+         <td>False</td>
+         <td>True</td>
+         <td>True</td>
+      </tr>
+      <tr>
+         <td>False</td>
+         <td>False</td>
+         <td>False</td>
+      </tr>
+   </table>
+<p>Este resultado puede obtenerse por medio de la siguiente expresi&oacute;n que s&oacute;lo incluye los operadores AND, OR y NOT: <code>(Test1 OR Test2) AND NOT (Test1 AND Test2)</code>. La traducci&oacute;n de esta expresi&oacute;n a c&oacute;digo de programaci&oacute;n por bloques ser&iacute;a &eacute;sta:
+<pre>
+(  (  Test1? ; Test2? ; )?  ( (  Test1? Test2? ;  )? )?  ;  )?
+ \  \__Test1_OR_Test2__/     \ \_Test1_AND_Test2_/  /   /  /
+  \                           \_NOT_el_AND_previo__/   /  /
+   \                                                  /  /
+    \__El_último_QUIT_completa_el_AND_de_estos_bloques__/
+</pre>
+<p>De igual manera, no es f&aacute;cil aplicar el operador XOR a mas de dos condiciones. Si extendemos el concepto del XOR a mas de dos operandos, el resultado ser&aacute; True cuando <i>precisamente una</i> de todas las condiciones sea True, y ser&aacute; False en cualquier otro caso. Note que esto <i>no es</i> lo mismo que aplicar un XOR varias veces sobre dos operandos o resultados parciales cada vez. Por ejemplo, un XOR sobre 3 tests/condiciones:
+   <table border="1" rules="all" cellpadding="5" align="left">
+      <tr>
+         <td><b>T1</b></td>
+         <td><b>T2</b></td>
+         <td><b>T3</b></td>
+         <td><b>XOR</b>(T1,T2,T3)</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>1</td>
+         <td>0</td>
+         <td>0</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>1</td>
+         <td>1</td>
+         <td>0</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>1</td>
+         <td>0</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>1</td>
+         <td>1</td>
+      </tr>
+      <tr>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+         <td>0</td>
+      </tr>
+   </table>
+   <table align="left">
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+      <tr>
+         <td>&nbsp;</td>
+      </tr>
+   </table>
+<p><br>
+<p>Un ejercicio interesante consiste en definir la expresi&oacute;n Booleana que obtenga este resultado usando s&oacute;lo los operadores AND, OR y NOT. Aqu&iacute; est&aacute; una posible soluci&oacute;n:
+<p><code>( T1 AND NOT (T2 OR T3) )  OR  ( (NOT T1) AND (T2 OR T3) AND NOT (T2 AND T3) )</code>
+<p>Podemos simplificar esta expresi&oacute;n un poco si usamos el operador XOR sobre dos operandos que vimos antes:
+<p><code>( T1 AND NOT (T2 OR T3) )  OR  ( (NOT T1) AND (T2 XOR T3) )</code>
+<p>Se invita al lector a convertir estas expresiones Booleanas a c&oacute;digo de programaci&oacute;n por bloques.<br clear="all">
+<br><a href="#"><span style="float:right; font-size:small;">Top</span></a>
+<h2><a name="Apéndices" style="text-decoration:none">Apéndices</a> </h2>
+<h3><a name="Instalación_y_soporte_de_printf.exe" style="text-decoration:none">Instalación y soporte de printf.exe</a> </h3>
+<p>La instalaci&oacute;n del paquete printf.exe es muy sencilla y s&oacute;lo consiste en descargar el archivo printf.zip y extraer su contenido en un folder determinado, por lo que no requiere modificar ning&uacute;n estado ni registro de la computadora.
+<p>Esta es una relaci&oacute;n de los archivos inclu&iacute;dos en el paquete:
+<pre>
+AlgebraicToRPN.bat		Convierte expresiones algebraicas a RPN
+GETARGS.obj			- Se utiliza en el Apéndice 2
+GetStandardForm.bat		Convierte la Forma Didáctica de printf.exe a forma estándar
+printf - GetKey codes.txt	Códigos devueltos por la función GetKey
+printf Example *.bat		Varios programas printf.exe de ejemplo en archivos .BATch
+printf.exe			La aplicación printf.exe
+printf.exe - Arithmetic and Programming.html	Manual de usuario en Inglés
+printf.exe - Aritmética y Programación.html	Manual de usuario en Español
+printf.obj			- Se utiliza en el Apéndice 2
+printfHelp.bat			Ayuda en pantalla de printf.exe
+printfMake.bat			- Se utiliza en el Apéndice 2
+printfStorage.asm		- Se utiliza en el Apéndice 2
+Register your copy of printf.exe.html		Página de registro en Inglés
+Registra tu copia de printf.exe.html		Página de registro en Español
+ShowKeyCodes.bat		Genera los códigos del operador GetKey
+</pre>
+<p>Se sugiere comenzar a utilizar este paquete desde el mismo folder donde se encuentra instalado. Posteriormente, si usted lo considera conveniente, puede inclu&iacute;r la ruta completa del archivo <b>printf.exe</b> dentro de la variable <b>PATH</b> del sistema, lo que permitir&iacute;a usar esta aplicaci&oacute;n desde cualquier otro subdirectorio.
+<p><b>NOTA</b>: Algunos programas antivirus marcan a printf.exe como "potencialmente peligroso". Este es un mensaje falso positivo causado, en primer lugar, porque el c&oacute;digo fuente de printf.exe est&aacute; escrito en ensamblador. Si usted descarg&oacute; el paquete printf.zip del sitio <a href="https://www.apaacini.com">apaacini.com</a>, entonces est&aacute; libre de virus con toda seguridad.
+<p>Si usted tiene cualquier pregunta o duda sobre el uso de printf.exe, puede revisar la p&aacute;gina <a href="https://www.dostips.com/forum/viewtopic.php?f=3&t=7312">DosTips.com printf.exe</a>. Lea la conversaci&oacute;n desde el principio; es probable que su pregunta haya sido contestada anteriormente. En caso contrario, escriba su pregunta en forma clara y publ&iacute;quela en el sitio como New Reply (en ingl&eacute;s); incluya un ejemplo de la operaci&oacute;n de printf.exe que le cause problemas. Es conveniente que usted se registre como usuario de DosTips.com antes de publicar su pregunta.
+<p>Tambi&eacute;n se sugiere que se <a href="Registra tu copia de printf.exe.html">registre</a> como usuario de printf.exe.
+<h3><a name="Aumentando_el_espacio_de_almacenamiento" style="text-decoration:none">Aumentando el espacio de almacenamiento</a> </h3>
+<p>El n&uacute;mero de registros de almacenamiento, tanto enteros como de punto flotante, y el n&uacute;mero de caracteres reservados para almacenar cadenas se puede aumentar al valor que usted desee siguiendo el procedimiento descrito en esta secci&oacute;n, pero si estos n&uacute;meros son excesivos y la computadora no cuenta con suficiente memoria, se marcar&aacute; un error de ejecuci&oacute;n.
+<p>Tambi&eacute;n se puede aumentar el n&uacute;mero de funciones CMD anidadas, el n&uacute;mero de marcas FMT{ anidadas y el n&uacute;mero de bloques de c&oacute;digo con nombre (subrutinas) que pueden ser definidos.
+<p>Para aumentar estos n&uacute;meros se requiere instalar previamente el ensamblador MASM32. Abra la liga del <a href="https://www.masm32.com">MASM32 SDK</a> y complete el proceso de descarga e instalaci&oacute;n del paquete; le tomar&aacute; tan s&oacute;lo un par de minutos hacerlo. Al terminar, el ensamblador deber&aacute; quedar instalado en su directorio est&aacute;ndar, que es <b>C:\masm32\</b>
+<p>Los valores que definen el espacio de almacenamiento de printf.exe se encuentran en el archivo <code>printfStorage.asm</code>. Usted s&oacute;lo debe editar este archivo con un editor de texto puro, como el Bloc de Notas de Windows; si utiliza otro editor, aseg&uacute;rese de que el archivo se guarde como texto sin formato y codificaci&oacute;n ANSI. Estos son los valores originales que usted puede modificar:
+<pre>
+	IREGS		EQU	20		;Número de registros de almacenamiento Enteros
+	FREGS		EQU	20		;Número de registros de almacenamiento de Punto Flotante
+	CHARS		EQU	10 * 1024	;Tamaño del área de memoria para almacenar cadenas de caracteres = 10 KB
+	MAX_FORMAT	EQU	40		;Número máximo de marcas FMT{ anidadas x 2
+	MAX_CMDSTDIN	EQU	20		;Número máximo de funciones CMD anidadas (Stdin's redireccionados)
+	NAMEDBLOCK_LEN	EQU	32		;Número permitido de bloques con nombre (subrutinas)
+</pre>
+<p>NO modifique ninguna otra parte de este archivo. Despu&eacute;s de guardar el archivo modificado, abra una ventana de comandos de cmd.exe y ejecute el programa <code>printfMake.bat</code> una sola vez. &iexcl;Eso es todo&#33;
+<p>La aplicaci&oacute;n printf.exe tambi&eacute;n permite <i>consultar</i> los primeros tres valores. Por ejemplo:
+<pre>
+printf "Registros Enteros: %i\tRegistros Flotantes: %i\tCaracteres: %i\n" IREGS FREGS CHARS
+</pre>
+<p>Esto permite que un programa compruebe que exista memoria suficiente para su operaci&oacute;n y, en caso contrario, cancelar con un mensaje descriptivo en lugar de ocasionar un error de ejecuci&oacute;n. Por ejemplo:
+<pre>
+printf "%s\n"    ^
+   ( 1500 IREGS &lt;?   ^
+      "Error: El número de registros enteros debe aumentarse a 1500" OUT   ^
+   ;   ^
+      "Registros suficientes, procediendo..." OUT   ^
+      1 2 3 ETC...   ^
+   )
+</pre>
+<h3><a name="Mensajes_de_error" style="text-decoration:none">Mensajes de error</a> </h3>
+<p>En este ap&eacute;ndice se describen los mensajes de error de la aplicaci&oacute;n printf.exe. Cuando uno de estos errores se presenta, printf.exe termina con un valor de ERRORLEVEL igual al n&uacute;mero de error, pero con signo negativo.
+   <ol style="list-style-type: decimal">
+      <li> &iexcl;MEMORIA INSUFICIENTE&#33;<br>
+<p>    - La computadora tiene <i>muy poca</i> memoria disponible (poco probable).<br>
+<p>    - Se solicit&oacute; un n&uacute;mero <i>muy grande</i> de registros de almacenamiento o caracteres.
+      <li> 'Caracter, "cadena o /*comentario sin cerrar<br>
+<p>    Falta el caracter de cierre de un Caracter', Cadena" o Comentario*/. Note que una cadena o comentario sin cerrar s&oacute;lo se puede detectar hasta que el programa termina.
+      <li> N&uacute;mero err&oacute;neo o demasiado grande<br>
+<p>    Un n&uacute;mero est&aacute; mal escrito. Consulte <a href="#Tipos_de_Datos">Tipos de Datos</a> para revisar la forma correcta.
+      <li> Operador inv&aacute;lido<br>
+<p>    Suele ser un error de tecleo. Recuerde separar todos los operadores por uno o m&aacute;s espacios. Este error puede suceder al escribir operadores muy "largos", como <code>]--.3?</code>.
+      <li> Funci&oacute;n o variable no definida<br>
+<p>    Suele ser un error de tecleo; revise la sintaxis. Este error puede suceder al escribir funciones muy "largas", como <code>IN{+?:6</code>. Recuerde que si usa el valor de una variable Batch como cadena, la variable <i>debe estar definida</i>.
+      <li> M&aacute;ximo n&uacute;mero de operaciones excedido<br>
+<p>    M&aacute;s de 20 niveles de marcas <b>FMT{</b> activas o funciones <b>CMD</b> anidadas, o m&aacute;s de 32 Bloques con Nombre (subrutinas) definidos. Consulte el Ap&eacute;ndice 1 por instrucciones sobre c&oacute;mo aumentar estos l&iacute;mites.
+      <li> ":" Repeat, ";" Quit, ")" End o Test? falso fuera de todo (Bloque<br>
+<p>    Las operaciones: <code>: ; )</code> o un Test? que resulta falso s&oacute;lo pueden aparecer dentro de un bloque de c&oacute;digo.
+      <li> Bloque sin cerrar en un nivel de anidamiento<br>
+<p>    Falta el par&eacute;ntesis de cierre de un bloque de c&oacute;digo. Note que este error s&oacute;lo puede detectarse hasta que el programa termina. El nivel de anidamiento reportado puede ayudar a identificar el bloque que qued&oacute; abierto.
+      <li> Este bloque con NOMBRE( no puede definirse aqu&iacute;<br>
+<p>    Los bloques de c&oacute;digo con nombre (subrutinas) deben definirse <i>antes</i> de la cadena "formato" y deben ser bloques externos (no anidados). Dos bloques con nombre no pueden tener el mismo nombre (primeros 4 caracteres).
+      <li> Demasiadas llamadas (recursivas) a subrutinas<br>
+<p>    Este error usualmente es un bucle de invocaciones recursivas sin salida. Revise <i>la condici&oacute;n</i> que interrumpe el ciclo de invocaciones recursivas. El m&aacute;ximo n&uacute;mero de regresos pendientes de subrutinas es de alrededor de 128,000.
+      <li> No se puede crear/abrir un archivo de salida<br>
+<p>    El archivo <i>de salida</i> que se intent&oacute; abrir no se encontr&oacute; o no pudo crearse. Suele ser un error de tecleo que inserta un caracter ilegal en el nombre del archivo, o un subdirectorio que no existe. Recuerde que se puede crear un directorio usando la funci&oacute;n <b>CMD</b>. El mismo error "no encontrado" sobre un archivo <i>de entrada</i> se detecta en la misma operaci&oacute;n/test? de apertura <b>IN{?:n</b>.
+      <li> Operaci&oacute;n de entrada/salida sobre un handle no abierto<br>
+<p>    Una operaci&oacute;n <b>IN?:n</b> de entrada u <b>OUT:n</b> de salida sobre un archivo usa un n&uacute;mero de <i>handle</i> que no ha sido abierto. Revise que el n&uacute;mero de handle N de la operaci&oacute;n de apertura sea el mismo de la operaci&oacute;n de E/S.
+   </ol>
+<p>Despu&eacute;s que printf.exe muestre un mensaje de error, usted puede mostrar la descripci&oacute;n completa del mismo ejecutando esta l&iacute;nea: <code>printfHelp %errorlevel%</code> Puede insertar esta l&iacute;nea en el archivo <b>ERR.BAT</b> y entonces s&oacute;lo ejecutar: <code>ERR</code>
+<p><hr>
+   <ul id="horList" style="text-align:center;">
+      <li style="padding-right:3em;"><a href="#Introducci&oacute;n" style="text-decoration:none"><font color="#333333">Introducci&oacute;n</font></a>
+      <li style="padding-right:3em;"><a href="#Mostrar_Texto_con_Formato" style="text-decoration:none"><font color="#333333">Texto con</font></a>
+      <li style="padding-right:3em;"><a href="#Operaciones_Aritm&eacute;ticas" style="text-decoration:none"><font color="#333333">Operaciones</font></a>
+      <li style="padding-right:3em;"><a href="#Programaci&oacute;n_por_Bloques" style="text-decoration:none"><font color="#333333">Programaci&oacute;n</font></a>
+      <li style="padding-right:3em;"><a href="Registra tu copia de printf.exe.html" style="text-decoration:none"><font color="#333333">Registra tu</font></a>
+   </ul>
+   <ul id="horList" style="text-align:center;">
+      <li style="padding-right:3em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <li style="padding-right:3em;"><a href="#Texto_con_Formato" style="text-decoration:none"><font color="#333333">&nbsp;&nbsp;Formato</font></a>
+      <li style="padding-right:3em;"><a href="#Operaciones_Aritm&eacute;ticas" style="text-decoration:none"><font color="#333333">Aritm&eacute;ticas</font></a>
+      <li style="padding-right:3em;"><a href="#Programaci&oacute;n_por_Bloques" style="text-decoration:none"><font color="#333333">&nbsp;por&nbsp;Bloques</font></a>
+      <li style="padding-right:3em;"><a href="Registra tu copia de printf.exe.html" style="text-decoration:none"><font color="#333333">&nbsp;printf.exe</font></a>
+   </ul>
+<br clear="all">
+</body>
+</html>

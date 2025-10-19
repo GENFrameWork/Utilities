@@ -1,0 +1,185 @@
+/*  Values of special keys returned by GETK (GetKey) printf.exe input operation
+    Copyright (C) Antonio Perez Ayala - 2013-2022  */
+
+
+/* ASCII standard control characters */
+
+BS(      8 )
+TAB(     9 )
+LF(     10 )
+CEnter( 10 )	/* Ctrl-Enter generate a LF */
+CR(     13 )
+Enter(  13 )
+ESC(    27 )
+
+/* Alt-Letter top row */
+ABS(        -14 )	/* Alt-BackSpace */
+STAB(       -15 )	/* SHIFT-TAB (BackTab)  Put here for completeness */
+AQ(         -16 )
+AW(         -17 )
+AE(         -18 )
+AR(         -19 )
+AT(         -20 )
+AY(         -21 )
+AU(         -22 )
+AI(         -23 )
+AO(         -24 )
+AP(         -25 )
+ALfBracket( -26 )
+ARgBracket( -27 )
+
+/* Alt-Letter middle row */
+AA(         -30 )
+AS(         -31 )
+AD(         -32 )
+AF(         -33 )
+AG(         -34 )
+AH(         -35 )
+AJ(         -36 )
+AK(         -37 )
+AL(         -38 )
+ASemicolon( -39 )
+AApos(      -40 )	/* Alt-Apostrophe */
+ABQuote(    -41 )	/* Alt-BackQuote */
+ABSlash(    -43 )	/* Alt-BackSlash */
+
+/* Alt-Letter bottom row */
+AZ(     -44 )
+AX(     -45 )
+AC(     -46 )
+AV(     -47 )
+AB(     -48 )
+AN(     -49 )
+AM(     -50 )
+AComma( -51 )
+ADot(   -52 )
+ASlash( -53 )		/* Alt-Slash */
+
+AGStar( -55 )		/* Alt-GrayAsterisk */
+
+/* Direct Function keys */
+F1(   -59 )
+F2(   -60 )
+F3(   -61 )
+F4(   -62 )
+F5(   -63 )
+F6(   -64 )
+F7(   -65 )
+F8(   -66 )
+F9(   -67 )
+F10(  -68 )
+
+/* Direct Keys in numeric pad */
+Home(    -71 )
+UpArrow( -72 )
+PgUp(    -73 )
+AGDash(  -74 )		/* Alt-GrayDash */
+LfArrow( -75 )
+Pad5(    -76 )		/* 5 in numeric keypad	*/
+RgArrow( -77 )
+AGPlus(  -78 )		/* Alt-GrayPlus	*/
+End(     -79 )
+DnArrow( -80 )
+PgDown(  -81 )
+Ins(     -82 )
+Del(     -83 )
+
+/* Shift-Function keys */
+SF1(   -84 )
+SF2(   -85 )
+SF3(   -86 )
+SF4(   -87 )
+SF5(   -88 )
+SF6(   -89 )
+SF7(   -90 )
+SF8(   -91 )
+SF9(   -92 )
+SF10(  -93 )
+
+/* Ctrl-Function keys */
+CF1(   -94 )
+CF2(   -95 )
+CF3(   -96 )
+CF4(   -97 )
+CF5(   -98 )
+CF6(   -99 )
+CF7(  -100 )
+CF8(  -101 )
+CF9(  -102 )
+CF10( -103 )
+
+/* Alt-Function keys */
+AF1(  -104 )
+AF2(  -105 )
+AF3(  -106 )
+AF4(  -107 )
+AF5(  -108 )
+AF6(  -109 )
+AF7(  -110 )
+AF8(  -111 )
+AF9(  -112 )
+AF10( -113 )
+
+/* Ctrl-Cursor movement keys, 1st part */
+CPrtSc(   -114 )
+CLfArrow( -115 )
+CRgArrow( -116 )
+CEnd(     -117 )
+CPgDown(  -118 )
+CHome(    -119 )
+
+CPgUp(    -132 )
+
+/* Alt-Digit keys */
+A1(     -120 )
+A2(     -121 )
+A3(     -122 )
+A4(     -123 )
+A5(     -124 )
+A6(     -125 )
+A7(     -126 )
+A8(     -127 )
+A9(     -128 )
+A0(     -129 )
+ADash(  -130 )
+AEqual( -131 )
+
+/* Additional Function keys: Original IBM-PC keyboard had 10 Function keys
+   F11 and F12 where added later, with the Enhanced keyboard */
+F11(  -133 )		/* F11		*/
+F12(  -134 )		/* F12		*/
+SF11( -135 )		/* Shift-F11	*/
+SF12( -136 )		/* Shift-F12	*/
+CF11( -137 )		/* Ctrl-F11	*/
+CF12( -138 )		/* Ctrl-F12	*/
+AF11( -139 )		/* Alt-F11	*/
+AF12( -140 )		/* Alt-f12	*/
+
+/* Ctrl-Cursor movement keys, 2nd part */
+CUpArrow( -141 )
+CGDash(   -142 )	/* Ctrl-GrayDash */
+CPad5(    -143 )	/* Ctrl-5 in numeric keypad */
+CGPlus(   -144 )	/* Ctrl-GrayPlus */
+CDnArrow( -145 )
+CIns(     -146 )
+CDel(     -147 )
+CTAB(     -148 )
+CGSlash(  -149 )	/* Ctrl-GraySlash */
+CGStar(   -150 )	/* Ctrl-Gray-Star */
+
+/* Alt-Keys in numeric pad */
+AHome(    -151 )
+AUpArrow( -152 )
+APgUp(    -153 )
+ALfArrow( -155 )
+APad5(    -156 )	/* Alt-5 in numeric keypad */
+ARgArrow( -157 )
+AEnd(     -159 )
+ADnArrow( -160 )
+APgDown(  -161 )
+AIns(     -162 )
+ADel(     -163 )
+AGSlash(  -164 )
+
+
+/* These numbers are the negative value of the second byte in extended keyboards */
