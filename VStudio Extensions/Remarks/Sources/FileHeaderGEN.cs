@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------------------------
 //  FileHeader.cs 
-//  Copyright (c) GEN Group.  All rights reserved.
+//  Copyright (c) EndoraSoft.  All rights reserved.
 //------------------------------------------------------------------------------
 
 using System;

@@ -6,7 +6,7 @@
 * @brief      GEN Defines of the Application
 * @ingroup    
 *
-* @copyright  Copyright(c) 2005 - 2018 GEN Group.
+* @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated

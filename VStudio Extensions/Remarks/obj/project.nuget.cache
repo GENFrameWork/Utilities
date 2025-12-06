@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "muQeEQrjtGM=",
+  "dgSpecHash": "sZZicJjqgA4=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+  "projectFilePath": "D:\\Projects\\GEN_FrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SirGraham\\.nuget\\packages\\envdte\\17.0.31902.203\\envdte.17.0.31902.203.nupkg.sha512",
     "C:\\Users\\SirGraham\\.nuget\\packages\\envdte100\\17.0.31902.203\\envdte100.17.0.31902.203.nupkg.sha512",

@@ -1,12 +1,12 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file        APPUpdateCFG.h
+* @file       APPUpdateCFG.h
 *
-* @class       APPUPDATECREATOR_CFG
-* @brief       Application Update CFG
-* @ingroup     UTILS
+* @class      APPUPDATECREATOR_CFG
+* @brief      Application Update CFG
+* @ingroup    UTILS
 *
-* @copyright   Copyright(c) 2005 - 2018 GEN Group.
+* @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated

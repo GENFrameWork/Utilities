@@ -1,12 +1,12 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file        APPUpdateCreator.h
+* @file       APPUpdateCreator.h
 *
-* @class       APPUPDATECREATOR
-* @brief       Application Update Creator class
-* @ingroup     UTILS
+* @class      APPUPDATECREATOR
+* @brief      Application Update Creator class
+* @ingroup    UTILS
 *
-* @copyright   Copyright(c) 2005 - 2018 GEN Group.
+* @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -77,7 +77,7 @@ enum APPUPDATEXFSMSTATES
 #define APPLICATION_NAMEAPP                       __L("APP Update Creator")
 #define APPLICATION_NAMEFILE                      __L("appupdatecreator")
 
-#define APPLICATION_OWNER                         __L("GEN Group")
+#define APPLICATION_OWNER                         __L("EndoraSoft")
 
 #define APPLICATION_YEAROFCREATION                2018
 

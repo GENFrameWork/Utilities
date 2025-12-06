@@ -13325,13 +13325,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+      "projectUniqueName": "D:\\Projects\\GEN_FrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
       "projectName": "Remarks",
-      "projectPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
+      "projectPath": "D:\\Projects\\GEN_FrameWork\\Utilities\\VStudio Extensions\\Remarks\\Remarks.csproj",
       "packagesPath": "C:\\Users\\SirGraham\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\GENFrameWork\\Utilities\\VStudio Extensions\\Remarks\\obj\\",
+      "outputPath": "D:\\Projects\\GEN_FrameWork\\Utilities\\VStudio Extensions\\Remarks\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],

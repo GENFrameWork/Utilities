@@ -49,7 +49,7 @@ enum #*[jig]XFSMSTATES
 #define APPLICATION_SUBVERSIONERR               0
 
 #define APPLICATION_NAMEAPP                     __L("#@[jig]")
-#define APPLICATION_ENTERPRISE                  __L("GEN Group")
+#define APPLICATION_ENTERPRISE                  __L("EndoraSoft")
 
 #define APPLICATION_NAMEFILE                    __L("#![jig]")
 

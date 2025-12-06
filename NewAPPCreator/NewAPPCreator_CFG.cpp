@@ -6,7 +6,7 @@
 * @brief       New Application Creator CFG
 * @ingroup     UTILITIES
 *
-* @copyright   GEN Group. All rights reserved.
+* @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
@@ -146,7 +146,7 @@ bool NEWAPPCREATOR_CFG::DoDefault()
 
   application_path            = __L("");
   application_name            = __L("");
-  application_copyright       = __L("GEN Group");
+  application_copyright       = __L("EndoraSoft");
   application_type            = 0;
   application_format          = 0;
 

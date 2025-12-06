@@ -6,7 +6,7 @@
 * @brief      Unit1
 * @ingroup    XUTILS
 *
-* @copyright  Copyright(c) 2008 - 2016 GEN Group.
+* @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
 * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
