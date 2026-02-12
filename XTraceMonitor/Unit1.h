@@ -56,7 +56,7 @@
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
 
 #define XTRACEMONITOR_CFGNAMEFILE	 	 			                __L("XTraceMonitor")
-#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.6.1")
+#define XTRACEMONITOR_VERSIONLABEL                        __L("Version 7.6.2")
 #define XTRACEMONITOR_ROOTDIR                             __L("assets")
 
 #define XTRACEMONITOR_MASKLEVELBLACK                      0x00000001
