@@ -29,26 +29,21 @@
 #pragma once
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
-#pragma region INCLUDES
 
 #include "XVector.h"
 #include "XPath.h"
 #include "XFileTXT.h"
 
-#pragma endregion
 
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
-#pragma region DEFINES_ENUMS
 
 typedef bool (*TRANSLANTESCAN_FOUNDINFILE_PTRFUNC)(XPATH* pathfile, XFILETXT* filetxt, int line, int index, XSTRING& result);
 typedef bool (*TRANSLANTESCAN_CHANGEINFILE_PTRFUNC)(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring,int line, int index, XSTRING& result);
 
-#pragma endregion
 
 
 /*---- CLASS ---------------------------------------------------------------------------------------------------------*/
-#pragma region CLASS
 
 class TRANSLATESCAN_FILETARGET
 {
@@ -91,14 +86,11 @@ class TRANSLATESCAN_MANAGER
     void                     Clean                                      ();
 };
 
-#pragma endregion
 
 
 /*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/
-#pragma region FUNCTIONS_PROTOTYPES
 
 
-#pragma endregion
 
 
 

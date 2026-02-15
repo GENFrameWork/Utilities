@@ -29,7 +29,6 @@
 #pragma once
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
-#pragma region INCLUDES
 
 #include "XDateTime.h"
 #include "XFSMachine.h"
@@ -41,11 +40,9 @@
 
 #include "APPFlowConsole.h"
 
-#pragma endregion
 
 
 /*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/
-#pragma region DEFINES_ENUMS
 
 
 enum TRANSLATESCANXFSMEVENTS
@@ -90,11 +87,9 @@ enum TRANSLATESCANTASKID
 #define APPLICATION_YEAROFCREATION                2025
 
 
-#pragma endregion
 
 
 /*---- CLASS ---------------------------------------------------------------------------------------------------------*/
-#pragma region CLASS
 
 class XTIME;
 class XTIMER;
@@ -148,14 +143,11 @@ class TRANSLATESCAN : public APPFLOWCONSOLE, public XOBSERVER, public XFSMACHINE
 
 };
 
-#pragma endregion
 
 
 /*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/
-#pragma region FUNCTIONS_PROTOTYPES
 
 extern TRANSLATESCAN* translatescan;
 
-#pragma endregion
 
 
