@@ -26,8 +26,7 @@
 * 
 * --------------------------------------------------------------------------------------------------------------------*/
 
-#ifndef _TRANSLATESCAN_MANAGER_H_
-#define _TRANSLATESCAN_MANAGER_H_
+#pragma once
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 #pragma region INCLUDES
@@ -102,6 +101,5 @@ class TRANSLATESCAN_MANAGER
 #pragma endregion
 
 
-#endif
 
 

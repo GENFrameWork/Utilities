@@ -26,8 +26,7 @@
 * 
 * --------------------------------------------------------------------------------------------------------------------*/
 
-#ifndef _TRANSLATESCAN_H_
-#define _TRANSLATESCAN_H_
+#pragma once
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 #pragma region INCLUDES
@@ -160,4 +159,3 @@ extern TRANSLATESCAN* translatescan;
 #pragma endregion
 
 
-#endif

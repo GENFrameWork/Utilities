@@ -284,38 +284,25 @@ namespace Remarks
             selection.Text += "\n";
 
             selection.Text += "/*---- PRECOMPILATION INCLUDES ---------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region PRECOMPILATION_DEFINE_INCLUDE\n";
             selection.Text += "\n";
             selection.Text += "#include \"GEN_Defines.h\"\n";
-            selection.Text += "\n";
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region INCLUDES\n";
             selection.Text += "\n";
             selection.Text += "#include \"" + namewithoutext + ".h\"\n";
-            selection.Text += "\n";                  
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
 
             selection.Text += "/*---- PRECOMPILATION INCLUDES ---------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region PRECOMPILATION_CONTROL_INCLUDE\n";
             selection.Text += "\n";
             selection.Text += "#include \"GEN_Control.h\"\n";
-            selection.Text += "\n";
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
 
             selection.Text += "/*---- GENERAL VARIABLE ----------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region GENERAL_VARIABLE\n";
-            selection.Text += "\n";
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- CLASS MEMBERS -------------------------------------------------------------------------------------------------*/\n";            
-            selection.Text += "#pragma region CLASS_MEMBERS\n";
-            selection.Text += "\n\n";
+            selection.Text += "\n";
             selection.Text += namewithoutext.ToUpper() + "::" + namewithoutext.ToUpper() + "()\n";
             selection.Text += "{\n";
             selection.Text += "  Clean();\n";
@@ -329,8 +316,6 @@ namespace Remarks
             selection.Text += "void " + namewithoutext.ToUpper() + "::Clean()\n";
             selection.Text += "{\n";
             selection.Text += "}\n";
-            selection.Text += "\n\n"; 
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
     }
 
@@ -360,26 +345,16 @@ namespace Remarks
             selection.Text += copyright;
 
             selection.Text += "--------------------------------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "\n";
-
-            selection.Text += "#ifndef _" + (namewithoutext.ToUpper()) + "_" + ext.ToUpper() + "_" + "\n";
-            selection.Text += "#define _" + (namewithoutext.ToUpper()) + "_" + ext.ToUpper() + "_" + "\n";
+            selection.Text += "#pragma once\n";
             selection.Text += "\n";              
 
             selection.Text += "/*---- INCLUDES ------------------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region INCLUDES\n";
             selection.Text += "\n\n";       
-            selection.Text += "#pragma endregion\n";
-            selection.Text += "\n\n";
             
             selection.Text += "/*---- DEFINES & ENUMS  ----------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region DEFINES_ENUMS\n";
-            selection.Text += "\n\n";
-            selection.Text += "#pragma endregion\n";
             selection.Text += "\n\n";
             
             selection.Text += "/*---- CLASS ---------------------------------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region CLASS\n";
             selection.Text += "\n";
             selection.Text += "class " + namewithoutext.ToUpper() + "\n";
             selection.Text += "{\n";
@@ -394,15 +369,8 @@ namespace Remarks
             selection.Text += "    void            Clean    ();\n";
             selection.Text += "};";           
             selection.Text += "\n\n";
-            selection.Text += "#pragma endregion\n";
-            selection.Text += "\n\n";
             
-            selection.Text += "/*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/\n";
-            selection.Text += "#pragma region FUNCTIONS_PROTOTYPES\n";
-            selection.Text += "\n\n";
-            selection.Text += "#pragma endregion\n";
-            selection.Text += "\n\n";            
-            selection.Text += "#endif\n";
+            selection.Text += "/*---- INLINE FUNCTIONS + PROTOTYPES ---------------------------------------------------------------------------------*/\n";                   
             selection.Text += "\n\n";
         }
     }

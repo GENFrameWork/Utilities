@@ -26,8 +26,7 @@
 * 
 * --------------------------------------------------------------------------------------------------------------------*/
 
-#ifndef _TRANSLATESCAN_CFG_H_
-#define _TRANSLATESCAN_CFG_H_
+#pragma once
 
 /*---- INCLUDES ------------------------------------------------------------------------------------------------------*/
 #pragma region INCLUDES
@@ -82,5 +81,4 @@ class TRANSLATESCAN_CFG : public APPFLOWCFG
 #pragma endregion
 
 
-#endif
 
