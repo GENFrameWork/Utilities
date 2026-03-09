@@ -17,6 +17,8 @@ option(DEBUG_FEATURE                                            "Debug mode"    
 option(XTRACE_FEATURE                                           "XTrace"                                                  ON )
 option(XMEMORY_CONTROL_FEATURE                                  "XMemory Control"                                         ON )
                                               
+option(USE_CLANG_COMPILER_FEATURE                               "Use Clang Compiler"                                      ON )
+
 option(APPFLOW_FEATURE                                          "Application Flow modules"                                ON )
 option(APPFLOW_EXTENDED_FEATURE                                 "Application Flow Extended"                               ON )  
 option(APPFLOW_EXTENDED_APPLICATIONHEADER_FEATURE               "Application Flow Extended Aplication Header"             ON )  
@@ -40,7 +42,7 @@ add_definitions(${APP_CFG_APPUPDATECREATOR})
 # --------------------------------------------------------------------
 # Source code of the GEN in this Application
 
-include("${GEN_DIRECTORY}/Common/cmake/GEN_CMakeLists_Main.txt") 
+include("${GEN_DIRECTORY}/Common/cmake/GEN_Main.cmake") 
                    
                    
 # --------------------------------------------------------------------
@@ -59,10 +61,10 @@ list(APPEND GEN_SOURCES_MODULES_LIST "${APP_DIRECTORY_APPLICATION}/APPUpdateCrea
 # --------------------------------------------------------------------
 # Create proyect 
 
-include("${GEN_DIRECTORY}/Common/cmake/GEN_CMakeLists_CreateProject.txt") 
+include("${GEN_DIRECTORY}/Common/cmake/GEN_CreateProject.cmake") 
 
 
 # --------------------------------------------------------------------
 # Add Libraries
 
-include("${GEN_DIRECTORY}/Common/cmake/GEN_CMakeLists_Libraries.txt") 
+include("${GEN_DIRECTORY}/Common/cmake/GEN_Libraries.cmake") 
