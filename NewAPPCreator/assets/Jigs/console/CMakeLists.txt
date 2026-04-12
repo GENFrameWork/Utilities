@@ -11,13 +11,13 @@
 
 # --------------------------------------------------------------------
 # Compile Selection
- include("${GEN_DIRECTORY}/Common/cmake/GEN_Platform-Compiler.cmake") 
+ include("${GEN_DIRECTORY}/Common/CMake/GEN_Platform-Compiler.cmake") 
 
 
 # --------------------------------------------------------------------
 # Activate features/Defines
 
- include("${GEN_DIRECTORY}/Common/cmake/GEN_Default.cmake") 
+ include("${GEN_DIRECTORY}/Common/CMake/GEN_Default.cmake") 
 
  set(DEBUG_FEATURE                                true    CACHE BOOL "Debug mode"                                         ON )
  set(XTRACE_FEATURE                               true    CACHE BOOL "XTrace"                                             ON )
@@ -44,7 +44,7 @@
 # --------------------------------------------------------------------
 # Source code of the GEN in this Application
 
- include("${GEN_DIRECTORY}/Common/cmake/GEN.cmake") 
+ include("${GEN_DIRECTORY}/Common/CMake/GEN.cmake") 
                    
                    
 # --------------------------------------------------------------------
@@ -67,7 +67,7 @@
 
 # --------------------------------------------------------------------
 # Warnings control
- include("${GEN_DIRECTORY}/Common/cmake/GEN_Warnings.cmake") 
+ include("${GEN_DIRECTORY}/Common/CMake/GEN_Warnings.cmake") 
 
 
 # --------------------------------------------------------------------
@@ -81,4 +81,4 @@
 # --------------------------------------------------------------------
 # Add Libraries
 
- include("${GEN_DIRECTORY}/Common/cmake/GEN_Libraries.cmake") 
+ include("${GEN_DIRECTORY}/Common/CMake/GEN_Libraries.cmake") 

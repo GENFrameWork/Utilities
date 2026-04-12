@@ -52,7 +52,7 @@ add_definitions(${APP_CFG_TRANSLATESCAN})
 # --------------------------------------------------------------------
 # Main CMakeList of GEN
 
-include("${GEN_DIRECTORY}/Common/cmake/GEN_Main.cmake") 
+include("${GEN_DIRECTORY}/Common/CMake/GEN_Main.cmake") 
                    
                    
 # --------------------------------------------------------------------
@@ -73,4 +73,4 @@ list(APPEND GEN_SOURCES_MODULES_LIST "${APP_DIRECTORY_APPLICATION}/TranslateScan
 # --------------------------------------------------------------------
 # End Proyect 
 
-include("${GEN_DIRECTORY}/Common/cmake/GEN_End.cmake")
+include("${GEN_DIRECTORY}/Common/CMake/GEN_End.cmake")
