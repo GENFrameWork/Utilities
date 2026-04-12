@@ -1,20 +1,12 @@
 syntax: glob
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
 *.obj
 *.exe
 *.o
 *.a
 *.lib
 *.so*
-<<<<<<< HEAD
 *.idb
-=======
->>>>>>> master
 *.log
 *.sdf
 *.VC.db
@@ -25,31 +17,20 @@ syntax: glob
 *.suo
 *.orig
 *.tix
-<<<<<<< HEAD
-*.~*
-=======
 .~*
->>>>>>> master
 *.bak
 *.raw
 *.dll
 *.pdb
 *.err
 *.ai
-<<<<<<< HEAD
 *.d
-*.tds
-
-!XTraceMonitor/XTraceMonitor.exe
-XTraceMonitor/obj/
-
 
 
 # Files compilated
-/**/Platforms/.vs
-/**/Platforms/Windows
-/**/Platforms/Linux
-/**/Platforms/Linux_iMX6
-/**/Platforms/Linux_Pi
-=======
->>>>>>> master
+/**/CMake/.vs
+/**/CMake/.vscode
+/**/CMake/out
+/**/CMake/Build
+/output.txt
+/outfile.txt
