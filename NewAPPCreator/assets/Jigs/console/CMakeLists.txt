@@ -50,7 +50,7 @@
 # --------------------------------------------------------------------
 # Directorys of the Application
 
- set(APP_DIRECTORY_APPLICATION   "../Application")
+ set(APP_DIRECTORY_APPLICATION   "../Sources")
  list(APPEND GEN_INCLUDES_DIR_LIST ${APP_DIRECTORY_APPLICATION})
 
 
