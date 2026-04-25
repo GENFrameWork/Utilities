@@ -262,7 +262,7 @@ bool APPUPDATECREATOR::AppProc_FirstUpdate()
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::AppProc_Update()
 {
-  if(GetEvent()==APPUPDATECREATOR_XFSMEVENT_NONE) // Not new event
+  if(GetEvent()==APPUPDATECREATOR_XFSMEVENT_NONE) // Not GEN_NEW event
     {
       switch(GetCurrentState())
         {
@@ -476,7 +476,7 @@ bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefi
     {
       do{ if(xdirelement.GetNameFile()->Compare(DIOAPPLICATIONUPDATE_INIFILE, true))
             {
-              XPATH* xpathnext = new XPATH();
+              XPATH* xpathnext = GEN_NEW XPATH();
               if(xpathnext)
                 {
                   xpathnext->Set(xpath);

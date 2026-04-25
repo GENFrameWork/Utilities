@@ -217,7 +217,7 @@ bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XCHAR* inipath, XVECTOR<TRANSLATES
             
               if(valid)  
                 {
-                  TRANSLATESCAN_FILETARGET* filetarget = new TRANSLATESCAN_FILETARGET();
+                  TRANSLATESCAN_FILETARGET* filetarget = GEN_NEW TRANSLATESCAN_FILETARGET();
                   if(filestarget)
                     {
                       filetarget->GetXPathFile()->Set(inipath);
@@ -280,7 +280,7 @@ bool TRANSLATESCAN_MANAGER::SearchInFile(XPATH& pathfile, XCHAR* searchstring, T
   XSTRING _searchstring = searchstring;
   bool status = false;
 
-  XFILETXT* filetxt = new XFILETXT();
+  XFILETXT* filetxt = GEN_NEW XFILETXT();
   if(!filetxt)
     {
       return false;

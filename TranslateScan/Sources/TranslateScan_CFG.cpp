@@ -84,7 +84,7 @@ bool TRANSLATESCAN_CFG::GetIsInstanced()
 *---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_CFG& TRANSLATESCAN_CFG::GetInstance(bool ini)
 {
-  if(!instance) instance = new TRANSLATESCAN_CFG(ini?APPLICATION_NAMEFILE:NULL);
+  if(!instance) instance = GEN_NEW TRANSLATESCAN_CFG(ini?APPLICATION_NAMEFILE:NULL);
 
   return (*instance);
 }

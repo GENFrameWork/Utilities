@@ -301,7 +301,7 @@ bool TRANSLATESCAN::AppProc_FirstUpdate()
   
   //--------------------------------------------------------------------------------------------------
   
-  manager = new TRANSLATESCAN_MANAGER();
+  manager = GEN_NEW TRANSLATESCAN_MANAGER();
   if(!manager)
     {
       return false;
@@ -329,7 +329,7 @@ bool TRANSLATESCAN::AppProc_FirstUpdate()
 * --------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::AppProc_Update()
 {
-  if(GetEvent()==TRANSLATESCAN_XFSMEVENT_NONE) // Not new event
+  if(GetEvent()==TRANSLATESCAN_XFSMEVENT_NONE) // Not GEN_NEW event
     {
       switch(GetCurrentState())
         {

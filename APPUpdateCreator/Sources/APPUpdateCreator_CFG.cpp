@@ -78,7 +78,7 @@ bool APPUPDATECREATOR_CFG::GetIsInstanced()
 *---------------------------------------------------------------------------------------------------------------------*/
 APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
 {
-  if(!instance) instance = new APPUPDATECREATOR_CFG(APPLICATION_NAMEFILE);
+  if(!instance) instance = GEN_NEW APPUPDATECREATOR_CFG(APPLICATION_NAMEFILE);
 
   return (*instance);
 }
