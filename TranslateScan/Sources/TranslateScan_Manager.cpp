@@ -337,7 +337,7 @@ bool TRANSLATESCAN_MANAGER::SearchInFile(XPATH& pathfile, XCHAR* searchstring, T
       status = true;
     } 
 
-  delete filetxt;
+  GEN_DELETE filetxt;
 
   return status;
 }

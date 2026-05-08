@@ -423,7 +423,7 @@ bool TRANSLATESCAN::AppProc_End()
 
   if(manager)
     {
-      delete manager;
+      GEN_DELETE manager;
       manager = NULL;
     }
 

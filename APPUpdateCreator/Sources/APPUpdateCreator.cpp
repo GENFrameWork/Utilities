@@ -486,7 +486,7 @@ bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefi
                   if(xdirelement.GetType()==XDIRELEMENTTYPE_DIR)
                     {
                       CreateListOfFiles((*xpathnext), updatefiles);
-                      delete xpathnext;
+                      GEN_DELETE xpathnext;
                     }
                    else updatefiles->Add(xpathnext);
                 }

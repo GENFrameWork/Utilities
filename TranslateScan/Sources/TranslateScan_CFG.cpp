@@ -103,7 +103,7 @@ bool TRANSLATESCAN_CFG::DelInstance()
 {
   if(instance)
     {
-      delete instance;
+      GEN_DELETE instance;
       instance = NULL;
 
       return true;
