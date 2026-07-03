@@ -98,7 +98,7 @@ class	DIOCHECKTCPIPCONNECTIONS;
 class DIOCHECKINTERNETCONNECTION;
 class GRPSCREEN;
 class GRPWINDOWSSCREEN;
-class GRPCANVAS;
+class GRP2DCANVAS;
 
 
 struct MONITOR_RECTS
@@ -364,7 +364,7 @@ class TMainForm : public TForm
     bool                          openuart;
 
     GRPWINDOWSSCREEN*             grp_screen;
-    GRPCANVAS*                    grp_canvas;
+    GRP2DCANVAS*                    grp_canvas;
 
     ORIGIN*                       rootorigin;
     ORIGIN*                       localnointernetorigin;
