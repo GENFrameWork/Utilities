@@ -61,12 +61,14 @@
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN_FILETARGET::TRANSLATESCAN_FILETARGET()
-* @brief      Constructor
+* @brief      Constructor of class.
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_FILETARGET::TRANSLATESCAN_FILETARGET()
 {
   Clean();
@@ -74,13 +76,15 @@ TRANSLATESCAN_FILETARGET::TRANSLATESCAN_FILETARGET()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN_FILETARGET::~TRANSLATESCAN_FILETARGET()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_FILETARGET::~TRANSLATESCAN_FILETARGET()
 {
   Clean();
@@ -88,14 +92,14 @@ TRANSLATESCAN_FILETARGET::~TRANSLATESCAN_FILETARGET()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         XPATH* TRANSLATESCAN_FILETARGET::GetXPathFile()
-* @brief      get Xpath file
+* @brief      Get the target file path.
 * @ingroup    APPLICATION
-* 
-* @return     XPATH* : 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     XPATH* : pointer to the target file path.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 XPATH* TRANSLATESCAN_FILETARGET::GetXPathFile()
 {
   return &xpathfile;
@@ -103,13 +107,15 @@ XPATH* TRANSLATESCAN_FILETARGET::GetXPathFile()
 
   
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         void TRANSLATESCAN_FILETARGET::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     void : does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 void TRANSLATESCAN_FILETARGET::Clean()
 {
 
@@ -121,12 +127,14 @@ void TRANSLATESCAN_FILETARGET::Clean()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN_MANAGER::TRANSLATESCAN_MANAGER()
-* @brief      Constructor
+* @brief      Constructor of class.
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_MANAGER::TRANSLATESCAN_MANAGER()
 {
   Clean();
@@ -134,13 +142,15 @@ TRANSLATESCAN_MANAGER::TRANSLATESCAN_MANAGER()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN_MANAGER::~TRANSLATESCAN_MANAGER()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_MANAGER::~TRANSLATESCAN_MANAGER()
 {
   Clean();
@@ -148,17 +158,17 @@ TRANSLATESCAN_MANAGER::~TRANSLATESCAN_MANAGER()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XPATH& inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget)
-* @brief      search files target
+*
+* @fn         bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XCHAR* inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget)
+* @brief      Search source files from a path and add them to the target list.
 * @ingroup    APPLICATION
-* 
-* @param[in]  inipath : 
-* @param[in]  filestarget : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @param[in]  inipath : initial directory path to scan.
+* @param[out]  filestarget : list filled with the source files found.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XCHAR* inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget)
 {
   XCHAR* extensions[] = { __L(".c"),
@@ -239,17 +249,17 @@ bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XCHAR* inipath, XVECTOR<TRANSLATES
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XPATH& inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget)
-* @brief      search files target
+* @brief      Search source files from a path and add them to the target list.
 * @ingroup    APPLICATION
-* 
-* @param[in]  inipath : 
-* @param[in]  filestarget : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @param[in]  inipath : initial directory path to scan.
+* @param[out]  filestarget : list filled with the source files found.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XPATH& inipath, XVECTOR<TRANSLATESCAN_FILETARGET*>* filestarget)
 {
   return SearchFilesTarget(inipath.Get(), filestarget);
@@ -257,19 +267,19 @@ bool TRANSLATESCAN_MANAGER::SearchFilesTarget(XPATH& inipath, XVECTOR<TRANSLATES
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::SearchInFile(XPATH& pathfile, XCHAR* searchstring, TRANSLANTESCAN_FOUNDINFILE_PTRFUNC foundinfileptrfunc, TRANSLANTESCAN_CHANGEINFILE_PTRFUNC changeinfileptrfunc)
-* @brief      search in file
-* @ingroup    
-* 
-* @param[in]  pathfile : 
-* @param[in]  searchstring : 
-* @param[in]  foundinfileptrfunc : 
-* @param[in]  changeinfileptrfunc : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Search a text pattern in a file and optionally change matching lines.
+* @ingroup    APPLICATION
+*
+* @param[in]  pathfile : file path to open and scan.
+* @param[in]  searchstring : text pattern to search.
+* @param[in]  foundinfileptrfunc : callback executed when a match is found.
+* @param[in]  changeinfileptrfunc : optional callback used to modify a matching line.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::SearchInFile(XPATH& pathfile, XCHAR* searchstring, TRANSLANTESCAN_FOUNDINFILE_PTRFUNC foundinfileptrfunc, TRANSLANTESCAN_CHANGEINFILE_PTRFUNC changeinfileptrfunc)
 {
   if(!searchstring)
@@ -344,16 +354,16 @@ bool TRANSLATESCAN_MANAGER::SearchInFile(XPATH& pathfile, XCHAR* searchstring, T
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief(XPATH& operationdir)
-* @brief      operation  remark  brief
-* @ingroup    
-* 
-* @param[in]  operationdir : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Update brief remarks in the source files of a directory.
+* @ingroup    APPLICATION
+*
+* @param[in]  operationdir : directory where the operation is executed.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief(XPATH& operationdir)
 {
   XVECTOR<TRANSLATESCAN_FILETARGET*> filestarget;
@@ -387,20 +397,20 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief(XPATH& operationdir)
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_SearchLine(XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& result)
-* @brief      operation  remark  brief  search line
-* @ingroup    
-* 
-* @param[in]  pathfile : 
-* @param[in]  filetxt : 
-* @param[in]  nline : 
-* @param[in]  index : 
-* @param[in]  result : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Build the replacement brief text for a matched function remark line.
+* @ingroup    APPLICATION
+*
+* @param[in]  pathfile : file path being scanned.
+* @param[in]  filetxt : text file being scanned.
+* @param[in]  nline : line number where the match was found.
+* @param[in]  index : character index where the match was found.
+* @param[out]  result : brief text generated for the line.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_SearchLine(XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& result)
 {
   if(!pathfile)
@@ -518,21 +528,21 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_SearchLine(XPATH* pathfile, X
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_ChangeLine(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring, int nline, int index, XSTRING& result)
-* @brief      operation  remark  brief  change line
-* @ingroup    
-* 
-* @param[in]  pathfile : 
-* @param[in]  filetxt : 
-* @param[in]  searchstring : 
-* @param[in]  nline : 
-* @param[in]  index : 
-* @param[in]  result : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Replace a matched brief remark line with the generated text.
+* @ingroup    APPLICATION
+*
+* @param[in]  pathfile : file path being modified.
+* @param[in,out]  filetxt : text file where the line is replaced.
+* @param[in]  searchstring : text pattern that was matched.
+* @param[in]  nline : line number to replace.
+* @param[in]  index : character index where the matched text starts.
+* @param[in]  result : brief text to write.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_ChangeLine(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring, int nline, int index, XSTRING& result)
 {
   if(!pathfile)
@@ -572,17 +582,17 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_ChangeLine(XPATH* pathfile, X
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_Construct(XSTRING& brief_origin, XSTRING& brief_target)
-* @brief      operation  remark  brief  construct
-* @ingroup    
-* 
-* @param[in]  brief_origin : 
-* @param[in]  brief_target : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Construct a readable brief text from a member name.
+* @ingroup    APPLICATION
+*
+* @param[in]  brief_origin : original member name used as source text.
+* @param[out]  brief_target : readable brief text generated from the source text.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_Construct(XSTRING& brief_origin, XSTRING& brief_target)
 {
   brief_target = brief_origin;
@@ -686,16 +696,16 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_Brief_Construct(XSTRING& brief_orig
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup(XPATH& operationdir)
-* @brief      operation  remark  in group
-* @ingroup    
-* 
-* @param[in]  operationdir : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Update ingroup remarks in the source files of a directory.
+* @ingroup    APPLICATION
+*
+* @param[in]  operationdir : directory where the operation is executed.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup(XPATH& operationdir)
 {
   XVECTOR<TRANSLATESCAN_FILETARGET*> filestarget;
@@ -729,20 +739,20 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup(XPATH& operationdir)
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_SearchLine(XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& result)
-* @brief      operation  remark  in group  search line
-* @ingroup    
-* 
-* @param[in]  pathfile : 
-* @param[in]  filetxt : 
-* @param[in]  nline : 
-* @param[in]  index : 
-* @param[in]  result : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Build the replacement ingroup text for a matched remark line.
+* @ingroup    APPLICATION
+*
+* @param[in]  pathfile : file path being scanned.
+* @param[in]  filetxt : text file being scanned.
+* @param[in]  nline : line number where the match was found.
+* @param[in]  index : character index where the match was found.
+* @param[out]  result : ingroup text generated for the line.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_SearchLine(XPATH* pathfile, XFILETXT* filetxt, int nline, int index, XSTRING& result)
 {
   if(!pathfile)
@@ -819,21 +829,21 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_SearchLine(XPATH* pathfile,
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_ChangeLine(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring, int nline, int index, XSTRING& result)
-* @brief      operation  remark  in group  change line
-* @ingroup    
-* 
-* @param[in]  pathfile : 
-* @param[in]  filetxt : 
-* @param[in]  searchstring : 
-* @param[in]  nline : 
-* @param[in]  index : 
-* @param[in]  result : 
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+* @brief      Replace a matched ingroup remark line with the generated text.
+* @ingroup    APPLICATION
+*
+* @param[in]  pathfile : file path being modified.
+* @param[in,out]  filetxt : text file where the line is replaced.
+* @param[in]  searchstring : text pattern that was matched.
+* @param[in]  nline : line number to replace.
+* @param[in]  index : character index where the matched text starts.
+* @param[in]  result : ingroup text to write.
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_ChangeLine(XPATH* pathfile, XFILETXT* filetxt, XSTRING& searchstring, int nline, int index, XSTRING& result)
 {
   if(nline < 0)
@@ -864,13 +874,15 @@ bool TRANSLATESCAN_MANAGER::Operation_Remark_InGroup_ChangeLine(XPATH* pathfile,
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         void TRANSLATESCAN_MANAGER::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
 * @ingroup    APPLICATION
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     void : does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 void TRANSLATESCAN_MANAGER::Clean()
 {
 

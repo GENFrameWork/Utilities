@@ -1,9 +1,9 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       APPUpdateCFG.cpp
+* @file       APPUpdateCreator_CFG.cpp
 *
 * @class      APPUPDATECREATOR_CFG
-* @brief      Application update CFG
+* @brief      Application Update Creator configuration class
 * @ingroup    UTILS
 *
 * @copyright  EndoraSoft. All rights reserved.
@@ -54,10 +54,10 @@ APPUPDATECREATOR_CFG* APPUPDATECREATOR_CFG::instance = NULL;
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR_CFG::GetIsInstanced()
-* @brief      GetIsInstanced
-* @ingroup
+* @brief      Check if the singleton instance is created.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if the instance exists.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR_CFG::GetIsInstanced()
@@ -70,10 +70,10 @@ bool APPUPDATECREATOR_CFG::GetIsInstanced()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
-* @brief      GetInstance
-* @ingroup
+* @brief      Get the singleton instance of the configuration.
+* @ingroup    UTILS
 *
-* @return     APPUPDATECREATOR_CFG& :
+* @return     APPUPDATECREATOR_CFG& : reference to the singleton instance.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
@@ -87,10 +87,10 @@ APPUPDATECREATOR_CFG& APPUPDATECREATOR_CFG::GetInstance()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR_CFG::DelInstance()
-* @brief      DelInstance
-* @ingroup
+* @brief      Delete the singleton instance of the configuration.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if the instance has been deleted.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR_CFG::DelInstance()
@@ -113,10 +113,10 @@ bool APPUPDATECREATOR_CFG::DelInstance()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR_CFG::Default()
-* @brief      Set Default parameters
-* @ingroup
+* @brief      Set the default configuration parameters.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR_CFG::Default()
@@ -130,10 +130,10 @@ bool APPUPDATECREATOR_CFG::Default()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         APPUPDATECREATOR_CFG::APPUPDATECREATOR_CFG(XCHAR* namefile)
-* @brief      Constructor
-* @ingroup
+* @brief      Constructor of class.
+* @ingroup    UTILS
 *
-* @param[in]  namefile: namefile of the CFG file.
+* @param[in]  namefile : name of the configuration file.
 *
 * @return     Does not return anything.
 *
@@ -155,9 +155,9 @@ APPUPDATECREATOR_CFG::APPUPDATECREATOR_CFG(XCHAR* namefile) : APPFLOWCFG(namefil
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         APPUPDATECREATOR_CFG::~APPUPDATECREATOR_CFG()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
-* @ingroup
+* @ingroup    UTILS
 *
 * @return     Does not return anything.
 *
@@ -174,9 +174,9 @@ APPUPDATECREATOR_CFG::~APPUPDATECREATOR_CFG()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         void APPUPDATECREATOR_CFG::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
-* @ingroup
+* @ingroup    UTILS
 *
 * @return     void : does not return anything.
 *

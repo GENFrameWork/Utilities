@@ -1,9 +1,9 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       APPUpdateCFG.h
+* @file       APPUpdateCreator_CFG.h
 *
 * @class      APPUPDATECREATOR_CFG
-* @brief      Application Update CFG
+* @brief      Application Update Creator configuration class
 * @ingroup    UTILS
 *
 * @copyright  EndoraSoft. All rights reserved.

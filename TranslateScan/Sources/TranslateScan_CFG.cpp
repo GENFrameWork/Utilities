@@ -3,7 +3,7 @@
 * @file       TranslateScan_CFG.cpp
 * 
 * @class      TRANSLATESCAN_CFG
-* @brief      Translate Scan class
+* @brief      Translate Scan configuration class
 * @ingroup    APPLICATION
 * 
 * @copyright  EndoraSoft. All rights reserved.
@@ -61,10 +61,10 @@ TRANSLATESCAN_CFG* TRANSLATESCAN_CFG::instance = NULL;
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool TRANSLATESCAN_CFG::GetIsInstanced()
-* @brief      GetIsInstanced
-* @ingroup
+* @brief      Check if the singleton instance is created.
+* @ingroup    APPLICATION
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if the instance exists.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_CFG::GetIsInstanced()
@@ -76,10 +76,12 @@ bool TRANSLATESCAN_CFG::GetIsInstanced()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         TRANSLATESCAN_CFG& TRANSLATESCAN_CFG::GetInstance(bool ini)
-* @brief      GetInstance
-* @ingroup
+* @brief      Get the singleton instance of the configuration.
+* @ingroup    APPLICATION
 *
-* @return     TRANSLATESCAN_CFG& :
+* @param[in]  ini : true to initialize the instance with the application configuration file.
+*
+* @return     TRANSLATESCAN_CFG& : reference to the singleton instance.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_CFG& TRANSLATESCAN_CFG::GetInstance(bool ini)
@@ -93,10 +95,10 @@ TRANSLATESCAN_CFG& TRANSLATESCAN_CFG::GetInstance(bool ini)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool TRANSLATESCAN_CFG::DelInstance()
-* @brief      DelInstance
-* @ingroup
+* @brief      Delete the singleton instance of the configuration.
+* @ingroup    APPLICATION
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if the instance has been deleted.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_CFG::DelInstance()
@@ -114,14 +116,14 @@ bool TRANSLATESCAN_CFG::DelInstance()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_CFG::DoVariableMapping()
-* @brief      DoVariableMapping
+* @brief      Map the configuration variables.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_CFG::DoVariableMapping()
 {
   if(!APPFLOWCFG::DoVariableMapping())
@@ -138,14 +140,14 @@ bool TRANSLATESCAN_CFG::DoVariableMapping()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN_CFG::DoDefault()
-* @brief      DoDefault
+* @brief      Set the default configuration values.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN_CFG::DoDefault()
 {
   if(!APPFLOWCFG::DoDefault()) 
@@ -165,11 +167,11 @@ bool TRANSLATESCAN_CFG::DoDefault()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         TRANSLATESCAN_CFG::TRANSLATESCAN_CFG(XCHAR* namefile) : APPLICATIONCFG(namefile)
-* @brief      Constructor
-* @ingroup
+* @fn         TRANSLATESCAN_CFG::TRANSLATESCAN_CFG(XCHAR* namefile)
+* @brief      Constructor of class.
+* @ingroup    APPLICATION
 *
-* @param[in]  XCHAR* : name of file of config
+* @param[in]  namefile : name of the configuration file.
 *
 * @return     Does not return anything.
 *
@@ -188,9 +190,9 @@ TRANSLATESCAN_CFG::TRANSLATESCAN_CFG(XCHAR* namefile) : APPFLOWCFG(namefile)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         TRANSLATESCAN_CFG::~TRANSLATESCAN_CFG()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
-* @ingroup
+* @ingroup    APPLICATION
 *
 * @return     Does not return anything.
 *
@@ -204,9 +206,9 @@ TRANSLATESCAN_CFG::~TRANSLATESCAN_CFG()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         void TRANSLATESCAN_CFG::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
-* @ingroup
+* @ingroup    APPLICATION
 *
 * @return     void : does not return anything.
 *

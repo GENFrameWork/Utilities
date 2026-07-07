@@ -1,10 +1,10 @@
 /**-------------------------------------------------------------------------------------------------------------------
 * 
-* @file       NetConn_XEvents.h
+* @file       TranslateScan_XEvents.h
 * 
-* @class      NETCONN_XEVENTS
-* @brief      Net Conn XEvents 
-* @ingroup    EXAMPLES
+* @class      TRANSLATESCAN_XEVENTS
+* @brief      Translate Scan XEvents defines
+* @ingroup    APPLICATION
 * 
 * @copyright  EndoraSoft. All rights reserved.
 * 

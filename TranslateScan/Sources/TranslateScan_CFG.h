@@ -3,7 +3,7 @@
 * @file       TranslateScan_CFG.h
 * 
 * @class      TRANSLATESCAN_CFG
-* @brief      Translate Scan class
+* @brief      Translate Scan configuration class
 * @ingroup    APPLICATION
 * 
 * @copyright  EndoraSoft. All rights reserved.

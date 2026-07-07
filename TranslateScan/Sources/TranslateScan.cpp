@@ -113,14 +113,14 @@ APPLICATIONCREATEINSTANCE(TRANSLATESCAN, translatescan)
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
-* @fn         TRANSLATESCAN::TRANSLATESCAN() : XFSMACHINE(0)
-* @brief      Constructor
+*
+* @fn         TRANSLATESCAN::TRANSLATESCAN()
+* @brief      Constructor of class.
 * @ingroup    APPLICATION
-* 
-* @return     Does not return anything. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN::TRANSLATESCAN() : XFSMACHINE(0)
 {
   Clean();
@@ -128,15 +128,15 @@ TRANSLATESCAN::TRANSLATESCAN() : XFSMACHINE(0)
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN::~TRANSLATESCAN()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
 * @ingroup    APPLICATION
-* 
-* @return     Does not return anything. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     Does not return anything.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN::~TRANSLATESCAN()
 {
   Clean();
@@ -144,14 +144,14 @@ TRANSLATESCAN::~TRANSLATESCAN()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN::InitFSMachine()
-* @brief      InitFSMachine
+* @brief      Initialize the finite state machine.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::InitFSMachine()
 {
   if(!AddState( TRANSLATESCAN_XFSMSTATE_NONE            ,
@@ -181,14 +181,14 @@ bool TRANSLATESCAN::InitFSMachine()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN::AppProc_Ini()
-* @brief      AppProc_Ini
+* @brief      Initialize the application process.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::AppProc_Ini()
 {
   XSTRING string;
@@ -280,14 +280,14 @@ bool TRANSLATESCAN::AppProc_Ini()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN::AppProc_FirstUpdate()
-* @brief      AppProc_FirstUpdate
+* @brief      Execute the first application update callback.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::AppProc_FirstUpdate()
 {
   XSTRING string;
@@ -319,14 +319,14 @@ bool TRANSLATESCAN::AppProc_FirstUpdate()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN::AppProc_Update()
-* @brief      AppProc_Update
+* @brief      Execute the application update callback.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::AppProc_Update()
 {
   if(GetEvent()==TRANSLATESCAN_XFSMEVENT_NONE) // Not GEN_NEW event
@@ -385,14 +385,14 @@ bool TRANSLATESCAN::AppProc_Update()
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         bool TRANSLATESCAN::AppProc_End()
-* @brief      AppProc_End
+* @brief      Finalize the application process.
 * @ingroup    APPLICATION
-* 
-* @return     bool : true if is succesful. 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     bool : true if it is successful.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::AppProc_End()
 {
   XSTRING string;
@@ -442,12 +442,12 @@ bool TRANSLATESCAN::AppProc_End()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool TRANSLATESCAN::KeyValidSecuences(int key)
-* @brief      KeyValidSecuences
+* @brief      Process a keyboard sequence received by the console.
 * @ingroup    APPLICATION
 *
-* @param[in]  key :
+* @param[in]  key : key code received from the console.
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::KeyValidSecuences(int key)
@@ -499,14 +499,14 @@ bool TRANSLATESCAN::KeyValidSecuences(int key)
 
 
 /**-------------------------------------------------------------------------------------------------------------------
-* 
+*
 * @fn         TRANSLATESCAN_MANAGER* TRANSLATESCAN::GetManager()
-* @brief      get manager
+* @brief      Get the Translate Scan manager.
 * @ingroup    APPLICATION
-* 
-* @return     TRANSLATESCAN_MANAGER* : 
-* 
-* --------------------------------------------------------------------------------------------------------------------*/
+*
+* @return     TRANSLATESCAN_MANAGER* : pointer to the manager instance.
+*
+*---------------------------------------------------------------------------------------------------------------------*/
 TRANSLATESCAN_MANAGER* TRANSLATESCAN::GetManager()
 {
   return manager;
@@ -516,10 +516,10 @@ TRANSLATESCAN_MANAGER* TRANSLATESCAN::GetManager()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool TRANSLATESCAN::Show_AllStatus()
-* @brief      Show_AllStatus
+* @brief      Show the current application status.
 * @ingroup    APPLICATION
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool TRANSLATESCAN::Show_AllStatus()
@@ -538,11 +538,11 @@ bool TRANSLATESCAN::Show_AllStatus()
 
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @fn         TRANSLATESCAN::HandleEvent
-* @brief      Handle Events
-* @ingroup
+* @fn         void TRANSLATESCAN::HandleEvent(XEVENT* xevent)
+* @brief      Handle observer events received by the application.
+* @ingroup    APPLICATION
 *
-* @param[]    xevent : event send to control
+* @param[in]  xevent : event to handle.
 *
 * @return     void : does not return anything.
 *
@@ -568,9 +568,9 @@ void TRANSLATESCAN::HandleEvent(XEVENT* xevent)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         void TRANSLATESCAN::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
-* @ingroup
+* @ingroup    APPLICATION
 *
 * @return     void : does not return anything.
 *

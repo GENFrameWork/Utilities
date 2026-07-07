@@ -1,9 +1,9 @@
 /**-------------------------------------------------------------------------------------------------------------------
 *
-* @file       APPUpdate.cpp
+* @file       APPUpdateCreator.cpp
 *
 * @class      APPUPDATECREATOR
-* @brief      Application Update class
+* @brief      Application Update Creator class
 * @ingroup    UTILS
 *
 * @copyright  EndoraSoft. All rights reserved.
@@ -97,8 +97,8 @@ APPLICATIONCREATEINSTANCE(APPUPDATECREATOR, appupdatecreator)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         APPUPDATECREATOR::APPUPDATECREATOR()
-* @brief      Constructor
-* @ingroup    XUTILS
+* @brief      Constructor of class.
+* @ingroup    UTILS
 *
 * @return     Does not return anything.
 *
@@ -112,9 +112,9 @@ APPUPDATECREATOR::APPUPDATECREATOR():  XFSMACHINE(0)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         APPUPDATECREATOR::~APPUPDATECREATOR()
-* @brief      Destructor
+* @brief      Destructor of class.
 * @note       VIRTUAL
-* @ingroup    XUTILS
+* @ingroup    UTILS
 *
 * @return     Does not return anything.
 *
@@ -129,10 +129,10 @@ APPUPDATECREATOR::~APPUPDATECREATOR()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::InitFSMachine()
-* @brief      Init FS Machine
-* @ingroup    XUTILS
+* @brief      Initialize the finite state machine.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::InitFSMachine()
@@ -163,10 +163,10 @@ bool APPUPDATECREATOR::InitFSMachine()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::AppProc_Ini()
-* @brief      AppProc_Ini
-* @ingroup    XUTILS
+* @brief      Initialize the application process.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::AppProc_Ini()
@@ -233,11 +233,10 @@ bool APPUPDATECREATOR::AppProc_Ini()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::AppProc_FirstUpdate()
-* @brief      Application callback First Update
-* @ingroup    XUTILS
-
+* @brief      Execute the first application update callback.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::AppProc_FirstUpdate()
@@ -253,11 +252,10 @@ bool APPUPDATECREATOR::AppProc_FirstUpdate()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::AppProc_Update()
-* @brief      Application Callback Update
-* @ingroup    XUTILS
-
+* @brief      Execute the application update callback.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::AppProc_Update()
@@ -327,11 +325,10 @@ bool APPUPDATECREATOR::AppProc_Update()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::AppProc_End()
-* @brief      Application Callback End
-* @ingroup    XUTILS
-
+* @brief      Finalize the application process.
+* @ingroup    UTILS
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::AppProc_End()
@@ -366,14 +363,13 @@ bool APPUPDATECREATOR::AppProc_End()
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata)
-* @brief      GetApplicationParam
-* @ingroup    XUTILS
-
+* @brief      Read update parameters from the command line.
+* @ingroup    UTILS
 *
-* @param[in]  xpath :
-* @param[in]  applicationversiondata :
+* @param[out]  xpath : application path obtained from the command line.
+* @param[out]  applicationversiondata : version data obtained from the command line.
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata)
@@ -455,14 +451,13 @@ bool APPUPDATECREATOR::GetApplicationParam(XPATH& xpath, DIOAPPLICATIONUPDATE_VE
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefiles)
-* @brief      CreateListOfFiles
-* @ingroup    XUTILS
-
+* @brief      Create the recursive list of files to include in the update package.
+* @ingroup    UTILS
 *
-* @param[in]  xpath :
-* @param[in]  updatefiles :
+* @param[in]  xpath : root path to scan.
+* @param[out]  updatefiles : list filled with the file paths found.
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefiles)
@@ -504,16 +499,15 @@ bool APPUPDATECREATOR::CreateListOfFiles(XPATH& xpath, XVECTOR<XPATH*>* updatefi
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata, XDWORD& nfiles, XDWORD& sizetotal)
-* @brief      GenerateUpdateFile
-* @ingroup    XUTILS
-
+* @brief      Generate the application update descriptor file.
+* @ingroup    UTILS
 *
-* @param[in]  xpath :
-* @param[in]  applicationversiondata :
-* @param[in]  nfiles :
-* @param[in]  sizetotal :
+* @param[in]  xpath : root path used to generate the update descriptor.
+* @param[in]  applicationversiondata : version data written to the descriptor.
+* @param[out]  nfiles : number of files included in the descriptor.
+* @param[out]  sizetotal : total size of the included files.
 *
-* @return     bool : true if is succesful.
+* @return     bool : true if it is successful.
 *
 *---------------------------------------------------------------------------------------------------------------------*/
 bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VERSIONDATA& applicationversiondata, XDWORD& nfiles, XDWORD& sizetotal)
@@ -599,12 +593,11 @@ bool APPUPDATECREATOR::GenerateUpdateFile(XPATH& xpath, DIOAPPLICATIONUPDATE_VER
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         void APPUPDATECREATOR::HandleEvent(XEVENT* xevent)
-* @brief      Handle Event for the observer manager of this class
+* @brief      Handle observer events received by the application.
 * @note       INTERNAL
-* @ingroup    XUTILS
-
+* @ingroup    UTILS
 *
-* @param[in]  xevent :
+* @param[in]  xevent : event to handle.
 *
 * @return     void : does not return anything.
 *
@@ -618,10 +611,9 @@ void APPUPDATECREATOR::HandleEvent(XEVENT* xevent)
 /**-------------------------------------------------------------------------------------------------------------------
 *
 * @fn         void APPUPDATECREATOR::Clean()
-* @brief      Clean the attributes of the class: Default initialice
+* @brief      Clean the attributes of the class: Default initialize.
 * @note       INTERNAL
-* @ingroup    XUTILS
-
+* @ingroup    UTILS
 *
 * @return     void : does not return anything.
 *

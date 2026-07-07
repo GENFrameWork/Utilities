@@ -3,9 +3,9 @@
 * @file       APP_GEN_Defines.h
 *
 * @class      APP_GEN_DEFINES
-* @brief      GEN Defines of the Application
-* @ingroup
-*
+* @brief      GEN defines of the Application
+* @ingroup    UTILS
+UTILS
 * @copyright  EndoraSoft. All rights reserved.
 *
 * @cond
